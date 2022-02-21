@@ -1,8 +1,7 @@
 {
   "name": "altaqwaa",
-  "productName": "Altaqwaa",
   "version": "1.0.0",
-  "description": "تطبيق إسلامي [ أذكار , قرآن , حصن المسلم , ادعية ]",
+  "description": "Altaqwaa - Islamic Desktop Application",
   "main": "main.js",
   "type": "commonjs",
   "author": {
@@ -27,40 +26,59 @@
     "nodemon": "^2.0.15"
   },
   "build": {
-    "appId": "com.altaqwaa.rn0x",
+    "productName":"Altaqwaa",
+    "publish": {
+			"provider": "github",
+			"owner": "rn0x",
+			"repo": "Altaqwaa-Islamic-Desktop-Application",
+			"protocol": "https"
+		},
+    "appId": "org.altaqwaa.rn0x",
     "copyright": "Copyright © 2022 Altaqwaa",
     "extraFiles": [
       "build"
     ],
     "win": {
       "icon": "build/icon.ico",
-      "publisherName": "Altaqwaa",
+      "signingHashAlgorithms": [
+        "sha256",
+        "sha1"
+    ],
+    "signAndEditExecutable": true,
+    "publisherName": "Ryan Almalki",
       "target": [
-				{
-					"target": "nsis",
-					"arch": [
-						"x64",
-						"ia32"
-					]
-				},
-				{
-					"target": "portable"
-				}
-			]
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "portable"
+        },
+        {
+          "target":"msi"
+        }
+      ]
     },
     "nsis": {
-      "oneClick": false,
+      "oneClick": "false",
       "perMachine": true,
+      "allowToChangeInstallationDirectory": "true",
       "installerIcon": "build/icon.ico",
       "uninstallerIcon": "build/icon.ico",
-      "allowToChangeInstallationDirectory": true,
       "license": "build/LICENSE.txt",
-      "shortcutName":"التقوى",
+      "shortcutName": "التقوى",
       "uninstallDisplayName":"التقوى"
-    },
+  },
     "linux": {
       "category":"Education",
       "icon": "build/icons/icon.icns",
+      "vendor": "Ryan Almalki",
+      "executableName": "Altaqwaa",
+      "description": "Altaqwaa - Islamic Desktop Application",
+      "synopsis": "Islamic Desktop Application",
       "target": [
         "AppImage",
         "deb",
