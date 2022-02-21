@@ -51,10 +51,13 @@
     },
     "nsis": {
       "oneClick": false,
-      "perMachine": false,
+      "perMachine": true,
       "installerIcon": "build/icon.ico",
       "uninstallerIcon": "build/icon.ico",
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "license": "build/LICENSE.txt",
+      "shortcutName":"التقوى",
+      "uninstallDisplayName":"التقوى"
     },
     "linux": {
       "category":"Education",
