@@ -1,5 +1,10 @@
 # Altaqwaa-Islamic-Desktop-Application
 
+<br>
+
+#### التقوى | تطبيق إسلامي لسطح المكتب يعمل على انظمة التشغيل ويندوز ولينكس
+
+<br>
 
 <p align="center">
   <img align="center" src="/github/1.png"> <br><br>
