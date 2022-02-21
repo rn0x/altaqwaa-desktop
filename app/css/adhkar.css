@@ -1,0 +1,148 @@
+@font-face {
+    font-family:"DroidKufi";
+    src: url(font/DroidKufi/DroidKufi-Bold.eot?#iefix) format("embedded-opentype"),
+         url(font/DroidKufi/DroidKufi-Bold.ttf)  format("truetype"), /* Safari, Android, iOS */
+         url(font/DroidKufi/DroidKufi-Bold.woff) format("woff"), /* Pretty Modern Browsers */
+         url(font/DroidKufi/DroidKufi-Bold.woff2) format("woff2"), /* Pretty Modern Browsers */
+         url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
+}
+
+@font-face {
+    font-family:"AvergentRegular";
+    src: url(font/AvergentRegular/AvergentRegular.ttf)  format("truetype");
+}
+
+@font-face {
+    font-family:"Al_QuranAlKareem";
+    src: url(font/Quran/Al-QuranAlKareem.ttf)  format("truetype");
+}
+
+
+/* التواجد الحالي منيو */
+
+#adhkar{
+
+    background-image: linear-gradient(to right, #1b5e20 , #45884a);
+    margin-right: 0px;
+}
+/* التواجد الحالي منيو */
+
+
+.adhkar {
+    width: 620px;
+    padding: 7px;
+    border-radius: 20px;
+    margin-right: 230px;
+    margin-top: 70px;
+    text-align: center;
+    font-family:'DroidKufi';
+}
+
+.adhkar_div_flex{
+
+    color: #979797;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.adhkar_div{
+    display: block;
+    width: calc(110% / 5);
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#f7f7f7;
+    padding: 15px;
+    border-radius: 30px;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+}
+
+.adhkar_div:hover {
+    width: calc(120% / 5);
+    background-color:#f7f7f7;
+    transition: 0.5s ease-in-out;
+}
+
+.adhkar_div img{
+
+    max-width: 50%;
+    height: auto;
+
+}
+
+.adhkar_div a{
+    color: #979797;
+    text-decoration: none;
+    text-align: center;
+    font-family:'DroidKufi';
+    font-size: 20px;
+}
+
+
+
+.adhkar_title {
+    padding: 5px;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#add1a8;
+    font-size: x-large;
+}
+
+.adhkar_text {
+
+    text-align: center;
+    font-family:'DroidKufi';
+    border-radius: 10px;
+    color: #575757;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#f7f7f7;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.adhkar_text p {
+    font-family: 'Al_QuranAlKareem';
+    font-size: 22px;
+    
+}
+
+.adhkar_text span{
+
+    font-size: 17px;
+    color: #45884a;
+
+}
+
+.adhkar_text_button{
+
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    background-image: linear-gradient(to right, #1b5e20 , #45884a) ;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+}
+
+.adhkar_text_button:hover {
+
+    background-image: linear-gradient(to right, #45884a , #1b5e20) ;
+    font-size: 24px;
+
+}

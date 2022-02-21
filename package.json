@@ -1,0 +1,76 @@
+{
+  "name": "altaqwaa",
+  "productName": "التقوى",
+  "version": "1.0.0",
+  "description": "تطبيق إسلامي [ أذكار , قرآن , حصن المسلم , ادعية ]",
+  "main": "main.js",
+  "type": "commonjs",
+  "author": {
+    "name": "Ryan Almalki",
+    "email": "rn0xx711@gmail.com",
+    "url": "https://www.altaqwaa.org"
+  },
+  "license": "MIT",
+  "scripts": {
+    "packwin": "electron-builder --windows",
+    "packlinux": "electron-builder --linux",
+    "packmac": "electron-builder --macos -c.mac.identity=null",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13"
+  },
+  "build": {
+    "appId": "com.altaqwaa.rn0x",
+    "copyright": "Copyright © 2022 Altaqwaa",
+    "extraFiles": [
+      "build"
+    ],
+    "mac": {
+      "icon": "build/icon.ico",
+      "category": "public.app-category.altaqwaa"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "publisherName": "Altaqwaa",
+      "target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64",
+						"ia32"
+					]
+				},
+				{
+					"target": "portable"
+				}
+			]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "category":"Education",
+      "icon": "build/icons/icon.icns",
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+        
+      ]
+    },
+    "dmg": {
+      "icon": "build/icon.icon"
+    },
+    "directories": {
+      "buildResources": "build"
+    }
+  }
+}

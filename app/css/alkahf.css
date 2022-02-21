@@ -1,0 +1,113 @@
+@font-face {
+    font-family:"DroidKufi";
+    src: url(font/DroidKufi/DroidKufi-Bold.eot?#iefix) format("embedded-opentype"),
+         url(font/DroidKufi/DroidKufi-Bold.ttf)  format("truetype"), /* Safari, Android, iOS */
+         url(font/DroidKufi/DroidKufi-Bold.woff) format("woff"), /* Pretty Modern Browsers */
+         url(font/DroidKufi/DroidKufi-Bold.woff2) format("woff2"), /* Pretty Modern Browsers */
+         url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
+}
+
+@font-face {
+    font-family:"AvergentRegular";
+    src: url(font/AvergentRegular/AvergentRegular.ttf)  format("truetype");
+}
+
+@font-face {
+    font-family:"Al_QuranAlKareem";
+    src: url(font/Quran/Al-QuranAlKareem.ttf)  format("truetype");
+}
+
+
+/* التواجد الحالي منيو */
+
+#alkahf{
+
+    background-image: linear-gradient(to right, #1b5e20 , #45884a);
+    margin-right: 0px;
+}
+
+/* التواجد الحالي منيو */
+
+.alkahf {
+    width: 620px;
+    padding: 7px;
+    border-radius: 20px;
+    margin-right: 230px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family:'DroidKufi';
+}
+
+.alkahf p {
+    padding: 5px;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#add1a8;
+    font-size: x-large;
+}
+
+.alkahf audio {
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#f7f7f7;
+}
+
+
+.alkahf ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+    /* center items horizontally, in this case */
+    align-items: center;
+}
+
+.alkahf li {
+    list-style: none;
+    display: block;
+    width: calc(115% / 3);
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #979797;
+    margin: 20px 20px 20px 20px;
+    word-wrap: break-word;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#f7f7f7;
+    
+}
+
+.quran_Surah{
+
+    margin-top: 70px;
+    font-family: 'Al_QuranAlKareem';
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 0px #0000000c;
+    background-color:#f7f7f7;
+
+}
+
+
+
+.quran_Surah p{
+
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    font-size: 24px;
+    padding: 0px;
+    border-radius: 0px;
+    border: 0px;
+    border-style:none;
+    text-shadow: none;
+    color: #979797 ;
+
+
+}
