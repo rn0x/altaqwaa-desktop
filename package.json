@@ -14,14 +14,17 @@
   "scripts": {
     "packwin": "electron-builder --windows",
     "packlinux": "electron-builder --linux",
-    "packmac": "electron-builder --macos -c.mac.identity=null",
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dev": "nodemon --exec electron ."
   },
   "devDependencies": {
     "electron": "^17.0.1",
     "electron-builder": "^22.14.13"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.15"
   },
   "build": {
     "appId": "com.altaqwaa.rn0x",
@@ -29,10 +32,6 @@
     "extraFiles": [
       "build"
     ],
-    "mac": {
-      "icon": "build/icon.ico",
-      "category": "public.app-category.altaqwaa"
-    },
     "win": {
       "icon": "build/icon.ico",
       "publisherName": "Altaqwaa",
@@ -68,9 +67,6 @@
         "rpm"
         
       ]
-    },
-    "dmg": {
-      "icon": "build/icon.icon"
     },
     "directories": {
       "buildResources": "build"

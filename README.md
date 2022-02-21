@@ -30,8 +30,7 @@
 ## تنزيل التطبيق
 
 - **Linux**: [Download the .AppImage, .deb, or .rpm file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
-- **macOS**: [Download the .dmg file](https://github.com/szTheory/Altaqwaa-Islamic-Desktop-Application/releases/latest)
-- **Windows**: [Download the .exe file](https://github.com/szTheory/Altaqwaa-Islamic-Desktop-Application/releases/latest)
+- **Windows**: [Download the .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 
 ### قم  بتشغيل التطبيق في وضع التطوير 
 
@@ -40,7 +39,7 @@
 
 git clone https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application
 cd Altaqwaa-Islamic-Desktop-Application
-npm start
+yarn run dev
 
 ```
 
@@ -49,13 +48,11 @@ npm start
 ```bash
 
 #Windows
-npm run packwin
+yarn run packwin
 
 #Linux
-npm run packlinux
+yarn run packlinux
 
-#macOS
-npm run packmac
 
 ```
 
