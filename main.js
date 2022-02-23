@@ -10,7 +10,7 @@ const createWindow = () => {
     center: true,
     resizable: false,
     title: 'التقوى',
-    icon: path.join(__dirname, '/build/icon/icon.png')
+    icon: path.join(__dirname, '/build/icons/icon.png')
   });
 
   mainWindow.loadFile('./app/adhkar/adhkar.html');
