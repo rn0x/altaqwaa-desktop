@@ -1,94 +1,162 @@
 @font-face {
-    font-family:"DroidKufi";
-    src: url(font/DroidKufi/DroidKufi-Bold.eot?#iefix) format("embedded-opentype"),
-         url(font/DroidKufi/DroidKufi-Bold.ttf)  format("truetype"), /* Safari, Android, iOS */
-         url(font/DroidKufi/DroidKufi-Bold.woff) format("woff"), /* Pretty Modern Browsers */
-         url(font/DroidKufi/DroidKufi-Bold.woff2) format("woff2"), /* Pretty Modern Browsers */
-         url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
+  font-family: "DroidKufi";
+  src        : url(font/DroidKufi/DroidKufi-Bold.eot?#iefix) format("embedded-opentype"),
+    url(font/DroidKufi/DroidKufi-Bold.ttf) format("truetype"),
+    /* Safari, Android, iOS */
+    url(font/DroidKufi/DroidKufi-Bold.woff) format("woff"),
+    /* Pretty Modern Browsers */
+    url(font/DroidKufi/DroidKufi-Bold.woff2) format("woff2"),
+    /* Pretty Modern Browsers */
+    url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
 }
 
 @font-face {
-    font-family:"AvergentRegular";
-    src: url(font/AvergentRegular/AvergentRegular.ttf)  format("truetype");
+  font-family: "AvergentRegular";
+  src        : url(font/AvergentRegular/AvergentRegular.ttf) format("truetype");
+}
+
+#titlebar {
+  height            : 30px;
+  width             : 100%;
+  top               : 0;
+  direction         : rtl;
+  position          : fixed;
+  z-index           : 2;
+  -webkit-app-region: drag;
 }
 
 
-
-
-html , body{
-
-    background-color: #ecf0f1;
-    background-size: 350px;
-    max-width: 100%;
-    user-select: none;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    direction: rtl;
-    margin: 0px 0px 0px 0px;
-    
+#window-controls {
+  display           : flex;
+  position          : absolute;
+  top               : 0;
+  left              : 0;
+  z-index           : 5;
+  -webkit-app-region: no-drag;
 }
 
-.body{
-    margin: 0px 0px 0px 0px;
-    top: 0;
-    max-width: 100%;
-    display: block;
-    direction: rtl;
-    position:absolute;
+#close-button .icon {
+  width       : 13px;
+  height      : 13px;
+  margin-right: 25px;
 }
 
-.header{
-    margin: 0px 0px 0px 0px;
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0px;
-    right: 0px;
-    background-image: linear-gradient(to right, #45884a , #1b5e20);
-    overflow-x: hidden ;
-    overflow-y: hidden;
-    padding-top: 20px;
-    list-style: none;
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.301);
+#min-button .icon {
+  width       : 15px;
+  height      : 15px;
+  margin-right: 10px;
 }
 
-.header a{
-    
-    color: #ffffff;
-    font-family:'DroidKufi';
-    font-size: 13px;
-    display: block;
-    text-decoration: none;
-    margin-top: 5px;
-    margin-right: 15px;
-    padding: 5px;
+#min-button {
+  background                : #dee3e4;
+  padding-left              : 10px;
+  padding-top               : 9px;
+  padding-bottom            : 2px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius : 15px;
 }
+
+#close-button {
+  background                : #d40000;
+  padding-left              : 20px;
+  padding-top               : 8px;
+  padding-bottom            : 2px;
+  border-bottom-right-radius: 15px;
+}
+
+#close-button:hover {
+  background: #bb0404;
+}
+
+
+#min-button:hover {
+  background: #d3d7d8;
+
+}
+
+html,
+body {
+
+  background-color   : #ecf0f1;
+  background-size    : 350px;
+  max-width          : 100%;
+  user-select        : none;
+  -khtml-user-select : none;
+  -o-user-select     : none;
+  -moz-user-select   : none;
+  -webkit-user-select: none;
+  direction          : rtl;
+  margin             : 0px 0px 0px 0px;
+  -webkit-app-region : drag;
+
+}
+
+.body {
+  margin   : 0px 0px 0px 0px;
+  top      : 0;
+  max-width: 100%;
+  display  : block;
+  direction: rtl;
+  position : absolute;
+}
+
+.header {
+  margin          : 0px 0px 0px 0px;
+  height          : 100%;
+  width           : 200px;
+  position        : fixed;
+  z-index         : 1;
+  top             : 0px;
+  right           : 0px;
+  background-image: linear-gradient(to right, #45884a, #1b5e20);
+  overflow-x      : hidden;
+  overflow-y      : hidden;
+  padding-top     : 20px;
+  list-style      : none;
+  box-shadow      : 0 .25rem .75rem rgba(0, 0, 0, 0.301);
+}
+
+.header a {
+
+  color             : #ffffff;
+  font-family       : 'DroidKufi';
+  font-size         : 13px;
+  display           : block;
+  text-decoration   : none;
+  margin-top        : 5px;
+  margin-right      : 15px;
+  padding           : 5px;
+  -webkit-app-region: no-drag;
+}
+
 .header a:hover {
-    transition: 1s ease-in-out;
-    background-image: linear-gradient(to right, #1b5e20 , #45884a);
-    margin-right: 0px;
+  transition      : 1s ease-in-out;
+  background-image: linear-gradient(to right, #1b5e20, #45884a);
+  margin-right    : 0px;
 }
 
-.header p{
-    
-    color: #ffffff;
-    font-family:'AvergentRegular';
-    font-size: 12px;
-    text-align: center;
-    margin-top: 105px;
+.header p {
+
+  color      : #0f4113;
+  font-family: 'AvergentRegular';
+  font-size  : 10px;
+  text-align : center;
+  margin-top : 165px;
+}
+
+.header p:hover {
+
+  color: #ffffff;
 }
 
 #logo {
-    width: 200px;
-    height: 100px;
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+  width       : 200px;
+  height      : 100px;
+  max-width   : 100%;
+  display     : block;
+  margin-left : auto;
+  margin-right: auto;
+  margin-top  : 10px;
 }
 
 
@@ -96,25 +164,28 @@ html , body{
 
 /* width */
 ::-webkit-scrollbar {
-    width: 13px;  
-} 
+  width             : 13px;
+  -webkit-app-region: no-drag;
+}
 
 
-  /* Track */
+/* Track */
 ::-webkit-scrollbar-track {
-    background-color: #1b5e20;
-    
+  background-color  : #1b5e20;
+  -webkit-app-region: no-drag;
+
 }
-   
-  /* Handle */
+
+/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #45884a;     
-    
+  background        : #45884a;
+  -webkit-app-region: no-drag;
+
 }
-  
-  /* Handle on hover */
+
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #5ba15f; 
+  background: #5ba15f;
 }
-  
+
 /* Custom Scrollbar */

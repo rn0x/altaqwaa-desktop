@@ -1,844 +1,865 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <title>التقوى</title>
     <link rel="stylesheet" href="../css/Quran_home.css">
     <link rel="stylesheet" href="../css/style.css">
-  </head>
-  <body onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
+</head>
+
+<body onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
     <!-- منطقة الهيدر -->
     <div class="header">
-      <img src="../image/logo.png" id="logo"><br>
-      <a href="./index.html" id="quran">تصفح القرآن الكريم</a>
-      <a href="../hisn_almuslim/hisn_almuslim.html" id="hisn_almuslim">حصن المسلم</a>
-      <a href="../alkahf/alkahf.html" id="alkahf">سورة الكهف</a>
-      <a href="../Allah_names/Allah_names.html" id="Allah_names">أسماء الله الحسنى</a>
-      <a href="../adhkar/adhkar.html" id="adhkar">الأذكار</a>
-      <p>Developed by: Ryan Almalki</p>
-      
+        <img src="../image/logo.png" id="logo"><br>
+        <a href="./index.html" id="quran">تصفح القرآن الكريم</a>
+        <a href="../hisn_almuslim/hisn_almuslim.html" id="hisn_almuslim">حصن المسلم</a>
+        <a href="../alkahf/alkahf.html" id="alkahf">سورة الكهف</a>
+        <a href="../Allah_names/Allah_names.html" id="Allah_names">أسماء الله الحسنى</a>
+        <a href="../adhkar/adhkar.html" id="adhkar">الأذكار</a>
+        <p>Developed by: Ryan Almalki</p>
+
     </div>
     <!-- منطقة الهيدر -->
-    
-    <div class="body">
-      <h3 class="info_home"> لقراءة القرآن الكريم قم بإختيار السورة من الفهرس</h3>
-      <div class="table">
-        <table>
-            <tr>
-                <th>الصفحة</th>
-                <th>عدد آياتها</th> 
-                <th>نوعها</th>
-                <th>اسم السورة</th> 
-                <th>م</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>7</td>
-                <td>مكية</td>
-                <td><a href="./1.html">الفاتحة</a></td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>286</td>
-                <td>مدنية</td>
-                <td><a href="./2.html">البقرة</a></td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>50</td>
-                <td>200</td>
-                <td>مدنية</td>
-                <td><a href="./3.html">آل عمران</a></td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>77</td>
-                <td>176</td>
-                <td>مدنية</td>
-                <td><a href="./4.html">النساء</a></td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>106</td>
-                <td>120</td>
-                <td>مدنية</td>
-                <td><a href="./5.html">المائدة</a></td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>128</td>
-                <td>165</td>
-                <td>مكية</td>
-                <td><a href="./6.html">الأنعام</a></td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>151</td>
-                <td>206</td>
-                <td>مكية</td>
-                <td><a href="./7.html">الأعراف</a></td>
-                <td>7</td>
-            </tr>
-            <tr>
-                <td>177</td>
-                <td>75</td>
-                <td>مدنية</td>
-                <td><a href="./8.html">الأنفال</a></td>
-                <td>8</td>
-            </tr>
-            <tr>
-                <td>187</td>
-                <td>129</td>
-                <td>مدنية</td>
-                <td><a href="./9.html">التوبة</a></td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td>208</td>
-                <td>109</td>
-                <td>مكية</td>
-                <td><a href="./10.html">يونس</a></td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>221</td>
-                <td>123</td>
-                <td>مكية</td>
-                <td><a href="./11.html">هود</a></td>
-                <td>11</td>
-            </tr>
-            <tr>
-                <td>235</td>
-                <td>111</td>
-                <td>مكية</td>
-                <td><a href="./12.html">يوسف</a></td>
-                <td>12</td>
-            </tr>
-            <tr>
-                <td>249</td>
-                <td>43</td>
-                <td>مدنية</td>
-                <td><a href="./13.html">الرعد</a></td>
-                <td>13</td>
-            </tr>
-            <tr>
-                <td>255</td>
-                <td>52</td>
-                <td>مكية</td>
-                <td><a href="./14.html">ابراهيم</a></td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>262</td>
-                <td>99</td>
-                <td>مكية</td>
-                <td><a href="./15.html">الحجر</a></td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>267</td>
-                <td>128</td>
-                <td>مكية</td>
-                <td><a href="./16.html">النحل</a></td>
-                <td>16</td>
-            </tr>
-            <tr>
-                <td>282</td>
-                <td>111</td>
-                <td>مكية</td>
-                <td><a href="./17.html">الإسراء</a></td>
-                <td>17</td>
-            </tr>
-            <tr>
-                <td>293</td>
-                <td>110</td>
-                <td>مكية</td>
-                <td><a href="./18.html">الكهف</a></td>
-                <td>18</td>
-            </tr>
-            <tr>
-                <td>305</td>
-                <td>98</td>
-                <td>مكية</td>
-                <td><a href="./19.html">مريم</a></td>
-                <td>19</td>
-            </tr>
-            <tr>
-                <td>312</td>
-                <td>135</td>
-                <td>مكية</td>
-                <td><a href="./20.html">طه</a></td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>322</td>
-                <td>112</td>
-                <td>مكية</td>
-                <td><a href="./21.html">الأنبياء</a></td>
-                <td>21</td>
-            </tr>
-            <tr>
-                <td>332</td>
-                <td>78</td>
-                <td>مدنية</td>
-                <td><a href="./22.html">الحج</a></td>
-                <td>22</td>
-            </tr>
-            <tr>
-                <td>342</td>
-                <td>118</td>
-                <td>مكية</td>
-                <td><a href="./23.html">المؤمنون</a></td>
-                <td>23</td>
-            </tr>
-            <tr>
-                <td>350</td>
-                <td>64</td>
-                <td>مدنية</td>
-                <td><a href="./24.html">النور</a></td>
-                <td>24</td>
-            </tr>
-            <tr>
-                <td>359</td>
-                <td>77</td>
-                <td>مكية</td>
-                <td><a href="./25.html">الفرقان</a></td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>367</td>
-                <td>227</td>
-                <td>مكية</td>
-                <td><a href="./26.html">الشعراء</a></td>
-                <td>26</td>
-            </tr>
-            <tr>
-                <td>377</td>
-                <td>93</td>
-                <td>مكية</td>
-                <td><a href="./27.html">النمل</a></td>
-                <td>27</td>
-            </tr>
-            <tr>
-                <td>385</td>
-                <td>88</td>
-                <td>مكية</td>
-                <td><a href="./28.html">القصص</a></td>
-                <td>28</td>
-            </tr>
-            <tr>
-                <td>396</td>
-                <td>69</td>
-                <td>مكية</td>
-                <td><a href="./29.html">العنكبوت</a></td>
-                <td>29</td>
-            </tr>
-            <tr>
-                <td>404</td>
-                <td>60</td>
-                <td>مكية</td>
-                <td><a href="./30.html">الروم</a></td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>411</td>
-                <td>34</td>
-                <td>مكية</td>
-                <td><a href="./31.html">لقمان</a></td>
-                <td>31</td>
-            </tr>
-            <tr>
-                <td>415</td>
-                <td>30</td>
-                <td>مكية</td>
-                <td><a href="./32.html">السجدة</a></td>
-                <td>32</td>
-            </tr>
-            <tr>
-                <td>418</td>
-                <td>73</td>
-                <td>مدنية</td>
-                <td><a href="./33.html">الأحزاب</a></td>
-                <td>33</td>
-            </tr>
-            <tr>
-                <td>428</td>
-                <td>54</td>
-                <td>مكية</td>
-                <td><a href="./34.html">سبأ</a></td>
-                <td>34</td>
-            </tr>
-            <tr>
-                <td>434</td>
-                <td>45</td>
-                <td>مكية</td>
-                <td><a href="./35.html">فاطر</a></td>
-                <td>35</td>
-            </tr>
-            <tr>
-                <td>440</td>
-                <td>83</td>
-                <td>مكية</td>
-                <td><a href="./36.html">يس</a></td>
-                <td>36</td>
-            </tr>
-            <tr>
-                <td>446</td>
-                <td>182</td>
-                <td>مكية</td>
-                <td><a href="./37.html">الصافات</a></td>
-                <td>37</td>
-            </tr>
-            <tr>
-                <td>453</td>
-                <td>88</td>
-                <td>مكية</td>
-                <td><a href="./38.html">سورة ص</a></td>
-                <td>38</td>
-            </tr>
-            <tr>
-                <td>458</td>
-                <td>75</td>
-                <td>مكية</td>
-                <td><a href="./39.html">الزمر</a></td>
-                <td>39</td>
-            </tr>
-            <tr>
-                <td>467</td>
-                <td>85</td>
-                <td>مكية</td>
-                <td><a href="./40.html">غافر</a></td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>477</td>
-                <td>54</td>
-                <td>مكية</td>
-                <td><a href="./41.html">فصلت</a></td>
-                <td>41</td>
-            </tr>
-            <tr>
-                <td>483</td>
-                <td>53</td>
-                <td>مكية</td>
-                <td><a href="./42.html">الشورى</a></td>
-                <td>42</td>
-            </tr>
-            <tr>
-                <td>489</td>
-                <td>89</td>
-                <td>مكية</td>
-                <td><a href="./43.html">الزخرف</a></td>
-                <td>43</td>
-            </tr>
-            <tr>
-                <td>496</td>
-                <td>59</td>
-                <td>مكية</td>
-                <td><a href="./44.html">الدخان</a></td>
-                <td>44</td>
-            </tr>
-            <tr>
-                <td>499</td>
-                <td>37</td>
-                <td>مكية</td>
-                <td><a href="./45.html">الجاثية</a></td>
-                <td>45</td>
-            </tr>
-            <tr>
-                <td>502</td>
-                <td>35</td>
-                <td>مكية</td>
-                <td><a href="./46.html">الأحقاف</a></td>
-                <td>46</td>
-            </tr>
-            <tr>
-                <td>507</td>
-                <td>38</td>
-                <td>مدنية</td>
-                <td><a href="./47.html">محمد</a></td>
-                <td>47</td>
-            </tr>
-            <tr>
-                <td>511</td>
-                <td>29</td>
-                <td>مدنية</td>
-                <td><a href="./48.html">الفتح</a></td>
-                <td>48</td>
-            </tr>
-            <tr>
-                <td>515</td>
-                <td>18</td>
-                <td>مدنية</td>
-                <td><a href="./49.html">الحجرات</a></td>
-                <td>49</td>
-            </tr>
-            <tr>
-                <td>518</td>
-                <td>45</td>
-                <td>مكية</td>
-                <td><a href="./50.html">سورة ق</a></td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>520</td>
-                <td>60</td>
-                <td>مكية</td>
-                <td><a href="./51.html">الذاريات</a></td>
-                <td>51</td>
-            </tr>
-            <tr>
-                <td>523</td>
-                <td>49</td>
-                <td>مكية</td>
-                <td><a href="./52.html">الطور</a></td>
-                <td>52</td>
-            </tr>
-            <tr>
-                <td>526</td>
-                <td>62</td>
-                <td>مكية</td>
-                <td><a href="./53.html">النجم</a></td>
-                <td>53</td>
-            </tr>
-            <tr>
-                <td>528</td>
-                <td>55</td>
-                <td>مكية</td>
-                <td><a href="./54.html">القمر</a></td>
-                <td>54</td>
-            </tr>
-            <tr>
-                <td>531</td>
-                <td>78</td>
-                <td>مدنية</td>
-                <td><a href="./55.html">الرحمن</a></td>
-                <td>55</td>
-            </tr>
-            <tr>
-                <td>534</td>
-                <td>96</td>
-                <td>مكية</td>
-                <td><a href="./56.html">الواقعة</a></td>
-                <td>56</td>
-            </tr>
-            <tr>
-                <td>537</td>
-                <td>29</td>
-                <td>مدنية</td>
-                <td><a href="./57.html">الحديد</a></td>
-                <td>57</td>
-            </tr>
-            <tr>
-                <td>542</td>
-                <td>22</td>
-                <td>مدنية</td>
-                <td><a href="./58.html">المجادلة</a></td>
-                <td>58</td>
-            </tr>
-            <tr>
-                <td>545</td>
-                <td>24</td>
-                <td>مدنية</td>
-                <td><a href="./59.html">الحشر</a></td>
-                <td>59</td>
-            </tr>
-            <tr>
-                <td>549</td>
-                <td>13</td>
-                <td>مدنية</td>
-                <td><a href="./60.html">الممتحنة</a></td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>551</td>
-                <td>14</td>
-                <td>مدنية</td>
-                <td><a href="./61.html">الصف</a></td>
-                <td>61</td>
-            </tr>
-            <tr>
-                <td>553</td>
-                <td>11</td>
-                <td>مدنية</td>
-                <td><a href="./62.html">الجمعة</a></td>
-                <td>62</td>
-            </tr>
-            <tr>
-                <td>554</td>
-                <td>11</td>
-                <td>مدنية</td>
-                <td><a href="./63.html">المنافقون</a></td>
-                <td>63</td>
-            </tr>
-            <tr>
-                <td>556</td>
-                <td>18</td>
-                <td>مدنية</td>
-                <td><a href="./64.html">التغابن</a></td>
-                <td>64</td>
-            </tr>
-            <tr>
-                <td>558</td>
-                <td>12</td>
-                <td>مدنية</td>
-                <td><a href="./65.html">الطلاق</a></td>
-                <td>65</td>
-            </tr>
-            <tr>
-                <td>560</td>
-                <td>12</td>
-                <td>مدنية</td>
-                <td><a href="./66.html">التحريم</a></td>
-                <td>66</td>
-            </tr>
-            <tr>
-                <td>562</td>
-                <td>30</td>
-                <td>مكية</td>
-                <td><a href="./67.html">الملك</a></td>
-                <td>67</td>
-            </tr>
-            <tr>
-                <td>564</td>
-                <td>52</td>
-                <td>مكية</td>
-                <td><a href="./68.html">القلم</a></td>
-                <td>68</td>
-            </tr>
-            <tr>
-                <td>566</td>
-                <td>52</td>
-                <td>مكية</td>
-                <td><a href="./69.html">الحاقة</a></td>
-                <td>69</td>
-            </tr>
-            <tr>
-                <td>568</td>
-                <td>44</td>
-                <td>مكية</td>
-                <td><a href="./70.html">المعارج</a></td>
-                <td>70</td>
-            </tr>
-            <tr>
-                <td>570</td>
-                <td>28</td>
-                <td>مكية</td>
-                <td><a href="./71.html">نوح</a></td>
-                <td>71</td>
-            </tr>
-            <tr>
-                <td>572</td>
-                <td>28</td>
-                <td>مكية</td>
-                <td><a href="./72.html">الجن</a></td>
-                <td>72</td>
-            </tr>
-            <tr>
-                <td>574</td>
-                <td>20</td>
-                <td>مكية</td>
-                <td><a href="./73.html">المزمل</a></td>
-                <td>73</td>
-            </tr>
-            <tr>
-                <td>575</td>
-                <td>56</td>
-                <td>مكية</td>
-                <td><a href="./74.html">المدثر</a></td>
-                <td>74</td>
-            </tr>
-            <tr>
-                <td>577</td>
-                <td>40</td>
-                <td>مكية</td>
-                <td><a href="./75.html">القيامة</a></td>
-                <td>75</td>
-            </tr>
-            <tr>
-                <td>578</td>
-                <td>31</td>
-                <td>مدنية</td>
-                <td><a href="./76.html">الإنسان</a></td>
-                <td>76</td>
-            </tr>
-            <tr>
-                <td>580</td>
-                <td>50</td>
-                <td>مكية</td>
-                <td><a href="./77.html">المرسلات</a></td>
-                <td>77</td>
-            </tr>
-            <tr>
-                <td>582</td>
-                <td>40</td>
-                <td>مكية</td>
-                <td><a href="./78.html">النبأ</a></td>
-                <td>78</td>
-            </tr>
-            <tr>
-                <td>583</td>
-                <td>46</td>
-                <td>مكية</td>
-                <td><a href="./79.html">النازعات</a></td>
-                <td>79</td>
-            </tr>
-            <tr>
-                <td>585</td>
-                <td>42</td>
-                <td>مكية</td>
-                <td><a href="./80.html">عبس</a></td>
-                <td>80</td>
-            </tr>
-            <tr>
-                <td>586</td>
-                <td>29</td>
-                <td>مكية</td>
-                <td><a href="./81.html">التكوير</a></td>
-                <td>81</td>
-            </tr>
-            <tr>
-                <td>587</td>
-                <td>19</td>
-                <td>مكية</td>
-                <td><a href="./82.html">الإنفطار</a></td>
-                <td>82</td>
-            </tr>
-            <tr>
-                <td>587</td>
-                <td>36</td>
-                <td>مكية</td>
-                <td><a href="./83.html">المطففين</a></td>
-                <td>83</td>
-            </tr>
-            <tr>
-                <td>589</td>
-                <td>52</td>
-                <td>مكية</td>
-                <td><a href="./84.html">الانشقاق</a></td>
-                <td>84</td>
-            </tr>
-            <tr>
-                <td>590</td>
-                <td>22</td>
-                <td>مكية</td>
-                <td><a href="./85.html">البروج</a></td>
-                <td>85</td>
-            </tr>
-            <tr>
-                <td>591</td>
-                <td>17</td>
-                <td>مكية</td>
-                <td><a href="./86.html">الطارق</a></td>
-                <td>86</td>
-            </tr>
-            <tr>
-                <td>591</td>
-                <td>19</td>
-                <td>مكية</td>
-                <td><a href="./87.html">الأعلى</a></td>
-                <td>87</td>
-            </tr>
-            <tr>
-                <td>592</td>
-                <td>26</td>
-                <td>مكية</td>
-                <td><a href="./88.html">الغاشية</a></td>
-                <td>88</td>
-            </tr>
-            <tr>
-                <td>593</td>
-                <td>30</td>
-                <td>مكية</td>
-                <td><a href="./89.html">الفجر</a></td>
-                <td>89</td>
-            </tr>
-            <tr>
-                <td>594</td>
-                <td>20</td>
-                <td>مكية</td>
-                <td><a href="./90.html">البلد</a></td>
-                <td>90</td>
-            </tr>
-            <tr>
-                <td>595</td>
-                <td>15</td>
-                <td>مكية</td>
-                <td><a href="./91.html">الشمس</a></td>
-                <td>91</td>
-            </tr>
-            <tr>
-                <td>595</td>
-                <td>21</td>
-                <td>مكية</td>
-                <td><a href="./92.html">الليل</a></td>
-                <td>92</td>
-            </tr>
-            <tr>
-                <td>596</td>
-                <td>11</td>
-                <td>مكية</td>
-                <td><a href="./93.html">الضحى</a></td>
-                <td>93</td>
-            </tr>
-            <tr>
-                <td>596</td>
-                <td>8</td>
-                <td>مكية</td>
-                <td><a href="./94.html">الشرح</a></td>
-                <td>94</td>
-            </tr>
-            <tr>
-                <td>597</td>
-                <td>8</td>
-                <td>مكية</td>
-                <td><a href="./95.html">التين</a></td>
-                <td>95</td>
-            </tr>
-            <tr>
-                <td>597</td>
-                <td>19</td>
-                <td>مكية</td>
-                <td><a href="./96.html">العلق</a></td>
-                <td>96</td>
-            </tr>
-            <tr>
-                <td>598</td>
-                <td>5</td>
-                <td>مكية</td>
-                <td><a href="./97.html">القدر</a></td>
-                <td>97</td>
-            </tr>
-            <tr>
-                <td>598</td>
-                <td>8</td>
-                <td>مدنية</td>
-                <td><a href="./98.html">البينة</a></td>
-                <td>98</td>
-            </tr>
-            <tr>
-                <td>599</td>
-                <td>8</td>
-                <td>مدنية</td>
-                <td><a href="./99.html">الزلزلة</a></td>
-                <td>99</td>
-            </tr>
-            <tr>
-                <td>599</td>
-                <td>11</td>
-                <td>مكية</td>
-                <td><a href="./100.html">العاديات</a></td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>600</td>
-                <td>11</td>
-                <td>مكية</td>
-                <td><a href="./101.html">القارعة</a></td>
-                <td>101</td>
-            </tr>
-            <tr>
-                <td>600</td>
-                <td>8</td>
-                <td>مكية</td>
-                <td><a href="./102.html">التكاثر</a></td>
-                <td>102</td>
-            </tr>
-            <tr>
-                <td>601</td>
-                <td>3</td>
-                <td>مكية</td>
-                <td><a href="./103.html">العصر</a></td>
-                <td>103</td>
-            </tr>
-            <tr>
-                <td>601</td>
-                <td>9</td>
-                <td>مكية</td>
-                <td><a href="./104.html">الهمزة</a></td>
-                <td>104</td>
-            </tr>
-            <tr>
-                <td>601</td>
-                <td>5</td>
-                <td>مكية</td>
-                <td><a href="./105.html">الفيل</a></td>
-                <td>105</td>
-            </tr>
-            <tr>
-                <td>602</td>
-                <td>4</td>
-                <td>مكية</td>
-                <td><a href="./106.html">قريش</a></td>
-                <td>106</td>
-            </tr>
-            <tr>
-                <td>602</td>
-                <td>7</td>
-                <td>مكية</td>
-                <td><a href="./107.html">الماعون</a></td>
-                <td>107</td>
-            </tr>
-            <tr>
-                <td>602</td>
-                <td>3</td>
-                <td>مكية</td>
-                <td><a href="./108.html">الكوثر</a></td>
-                <td>108</td>
-            </tr>
-            <tr>
-                <td>603</td>
-                <td>6</td>
-                <td>مكية</td>
-                <td><a href="./109.html">الكافرون</a></td>
-                <td>109</td>
-            </tr>
-            <tr>
-                <td>303</td>
-                <td>3</td>
-                <td>مدنية</td>
-                <td><a href="./110.html">النصر</a></td>
-                <td>110</td>
-            </tr>
-            <tr>
-                <td>603</td>
-                <td>5</td>
-                <td>مكية</td>
-                <td><a href="./111.html">المسد</a></td>
-                <td>111</td>
-            </tr>
-            <tr>
-                <td>604</td>
-                <td>4</td>
-                <td>مكية</td>
-                <td><a href="./112.html">الإخلاص</a></td>
-                <td>112</td>
-            </tr>
-            <tr>
-                <td>604</td>
-                <td>5</td>
-                <td>مكية</td>
-                <td><a href="./113.html">الفلق</a></td>
-                <td>113</td>
-            </tr>
-            <tr>
-                <td>604</td>
-                <td>6</td>
-                <td>مكية</td>
-                <td><a href="./114.html">الناس</a></td>
-                <td>114</td>
-            </tr>
-        </table>
-    </div>
-        
-    </div>
-    
 
-    
-  
-    
-    
-  </body>
+    <header id="titlebar">
+
+        <div id="drag-region">
+            <div id="window-controls">
+
+                <div class="button" id="min-button">
+                    <img class="icon" srcset="../icon/minimize.png" draggable="false" />
+                </div>
+
+                <div class="button" id="close-button">
+                    <img class="icon" srcset="../icon/close.png" draggable="false" />
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <div class="body">
+        <h3 class="info_home"> لقراءة القرآن الكريم قم بإختيار السورة من الفهرس</h3>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>الصفحة</th>
+                    <th>عدد آياتها</th>
+                    <th>نوعها</th>
+                    <th>اسم السورة</th>
+                    <th>م</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>مكية</td>
+                    <td><a href="./1.html">الفاتحة</a></td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>286</td>
+                    <td>مدنية</td>
+                    <td><a href="./2.html">البقرة</a></td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>200</td>
+                    <td>مدنية</td>
+                    <td><a href="./3.html">آل عمران</a></td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>77</td>
+                    <td>176</td>
+                    <td>مدنية</td>
+                    <td><a href="./4.html">النساء</a></td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>106</td>
+                    <td>120</td>
+                    <td>مدنية</td>
+                    <td><a href="./5.html">المائدة</a></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>128</td>
+                    <td>165</td>
+                    <td>مكية</td>
+                    <td><a href="./6.html">الأنعام</a></td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>151</td>
+                    <td>206</td>
+                    <td>مكية</td>
+                    <td><a href="./7.html">الأعراف</a></td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>177</td>
+                    <td>75</td>
+                    <td>مدنية</td>
+                    <td><a href="./8.html">الأنفال</a></td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>187</td>
+                    <td>129</td>
+                    <td>مدنية</td>
+                    <td><a href="./9.html">التوبة</a></td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>208</td>
+                    <td>109</td>
+                    <td>مكية</td>
+                    <td><a href="./10.html">يونس</a></td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>221</td>
+                    <td>123</td>
+                    <td>مكية</td>
+                    <td><a href="./11.html">هود</a></td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>235</td>
+                    <td>111</td>
+                    <td>مكية</td>
+                    <td><a href="./12.html">يوسف</a></td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>249</td>
+                    <td>43</td>
+                    <td>مدنية</td>
+                    <td><a href="./13.html">الرعد</a></td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>255</td>
+                    <td>52</td>
+                    <td>مكية</td>
+                    <td><a href="./14.html">ابراهيم</a></td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>262</td>
+                    <td>99</td>
+                    <td>مكية</td>
+                    <td><a href="./15.html">الحجر</a></td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>267</td>
+                    <td>128</td>
+                    <td>مكية</td>
+                    <td><a href="./16.html">النحل</a></td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>282</td>
+                    <td>111</td>
+                    <td>مكية</td>
+                    <td><a href="./17.html">الإسراء</a></td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>293</td>
+                    <td>110</td>
+                    <td>مكية</td>
+                    <td><a href="./18.html">الكهف</a></td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>305</td>
+                    <td>98</td>
+                    <td>مكية</td>
+                    <td><a href="./19.html">مريم</a></td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>312</td>
+                    <td>135</td>
+                    <td>مكية</td>
+                    <td><a href="./20.html">طه</a></td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>322</td>
+                    <td>112</td>
+                    <td>مكية</td>
+                    <td><a href="./21.html">الأنبياء</a></td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td>332</td>
+                    <td>78</td>
+                    <td>مدنية</td>
+                    <td><a href="./22.html">الحج</a></td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>342</td>
+                    <td>118</td>
+                    <td>مكية</td>
+                    <td><a href="./23.html">المؤمنون</a></td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>350</td>
+                    <td>64</td>
+                    <td>مدنية</td>
+                    <td><a href="./24.html">النور</a></td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>359</td>
+                    <td>77</td>
+                    <td>مكية</td>
+                    <td><a href="./25.html">الفرقان</a></td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>367</td>
+                    <td>227</td>
+                    <td>مكية</td>
+                    <td><a href="./26.html">الشعراء</a></td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>377</td>
+                    <td>93</td>
+                    <td>مكية</td>
+                    <td><a href="./27.html">النمل</a></td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>385</td>
+                    <td>88</td>
+                    <td>مكية</td>
+                    <td><a href="./28.html">القصص</a></td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>396</td>
+                    <td>69</td>
+                    <td>مكية</td>
+                    <td><a href="./29.html">العنكبوت</a></td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>60</td>
+                    <td>مكية</td>
+                    <td><a href="./30.html">الروم</a></td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>411</td>
+                    <td>34</td>
+                    <td>مكية</td>
+                    <td><a href="./31.html">لقمان</a></td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>415</td>
+                    <td>30</td>
+                    <td>مكية</td>
+                    <td><a href="./32.html">السجدة</a></td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>418</td>
+                    <td>73</td>
+                    <td>مدنية</td>
+                    <td><a href="./33.html">الأحزاب</a></td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>428</td>
+                    <td>54</td>
+                    <td>مكية</td>
+                    <td><a href="./34.html">سبأ</a></td>
+                    <td>34</td>
+                </tr>
+                <tr>
+                    <td>434</td>
+                    <td>45</td>
+                    <td>مكية</td>
+                    <td><a href="./35.html">فاطر</a></td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>440</td>
+                    <td>83</td>
+                    <td>مكية</td>
+                    <td><a href="./36.html">يس</a></td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>446</td>
+                    <td>182</td>
+                    <td>مكية</td>
+                    <td><a href="./37.html">الصافات</a></td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>453</td>
+                    <td>88</td>
+                    <td>مكية</td>
+                    <td><a href="./38.html">سورة ص</a></td>
+                    <td>38</td>
+                </tr>
+                <tr>
+                    <td>458</td>
+                    <td>75</td>
+                    <td>مكية</td>
+                    <td><a href="./39.html">الزمر</a></td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>467</td>
+                    <td>85</td>
+                    <td>مكية</td>
+                    <td><a href="./40.html">غافر</a></td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>477</td>
+                    <td>54</td>
+                    <td>مكية</td>
+                    <td><a href="./41.html">فصلت</a></td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td>483</td>
+                    <td>53</td>
+                    <td>مكية</td>
+                    <td><a href="./42.html">الشورى</a></td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>489</td>
+                    <td>89</td>
+                    <td>مكية</td>
+                    <td><a href="./43.html">الزخرف</a></td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <td>496</td>
+                    <td>59</td>
+                    <td>مكية</td>
+                    <td><a href="./44.html">الدخان</a></td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>499</td>
+                    <td>37</td>
+                    <td>مكية</td>
+                    <td><a href="./45.html">الجاثية</a></td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>502</td>
+                    <td>35</td>
+                    <td>مكية</td>
+                    <td><a href="./46.html">الأحقاف</a></td>
+                    <td>46</td>
+                </tr>
+                <tr>
+                    <td>507</td>
+                    <td>38</td>
+                    <td>مدنية</td>
+                    <td><a href="./47.html">محمد</a></td>
+                    <td>47</td>
+                </tr>
+                <tr>
+                    <td>511</td>
+                    <td>29</td>
+                    <td>مدنية</td>
+                    <td><a href="./48.html">الفتح</a></td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td>515</td>
+                    <td>18</td>
+                    <td>مدنية</td>
+                    <td><a href="./49.html">الحجرات</a></td>
+                    <td>49</td>
+                </tr>
+                <tr>
+                    <td>518</td>
+                    <td>45</td>
+                    <td>مكية</td>
+                    <td><a href="./50.html">سورة ق</a></td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>520</td>
+                    <td>60</td>
+                    <td>مكية</td>
+                    <td><a href="./51.html">الذاريات</a></td>
+                    <td>51</td>
+                </tr>
+                <tr>
+                    <td>523</td>
+                    <td>49</td>
+                    <td>مكية</td>
+                    <td><a href="./52.html">الطور</a></td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <td>526</td>
+                    <td>62</td>
+                    <td>مكية</td>
+                    <td><a href="./53.html">النجم</a></td>
+                    <td>53</td>
+                </tr>
+                <tr>
+                    <td>528</td>
+                    <td>55</td>
+                    <td>مكية</td>
+                    <td><a href="./54.html">القمر</a></td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>531</td>
+                    <td>78</td>
+                    <td>مدنية</td>
+                    <td><a href="./55.html">الرحمن</a></td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>534</td>
+                    <td>96</td>
+                    <td>مكية</td>
+                    <td><a href="./56.html">الواقعة</a></td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td>537</td>
+                    <td>29</td>
+                    <td>مدنية</td>
+                    <td><a href="./57.html">الحديد</a></td>
+                    <td>57</td>
+                </tr>
+                <tr>
+                    <td>542</td>
+                    <td>22</td>
+                    <td>مدنية</td>
+                    <td><a href="./58.html">المجادلة</a></td>
+                    <td>58</td>
+                </tr>
+                <tr>
+                    <td>545</td>
+                    <td>24</td>
+                    <td>مدنية</td>
+                    <td><a href="./59.html">الحشر</a></td>
+                    <td>59</td>
+                </tr>
+                <tr>
+                    <td>549</td>
+                    <td>13</td>
+                    <td>مدنية</td>
+                    <td><a href="./60.html">الممتحنة</a></td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>551</td>
+                    <td>14</td>
+                    <td>مدنية</td>
+                    <td><a href="./61.html">الصف</a></td>
+                    <td>61</td>
+                </tr>
+                <tr>
+                    <td>553</td>
+                    <td>11</td>
+                    <td>مدنية</td>
+                    <td><a href="./62.html">الجمعة</a></td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>554</td>
+                    <td>11</td>
+                    <td>مدنية</td>
+                    <td><a href="./63.html">المنافقون</a></td>
+                    <td>63</td>
+                </tr>
+                <tr>
+                    <td>556</td>
+                    <td>18</td>
+                    <td>مدنية</td>
+                    <td><a href="./64.html">التغابن</a></td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>558</td>
+                    <td>12</td>
+                    <td>مدنية</td>
+                    <td><a href="./65.html">الطلاق</a></td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td>560</td>
+                    <td>12</td>
+                    <td>مدنية</td>
+                    <td><a href="./66.html">التحريم</a></td>
+                    <td>66</td>
+                </tr>
+                <tr>
+                    <td>562</td>
+                    <td>30</td>
+                    <td>مكية</td>
+                    <td><a href="./67.html">الملك</a></td>
+                    <td>67</td>
+                </tr>
+                <tr>
+                    <td>564</td>
+                    <td>52</td>
+                    <td>مكية</td>
+                    <td><a href="./68.html">القلم</a></td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>566</td>
+                    <td>52</td>
+                    <td>مكية</td>
+                    <td><a href="./69.html">الحاقة</a></td>
+                    <td>69</td>
+                </tr>
+                <tr>
+                    <td>568</td>
+                    <td>44</td>
+                    <td>مكية</td>
+                    <td><a href="./70.html">المعارج</a></td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td>570</td>
+                    <td>28</td>
+                    <td>مكية</td>
+                    <td><a href="./71.html">نوح</a></td>
+                    <td>71</td>
+                </tr>
+                <tr>
+                    <td>572</td>
+                    <td>28</td>
+                    <td>مكية</td>
+                    <td><a href="./72.html">الجن</a></td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td>574</td>
+                    <td>20</td>
+                    <td>مكية</td>
+                    <td><a href="./73.html">المزمل</a></td>
+                    <td>73</td>
+                </tr>
+                <tr>
+                    <td>575</td>
+                    <td>56</td>
+                    <td>مكية</td>
+                    <td><a href="./74.html">المدثر</a></td>
+                    <td>74</td>
+                </tr>
+                <tr>
+                    <td>577</td>
+                    <td>40</td>
+                    <td>مكية</td>
+                    <td><a href="./75.html">القيامة</a></td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>578</td>
+                    <td>31</td>
+                    <td>مدنية</td>
+                    <td><a href="./76.html">الإنسان</a></td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>580</td>
+                    <td>50</td>
+                    <td>مكية</td>
+                    <td><a href="./77.html">المرسلات</a></td>
+                    <td>77</td>
+                </tr>
+                <tr>
+                    <td>582</td>
+                    <td>40</td>
+                    <td>مكية</td>
+                    <td><a href="./78.html">النبأ</a></td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>583</td>
+                    <td>46</td>
+                    <td>مكية</td>
+                    <td><a href="./79.html">النازعات</a></td>
+                    <td>79</td>
+                </tr>
+                <tr>
+                    <td>585</td>
+                    <td>42</td>
+                    <td>مكية</td>
+                    <td><a href="./80.html">عبس</a></td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>586</td>
+                    <td>29</td>
+                    <td>مكية</td>
+                    <td><a href="./81.html">التكوير</a></td>
+                    <td>81</td>
+                </tr>
+                <tr>
+                    <td>587</td>
+                    <td>19</td>
+                    <td>مكية</td>
+                    <td><a href="./82.html">الإنفطار</a></td>
+                    <td>82</td>
+                </tr>
+                <tr>
+                    <td>587</td>
+                    <td>36</td>
+                    <td>مكية</td>
+                    <td><a href="./83.html">المطففين</a></td>
+                    <td>83</td>
+                </tr>
+                <tr>
+                    <td>589</td>
+                    <td>52</td>
+                    <td>مكية</td>
+                    <td><a href="./84.html">الانشقاق</a></td>
+                    <td>84</td>
+                </tr>
+                <tr>
+                    <td>590</td>
+                    <td>22</td>
+                    <td>مكية</td>
+                    <td><a href="./85.html">البروج</a></td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>591</td>
+                    <td>17</td>
+                    <td>مكية</td>
+                    <td><a href="./86.html">الطارق</a></td>
+                    <td>86</td>
+                </tr>
+                <tr>
+                    <td>591</td>
+                    <td>19</td>
+                    <td>مكية</td>
+                    <td><a href="./87.html">الأعلى</a></td>
+                    <td>87</td>
+                </tr>
+                <tr>
+                    <td>592</td>
+                    <td>26</td>
+                    <td>مكية</td>
+                    <td><a href="./88.html">الغاشية</a></td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>593</td>
+                    <td>30</td>
+                    <td>مكية</td>
+                    <td><a href="./89.html">الفجر</a></td>
+                    <td>89</td>
+                </tr>
+                <tr>
+                    <td>594</td>
+                    <td>20</td>
+                    <td>مكية</td>
+                    <td><a href="./90.html">البلد</a></td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>595</td>
+                    <td>15</td>
+                    <td>مكية</td>
+                    <td><a href="./91.html">الشمس</a></td>
+                    <td>91</td>
+                </tr>
+                <tr>
+                    <td>595</td>
+                    <td>21</td>
+                    <td>مكية</td>
+                    <td><a href="./92.html">الليل</a></td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>596</td>
+                    <td>11</td>
+                    <td>مكية</td>
+                    <td><a href="./93.html">الضحى</a></td>
+                    <td>93</td>
+                </tr>
+                <tr>
+                    <td>596</td>
+                    <td>8</td>
+                    <td>مكية</td>
+                    <td><a href="./94.html">الشرح</a></td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>597</td>
+                    <td>8</td>
+                    <td>مكية</td>
+                    <td><a href="./95.html">التين</a></td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>597</td>
+                    <td>19</td>
+                    <td>مكية</td>
+                    <td><a href="./96.html">العلق</a></td>
+                    <td>96</td>
+                </tr>
+                <tr>
+                    <td>598</td>
+                    <td>5</td>
+                    <td>مكية</td>
+                    <td><a href="./97.html">القدر</a></td>
+                    <td>97</td>
+                </tr>
+                <tr>
+                    <td>598</td>
+                    <td>8</td>
+                    <td>مدنية</td>
+                    <td><a href="./98.html">البينة</a></td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td>599</td>
+                    <td>8</td>
+                    <td>مدنية</td>
+                    <td><a href="./99.html">الزلزلة</a></td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>599</td>
+                    <td>11</td>
+                    <td>مكية</td>
+                    <td><a href="./100.html">العاديات</a></td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>600</td>
+                    <td>11</td>
+                    <td>مكية</td>
+                    <td><a href="./101.html">القارعة</a></td>
+                    <td>101</td>
+                </tr>
+                <tr>
+                    <td>600</td>
+                    <td>8</td>
+                    <td>مكية</td>
+                    <td><a href="./102.html">التكاثر</a></td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td>601</td>
+                    <td>3</td>
+                    <td>مكية</td>
+                    <td><a href="./103.html">العصر</a></td>
+                    <td>103</td>
+                </tr>
+                <tr>
+                    <td>601</td>
+                    <td>9</td>
+                    <td>مكية</td>
+                    <td><a href="./104.html">الهمزة</a></td>
+                    <td>104</td>
+                </tr>
+                <tr>
+                    <td>601</td>
+                    <td>5</td>
+                    <td>مكية</td>
+                    <td><a href="./105.html">الفيل</a></td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td>602</td>
+                    <td>4</td>
+                    <td>مكية</td>
+                    <td><a href="./106.html">قريش</a></td>
+                    <td>106</td>
+                </tr>
+                <tr>
+                    <td>602</td>
+                    <td>7</td>
+                    <td>مكية</td>
+                    <td><a href="./107.html">الماعون</a></td>
+                    <td>107</td>
+                </tr>
+                <tr>
+                    <td>602</td>
+                    <td>3</td>
+                    <td>مكية</td>
+                    <td><a href="./108.html">الكوثر</a></td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td>603</td>
+                    <td>6</td>
+                    <td>مكية</td>
+                    <td><a href="./109.html">الكافرون</a></td>
+                    <td>109</td>
+                </tr>
+                <tr>
+                    <td>303</td>
+                    <td>3</td>
+                    <td>مدنية</td>
+                    <td><a href="./110.html">النصر</a></td>
+                    <td>110</td>
+                </tr>
+                <tr>
+                    <td>603</td>
+                    <td>5</td>
+                    <td>مكية</td>
+                    <td><a href="./111.html">المسد</a></td>
+                    <td>111</td>
+                </tr>
+                <tr>
+                    <td>604</td>
+                    <td>4</td>
+                    <td>مكية</td>
+                    <td><a href="./112.html">الإخلاص</a></td>
+                    <td>112</td>
+                </tr>
+                <tr>
+                    <td>604</td>
+                    <td>5</td>
+                    <td>مكية</td>
+                    <td><a href="./113.html">الفلق</a></td>
+                    <td>113</td>
+                </tr>
+                <tr>
+                    <td>604</td>
+                    <td>6</td>
+                    <td>مكية</td>
+                    <td><a href="./114.html">الناس</a></td>
+                    <td>114</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
 </html>

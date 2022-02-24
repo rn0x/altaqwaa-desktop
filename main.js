@@ -1,16 +1,22 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+
+let mainWindow
 
 const createWindow = () => {
 
-  let mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 900,
     height: 550,
     show: false,
     center: true,
     resizable: false,
+    frame: false,
     title: 'التقوى',
-    icon: path.join(__dirname, '/build/icons/icon.png')
+    icon: path.join(__dirname, '/build/icons/icon.png'),
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
   });
 
   mainWindow.loadFile('./app/adhkar/adhkar.html');
@@ -25,6 +31,16 @@ const createWindow = () => {
   });
 
 }
+
+ipcMain.on('minimize', () => {
+
+  mainWindow.minimize()
+});
+
+
+ipcMain.on('close', () => {
+  mainWindow.close()
+});
 
 app.whenReady().then(() => {
 

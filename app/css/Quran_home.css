@@ -1,110 +1,112 @@
 @font-face {
-    font-family:"DroidKufi";
-    src: url(font/DroidKufi/DroidKufi-Bold.eot?#iefix) format("embedded-opentype"),
-         url(font/DroidKufi/DroidKufi-Bold.ttf)  format("truetype"), /* Safari, Android, iOS */
-         url(font/DroidKufi/DroidKufi-Bold.woff) format("woff"), /* Pretty Modern Browsers */
-         url(font/DroidKufi/DroidKufi-Bold.woff2) format("woff2"), /* Pretty Modern Browsers */
-         url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
+    font-family: "DroidKufi";
+    src        : url(font/DroidKufi/DroidKufi-Bold.eot?#iefix) format("embedded-opentype"),
+        url(font/DroidKufi/DroidKufi-Bold.ttf) format("truetype"),
+        /* Safari, Android, iOS */
+        url(font/DroidKufi/DroidKufi-Bold.woff) format("woff"),
+        /* Pretty Modern Browsers */
+        url(font/DroidKufi/DroidKufi-Bold.woff2) format("woff2"),
+        /* Pretty Modern Browsers */
+        url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
 }
 
 @font-face {
-    font-family:"AvergentRegular";
-    src: url(font/AvergentRegular/AvergentRegular.ttf)  format("truetype");
+    font-family: "AvergentRegular";
+    src        : url(font/AvergentRegular/AvergentRegular.ttf) format("truetype");
 }
 
 
 /* التواجد الحالي منيو */
 
-#quran{
+#quran {
 
-    background-image: linear-gradient(to right, #1b5e20 , #45884a);
-    margin-right: 0px;
+    background-image: linear-gradient(to right, #1b5e20, #45884a);
+    margin-right    : 0px;
 }
 
 /* التواجد الحالي منيو */
 
-.info_home{
+.info_home {
 
-    color: #ffffff;
-    margin-right: 230px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-family:'DroidKufi';
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px 0px #0000000c;
+    color           : #ffffff;
+    margin-right    : 230px;
+    margin-top      : 50px;
+    margin-bottom   : 50px;
+    text-align      : center;
+    font-family     : 'DroidKufi';
+    padding         : 5px;
+    border-radius   : 10px;
+    box-shadow      : 0px 0px 8px 0px #0000000c;
     background-color: #add1a8;
-    font-size: 20px;
+    font-size       : 20px;
 }
 
-.table{
+.table {
 
     max-width: 100%;
 
 }
- 
+
 .table a {
-    font-size: 14px;
-    color: #979797;
-    font-weight: 600;
+    font-size      : 14px;
+    color          : #979797;
+    font-weight    : 600;
     text-decoration: none;
-    font-family:'DroidKufi';
+    font-family    : 'DroidKufi';
 }
 
 .table a:hover {
     transition: 0.5s ease-in-out;
-    font-size: 16px;
-    color: #63a14b;
+    font-size : 16px;
+    color     : #63a14b;
 }
 
 .table table {
-    border-collapse: separate;
-    width: 630px;
-    border-spacing: 0;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    margin-right: 230px;
-    box-shadow: 0px 5px 26px 0px rgba(0, 0, 0, 0.089);
-    direction: ltr;
-    text-align: center;
-    font-family:'DroidKufi';
-    border-radius: 10px;
-    padding: 10px;
-    background-color:#f7f7f7;
+    border-collapse : separate;
+    width           : 630px;
+    border-spacing  : 0;
+    margin-top      : 30px;
+    margin-bottom   : 50px;
+    margin-right    : 230px;
+    box-shadow      : 0px 5px 26px 0px rgba(0, 0, 0, 0.089);
+    direction       : ltr;
+    text-align      : center;
+    font-family     : 'DroidKufi';
+    border-radius   : 10px;
+    padding         : 10px;
+    background-color: #f7f7f7;
 }
 
 .table th {
-    
-    border-top: 1px solid;
+
+    border-top   : 1px solid;
     border-bottom: 1px solid;
-    border-right: 1px solid;
-    border-left: 1px solid;
-    border-color: #ddd;
-    padding: 16px;
-    font-size: 16px;
-    color: rgb(110, 110, 110);
+    border-right : 1px solid;
+    border-left  : 1px solid;
+    border-color : #ddd;
+    padding      : 16px;
+    font-size    : 16px;
+    color        : rgb(110, 110, 110);
 }
 
 .table td {
-    border-top: 1px solid;
+    border-top   : 1px solid;
     border-bottom: 1px solid;
-    border-right: 1px solid;
-    border-left: 1px solid;
-    border-color: #ddd;
-    padding: 16px;
-    font-size: 14px;
-    color: rgb(151, 151, 151);
-    font-weight: 600;
+    border-right : 1px solid;
+    border-left  : 1px solid;
+    border-color : #ddd;
+    padding      : 16px;
+    font-size    : 14px;
+    color        : rgb(151, 151, 151);
+    font-weight  : 600;
 }
 
 .table th:hover,
 .table td:hover {
-    
+
     background-color: rgba(221, 221, 221, 0.144);
 }
 
 .table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-

@@ -7,10 +7,11 @@
 <br>
 
 <p align="center">
-<img align="center" src="/github/4.png"> <br><br><br><br>
-  <img align="center" src="/github/1.png"> <br><br>
+  <img align="center" src="/github/1.png"> <br><br><br><br>
   <img align="center" src="/github/2.png"> <br><br>
   <img align="center" src="/github/3.png"> <br><br>
+  <img align="center" src="/github/4.png"> <br><br>
+  <img align="center" src="/github/5.png"> <br><br>
 </p>
 
 
@@ -40,11 +41,17 @@
 
 ### قم  بتشغيل التطبيق في وضع التطوير 
 
+##### متطلبات التشغيل 
+- nodejs
+- git 
+- yarn
+
 
 ```bash
 
 git clone https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application
 cd Altaqwaa-Islamic-Desktop-Application
+yarn install
 yarn run dev
 
 ```
