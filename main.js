@@ -1,7 +1,15 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu } = require('electron');
 const path = require('path');
+const notification = require('./notifications.js');
+const folder = require('./folder.js');
+const fs = require('fs-extra');
+
+let path_folder = fs.existsSync(path.join(process.resourcesPath, '/build')) === true ? process.resourcesPath : __dirname
+folder(app.getPath("appData"), path_folder); // copy file 
 
 let mainWindow
+let tray
+let trayMenu
 
 const createWindow = () => {
 
@@ -13,7 +21,7 @@ const createWindow = () => {
     resizable: false,
     frame: false,
     title: 'التقوى',
-    icon: path.join(__dirname, '/build/icons/icon.png'),
+    icon: path.join(path_folder, '/build/icons/icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -23,28 +31,76 @@ const createWindow = () => {
   mainWindow.removeMenu()
 
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
+    mainWindow.show();
   });
 
-  mainWindow.on('closed', () => {
+  mainWindow.on('minimize', (event) => {
+    event.preventDefault();
+    mainWindow.hide();
+  });
+
+  mainWindow.on("show", (event) => {
+    event.preventDefault();
+  });
+
+  mainWindow.on('closed', (event) => {
+    event.preventDefault();
+    tray = null
+    trayMenu = null
     mainWindow = null
   });
 
+
+
+  trayMenu = Menu.buildFromTemplate([
+    {
+      label: 'عرض التطبيق', click: function () {
+        mainWindow.show();
+      }
+    },
+    {
+      label: 'إغلاق', click: function () {
+        mainWindow.destroy();
+        app.isQuiting = true;
+        app.quit();
+      }
+    }
+  ]);
+  tray = new Tray(path.join(path_folder, '/build/icons/icon.png'));
+  tray.setContextMenu(trayMenu);
+  tray.setToolTip("التقوى");
+  tray.on('click', () => {
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+  });
+  
+
 }
 
-ipcMain.on('minimize', () => {
-
-  mainWindow.minimize()
-});
-
-
-ipcMain.on('close', () => {
-  mainWindow.close()
-});
-
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
 
   createWindow();
+  notification(app.getPath("appData"));
+
+});
+
+app.on('ready', (e) => {
+
+  e.preventDefault();
+  app.setAppUserModelId("org.altaqwaa.rn0x");
+
+  ipcMain.on('minimize', () => {
+
+    mainWindow.minimize()
+  });
+
+  ipcMain.on('close', () => {
+    mainWindow.close()
+  });
+
+  ipcMain.handle('electron-app-get-path', async () => {
+    return app.getPath("appData") // root installation path
+  });
+
 
 });
 
@@ -56,6 +112,10 @@ app.on('activate', () => {
 
   }
 
+});
+
+app.on('before-quit', function () {
+  tray.destroy();
 });
 
 app.on('window-all-closed', () => {

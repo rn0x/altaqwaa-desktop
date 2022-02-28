@@ -28,6 +28,8 @@
 - أذكار الطعام 
 - أذكار الصلاة
 - تسابيح
+- مواقيت الصلاة
+- إشعار صوت وكتابة بدخول وقت الصلاة
 
 ## العيوب
 
@@ -68,4 +70,11 @@ yarn run packlinux
 
 
 ```
+<br><br><br><br><br><br>
 
+### لقطات شاشة
+
+<p align="center">
+  <img align="center" src="/github/6.png"> 
+  <img align="center" src="/github/7.png">
+</p>

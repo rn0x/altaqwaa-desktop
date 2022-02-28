@@ -9,21 +9,24 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
+<body>
   <!-- منطقة الهيدر -->
-  <div class="header">
+  <div class="header" onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
     <img src="../image/logo.png" id="logo"><br>
     <a href="../Quran/index.html" id="quran">تصفح القرآن الكريم</a>
     <a href="../hisn_almuslim/hisn_almuslim.html" id="hisn_almuslim">حصن المسلم</a>
     <a href="../alkahf/alkahf.html" id="alkahf">سورة الكهف</a>
     <a href="../Allah_names/Allah_names.html" id="Allah_names">أسماء الله الحسنى</a>
     <a href="../adhkar/adhkar.html" id="adhkar">الأذكار</a>
+    <a href="../adhan/adhan.html" id="adhan">أوقات الصلاة</a>
+    <p class="time_header" id="time_header_145"></p>
     <p>Developed by: Ryan Almalki</p>
+    <audio autoplay id="adhan_mp3_145"></audio>
 
   </div>
   <!-- منطقة الهيدر -->
 
-  <header id="titlebar">
+  <header id="titlebar" onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
 
     <div id="drag-region">
       <div id="window-controls">
@@ -65,7 +68,8 @@
 
   </div>
   
-  
+    
+
 </body>
 
 </html>

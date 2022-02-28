@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>التقوى</title>
+    <link rel="stylesheet" href="../css/adhan.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- منطقة الهيدر -->
+    <div class="header" onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
+        <img src="../image/logo.png" id="logo"><br>
+        <a href="../Quran/index.html" id="quran">تصفح القرآن الكريم</a>
+        <a href="../hisn_almuslim/hisn_almuslim.html" id="hisn_almuslim">حصن المسلم</a>
+        <a href="../alkahf/alkahf.html" id="alkahf">سورة الكهف</a>
+        <a href="../Allah_names/Allah_names.html" id="Allah_names">أسماء الله الحسنى</a>
+        <a href="../adhkar/adhkar.html" id="adhkar">الأذكار</a>
+        <a href="../adhan/adhan.html" id="adhan">أوقات الصلاة</a>
+        <p class="time_header" id="time_header_1"></p>
+        <p>Developed by: Ryan Almalki</p>
+        <audio autoplay id="adhan_mp3_1"></audio>
+
+    </div>
+    <!-- منطقة الهيدر -->
+
+    <header id="titlebar" onmousedown='return false;' onselectstart='return false;' onContextMenu="return false;">
+
+        <div id="drag-region">
+            <div id="window-controls">
+
+                <div class="button" id="min-button">
+                    <img class="icon" srcset="../icon/minimize.png" draggable="false" />
+                </div>
+
+                <div class="button" id="close-button">
+                    <img class="icon" srcset="../icon/close.png" draggable="false" />
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <div class="body">
+
+        <div class="adhan">
+
+            <h3 id="city"></h3>
+
+            <!-- الصلاة الحالية -->
+            <div class="adhan_now">
+                <p id="adhan_now_title">الصلاة الحالية</p>
+                <p id="adhan_now"></p>
+            </div>
+
+            <div class="div_adhan_next">
+                <!-- الصلاة القادمة -->
+                <div class="adhan_next">
+                    <p id="adhan_next_title">الصلاة القادمة</p>
+                    <p id="adhan_next"></p>
+                </div>
+
+                <!--  وقت الصلاة القادمة -->
+                <div class="time_adhan_next">
+                    <p id="time_adhan_next_title">وقت الصلاة القادمة</p>
+                    <p id="time_adhan_next"></p>
+                </div>
+
+            </div>
+
+            <div class="div_adhan_time">
+                <div class="fajr">
+                    <p>الفجر</p>
+                    <p id="fajr"></p>
+                </div>
+
+                <div class="sunrise">
+                    <p>الضحى</p>
+                    <p id="sunrise"></p>
+                </div>
+
+                <div class="dhuhr">
+                    <p>الظهر</p>
+                    <p id="dhuhr"></p>
+                </div>
+
+                <div class="asr">
+                    <p>العصر</p>
+                    <p id="asr"></p>
+                </div>
+
+                <div class="maghrib">
+                    <p>المغرب</p>
+                    <p id="maghrib"></p>
+                </div>
+
+                <div class="isha">
+                    <p>العشاء</p>
+                    <p id="isha"></p>
+                </div>
+
+            </div>
+
+            <div class="from">
+                <form>
+                    <select id="select_country">
+                        <option value="sa">السعودية</option>
+                        <option value="ae">الإمارات</option>
+                        <option value="kw">الكويت</option>
+                        <option value="eg">مصر</option>
+                    </select>
+                    <button type="submit" id="submit_country_Submit">أدخل</button>
+                </form>
+    
+                <form>
+                    <select id="select_city"></select>
+                    <button type="submit" id="submit_city_Submit">أدخل</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>        
+
+</body>
+
+</html>

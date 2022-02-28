@@ -67,8 +67,7 @@
     margin-left     : 60px;
     margin-right    : 60px;
     flex-direction  : column;
-
-
+    transition      : 1s ease-in-out;
 }
 
 .Previous_and_Next li:hover {

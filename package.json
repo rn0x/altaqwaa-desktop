@@ -1,6 +1,7 @@
 {
   "name": "altaqwaa",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "homepage": "https://www.altaqwaa.org",
   "description": "Altaqwaa - Islamic Desktop Application",
   "main": "main.js",
   "type": "commonjs",
@@ -23,7 +24,10 @@
     "electron-builder": "^22.14.13"
   },
   "dependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "adhan": "^4.3.1",
+    "fs-extra": "^10.0.1",
+    "moment-timezone": "^0.5.34"
   },
   "build": {
     "productName":"Altaqwaa",
@@ -36,7 +40,21 @@
     "appId": "org.altaqwaa.rn0x",
     "copyright": "Copyright © 2022 Altaqwaa",
     "extraFiles": [
-      "build"
+      {
+        "from":"json",
+        "to": "resources/json",
+        "filter": ["**/*"]
+      },
+      {
+        "from":"mp3",
+        "to": "resources/mp3",
+        "filter": ["**/*"]
+      },
+      {
+        "from":"build",
+        "to": "resources/build",
+        "filter": ["**/*"]
+      }
     ],
     "win": {
       "icon": "build/icon.ico",

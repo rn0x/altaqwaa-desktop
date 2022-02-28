@@ -1,0 +1,240 @@
+[
+	{
+		"city": "Dubai",
+		"name": "دبي",
+		"latitude": 25.269722222,
+		"longitude": 55.309444444,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Abu Dhabi Municipality",
+		"name": "بلدية أبوظبي",
+		"latitude": 24.41361,
+		"longitude": 54.43295,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Abu Dhabi",
+		"name": "أبو ظبي",
+		"latitude": 24.478055555,
+		"longitude": 54.368611111,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Sharjah",
+		"name": "الشارقة",
+		"latitude": 25.3575,
+		"longitude": 55.391944444,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Ain Municipality",
+		"name": "بلدية العين",
+		"latitude": 24.15223,
+		"longitude": 55.8204,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Ain",
+		"name": "العين",
+		"latitude": 24.2075,
+		"longitude": 55.744722222,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Ras Al Khaimah",
+		"name": "رأس الخيمة",
+		"latitude": 25.46116,
+		"longitude": 56.04058,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Ras Al Khaimah City",
+		"name": "مدينة رأس الخيمة",
+		"latitude": 25.78953,
+		"longitude": 55.9432,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Dhafra",
+		"name": "الظفرة",
+		"latitude": 23.65745,
+		"longitude": 53.72225,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Musaffah",
+		"name": "مصفح",
+		"latitude": 24.35893,
+		"longitude": 54.48267,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Ajman",
+		"name": "عجمان",
+		"latitude": 25.399444444,
+		"longitude": 55.479722222,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Fujairah Municipality",
+		"name": "بلدية الفجيرة",
+		"latitude": 25.13557,
+		"longitude": 56.33279,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Umm AL Quwain",
+		"name": "أم القيوين",
+		"latitude": 25.49326,
+		"longitude": 55.7352,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Fujairah City",
+		"name": "مدينة الفجيرة",
+		"latitude": 25.11641,
+		"longitude": 56.34141,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Khalifah A City",
+		"name": "مدينة الخليفة أ",
+		"latitude": 24.42588,
+		"longitude": 54.605,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Reef Al Fujairah City",
+		"name": "مدينة ريف الفجيرة",
+		"latitude": 25.14479,
+		"longitude": 56.24764,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Bani Yas City",
+		"name": "مدينة بني ياس",
+		"latitude": 24.30978,
+		"longitude": 54.62944,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Dibba Al Fujairah Municipality",
+		"name": "بلدية دبا الفجيرة",
+		"latitude": 25.5858,
+		"longitude": 56.24792,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Zayed City",
+		"name": "مدينة زايد",
+		"latitude": 23.65416,
+		"longitude": 53.70522,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Umm Al Quwain City",
+		"name": "مدينة أم القيوين",
+		"latitude": 25.56473,
+		"longitude": 55.55517,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Shamkhah City",
+		"name": "مدينة الشمخة",
+		"latitude": 24.39268,
+		"longitude": 54.70779,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Khor Fakkan",
+		"name": "خورفكان",
+		"latitude": 25.339166666,
+		"longitude": 56.356111111,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Dibba Al-Fujairah",
+		"name": "دبا الفجيرة",
+		"latitude": 25.616667,
+		"longitude": 56.266667,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Kalba",
+		"name": "كلباء",
+		"latitude": 24.99816,
+		"longitude": 56.27207,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Dibba Al-Hisn",
+		"name": "دبا الحصن",
+		"latitude": 25.608888888,
+		"longitude": 56.275833333,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Dhaid",
+		"name": "الذيد",
+		"latitude": 25.283333333,
+		"longitude": 55.883333333,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Ruwais",
+		"name": "الرويس",
+		"latitude": 24.11685491,
+		"longitude": 52.73301956,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Dibba Al Hesn",
+		"name": "دبا الحصن",
+		"latitude": 25.61593,
+		"longitude": 56.26899,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Madam",
+		"name": "المدام",
+		"latitude": 24.95536,
+		"longitude": 55.7682,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Muzayri‘",
+		"name": "مزيري",
+		"latitude": 23.143611111,
+		"longitude": 53.788055555,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Masfout",
+		"name": "مصفوت",
+		"latitude": 24.83982,
+		"longitude": 56.05158,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Milehah",
+		"name": "مليحة",
+		"latitude": 25.10097,
+		"longitude": 55.91282,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Al Batayih",
+		"name": "البطايح",
+		"latitude": 25.22317,
+		"longitude": 55.74272,
+		"timezone": "Asia/Dubai"
+	},
+	{
+		"city": "Murbah",
+		"name": "مرباح",
+		"latitude": 25.280555555,
+		"longitude": 56.364166666,
+		"timezone": "Asia/Dubai"
+	}
+]
