@@ -72,7 +72,7 @@ const createWindow = () => {
   tray.on('click', () => {
     mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
   });
-  
+
 
 }
 
@@ -80,6 +80,12 @@ app.whenReady().then(async () => {
 
   createWindow();
   notification(app.getPath("appData"));
+
+  if (process.argv.includes('--hidden')) {
+
+    mainWindow.hide()
+
+  }
 
 });
 
@@ -98,19 +104,9 @@ app.on('ready', (e) => {
   });
 
   ipcMain.handle('electron-app-get-path', async () => {
-    return app.getPath("appData") // root installation path
+    return app.getPath("appData") //  path files
   });
 
-
-});
-
-app.on('activate', () => {
-
-  if (BrowserWindow.getAllWindows().length === 0) {
-
-    createWindow();
-
-  }
 
 });
 
@@ -122,4 +118,9 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
+});
+
+app.setLoginItemSettings({
+  openAtLogin: true,
+  args: ['--hidden']
 });
