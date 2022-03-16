@@ -114,9 +114,6 @@ module.exports = async function notification(GetPath, path_folder) {
 
             else if (time === '7:15 AM' && Time_Adhan_false && json_notification.notification === true) {
 
-                let Audio_AM = player.play(path.join(GetPath, '/mp3/AM.mp3'), (err) => {
-                    if (err && !err.killed) throw err
-                });
                 let notification = new Notification({
                     title: 'أذكار الصباح ☀️',
                     body: 'بصوت إدريس أبكر 🔊',
@@ -126,17 +123,13 @@ module.exports = async function notification(GetPath, path_folder) {
                     timeoutType: 'never'
                 });
 
-                notification.on('click', () => Audio_AM.kill());
-                notification.on('close', () => Audio_AM.kill());
                 notification.show();
+                player.play(path.join(GetPath, '/mp3/AM.mp3'));
 
             }
 
             else if (time === '7:15 PM' && Time_Adhan_false && json_notification.notification === true) {
 
-                let Audio_PM = player.play(path.join(GetPath, '/mp3/AM.mp3'), (err) => {
-                    if (err && !err.killed) throw err
-                });
                 let notification = new Notification({
                     title: 'أذكار المساء 🌑',
                     body: 'بصوت فيصل بن جذيان 🔊',
@@ -146,9 +139,8 @@ module.exports = async function notification(GetPath, path_folder) {
                     timeoutType: 'never'
                 });
 
-                notification.on('click', () => Audio_PM.kill());
-                notification.on('close', () => Audio_PM.kill());
                 notification.show();
+                player.play(path.join(GetPath, '/mp3/PM.mp3'));
 
             }
         }
