@@ -8,6 +8,9 @@ module.exports = async function folder(App_Path, resourcesPath) {
     let eg = '/json/eg.json'
     let kw = '/json/kw.json'
     let sa = '/json/sa.json'
+    let Adhkar = '/json/Adhkar.json'
+    let Adhkar_morning = '/json/Adhkar_morning.json'
+    let Adhkar_night = '/json/Adhkar_night.json'
 
     if (fs.existsSync(path.join(App_Path, city)) === false){
 
@@ -65,4 +68,50 @@ module.exports = async function folder(App_Path, resourcesPath) {
       
     }
 
+    if (fs.existsSync(path.join(App_Path, '/mp3/AM.mp3')) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/mp3'), { recursive: true });
+        let mp3 = fs.readFileSync(path.join(resourcesPath, '/mp3/AM.mp3'));
+        fs.writeFileSync(path.join(App_Path, '/mp3/AM.mp3'), mp3 , { spaces: '\t' });
+      
+    }
+
+    if (fs.existsSync(path.join(App_Path, '/mp3/PM.mp3')) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/mp3'), { recursive: true });
+        let mp3 = fs.readFileSync(path.join(resourcesPath, '/mp3/PM.mp3'));
+        fs.writeFileSync(path.join(App_Path, '/mp3/PM.mp3'), mp3 , { spaces: '\t' });
+      
+    }
+
+    if (fs.existsSync(path.join(App_Path, Adhkar)) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/json'), { recursive: true });
+        let ae_json = fs.readJSONSync(path.join(resourcesPath, Adhkar));
+        fs.writeJsonSync(path.join(App_Path, Adhkar), ae_json , { spaces: '\t' });
+      
+    }
+
+    if (fs.existsSync(path.join(App_Path, Adhkar_morning)) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/json'), { recursive: true });
+        let ae_json = fs.readJSONSync(path.join(resourcesPath, Adhkar_morning));
+        fs.writeJsonSync(path.join(App_Path, Adhkar_morning), ae_json , { spaces: '\t' });
+      
+    }
+
+    if (fs.existsSync(path.join(App_Path, Adhkar_night)) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/json'), { recursive: true });
+        let ae_json = fs.readJSONSync(path.join(resourcesPath, Adhkar_night));
+        fs.writeJsonSync(path.join(App_Path, Adhkar_night), ae_json , { spaces: '\t' });
+      
+    }
+
+    if (fs.existsSync(path.join(App_Path, '/json/notification.json')) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/json'), { recursive: true });
+        fs.writeJsonSync(path.join(App_Path, '/json/notification.json'), { notification: true } , { spaces: '\t' });
+      
+    }
 }
