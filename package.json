@@ -26,9 +26,9 @@
   },
   "dependencies": {
     "adhan": "^4.3.1",
-    "audic-forked": "^0.1.0",
     "fs-extra": "^10.0.1",
-    "moment-timezone": "^0.5.34"
+    "moment-timezone": "^0.5.34",
+    "play-sound": "^1.1.5"
   },
   "build": {
     "productName": "Altaqwaa",

@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const adhan = require('adhan');
 const moment = require('moment-timezone');
 const path = require('path');
-const Audic = require("audic-forked")
+const player = require('play-sound')(opts = {})
 
 module.exports = async function notification(GetPath, path_folder) {
 
@@ -114,7 +114,9 @@ module.exports = async function notification(GetPath, path_folder) {
 
             else if (time === '7:15 AM' && Time_Adhan_false && json_notification.notification === true) {
 
-                let audic = new Audic(path.join(GetPath, '/mp3/AM.mp3'),);
+                let Audio_AM = player.play(path.join(GetPath, '/mp3/AM.mp3'), (err) => {
+                    if (err && !err.killed) throw err
+                });
                 let notification = new Notification({
                     title: 'أذكار الصباح ☀️',
                     body: 'بصوت إدريس أبكر 🔊',
@@ -124,15 +126,17 @@ module.exports = async function notification(GetPath, path_folder) {
                     timeoutType: 'never'
                 });
 
-                notification.on('click', () => audic.pause());
-                notification.on('close', () => audic.pause());
+                notification.on('click', () => Audio_AM.kill());
+                notification.on('close', () => Audio_AM.kill());
                 notification.show();
-                audic.play();
+
             }
 
             else if (time === '7:15 PM' && Time_Adhan_false && json_notification.notification === true) {
 
-                let audic = new Audic(path.join(GetPath, '/mp3/PM.mp3'),);
+                let Audio_PM = player.play(path.join(GetPath, '/mp3/AM.mp3'), (err) => {
+                    if (err && !err.killed) throw err
+                });
                 let notification = new Notification({
                     title: 'أذكار المساء 🌑',
                     body: 'بصوت فيصل بن جذيان 🔊',
@@ -142,10 +146,9 @@ module.exports = async function notification(GetPath, path_folder) {
                     timeoutType: 'never'
                 });
 
-                notification.on('click', () => audic.pause());
-                notification.on('close', () => audic.pause());
+                notification.on('click', () => Audio_PM.kill());
+                notification.on('close', () => Audio_PM.kill());
                 notification.show();
-                audic.play();
 
             }
         }
