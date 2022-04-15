@@ -56,7 +56,7 @@ module.exports = async function folder(App_Path, resourcesPath) {
 
         fs.mkdirSync(path.join(App_Path, '/mp3'), { recursive: true });
         let mp3 = fs.readFileSync(path.join(resourcesPath, '/mp3/001.mp3'));
-        fs.writeFileSync(path.join(App_Path, '/mp3/001.mp3'), mp3 , { spaces: '\t' });
+        fs.writeFileSync(path.join(App_Path, '/mp3/001.mp3'), mp3);
       
     }
 
@@ -64,7 +64,7 @@ module.exports = async function folder(App_Path, resourcesPath) {
 
         fs.mkdirSync(path.join(App_Path, '/mp3'), { recursive: true });
         let mp3 = fs.readFileSync(path.join(resourcesPath, '/mp3/002.mp3'));
-        fs.writeFileSync(path.join(App_Path, '/mp3/002.mp3'), mp3 , { spaces: '\t' });
+        fs.writeFileSync(path.join(App_Path, '/mp3/002.mp3'), mp3);
       
     }
 
@@ -72,7 +72,7 @@ module.exports = async function folder(App_Path, resourcesPath) {
 
         fs.mkdirSync(path.join(App_Path, '/mp3'), { recursive: true });
         let mp3 = fs.readFileSync(path.join(resourcesPath, '/mp3/AM.mp3'));
-        fs.writeFileSync(path.join(App_Path, '/mp3/AM.mp3'), mp3 , { spaces: '\t' });
+        fs.writeFileSync(path.join(App_Path, '/mp3/AM.mp3'), mp3);
       
     }
 
@@ -80,7 +80,7 @@ module.exports = async function folder(App_Path, resourcesPath) {
 
         fs.mkdirSync(path.join(App_Path, '/mp3'), { recursive: true });
         let mp3 = fs.readFileSync(path.join(resourcesPath, '/mp3/PM.mp3'));
-        fs.writeFileSync(path.join(App_Path, '/mp3/PM.mp3'), mp3 , { spaces: '\t' });
+        fs.writeFileSync(path.join(App_Path, '/mp3/PM.mp3'), mp3);
       
     }
 

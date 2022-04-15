@@ -19,10 +19,10 @@ module.exports = async function adhan_mp3_id(id) {
         let nextPrayerTime = prayerTimes.timeForPrayer(next);
 
         let adhan_mp3 = document.getElementById(id);
-        if (moment(nextPrayerTime).tz(timezone).subtract(1, "minutes").format('h:mm A') === moment().tz(timezone).format('h:mm A') && next.toLocaleLowerCase() !== 'fajr') {
+        if (moment(nextPrayerTime).tz(timezone).subtract(1, "minutes").format('h:mm A') === moment().tz(timezone).format('h:mm A') && next.toLocaleLowerCase() !== 'fajr' && next.toLocaleLowerCase() !== 'sunrise') {
             adhan_mp3.src = path.join(App_Path, '/mp3/001.mp3')
         }
-        else if (moment(nextPrayerTime).tz(timezone).subtract(1, "minutes").format('h:mm A') === moment().tz(timezone).format('h:mm A') && next.toLocaleLowerCase() === 'fajr') {
+        else if (moment(nextPrayerTime).tz(timezone).subtract(1, "minutes").format('h:mm A') === moment().tz(timezone).format('h:mm A') && next.toLocaleLowerCase() === 'fajr' && next.toLocaleLowerCase() !== 'sunrise') {
             adhan_mp3.src = path.join(App_Path, '/mp3/002.mp3')
         }
 
