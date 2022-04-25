@@ -17,7 +17,7 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "dev": "nodemon --exec electron ."
+    "dev": "nodemon --exec electron .Z"
   },
   "devDependencies": {
     "electron": "^18.0.4",
@@ -110,7 +110,19 @@
       "target": [
         "AppImage",
         "deb",
-        "rpm"
+        "rpm",
+        "snap"
+      ]
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade":"stable",
+      "category": "Education",
+      "plugs": [
+        "default"
+      ],
+      "stagePackages": [
+        "default"
       ]
     },
     "directories": {
