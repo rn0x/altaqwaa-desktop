@@ -110,19 +110,7 @@
       "target": [
         "AppImage",
         "deb",
-        "rpm",
-        "snap"
-      ]
-    },
-    "snap": {
-      "confinement": "strict",
-      "grade":"stable",
-      "category": "Education",
-      "plugs": [
-        "default"
-      ],
-      "stagePackages": [
-        "default"
+        "rpm"
       ]
     },
     "directories": {
