@@ -17,18 +17,6 @@
 
 <br><br>
 
-<p align="center">
-  <a href="https://snapcraft.io/altaqwaa">
-    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg">
-  </a>
-
-  ```bash
-  sudo snap install altaqwaa 
-  
-  ```
-</p>
-
-<br><br><br><br>
 
 ## مميزات التطبيق
 
@@ -56,9 +44,26 @@
 
 ## تنزيل التطبيق
 
+<br><br>
+
+<p align="center">
+  <a href="https://snapcraft.io/altaqwaa">
+    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg">
+  </a>
+
+  ```bash
+  
+  sudo snap install altaqwaa 
+  
+  ```
+</p>
+
+<br><br>
+
 - **Linux**: [Download the .AppImage, .deb, or .rpm file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 - **Windows**: [Download the .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 
+<br><br>
 
 ### قم  بتشغيل التطبيق في وضع التطوير 
 
