@@ -17,9 +17,13 @@
 
 <br><br>
 
-<a href="https://snapcraft.io/altaqwaa" align="center">
-    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" align="center">
-</a><br><br><br><br>
+<p align="center">
+  <a href="https://snapcraft.io/altaqwaa">
+    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg">
+  </a>
+</p>
+
+<br><br><br><br>
 
 ## مميزات التطبيق
 
