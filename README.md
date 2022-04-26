@@ -17,6 +17,10 @@
 
 <br><br>
 
+<a href="https://snapcraft.io/altaqwaa" align="center">
+    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" align="center">
+</a><br><br><br><br>
+
 ## مميزات التطبيق
 
 - القرآن الكريم كتابة و صوت
@@ -45,6 +49,7 @@
 
 - **Linux**: [Download the .AppImage, .deb, or .rpm file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 - **Windows**: [Download the .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
+
 
 ### قم  بتشغيل التطبيق في وضع التطوير 
 
