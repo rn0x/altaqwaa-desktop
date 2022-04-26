@@ -25,6 +25,7 @@ summary: altaqwaa
 description: altaqwaa - Islamic Desktop Application
 architectures:
   - amd64
+
 apps:
   altaqwaa:
     command: command.sh
@@ -47,3 +48,26 @@ apps:
       PATH: $SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH
       SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
       LD_LIBRARY_PATH: $SNAP_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/x86_64-linux-gnu:$SNAP/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/x86_64-linux-gnu:$SNAP/usr/lib/x86_64-linux-gnu
+
+parts:
+  altaqwaa:
+    plugin: nodejs
+    source: https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application.git
+    override-build: |
+        npm install electron electron-packager
+        npx electron-packager . --overwrite --platform=linux --output=release-build --prune=true
+        cp -rv ./Altaqwaa-Islamic-Desktop-Application-linux-* $SNAPCRAFT_PART_INSTALL/altaqwaa
+    build-snaps:
+    - node/14/stable
+    build-packages:
+    - nodejs
+    - npm
+    - unzip
+    stage-packages:
+    - libnspr4
+    - libasound2
+    - libgconf-2-4
+    - libnss3
+    - libx11-xcb1
+    - libxss1
+    - libxtst6
