@@ -58,20 +58,22 @@
   ```
 </p>
 
-<br><br>
 
 - **Linux**: [Download the .AppImage, .deb, or .rpm file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 - **Windows**: [Download the .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 
 <br><br>
 
-### قم  بتشغيل التطبيق في وضع التطوير 
+## قم  بتشغيل التطبيق في وضع التطوير 
+
+<br><br>
 
 ##### متطلبات التشغيل 
 - nodejs
 - git 
 - yarn
 
+<br>
 
 ```bash
 
@@ -81,8 +83,11 @@ yarn install
 yarn run dev
 
 ```
+<br>
 
 #### build 
+
+<br>
 
 ```bash
 
@@ -99,6 +104,6 @@ yarn run packlinux
 ### لقطات شاشة
 
 <p align="center">
-  <img align="center" src="/github/6.png"> 
+  <img align="center" src="/github/6.png"> <br>
   <img align="center" src="/github/7.png">
 </p>
