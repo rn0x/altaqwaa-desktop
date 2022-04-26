@@ -21,6 +21,8 @@
   <a href="https://snapcraft.io/altaqwaa">
     <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg">
   </a>
+
+  ``` sudo snap install altaqwaa ```
 </p>
 
 <br><br><br><br>
