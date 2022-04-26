@@ -104,13 +104,13 @@
       "category": "Education",
       "icon": "build/icons/icon.icns",
       "vendor": "Ryan Almalki",
-      "executableName": "Altaqwaa",
       "description": "Altaqwaa - Islamic Desktop Application",
       "synopsis": "Islamic Desktop Application",
       "target": [
         "AppImage",
         "deb",
-        "rpm"
+        "rpm",
+        "snap"
       ]
     },
     "directories": {

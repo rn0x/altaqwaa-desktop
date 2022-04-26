@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=altaqwaa
-Comment=altaqwaa | Islamic desktop application
-Exec=altaqwaa
-Terminal=false
-Type=Application
-Icon=${SNAP}/meta/gui/icon.png
