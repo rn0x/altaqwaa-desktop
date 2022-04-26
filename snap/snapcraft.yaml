@@ -20,11 +20,6 @@ description: >
   * إشعارات صوت أذكار الصباح والمساء
   * إمكانية إيقاف وتفعيل الإشعارات
 icon: build/icons/icon.png
-architectures:
-  - build-on: amd64
-  - build-on: armhf
-  - build-on: arm64
-
 license: MIT License
 grade: stable
 confinement: strict
@@ -43,37 +38,16 @@ apps:
 
 parts:
   altaqwaa:
-    plugin: dump
+    plugin: nil
     source: https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application.git
+    override-build: |
+        npm install electron electron-packager
+        npx electron-packager . --overwrite --platform=linux --output=release-build --prune=true
+        cp -rv ./altaqwaa-linux-* $SNAPCRAFT_PART_INSTALL/altaqwaa
     build-snaps:
-      - node/16/stable
+    - node/14/stable
     build-packages:
-      - npm
-      - libgconf-2-4
+    - unzip
     stage-packages:
-      - libnspr4
-      - libusb-1.0-0
-      - libnss3
-    override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version `cat $SNAPCRAFT_PROJECT_DIR/package.json | grep version | sed s/'  \"version\": \"'//g | sed s/'\",'//g`
-     override-build: |
-      set +u # core20 base does not allow unbound variables !
-      # workaround for build.snapcraft.io builds
-      # https://bugs.launchpad.net/bugs/1886861
-      if [ -n "$http_proxy" ]; then
-        export ELECTRON_GET_USE_PROXY=1
-        export GLOBAL_AGENT_HTTP_PROXY="${http_proxy}"
-        export GLOBAL_AGENT_HTTPS_PROXY="${http_proxy}"
-      fi
-      npm install --unsafe-perm true electron-packager
-      cp $SNAPCRAFT_PROJECT_DIR/main.js .
-      electron-packager . --overwrite --platform=linux \
-          --output=release-build --prune=true
-      cp -a ./electron-quick-start-linux-* $SNAPCRAFT_PART_INSTALL/altaqwaa
-    prime:
-      - -node_modules
-      - -lib/node_modules
-      - -**/arm/**
-      - -**/arm64/**
-      - -**/ia32/**
+    - libnss3
+    - libnspr4

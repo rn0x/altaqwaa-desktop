@@ -17,7 +17,7 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "dev": "nodemon --exec electron .Z"
+    "dev": "nodemon --exec electron ."
   },
   "devDependencies": {
     "electron": "^18.0.4",
