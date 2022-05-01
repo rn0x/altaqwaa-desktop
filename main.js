@@ -1,14 +1,15 @@
-const { app, BrowserWindow, ipcMain, Tray, Menu, Notification } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu, Notificationm, globalShortcut } = require('electron');
 const path = require('path');
-const notification = require('./notifications.js');
 const folder = require('./folder.js');
 const fs = require('fs-extra');
+const moment = require('moment-timezone');
 
 let path_folder = fs.existsSync(path.join(process.resourcesPath, '/build')) === true ? process.resourcesPath : __dirname
 folder(app.getPath("appData"), path_folder); // copy file 
 let mainWindow
 let tray
 let trayMenu
+let adhkar_windo
 
 const createWindow = () => {
 
@@ -26,6 +27,7 @@ const createWindow = () => {
     }
   });
 
+
   mainWindow.loadFile('./app/adhkar/adhkar.html');
   mainWindow.removeMenu()
 
@@ -38,14 +40,15 @@ const createWindow = () => {
     mainWindow.hide();
   });
 
-  mainWindow.on("show", (event) => {
-    event.preventDefault();
-  });
+  // mainWindow.on("show", (event) => {
+  //   event.preventDefault();
+  // });
 
   mainWindow.on('closed', (event) => {
     event.preventDefault();
     tray = null
     trayMenu = null
+    adhkar_windo = null
     mainWindow = null
   });
 
@@ -103,7 +106,7 @@ const createWindow = () => {
   tray.setContextMenu(trayMenu);
   tray.setToolTip("التقوى");
   tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    mainWindow.isVisible() !== null && mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
   });
 
 
@@ -112,13 +115,99 @@ const createWindow = () => {
 app.whenReady().then(async () => {
 
   createWindow();
-  notification(app.getPath("appData"), path_folder);
 
+  let json_notification = fs.readJsonSync(path.join(app.getPath("appData"), '/json/notification.json')); // return notification true or false
+
+  adhkar_windo = new BrowserWindow({
+    width: 530,
+    height: 130,
+    x: 500,
+    y: 0,
+    show: false,
+    center: true,
+    resizable: false,
+    frame: false,
+    title: 'التقوى',
+    icon: path.join(path_folder, '/build/icons/icon.png'),
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  });
+
+  adhkar_windo.loadFile('./app/Adhkar_AM_PM.html');
+  adhkar_windo.removeMenu()
+
+  // اختصار الكيبورد لفتح وإخفاء نافذة التطبيق
+  globalShortcut.register('Ctrl+shift+T', () => {
+
+    console.log('Ctrl+shift+T')
+
+    if (mainWindow.isVisible()) {
+      mainWindow.hide()
+    }
+    else {
+      mainWindow.show()
+    }
+
+  });
+
+  // عند بدء تشغيل النظام يتم تشغيل التطبيق في الخلفية
   if (process.argv.includes('--hidden')) {
 
-    mainWindow.hide()
+    mainWindow.hide();
 
   }
+
+  // عند الساعه السابعة يتم إظهر نافذة اذكار الصباح والمساء - صوت
+  setInterval(() => {
+
+    let time = moment().format('LT');
+
+    if (time === '7:15 AM' && json_notification.notification === true) {
+
+      if (adhkar_windo.isVisible()) {
+
+        adhkar_windo.close();
+
+      }
+
+      else if (adhkar_windo.isVisible() === false) {
+
+        adhkar_windo.show();
+
+      }
+
+      setTimeout(() => {
+
+        adhkar_windo.close()
+
+      }, 600000);
+
+    }
+
+    else if (time === '7:15 PM' && json_notification.notification === true) {
+
+      if (adhkar_windo.isVisible()) {
+
+        adhkar_windo.close();
+
+      }
+
+      else if (adhkar_windo.isVisible() === false) {
+
+        adhkar_windo.show();
+
+      }
+
+      setTimeout(() => {
+
+        adhkar_windo.close()
+
+      }, 600000);
+
+    }
+
+  }, 60000);
 
 });
 
@@ -128,20 +217,30 @@ app.on('ready', (e) => {
   app.setAppUserModelId("org.altaqwaa.rn0x");
 
   ipcMain.on('minimize', () => {
-
     mainWindow.minimize()
   });
 
   ipcMain.on('close', () => {
+    adhkar_windo.close()
     mainWindow.close()
   });
 
+  ipcMain.on('close2', () => {
+    adhkar_windo.close()
+  });
+
+  ipcMain.on('minimize2', () => {
+    adhkar_windo.minimize()
+  });
+
   ipcMain.handle('electron-app-get-path', async () => {
-    return app.getPath("appData") //  path files
+    return app.getPath("appData") //  مسار ملفات التطبيق
   });
 
 
 });
+
+// عند إغلاق التطبيق يتم إغلاق ايقونة شريط المهام
 
 app.on('before-quit', function () {
   tray.destroy();
@@ -153,6 +252,7 @@ app.on('window-all-closed', () => {
   }
 });
 
+// بدء تشغيل التطبيق مع بدء تشغيل النظام للويندوز فقط
 app.setLoginItemSettings({
   openAtLogin: true,
   args: ['--hidden']

@@ -9,7 +9,7 @@
         /* Pretty Modern Browsers */
         url(font/DroidKufi/DroidKufi-Bold.svg) format("svg");
 }
- 
+
 @font-face {
     font-family: "AvergentRegular";
     src        : url(font/AvergentRegular/AvergentRegular.ttf) format("truetype");
@@ -59,7 +59,7 @@
     padding-top    : 10px;
     padding-bottom : 10px;
     box-shadow     : 0px 5px 26px 0px rgba(0, 0, 0, 0.089);
-    transition: 0.5s ease-in-out;
+    transition     : 0.5s ease-in-out;
 }
 
 .from:hover {
@@ -80,7 +80,7 @@
     direction          : ltr;
     border             : none;
     color              : #949494;
-    transition: 0.5s ease-in-out;
+    transition         : 0.5s ease-in-out;
 }
 
 #select_country:hover {
@@ -102,7 +102,7 @@
     direction          : ltr;
     border             : none;
     color              : #949494;
-    transition: 0.5s ease-in-out;
+    transition         : 0.5s ease-in-out;
 }
 
 #select_city:hover {
@@ -122,7 +122,7 @@
     background-image: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
     font-family     : 'DroidKufi';
     font-size       : 12px;
-    transition: 0.5s ease-in-out;
+    transition      : 0.5s ease-in-out;
 }
 
 #submit_country_Submit:hover {
@@ -141,7 +141,7 @@
     background-image: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
     font-family     : 'DroidKufi';
     font-size       : 12px;
-    transition: 0.5s ease-in-out;
+    transition      : 0.5s ease-in-out;
 }
 
 #submit_city_Submit:hover {
@@ -157,7 +157,7 @@
     background     : #f7f7f7;
     border-radius  : 20px;
     box-shadow     : 0px 5px 26px 0px rgba(0, 0, 0, 0.089);
-    transition: 0.5s ease-in-out;
+    transition     : 0.5s ease-in-out;
 }
 
 .adhan_now:hover {
@@ -169,7 +169,7 @@
 
     color      : #45884a;
     padding-top: 10px;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #adhan_now_title:hover {
@@ -181,7 +181,7 @@
 #adhan_now {
     color         : #949494;
     padding-bottom: 20px;
-    transition: 0.5s ease-in-out;
+    transition    : 0.5s ease-in-out;
 }
 
 #adhan_now:hover {
@@ -198,7 +198,7 @@
     border-radius  : 20px;
     text-align     : center;
     box-shadow     : 0px 5px 26px 0px rgba(0, 0, 0, 0.089);
-    transition: 0.5s ease-in-out;
+    transition     : 0.5s ease-in-out;
 }
 
 .div_adhan_next:hover {
@@ -210,7 +210,7 @@
 
     color      : #45884a;
     margin-left: 50px;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #adhan_next_title:hover {
@@ -222,7 +222,7 @@
     color      : #949494;
     margin-left: 50px;
     font-size  : 13px;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #adhan_next:hover {
@@ -234,7 +234,7 @@
 
     color       : #45884a;
     margin-right: 50px;
-    transition: 0.5s ease-in-out;
+    transition  : 0.5s ease-in-out;
 
 }
 
@@ -248,7 +248,7 @@
     margin-right: 50px;
     font-family : 'AvergentRegular';
     direction   : ltr;
-    transition: 0.5s ease-in-out;
+    transition  : 0.5s ease-in-out;
 }
 
 #time_adhan_next:hover {
@@ -271,7 +271,7 @@
     border-radius: 20px;
     margin-top   : 15px;
     margin-bottom: 10px;
-    transition: 0.5s ease-in-out;
+    transition   : 0.5s ease-in-out;
 }
 
 .div_adhan_time:hover {
@@ -286,7 +286,7 @@
     margin-left : 20px;
     margin-right: 20px;
     color       : #45884a;
-    transition: 0.5s ease-in-out;
+    transition  : 0.5s ease-in-out;
 }
 
 .div_adhan_time p:hover {
@@ -304,7 +304,7 @@
     color      : #949494;
     font-family: 'AvergentRegular';
     direction  : ltr;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #fajr:hover {
@@ -317,7 +317,7 @@
     color      : #949494;
     font-family: 'AvergentRegular';
     direction  : ltr;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #sunrise:hover {
@@ -330,7 +330,7 @@
     color      : #949494;
     font-family: 'AvergentRegular';
     direction  : ltr;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #dhuhr:hover {
@@ -343,7 +343,7 @@
     color      : #949494;
     font-family: 'AvergentRegular';
     direction  : ltr;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #asr:hover {
@@ -356,7 +356,7 @@
     color      : #949494;
     font-family: 'AvergentRegular';
     direction  : ltr;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #maghrib:hover {
@@ -369,7 +369,7 @@
     color      : #949494;
     font-family: 'AvergentRegular';
     direction  : ltr;
-    transition: 0.5s ease-in-out;
+    transition : 0.5s ease-in-out;
 }
 
 #isha:hover {
@@ -379,7 +379,7 @@
 }
 
 #city {
-    color: #7a7a7a;
+    color     : #7a7a7a;
     transition: 0.5s ease-in-out;
 }
 

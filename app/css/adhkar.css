@@ -143,7 +143,7 @@
     background-color: rgba(255, 255, 255, 0);
     border          : none;
     transition      : 0.5s ease-in-out;
-    
+
 }
 
 .adhkar_text_button:hover {
@@ -151,5 +151,99 @@
     background-image: linear-gradient(to right, #45884a, #1b5e20);
     font-size       : 24px;
     transition      : 0.5s ease-in-out;
+
+}
+
+#audio_div {
+
+    margin-left       : auto;
+    margin-right      : auto;
+    width             : 100%;
+    text-align        : center;
+    font-family       : 'DroidKufi';
+    font-size         : 15px;
+    -webkit-app-region: no-drag;
+
+
+}
+
+#adhkar_pm_am {
+    margin-left : auto;
+    margin-right: auto;
+    width       : 100%;
+}
+
+#titlebar2 {
+    height            : 30px;
+    width             : 100%;
+    top               : 0;
+    direction         : rtl;
+    position          : fixed;
+    z-index           : 2;
+    -webkit-app-region: drag;
+}
+
+
+#window-controls2 {
+    display           : flex;
+    position          : absolute;
+    top               : 0;
+    left              : 0;
+    z-index           : 5;
+    -webkit-app-region: no-drag;
+}
+
+#close-button2 .icon {
+    width       : 13px;
+    height      : 13px;
+    margin-right: 25px;
+}
+
+#min-button2 .icon {
+    width       : 15px;
+    height      : 15px;
+    margin-right: 10px;
+}
+
+#min-button2 {
+    background                : #dee3e4;
+    padding-left              : 10px;
+    padding-top               : 9px;
+    padding-bottom            : 2px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius : 15px;
+}
+
+#close-button2 {
+    background                : #d40000;
+    padding-left              : 20px;
+    padding-top               : 8px;
+    padding-bottom            : 2px;
+    border-bottom-right-radius: 15px;
+}
+
+#close-button2:hover {
+    background: #bb0404;
+}
+
+
+#min-button2:hover {
+    background: #d3d7d8;
+
+}
+
+#body_adhkar {
+
+    background-color   : #ecf0f1;
+    background-size    : 350px;
+    max-width          : 100%;
+    user-select        : none;
+    -khtml-user-select : none;
+    -o-user-select     : none;
+    -moz-user-select   : none;
+    -webkit-user-select: none;
+    direction          : rtl;
+    margin             : 0px 0px 0px 0px;
+    -webkit-app-region : drag;
 
 }

@@ -9,7 +9,9 @@ module.exports = async function class_adhan() {
 
     let App_Path = await ipcRenderer.invoke('electron-app-get-path');
     let json_city = fs.readJsonSync(path.join(App_Path, '/json/city.json'));
-    let prayerTimes = new adhan.PrayerTimes(new adhan.Coordinates(json_city.latitude, json_city.longitude), new Date(), adhan.CalculationMethod.MuslimWorldLeague());
+    let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : adhan.CalculationMethod.UmmAlQura() 
+    let params = city_CalculationMethod;
+    let prayerTimes = new adhan.PrayerTimes(new adhan.Coordinates(json_city.latitude, json_city.longitude), new Date(), params);
 
     document.getElementById('adhan_now').innerHTML = prayerTimes.currentPrayer().toLocaleLowerCase() === 'none' ? 'لايوجد' : prayerTimes.currentPrayer().toLocaleLowerCase() === 'fajr' ? 'الفجر' : prayerTimes.currentPrayer().toLocaleLowerCase() === 'sunrise' ? 'الضحى' : prayerTimes.currentPrayer().toLocaleLowerCase() === 'dhuhr' ? 'الظهر' : prayerTimes.currentPrayer().toLocaleLowerCase() === 'asr' ? 'العصر' : prayerTimes.currentPrayer().toLocaleLowerCase() === 'maghrib' ? 'المغرب' : prayerTimes.currentPrayer().toLocaleLowerCase() === 'isha' ? 'العشاء' : ' ';
     document.getElementById('adhan_next').innerHTML = prayerTimes.nextPrayer().toLocaleLowerCase() === 'none' ? 'لايوجد' : prayerTimes.nextPrayer().toLocaleLowerCase() === 'fajr' ? 'الفجر' : prayerTimes.nextPrayer().toLocaleLowerCase() === 'sunrise' ? 'الضحى' : prayerTimes.nextPrayer().toLocaleLowerCase() === 'dhuhr' ? 'الظهر' : prayerTimes.nextPrayer().toLocaleLowerCase() === 'asr' ? 'العصر' : prayerTimes.nextPrayer().toLocaleLowerCase() === 'maghrib' ? 'المغرب' : prayerTimes.nextPrayer().toLocaleLowerCase() === 'isha' ? 'العشاء' : ' ';
@@ -28,7 +30,8 @@ module.exports = async function class_adhan() {
         let sleep = (time) => new Promise(resolve => setTimeout(resolve, time));
         let json_city = fs.readJsonSync(path.join(App_Path, '/json/city.json'));
         let coordinates = new adhan.Coordinates(json_city.latitude, json_city.longitude);
-        let params = adhan.CalculationMethod.MuslimWorldLeague()
+        let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : adhan.CalculationMethod.UmmAlQura() 
+        let params = city_CalculationMethod;
         let prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
         let current = prayerTimes.currentPrayer()
         let next = prayerTimes.nextPrayer();
@@ -92,7 +95,8 @@ module.exports = async function class_adhan() {
                         let date = new Date();
                         let json_city = fs.readJsonSync(path.join(App_Path, '/json/city.json'));
                         let coordinates = new adhan.Coordinates(lop2.latitude, lop2.longitude);
-                        let params = adhan.CalculationMethod.MuslimWorldLeague();
+                        let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : adhan.CalculationMethod.UmmAlQura() 
+                        let params = city_CalculationMethod;
                         let prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
                         let current = prayerTimes.currentPrayer()
                         let next = prayerTimes.nextPrayer();

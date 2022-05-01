@@ -3,7 +3,6 @@ const fs = require('fs-extra');
 const adhan = require('adhan');
 const moment = require('moment-timezone');
 const path = require('path');
-const player = require('play-sound')(opts = {})
 
 module.exports = async function notification(GetPath, path_folder) {
 
@@ -112,35 +111,17 @@ module.exports = async function notification(GetPath, path_folder) {
 
             }
 
-            else if (time === '7:15 AM' && Time_Adhan_false && json_notification.notification === true) {
+            else if (time === '7:15 AM' && document.getElementById('audio_div') && json_notification.notification === true) {
 
-                let notification = new Notification({
-                    title: 'أذكار الصباح ☀️',
-                    body: 'بصوت إدريس أبكر 🔊',
-                    silent: false,
-                    icon: path.join(path_folder, '/build/icons/icon.png'),
-                    urgency: "normal",
-                    timeoutType: 'never'
-                });
-
-                notification.show();
-                player.play(path.join(GetPath, '/mp3/AM.mp3'));
+                document.getElementById('adhkar_pm_am_text').innerText = 'أذكار الصباح ☀️ | بصوت إدريس أبكر 🔊';
+                document.getElementById('adhkar_pm_am').src = path.join(GetPath, '/mp3/AM.mp3');
 
             }
 
-            else if (time === '7:15 PM' && Time_Adhan_false && json_notification.notification === true) {
+            else if (time === '7:15 PM' && document.getElementById('audio_div') && json_notification.notification === true) {
 
-                let notification = new Notification({
-                    title: 'أذكار المساء 🌑',
-                    body: 'بصوت فيصل بن جذيان 🔊',
-                    silent: false,
-                    icon: path.join(path_folder, '/build/icons/icon.png'),
-                    urgency: "normal",
-                    timeoutType: 'never'
-                });
-
-                notification.show();
-                player.play(path.join(GetPath, '/mp3/PM.mp3'));
+                document.getElementById('adhkar_pm_am_text').innerText = 'أذكار المساء 🌑 | بصوت فيصل بن جذيان 🔊';
+                document.getElementById('adhkar_pm_am').src = path.join(GetPath, '/mp3/PM.mp3');
 
             }
         }
