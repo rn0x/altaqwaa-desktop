@@ -48,8 +48,13 @@ const createWindow = () => {
     event.preventDefault();
     tray = null
     trayMenu = null
-    adhkar_windo = null
     mainWindow = null
+    adhkar_windo = null
+    if (adhkar_windo !== null && adhkar_windo.isVisible()) {
+
+      adhkar_windo.close();
+
+    }
   });
 
 
@@ -135,7 +140,11 @@ app.whenReady().then(async () => {
   });
 
   adhkar_windo.loadFile('./app/Adhkar_AM_PM.html');
-  adhkar_windo.removeMenu()
+  adhkar_windo.removeMenu();
+  adhkar_windo.on('closed', (event) => {
+    event.preventDefault();
+    adhkar_windo = null
+  });
 
   // اختصار الكيبورد لفتح وإخفاء نافذة التطبيق
   globalShortcut.register('Ctrl+shift+T', () => {
@@ -179,9 +188,13 @@ app.whenReady().then(async () => {
 
       setTimeout(() => {
 
-        adhkar_windo.close()
+        if (adhkar_windo !== null && adhkar_windo.isVisible()) {
 
-      }, 600000);
+          adhkar_windo.close();
+
+        }
+
+      }, 10000);
 
     }
 
@@ -201,7 +214,11 @@ app.whenReady().then(async () => {
 
       setTimeout(() => {
 
-        adhkar_windo.close()
+        if (adhkar_windo !== null && adhkar_windo.isVisible()) {
+
+          adhkar_windo.close();
+
+        }
 
       }, 600000);
 
@@ -221,12 +238,19 @@ app.on('ready', (e) => {
   });
 
   ipcMain.on('close', () => {
-    adhkar_windo.close()
-    mainWindow.close()
+
+    mainWindow.close();
+
   });
 
   ipcMain.on('close2', () => {
-    adhkar_windo.close()
+
+    if (adhkar_windo !== null && adhkar_windo.isVisible()) {
+
+      adhkar_windo.close();
+
+    }
+    
   });
 
   ipcMain.on('minimize2', () => {
