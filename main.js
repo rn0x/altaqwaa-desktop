@@ -101,7 +101,7 @@ const createWindow = () => {
     },
     {
       label: 'إغلاق', click: function () {
-        mainWindow.destroy();
+        mainWindow.close();
         app.isQuiting = true;
         app.quit();
       }
@@ -111,7 +111,15 @@ const createWindow = () => {
   tray.setContextMenu(trayMenu);
   tray.setToolTip("التقوى");
   tray.on('click', () => {
-    mainWindow.isVisible() !== null && mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    if (mainWindow !== null) {
+
+      if (mainWindow.isVisible()) {
+        mainWindow.hide();
+      } else {
+        mainWindow.show();
+      }
+
+    }
   });
 
 
@@ -120,8 +128,6 @@ const createWindow = () => {
 app.whenReady().then(async () => {
 
   createWindow();
-
-  let json_notification = fs.readJsonSync(path.join(app.getPath("appData"), '/json/notification.json')); // return notification true or false
 
   adhkar_windo = new BrowserWindow({
     width: 530,
@@ -171,8 +177,36 @@ app.whenReady().then(async () => {
   setInterval(() => {
 
     let time = moment().format('LT');
+    let json_notification = fs.readJsonSync(path.join(app.getPath("appData"), '/json/notification.json')); // return notification true or false
 
-    if (time === '7:15 AM' && json_notification.notification === true) {
+    if (adhkar_windo === null) {
+
+      adhkar_windo = new BrowserWindow({
+        width: 530,
+        height: 130,
+        x: 500,
+        y: 0,
+        show: false,
+        center: true,
+        resizable: false,
+        frame: false,
+        title: 'التقوى',
+        icon: path.join(path_folder, '/build/icons/icon.png'),
+        webPreferences: {
+          preload: path.join(__dirname, 'preload.js')
+        }
+      });
+
+      adhkar_windo.loadFile('./app/Adhkar_AM_PM.html');
+      adhkar_windo.removeMenu();
+      adhkar_windo.on('closed', (event) => {
+        event.preventDefault();
+        adhkar_windo = null
+      });
+
+    }
+
+    else if (time === '7:15 AM' && json_notification.notification === true) {
 
       if (adhkar_windo.isVisible()) {
 
@@ -250,7 +284,7 @@ app.on('ready', (e) => {
       adhkar_windo.close();
 
     }
-    
+
   });
 
   ipcMain.on('minimize2', () => {
