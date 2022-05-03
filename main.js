@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Tray, Menu, Notificationm, globalShortcut } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu, Notification, globalShortcut } = require('electron');
 const path = require('path');
 const folder = require('./folder.js');
 const fs = require('fs-extra');
