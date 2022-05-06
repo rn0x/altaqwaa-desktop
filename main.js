@@ -50,11 +50,14 @@ const createWindow = () => {
     trayMenu = null
     mainWindow = null
     adhkar_windo = null
+
     if (adhkar_windo !== null && adhkar_windo.isVisible()) {
 
       adhkar_windo.close();
 
     }
+
+    app.quit()
   });
 
 
@@ -96,12 +99,19 @@ const createWindow = () => {
     },
     {
       label: 'عرض التطبيق', click: function () {
-        mainWindow.show();
+        if (mainWindow !== null) {
+          mainWindow.show();
+        }
+        else if (mainWindow === null) createWindow()
+
       }
     },
     {
       label: 'إغلاق', click: function () {
-        mainWindow.close();
+        if (mainWindow !== null) {
+          mainWindow.close();
+        }
+        else if (mainWindow === null) createWindow()
         app.isQuiting = true;
         app.quit();
       }
@@ -125,9 +135,7 @@ const createWindow = () => {
 
 }
 
-app.whenReady().then(async () => {
-
-  createWindow();
+const create_Window_adhkar = () => {
 
   adhkar_windo = new BrowserWindow({
     width: 530,
@@ -152,10 +160,17 @@ app.whenReady().then(async () => {
     adhkar_windo = null
   });
 
+}
+
+app.on('ready', (e) => {
+
+  e.preventDefault();
+
+  createWindow();
+  create_Window_adhkar()
+
   // اختصار الكيبورد لفتح وإخفاء نافذة التطبيق
   globalShortcut.register('Ctrl+shift+T', () => {
-
-    console.log('Ctrl+shift+T')
 
     if (mainWindow.isVisible()) {
       mainWindow.hide()
@@ -181,28 +196,7 @@ app.whenReady().then(async () => {
 
     if (adhkar_windo === null) {
 
-      adhkar_windo = new BrowserWindow({
-        width: 530,
-        height: 130,
-        x: 500,
-        y: 0,
-        show: false,
-        center: true,
-        resizable: false,
-        frame: false,
-        title: 'التقوى',
-        icon: path.join(path_folder, '/build/icons/icon.png'),
-        webPreferences: {
-          preload: path.join(__dirname, 'preload.js')
-        }
-      });
-
-      adhkar_windo.loadFile('./app/Adhkar_AM_PM.html');
-      adhkar_windo.removeMenu();
-      adhkar_windo.on('closed', (event) => {
-        event.preventDefault();
-        adhkar_windo = null
-      });
+      create_Window_adhkar()
 
     }
 
@@ -260,11 +254,6 @@ app.whenReady().then(async () => {
 
   }, 60000);
 
-});
-
-app.on('ready', (e) => {
-
-  e.preventDefault();
   app.setAppUserModelId("org.altaqwaa.rn0x");
 
   ipcMain.on('minimize', () => {
