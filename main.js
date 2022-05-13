@@ -302,5 +302,6 @@ app.on('window-all-closed', () => {
 // بدء تشغيل التطبيق مع بدء تشغيل النظام للويندوز فقط
 app.setLoginItemSettings({
   openAtLogin: true,
+  path: path.join(process.resourcesPath, '../Altaqwaa.exe'),
   args: ['--hidden']
-});
+})
