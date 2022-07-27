@@ -8,6 +8,7 @@ module.exports = async function folder(App_Path, resourcesPath) {
     let eg = '/json/eg.json'
     let kw = '/json/kw.json'
     let sa = '/json/sa.json'
+    let dz = '/json/dz.json'
     let Adhkar = '/json/Adhkar.json'
     let Adhkar_morning = '/json/Adhkar_morning.json'
     let Adhkar_night = '/json/Adhkar_night.json'
@@ -41,6 +42,14 @@ module.exports = async function folder(App_Path, resourcesPath) {
         fs.mkdirSync(path.join(App_Path, '/json'), { recursive: true });
         let kw_json = fs.readJSONSync(path.join(resourcesPath, kw));
         fs.writeJsonSync(path.join(App_Path, kw), kw_json , { spaces: '\t' });
+      
+    }
+
+    if (fs.existsSync(path.join(App_Path, dz)) === false){
+
+        fs.mkdirSync(path.join(App_Path, '/json'), { recursive: true });
+        let dz_json = fs.readJSONSync(path.join(resourcesPath, dz));
+        fs.writeJsonSync(path.join(App_Path, dz), dz_json , { spaces: '\t' });
       
     }
 

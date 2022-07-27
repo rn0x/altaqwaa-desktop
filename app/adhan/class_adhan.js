@@ -9,7 +9,7 @@ module.exports = async function class_adhan() {
 
     let App_Path = await ipcRenderer.invoke('electron-app-get-path');
     let json_city = fs.readJsonSync(path.join(App_Path, '/json/city.json'));
-    let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : adhan.CalculationMethod.UmmAlQura() 
+    let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : json_city.timezone === 'Africa/Algiers' ? adhan.CalculationMethod.MuslimWorldLeague() : adhan.CalculationMethod.UmmAlQura()
     let params = city_CalculationMethod;
     let prayerTimes = new adhan.PrayerTimes(new adhan.Coordinates(json_city.latitude, json_city.longitude), new Date(), params);
 
@@ -30,7 +30,7 @@ module.exports = async function class_adhan() {
         let sleep = (time) => new Promise(resolve => setTimeout(resolve, time));
         let json_city = fs.readJsonSync(path.join(App_Path, '/json/city.json'));
         let coordinates = new adhan.Coordinates(json_city.latitude, json_city.longitude);
-        let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : adhan.CalculationMethod.UmmAlQura() 
+        let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : json_city.timezone === 'Africa/Algiers' ? adhan.CalculationMethod.MuslimWorldLeague() : adhan.CalculationMethod.UmmAlQura()
         let params = city_CalculationMethod;
         let prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
         let current = prayerTimes.currentPrayer()
@@ -95,7 +95,7 @@ module.exports = async function class_adhan() {
                         let date = new Date();
                         let json_city = fs.readJsonSync(path.join(App_Path, '/json/city.json'));
                         let coordinates = new adhan.Coordinates(lop2.latitude, lop2.longitude);
-                        let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : adhan.CalculationMethod.UmmAlQura() 
+                        let city_CalculationMethod = json_city.timezone === 'Africa/Cairo' ? adhan.CalculationMethod.Egyptian() : json_city.timezone === 'Africa/Algiers' ? adhan.CalculationMethod.MuslimWorldLeague() : adhan.CalculationMethod.UmmAlQura()
                         let params = city_CalculationMethod;
                         let prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
                         let current = prayerTimes.currentPrayer()
