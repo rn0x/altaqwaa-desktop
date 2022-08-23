@@ -1,49 +1,60 @@
-# Altaqwaa-Islamic-Desktop-Application
+![preview|690x388](/screenshots/Featured_banner.png)
+<br>
+
+- - -
 
 <br>
 
-#### التقوى | تطبيق إسلامي لسطح المكتب يعمل على انظمة التشغيل ويندوز ولينكس
+**تطبيق إسلامي مفتوح المصدر يعمل على أنظمة التشغيل ويندوز ولينكس سهل الإستخدام و جامع للكثير من  الميزات التي يحتاجها المسلم في يومه**
 
 <br>
 
-<p align="center">
-  <img align="center" src="/github/1.png"> <br><br><br><br>
-  <img align="center" src="/github/2.png"> <br><br>
-  <img align="center" src="/github/3.png"> <br><br>
-  <img align="center" src="/github/4.png"> <br><br>
-  <img align="center" src="/github/5.png"> <br><br>
-  <img align="center" src="/github/8.png"> <br><br>
-</p>
 
+- - -
 
-<br><br>
+# مميزات التطبيق
+<br>
 
-
-## مميزات التطبيق
-
-- القرآن الكريم كتابة و صوت
-- حصن المسلم
-- أسماء الله الحسنى ومعانيها
+- القرآن الكريم `نص`
+- القرآن الكريم `صوت`
 - أذكار الصباح
-- أذكار المساء
-- أذكار النوم
+- أذكار المساء 
 - أذكار الطعام 
+- أذكار النوم 
 - أذكار الصلاة
-- تسابيح
-- مواقيت الصلاة
-- إشعار صوت وكتابة بدخول وقت الصلاة
-- إشعارات أذكار متنوعة
-- بدء تشغيل التطبيق مع بدء تشغيل النظام (ويندوز فقط)
-- إشعارات صوت أذكار الصباح والمساء
-- إمكانية إيقاف وتفعيل الإشعارات
-- قريباً
+- تسابيح 
+- مواقيت الصلاة حسب إحداثيات موقعك عبر الـ (**ip**)
+- إمكانية تعديل موقعك (**عبر إدخال خطوط الطول والعرض**) و المنطقة الزمنية
+- تغير طريقة حساب أوقات الصلاة (**ام القرى , رابطة العالم الإسلامي ,الهيئة المصرية العامة للمساحة الخ ...**)
+- إشعار صوتي (**أذان**) بدخول وقت الصلاة 
+- إشعار صوتي بـ أذكار الصباح والمساء
+- بدء تشغيل التطبيق مع بدء تشغيل النظام (**ويندوز فقط**)
+- إيقاف وتشغيل الإشعارات 
+- نافذة شريط القوائم (**منطقة الإعلامات**) تبين الساعة + الصلاة القادمة
 
-## العيوب
+<br>
 
-- مقاس التطبيق ثابت 
-- 900px X 550px
+---
 
-## تنزيل التطبيق
+<br>
+
+# صور الشاشة
+
+<br>
+
+| ![altaqwaa](/screenshots/1.png) | ![altaqwaa](/screenshots/2.png) |
+|:------------------------|----------------------|
+| ![altaqwaa](/screenshots/3.png) | ![altaqwaa](/screenshots/4.png) |
+| ![altaqwaa](/screenshots/5.png) | ![altaqwaa](/screenshots/6.png) |
+| ![altaqwaa](/screenshots/7.png) | ![altaqwaa](/screenshots/8.png) |
+| ![altaqwaa](/screenshots/9.png) | ![altaqwaa](/screenshots/9.png) |
+
+
+
+
+<br>
+
+# تنزيل التطبيق
 
 <br><br>
 
@@ -65,13 +76,17 @@
 
 <br><br>
 
-## قم  بتشغيل التطبيق في وضع التطوير 
+
+# قم بتشغيل التطبيق في وضع التطوير
 
 <br><br>
 
-##### متطلبات التشغيل 
+##### متطلبات التشغيل
+
 - nodejs
-- git 
+
+- git
+
 - yarn
 
 <br>
@@ -79,32 +94,65 @@
 ```bash
 
 git clone https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application
+
 cd Altaqwaa-Islamic-Desktop-Application
+
 yarn install
+
 yarn run dev
 
 ```
+
 <br>
 
-#### build 
+#### build
 
 <br>
 
 ```bash
 
 #Windows
+
 yarn run packwin
 
 #Linux
+
 yarn run packlinux
 
-
 ```
-<br><br><br><br><br><br>
 
-### لقطات شاشة
+![cmd_2|690x171](/screenshots/cmd_1.png)
 
-<p align="center">
-  <img align="center" src="/github/6.png"> <br>
-  <img align="center" src="/github/7.png">
-</p>
+![cmd_1|690x205](/screenshots/cmd_2.png)
+
+# التبعيات 
+- adhan-js
+- electron
+- fs-extra
+- moment-js
+- node-fetch
+- request
+- menubar
+
+<br>
+
+
+# المصادر 
+
+<br>
+
+|          مصدر        |           الرابط          |
+|:--------------------------|------------------------|
+| القرآن الكريم | https://github.com/rn0x/Quran-Json |
+| ملفات صوت القرآن الكريم | https://www.mp3quran.net/api/_arabic.json |
+| الأذكار | https://www.islambook.com/azkar |
+| الحصول على إحداثيات الموقع | http://ip-api.com/json | 
+| الأيقونات | https://www.flaticon.com |
+| خطوط | https://fonts.qurancomplex.gov.sa/wp02 | 
+| خطوط | https://github.com/rastikerdar/vazirmatn |
+
+
+<br>
+
+
+# سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك

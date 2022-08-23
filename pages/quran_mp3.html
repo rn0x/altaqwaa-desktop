@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/barWindow.css">
+    <link rel="stylesheet" href="../public/css/quran_mp3.css">
+</head>
+
+<body>
+
+    <!-- window bar -->
+
+    <header id="titlebar" onmousedown='return false;' onselectstart='return false;'>
+
+        <div id="drag-region">
+
+            <div id="window-controls">
+
+                <div id="closed">
+                    <img class="icon_bar" srcset="../public/icon/closed.png" draggable="false" />
+                </div>
+
+                <div id="minimizable">
+                    <img class="icon_bar" srcset="../public/icon/minimizable.png" draggable="false" />
+                </div>
+
+                <div id="minimize">
+                    <img class="icon_bar" srcset="../public/icon/minimize.png" draggable="false" />
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="Content">
+
+        <div id="menu" onmousedown='return false;' onselectstart='return false;'>
+
+            <a href="./home.html">
+                <img src="../public/icon/quran.png" class="icon_menu" id="icon_menu_top">
+            </a>
+
+            <a href="./quran_mp3.html">
+                <img src="../public/icon/sound.png" class="icon_menu" id="icon_menu_mp3">
+            </a>
+
+            <a href="./adhkar.html">
+                <img src="../public/icon/open-hands.png" class="icon_menu" id="icon_adhkar">
+            </a>
+
+            <a href="./prayer_time.html">
+                <img src="../public/icon/azan.png" class="icon_menu" id="icon_prayer_time">
+            </a>
+
+            <a href="./settings.html">
+                <img src="../public/icon/settings.png" class="icon_menu" id="icon_settings">
+            </a>
+
+            <a href="./info.html">
+                <img src="../public/icon/info.png" class="icon_menu" id="icon_info">
+            </a>
+
+
+        </div>
+
+        <div id="quran_mp3" onmousedown='return false;' onselectstart='return false;'>
+
+            <ul id="Sheikh"></ul>
+            <ul id="ul_group"></ul>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

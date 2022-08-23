@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "Vazirmatn-Regular";
+    src: url(../font/Vazirmatn-Regular.ttf) format("truetype");
+}
+
+
+
+html,
+body {
+    background-color: #2e3338;
+    margin: 0px 0px 0px 0px;
+    max-height: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#titlebar {
+    height: 30px;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+
+#window-controls {
+    display: flex;
+    background-color: #232527;
+    direction: ltr;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.icon_bar {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#closed:hover {
+    background-color: #f34949;
+    transition: 0.3s ease-in-out;
+}
+
+#minimizable:hover,
+#minimize:hover {
+    background-color: #272b30;
+    transition: 0.3s ease-in-out;
+}
+
+#adhkar_am_pm {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+#audio {
+    width: 500px;
+}
+
+#text {
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 20px;
+}
+
+::-webkit-media-controls-enclosure {
+    border-radius: 5px;
+    background-color: #222629;
+}
