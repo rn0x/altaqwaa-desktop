@@ -47,7 +47,7 @@
 | ![altaqwaa](/screenshots/3.png) | ![altaqwaa](/screenshots/4.png) |
 | ![altaqwaa](/screenshots/5.png) | ![altaqwaa](/screenshots/6.png) |
 | ![altaqwaa](/screenshots/7.png) | ![altaqwaa](/screenshots/8.png) |
-| ![altaqwaa](/screenshots/9.png) | ![altaqwaa](/screenshots/9.png) |
+| ![altaqwaa](/screenshots/9.png) | ![altaqwaa](/screenshots/10.png) |
 
 
 
@@ -81,7 +81,7 @@
 
 <br><br>
 
-##### متطلبات التشغيل
+**متطلبات التشغيل**
 
 - nodejs
 
@@ -105,7 +105,7 @@ yarn run dev
 
 <br>
 
-#### build
+ **build**
 
 <br>
 
