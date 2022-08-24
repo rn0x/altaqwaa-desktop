@@ -30,7 +30,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "electron": "20.0.2",
+    "electron": "19.0.10",
     "electron-builder": "^23.3.3",
     "nodemon": "^2.0.19"
   },
