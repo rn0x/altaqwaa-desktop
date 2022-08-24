@@ -94,7 +94,8 @@
         "AppImage",
         "deb",
         "rpm",
-        "snap"
+        "snap",
+        "flatpak"
       ]
     }
   }
