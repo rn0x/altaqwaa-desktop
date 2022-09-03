@@ -27,7 +27,8 @@
     "moment-hijri": "^2.1.2",
     "moment-timezone": "^0.5.34",
     "node-fetch": "^2.6.7",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "v8-compile-cache": "^2.3.0"
   },
   "devDependencies": {
     "electron": "19.0.10",

@@ -1,3 +1,4 @@
+require('v8-compile-cache');
 const { BrowserWindow, ipcMain, app, Tray, Menu, globalShortcut } = require('electron');
 const path = require('path');
 const homeWindow = require('./Window/home.js');
