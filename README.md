@@ -154,5 +154,15 @@ yarn run packlinux
 
 <br>
 
+# review
+
+نبذه بسيطه عن التطبيق من الأخ [@SalehGNUTUX](https://github.com/SalehGNUTUX) على قناة [Gnu Tux](https://www.youtube.com/c/GnuTux) على اليوتيوب
+
+<br>
+
+[![GnuTux|690x385](/screenshots/GnuTux.png)](https://www.youtube.com/watch?v=PtRfxMe9nRI)
+
+
+
 
 # سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك
