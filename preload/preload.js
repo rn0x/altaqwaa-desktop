@@ -13,6 +13,7 @@ const prayer_time = require('./prayer_time.js');
 const prayer = require('./prayer.js');
 const settings = require('./settings.js');
 const info = require('./info.js');
+const hisnmuslim = require('./hisnmuslim.js');
 
 window.addEventListener('DOMContentLoaded', async (e) => {
 
@@ -33,5 +34,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   prayer_time(App_Path);
   settings(App_Path);
   info();
+  hisnmuslim();
 
 });

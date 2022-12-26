@@ -27,14 +27,19 @@ module.exports = function tray_window(tray, win, ipcMain, app) {
 
     });
 
-
     adhkar.on('ready', () => {
 
         adhkar.tray.on('click', () => {
 
-            win?.hide();
-            adhkar?.showWindow();
-        })
+            if (win?.isVisible()) {
+                win?.hide();
+                adhkar?.showWindow();
+            }
+            else {
+                win?.show();
+                adhkar?.hideWindow()
+            }
+        });
 
     });
 

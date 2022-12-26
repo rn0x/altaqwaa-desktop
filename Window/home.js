@@ -1,4 +1,5 @@
-﻿const path = require('path');
+﻿const fs = require('fs-extra');
+const path = require('path');
 const createFile = require('../module/createFile.js');
 const tray_window = require('./tray_window.js')
 const location = require('../module/location.js');
@@ -45,6 +46,13 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
     win?.on('closed', (event) => {
 
         event?.preventDefault();
+        let App_Path = path.join(app?.getPath("appData"), '/altaqwaa');
+        let soundJson = fs.readJsonSync(path.join(App_Path, './data/sound.json'));
+        let audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
+        audioJson.start = false
+        soundJson.sound = true
+        fs.writeJsonSync(path.join(App_Path, './data/sound.json'), soundJson);
+        fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), audioJson);
         // tray?.destroy();
         tray = null
         contextMenu = null
@@ -87,11 +95,46 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
     tray?.setContextMenu(contextMenu);
     tray?.setToolTip("التقوى");
 
-    tray_window(tray, win, ipcMain, app);
-
     if (process.argv.includes('--hidden')) {
 
         win?.hide()
+
+    }
+
+    else if (process.platform === 'win32' || process.platform === "win64") {
+
+        tray_window(tray, win, ipcMain, app);
+    }
+
+    else if (process.platform === 'linux') {
+
+        let homePath = app?.getPath('home');
+        let desktop = fs.existsSync(`${homePath}/.config/autostart/Altaqwaa.desktop`);
+
+        tray.on('click', () => {
+
+            if (win?.isVisible()) {
+                win?.hide();
+            }
+            else {
+                win?.show();
+            }
+        });
+
+        if (desktop === false) {
+
+            let data = '[Desktop Entry]\n'
+            data += 'Name=Altaqwaa\n'
+            data += 'Icon=org.altaqwaa.rn0x\n'
+            data += 'Exec=altaqwaa\n'
+            data += 'Terminal=false\n'
+            data += 'Type=Application\n'
+            data += 'Comment=Altaqwaa-Islamic-Desktop-Application\n'
+            data += 'Categories=Education'
+
+            fs.writeFileSync(`${homePath}/.config/autostart/Altaqwaa.desktop`, data);
+
+        }
 
     }
 

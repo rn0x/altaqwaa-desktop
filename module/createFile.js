@@ -6,15 +6,21 @@ module.exports = function createFile(App_Path) {
     if (fs.existsSync(path.join(App_Path, './data')) === false) {
 
         fs.mkdirsSync(path.join(App_Path, '/data'), { recursive: true });
-        
+
     }
 
-    
+
 
     if (fs.existsSync(path.join(App_Path, './data/Now.json')) === false) {
 
-        fs.writeJsonSync(path.join(App_Path, './data/Now.json'), {"id":"surah_number_1"}, { spaces: '\t' });
-        
+        fs.writeJsonSync(path.join(App_Path, './data/Now.json'), { "id": "surah_number_1" }, { spaces: '\t' });
+
+    }
+
+    if (fs.existsSync(path.join(App_Path, './data/audio_window.json')) === false) {
+
+        fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false }, { spaces: '\t' });
+
     }
 
     if (fs.existsSync(path.join(App_Path, './data/settings.json')) === false) {
@@ -24,15 +30,15 @@ module.exports = function createFile(App_Path) {
             "notifications_adhan": true,
             "notifications_adhkar": true
         }
-        
+
         fs.writeJsonSync(path.join(App_Path, './data/settings.json'), settings, { spaces: '\t' });
-        
+
     }
-    
+
     if (fs.existsSync(path.join(App_Path, './data/sound.json')) === false) {
 
-        fs.writeJsonSync(path.join(App_Path, './data/sound.json'), {"sound":false}, { spaces: '\t' });
-        
+        fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true }, { spaces: '\t' });
+
     }
-    
+
 }

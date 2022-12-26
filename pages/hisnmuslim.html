@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/barWindow.css">
-    <link rel="stylesheet" href="../public/css/home.css">
+    <link rel="stylesheet" href="../public/css/hisnmuslim.css">
 </head>
 
 <body>
@@ -72,7 +72,25 @@
 
         </div>
 
-        <div id="quran"></div>
+        <div id="mp3_hisn" onmousedown='return false;' onselectstart='return false;'>
+
+            <img src="../public/icon/closed.png" id="mp3_hisn_closed">
+            <div id="mp3_hisn_blackout"></div>
+            <div id="mp3_hisn_alert" role="alert">
+                <audio src="" autoplay controls preload='none' id="mp3_hisn_src"></audio>
+            </div>
+
+        </div>
+
+        <div id="hisnmuslim" onmousedown='return false;' onselectstart='return false;'>
+
+            <div id="hisn">
+                <h1 id="titel_hisn">حصن المسلم</h1>
+                <p id="ktab">من أذكار الكتاب والسنة</p>
+                <ul id="ul_hisn"></ul>
+            </div>
+
+        </div>
 
     </div>
 
