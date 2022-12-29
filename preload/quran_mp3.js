@@ -7,6 +7,7 @@ module.exports = function quran_mp3(App_Path) {
 
         let Quran_json = fs.readJsonSync(path.join(__dirname, '../data/Quran.json'));
         let mp3quran_json = fs.readJsonSync(path.join(__dirname, '../data/mp3quran.json'));
+        let volume = fs.readJsonSync(path.join(App_Path, './data/settings.json')).volume;
         let ul_group = document.getElementById('ul_group');
         let Sheikh = document.getElementById('Sheikh');
         let li_Sheikh_number = 1
@@ -96,8 +97,7 @@ module.exports = function quran_mp3(App_Path) {
                     audio.src = url
                     audio.preload = 'none'
                     audio.autoplay = false
-
-
+                    audio.volume = volume ? volume : 1
                 }
 
                 let icon_mp3 = document.getElementsByClassName('icon_mp3');

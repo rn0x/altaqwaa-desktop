@@ -14,7 +14,7 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
 
     win = new BrowserWindow({
         width: 1000,
-        height: 600,
+        height: 620,
         minWidth: 1000,
         minHeight: 600,
         show: false,

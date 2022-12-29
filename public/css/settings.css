@@ -117,6 +117,15 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
+/* for the volume value box */
+output {
+    background: #2196F3;
+    font-size: small;
+    padding: 4px 12px;
+    border-radius: 3px;
+    color: #fff;
+}
+
 /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
@@ -147,8 +156,5 @@ input:checked+.slider:before {
 
 #save:hover {
     background-color: #6bc077;
-    width: 220px;
-    padding: 16px;
-    transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
 }
