@@ -17,11 +17,17 @@ module.exports = function settings(App_Path) {
         let alrt = document.getElementById('alrt');//selected
         let selected = document.getElementById(settings?.Calculation);
 
+        const volumeRange = document.getElementById('volume');
+        const volumeValue = document.getElementById('volume_value');
+        volumeRange.addEventListener('input', handleVolumeRange)
+
         notifications_adhan.checked = settings?.notifications_adhan
         notifications_adhkar.checked = settings?.notifications_adhkar
         selected.selected = "selected"
 
-
+        function handleVolumeRange(volume) {
+            volumeValue.innerHTML = volumeRange.value;
+        }
 
         save.addEventListener('click', e => {
 
@@ -29,7 +35,9 @@ module.exports = function settings(App_Path) {
 
                 Calculation: Calculation.value,
                 notifications_adhan: notifications_adhan.checked,
-                notifications_adhkar: notifications_adhkar.checked
+                notifications_adhkar: notifications_adhkar.checked,
+                volume: volumeRange.value / 100
+                
             }
 
             if (latitude.value !== '') {
