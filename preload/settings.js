@@ -21,6 +21,11 @@ module.exports = function settings(App_Path) {
         const volumeValue = document.getElementById('volume_value');
         volumeRange.addEventListener('input', handleVolumeRange)
 
+        if(settings.volume && settings.value != 100) {
+            volumeValue.innerHTML = settings.volume * 100;
+            volumeRange.value = settings.volume * 100;
+        }
+        
         notifications_adhan.checked = settings?.notifications_adhan
         notifications_adhkar.checked = settings?.notifications_adhkar
         selected.selected = "selected"
