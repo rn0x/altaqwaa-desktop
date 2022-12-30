@@ -8,6 +8,8 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
 
     createFile(path.join(app.getPath("appData"), './altaqwaa'));
     await location(path.join(app?.getPath("appData"), './altaqwaa'));
+    let App_Path = path.join(app?.getPath("appData"), '/altaqwaa');
+    
     let win
     let tray
     let contextMenu
@@ -46,7 +48,6 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
     win?.on('closed', (event) => {
 
         event?.preventDefault();
-        let App_Path = path.join(app?.getPath("appData"), '/altaqwaa');
         let soundJson = fs.readJsonSync(path.join(App_Path, './data/sound.json'));
         let audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
         audioJson.start = false
@@ -153,5 +154,6 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
         tray?.destroy();
     });
 
+    fs.writeJsonSync(path.join(App_Path, './data/settings.json'), { currentRelease: app.getVersion() }, { spaces: '\t' });
 
 }

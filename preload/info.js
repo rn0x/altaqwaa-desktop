@@ -1,9 +1,27 @@
 const { shell } = require('electron');
+const fetch = require('node-fetch');
 
-module.exports = function info() {
+module.exports = function info(currentRelease) {
 
     if (document.getElementById('info')) {
 
+        /*
+            * SIMPLE GITHUB API CHECK FOR NEW RELEASES SCRIPT
+            * THE CURRENT RELEASE LOADS IN PRELOAD.JS FILE
+            * https://github.com/kemzops
+        */
+        fetch(`https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases`)
+        .then(response => response.json())
+        .then(releases => {
+            const latestRelease = releases[0];
+            if(currentRelease != latestRelease.tag_name.substring(1)) {
+                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
+            } else {
+                document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+            }
+        })
+        .catch(error => { /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API */ });
+    
         let github = document.getElementById('github');
         let altaqwaa = document.getElementById('altaqwaa');
         let Developer = document.getElementById('Developer');
@@ -121,7 +139,11 @@ module.exports = function info() {
 
         url_7.addEventListener('click', e => {
             shell.openExternal('https://github.com/maxogden/menubar')
-        });
+        }); 
+
+        url_8.addEventListener('click', e => {
+            shell.openExternal('https://github.com/zertosh/v8-compile-cache')
+        }); 
     }
 
 }
