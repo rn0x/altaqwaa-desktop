@@ -154,6 +154,6 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
         tray?.destroy();
     });
 
-    fs.writeJsonSync(path.join(App_Path, './data/settings.json'), { currentRelease: app.getVersion() }, { spaces: '\t' });
+    fs.writeJsonSync(path.join(App_Path, './data/version.json'), { currentRelease: app.getVersion() }, { spaces: '\t' });
 
 }

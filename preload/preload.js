@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   e.preventDefault();
 
   let App_Path = await ipcRenderer.invoke('App_Path');
-  let currentRelease = fs.readJsonSync(path.join(App_Path, './data/settings.json')).currentRelease || "0.0.0";
+  let currentRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).currentRelease || "0.0.0";
   
   barWindow();
   home(App_Path);
