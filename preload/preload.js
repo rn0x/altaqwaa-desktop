@@ -2,6 +2,7 @@ const { ipcRenderer } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
 const home = require('./home.js');
+const surah = require('./surah.js');
 const barWindow = require('./barWindow.js');
 const Quran = require('./quran.js');
 const quran_mp3 = require('./quran_mp3.js');
@@ -24,9 +25,12 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
   let App_Path = await ipcRenderer.invoke('App_Path');
   let currentRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).currentRelease || "0.0.0";
-  
+  let already_checked = fs.readJsonSync(path.join(App_Path, './data/version.json')).already_checked || false;
+  let latestRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).latestRelease || "0.0.0";
+
   barWindow();
   home(App_Path);
+  surah(App_Path);
   Quran(App_Path);
   quran_mp3(App_Path);
   adhkar();
@@ -38,7 +42,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   prayer();
   prayer_time(App_Path);
   settings(App_Path);
-  info(currentRelease);
+  info(currentRelease, already_checked, latestRelease);
   hisnmuslim();
 
 });

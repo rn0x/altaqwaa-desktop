@@ -1,7 +1,9 @@
 const { shell } = require('electron');
+const fs = require('fs-extra');
+const path = require('path');
 const fetch = require('node-fetch');
 
-module.exports = function info(currentRelease) {
+module.exports = function info(currentRelease, already_checked, latestRelease) {
 
     if (document.getElementById('info')) {
 
@@ -10,17 +12,26 @@ module.exports = function info(currentRelease) {
             * THE CURRENT RELEASE LOADS IN PRELOAD.JS FILE
             * https://github.com/kemzops
         */
-        fetch(`https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases`)
-        .then(response => response.json())
-        .then(releases => {
-            const latestRelease = releases[0];
-            if(currentRelease != latestRelease.tag_name.substring(1)) {
-                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
-            } else {
-                document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
-            }
-        })
-        .catch(error => { /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API */ });
+        if(already_checked == false) {
+            fetch(`https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases`)
+            .then(response => response.json())
+            .then(releases => {
+                const latestRelease = releases[0];
+                if(currentRelease != latestRelease.tag_name.substring(1)) {
+                    document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
+                } else {
+                    document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+                }
+                fs.writeJsonSync(path.join(App_Path, './data/version.json'), { 
+                    currentRelease: currentRelease,
+                    already_checked: true,
+                    latestRelease: latestRelease.tag_name.substring(1)
+                }, { spaces: '\t' });
+            })
+            .catch(error => { /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API */ });    
+        } else {
+            // i will continue later
+        }
     
         let github = document.getElementById('github');
         let altaqwaa = document.getElementById('altaqwaa');
@@ -134,14 +145,10 @@ module.exports = function info(currentRelease) {
         });
 
         url_6.addEventListener('click', e => {
-            shell.openExternal('https://github.com/request/request')
-        });
-
-        url_7.addEventListener('click', e => {
             shell.openExternal('https://github.com/maxogden/menubar')
         }); 
 
-        url_8.addEventListener('click', e => {
+        url_7.addEventListener('click', e => {
             shell.openExternal('https://github.com/zertosh/v8-compile-cache')
         }); 
     }

@@ -37,7 +37,7 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
 
     win?.once('ready-to-show', () => {
         win?.show();
-        //win.webContents.openDevTools();
+        win.webContents.openDevTools();
     });
 
     win?.on('minimize', (event) => {

@@ -132,9 +132,8 @@ yarn run packlinux
 - fs-extra
 - moment-js
 - node-fetch
-- request
 - menubar
-
+- v8-compile-cache
 <br>
 
 
