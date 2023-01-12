@@ -110,7 +110,7 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
     else if (process.platform === 'linux') {
 
         let homePath = app?.getPath('home');
-        let desktop = fs.existsSync(`${homePath}/.config/autostart/Altaqwaa.desktop`);
+        let autostart = fs.existsSync(`${homePath}/.config/autostart`);
 
         tray.on('click', () => {
 
@@ -122,19 +122,24 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
             }
         });
 
-        if (desktop === false) {
+        if (autostart === false) {
 
-            let data = '[Desktop Entry]\n'
-            data += 'Name=Altaqwaa\n'
-            data += 'Icon=org.altaqwaa.rn0x\n'
-            data += 'Exec=altaqwaa\n'
-            data += 'Terminal=false\n'
-            data += 'Type=Application\n'
-            data += 'Comment=Altaqwaa-Islamic-Desktop-Application\n'
-            data += 'Categories=Education'
+            fs.mkdirSync(`${homePath}/.config/autostart`, { recursive: true });
+            let desktop = fs.existsSync(`${homePath}/.config/autostart/Altaqwaa.desktop`);
+            if (desktop === false) {
 
-            fs.writeFileSync(`${homePath}/.config/autostart/Altaqwaa.desktop`, data);
-
+                let data = '[Desktop Entry]\n'
+                data += 'Name=Altaqwaa\n'
+                data += 'Icon=org.altaqwaa.rn0x\n'
+                data += 'Exec=altaqwaa\n'
+                data += 'Terminal=false\n'
+                data += 'Type=Application\n'
+                data += 'Comment=Altaqwaa-Islamic-Desktop-Application\n'
+                data += 'Categories=Education'
+    
+                fs.writeFileSync(`${homePath}/.config/autostart/Altaqwaa.desktop`, data);
+    
+            }
         }
 
     }
