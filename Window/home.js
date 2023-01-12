@@ -9,7 +9,7 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
     createFile(path.join(app.getPath("appData"), './altaqwaa'));
     await location(path.join(app?.getPath("appData"), './altaqwaa'));
     let App_Path = path.join(app?.getPath("appData"), '/altaqwaa');
-    
+
     let win
     let tray
     let contextMenu
@@ -136,9 +136,28 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
                 data += 'Type=Application\n'
                 data += 'Comment=Altaqwaa-Islamic-Desktop-Application\n'
                 data += 'Categories=Education'
-    
+
                 fs.writeFileSync(`${homePath}/.config/autostart/Altaqwaa.desktop`, data);
-    
+
+            }
+        }
+
+        if (autostart) {
+
+            let desktop = fs.existsSync(`${homePath}/.config/autostart/Altaqwaa.desktop`);
+            if (desktop === false) {
+
+                let data = '[Desktop Entry]\n'
+                data += 'Name=Altaqwaa\n'
+                data += 'Icon=org.altaqwaa.rn0x\n'
+                data += 'Exec=altaqwaa\n'
+                data += 'Terminal=false\n'
+                data += 'Type=Application\n'
+                data += 'Comment=Altaqwaa-Islamic-Desktop-Application\n'
+                data += 'Categories=Education'
+
+                fs.writeFileSync(`${homePath}/.config/autostart/Altaqwaa.desktop`, data);
+
             }
         }
 
