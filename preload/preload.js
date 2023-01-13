@@ -1,8 +1,10 @@
+/* packages */
 const { ipcRenderer, shell } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
 const fetch = require('node-fetch');
 
+/* preloads */
 const home = require('./home.js');
 const surah = require('./surah.js');
 const barWindow = require('./barWindow.js');
@@ -20,27 +22,32 @@ const settings = require('./settings.js');
 const info = require('./info.js');
 const hisnmuslim = require('./hisnmuslim.js');
 
+/* MODULES */
+const copy = require('../module/Copy.js');
 
 window.addEventListener('DOMContentLoaded', async (e) => {
-
   e.preventDefault();
-
-  let App_Path = await ipcRenderer.invoke('App_Path');
-
   barWindow(ipcRenderer);
+
+  const App_Path = await ipcRenderer.invoke('App_Path');
+  
+  /* PAGES */
   home();
   surah(fs, path, App_Path);
-  Quran(fs, path, App_Path);
+  Quran(fs, path, App_Path, copy);
   quran_mp3(fs, path, App_Path);
-  adhkar(fs, path);
-  morning();
-  evening();
-  sleeping();
-  food();
-  tasbih();
-  prayer();
+  adhkar(fs, path, copy);
+  hisnmuslim(fs, path);
   prayer_time(fs, path, App_Path);
   settings(fs, path, App_Path);
   info(fs, path, App_Path);
-  hisnmuslim(fs, path);
+
+  /* ADHKAR PAGES */
+  morning(copy);
+  evening(copy);
+  sleeping(copy);
+  food(copy);
+  tasbih(copy);
+  prayer(copy);
+
 });

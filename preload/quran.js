@@ -1,6 +1,4 @@
-const Copy = require('../module/Copy.js');
-
-module.exports = function Quran(fs, path, App_Path) {
+module.exports = function Quran(fs, path, App_Path, copy) {
 
     if (document.getElementById('Quran_Content')) {
 
@@ -14,7 +12,7 @@ module.exports = function Quran(fs, path, App_Path) {
         document.getElementById('Surah_text').innerText = ArrayQuran?.Surah;
         document.getElementById('Surah_text').addEventListener('click', (e) => {
             document.getElementById('alrt').style = 'display:inline-flex;'
-            Copy('Surah_text');
+            copy('Surah_text');
             setTimeout(() => {
 
                 document.getElementById('Surah_text').style = 'cursor: auto;'

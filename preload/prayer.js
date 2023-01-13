@@ -1,6 +1,4 @@
-const copy = require('../module/Copy.js');
-
-module.exports = function prayer() {
+module.exports = function prayer(copy) {
 
     if (document.getElementById('prayer')) {
 

@@ -1,6 +1,4 @@
-const copy = require('../module/Copy.js');
-
-module.exports = function adhkar(fs, path) {
+module.exports = function adhkar(fs, path, copy) {
 
     if (document.getElementById('adhkar')) {
 

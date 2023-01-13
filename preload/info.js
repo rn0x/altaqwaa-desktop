@@ -1,6 +1,3 @@
-const { shell } = require('electron');
-const fetch = require('node-fetch');
-
 module.exports = function info(fs, path, App_Path) {
 
     if (document.getElementById('info')) {

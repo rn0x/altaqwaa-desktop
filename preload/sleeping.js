@@ -1,6 +1,4 @@
-const copy = require('../module/Copy.js');
-
-module.exports = function sleeping() {
+module.exports = function sleeping(copy) {
 
     if (document.getElementById('sleeping')) {
 

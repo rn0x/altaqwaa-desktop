@@ -1,6 +1,4 @@
-const copy = require('../module/Copy.js');
-
-module.exports = function food() {
+module.exports = function food(copy) {
 
     if (document.getElementById('food')) {
 
