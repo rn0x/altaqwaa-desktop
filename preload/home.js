@@ -2,7 +2,6 @@ module.exports = function info() {
 
     if (document.getElementById('main')) {
 
-        document.documentElement.style.setProperty('--animate-duration', '2.0s');
         let page_quran = document.getElementById('page_quran');
         let page_quran_mp3 = document.getElementById('page_quran_mp3');
         let page_adhkar = document.getElementById('page_adhkar');

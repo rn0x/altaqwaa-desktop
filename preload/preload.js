@@ -30,6 +30,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   barWindow(ipcRenderer);
 
   const App_Path = await ipcRenderer.invoke('App_Path');
+
+  document.documentElement.style.setProperty('--animate-duration', '2.0s');
   
   /* PAGES */
   home();
