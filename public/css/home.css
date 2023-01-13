@@ -2,18 +2,16 @@
     background-color: #2e3338;
 }
 
-#home {
 
+#altaqwaa {
     padding-right: 70px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    word-wrap: break-word;
-    direction: rtl;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 #logo {
@@ -29,8 +27,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:center;
-    margin-left: 40px;
+    justify-content: center;
+    direction: rtl;
+    margin-left: 50px;
 }
 
 #pages li {
@@ -53,28 +52,28 @@
 }
 
 #pages li:hover {
-    background-color: #272b30;
+    background-color: #6bc077;
     padding: 5px;
     transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
-    
+
 }
 
 #pages li p {
     font-size: medium !important;
 }
 
-#pages li a {
+/* #pages li a {
     color: inherit;
     text-decoration: inherit;
-}
+} */
 
-#page_icon{
+#page_icon {
     width: 20px;
     height: 20px;
 }
 
-#page {
+.page {
     font-family: 'Vazirmatn-Regular';
     color: #ffffff;
     font-size: 22px;
