@@ -1,6 +1,6 @@
 module.exports = function info() {
 
-    if (document.getElementById('altaqwaa')) {
+    if (document.getElementById('main')) {
 
         document.documentElement.style.setProperty('--animate-duration', '2.0s');
         let page_quran = document.getElementById('page_quran');

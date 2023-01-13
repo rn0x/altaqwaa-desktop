@@ -37,11 +37,11 @@ module.exports = function info(fs, path, App_Path) {
         }
     
         let github = document.getElementById('github');
-        let main = document.getElementById('main');
+        let altaqwaa = document.getElementById('altaqwaa');
         let Developer = document.getElementById('Developer');
         let telegram = document.getElementById('telegram');
         let rn0x_github = document.getElementById('rn0x_github');
-        let gmail = document.getElementById('gmail');
+        let gmail = document.getElementById('gmail'); 
         let dependencies = document.getElementById('dependencies');
         let Sources = document.getElementById('Sources');
         let info_li_1 = document.getElementById('info_li_1');
@@ -63,21 +63,21 @@ module.exports = function info(fs, path, App_Path) {
         let url_7 = document.getElementById('url_7');
 
         info_li_1.addEventListener('click', e => {
-            main.style.display = 'none'
+            altaqwaa.style.display = 'none'
             Developer.style.display = 'block'
             dependencies.style.display = 'none'
             Sources.style.display = 'none'
         });
 
         info_li_2.addEventListener('click', e => {
-            main.style.display = 'none'
+            altaqwaa.style.display = 'none'
             Developer.style.display = 'none'
             dependencies.style.display = 'block'
             Sources.style.display = 'none'
         });
 
         info_li_3.addEventListener('click', e => {
-            main.style.display = 'none'
+            altaqwaa.style.display = 'none'
             Developer.style.display = 'none'
             dependencies.style.display = 'none'
             Sources.style.display = 'table'
