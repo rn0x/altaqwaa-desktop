@@ -1,6 +1,8 @@
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
+const fetch = require('node-fetch');
+
 const home = require('./home.js');
 const surah = require('./surah.js');
 const barWindow = require('./barWindow.js');
@@ -25,21 +27,20 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
   let App_Path = await ipcRenderer.invoke('App_Path');
 
-  barWindow();
-  home(App_Path);
-  surah(App_Path);
-  Quran(App_Path);
-  quran_mp3(App_Path);
-  adhkar();
+  barWindow(ipcRenderer);
+  home();
+  surah(fs, path, App_Path);
+  Quran(fs, path, App_Path);
+  quran_mp3(fs, path, App_Path);
+  adhkar(fs, path);
   morning();
   evening();
   sleeping();
   food();
   tasbih();
   prayer();
-  prayer_time(App_Path);
-  settings(App_Path);
-  info(App_Path);
-  hisnmuslim();
-
+  prayer_time(fs, path, App_Path);
+  settings(fs, path, App_Path);
+  info(fs, path, App_Path);
+  hisnmuslim(fs, path);
 });

@@ -1,7 +1,4 @@
-const fs = require('fs-extra');
-const path = require('path');
-
-module.exports = function hisnmuslim() {
+module.exports = function hisnmuslim(fs, path) {
 
     if (document.getElementById('hisnmuslim')) {
 

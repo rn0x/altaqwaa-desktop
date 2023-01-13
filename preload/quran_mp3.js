@@ -1,7 +1,4 @@
-const fs = require('fs-extra');
-const path = require('path');
-
-module.exports = function quran_mp3(App_Path) {
+module.exports = function quran_mp3(fs, path, App_Path) {
 
     if (document.getElementById('quran_mp3')) {
 

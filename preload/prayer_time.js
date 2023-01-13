@@ -1,7 +1,5 @@
 const momentHj = require('moment-hijri');
 const moment = require('moment-timezone');
-const fs = require('fs-extra');
-const path = require('path');
 const {
     fajrTime,
     dhuhrTime,
@@ -14,7 +12,7 @@ const {
 } = require('../module/adhan.js')
 momentHj.locale('en-EN')
 
-module.exports = function prayer_time(App_Path) {
+module.exports = function prayer_time(fs, path, App_Path) {
 
     if (document.getElementById('prayer_time')) {
 

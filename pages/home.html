@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../public/css/animate.min.css">
 </head>
 
-<body class="animate__animated animate__fadeIn">
+<body>
 
     <!-- window bar -->
 
@@ -38,41 +38,91 @@
 
     </header>
 
-    <div id="Content">
+    <div class="animate__animated animate__fadeIn" id="home">
 
-        <div id="menu" onmousedown='return false;' onselectstart='return false;'>
+        <div id="Content" onmousedown='return false;' onselectstart='return false;'>
 
-            <a href="./surah.html">
-                <img src="../public/icon/quran.png" class="icon_menu" id="icon_menu_top">
-            </a>
+            <div id="menu">
+                <a href="./home.html">
+                    <img src="../public/icon/home.png" class="icon_menu" id="icon_home">
+                </a>
 
-            <a href="./quran_mp3.html">
-                <img src="../public/icon/sound.png" class="icon_menu" id="icon_menu_mp3">
-            </a>
+                <a href="./surah.html">
+                    <img src="../public/icon/quran.png" class="icon_menu" id="icon_surah">
+                </a>
 
-            <a href="./adhkar.html">
-                <img src="../public/icon/open-hands.png" class="icon_menu" id="icon_adhkar">
-            </a>
+                <a href="./quran_mp3.html">
+                    <img src="../public/icon/sound.png" class="icon_menu" id="icon_menu_mp3">
+                </a>
 
-            <a href="./hisnmuslim.html">
-                <img src="../public/icon/castle.png" class="icon_menu" id="icon_hisnmuslim">
-            </a>
+                <a href="./adhkar.html">
+                    <img src="../public/icon/open-hands.png" class="icon_menu" id="icon_adhkar">
+                </a>
 
-            <a href="./prayer_time.html">
-                <img src="../public/icon/azan.png" class="icon_menu" id="icon_prayer_time">
-            </a>
+                <a href="./hisnmuslim.html">
+                    <img src="../public/icon/castle.png" class="icon_menu" id="icon_hisnmuslim">
+                </a>
 
-            <a href="./settings.html">
-                <img src="../public/icon/settings.png" class="icon_menu" id="icon_settings">
-            </a>
+                <a href="./prayer_time.html">
+                    <img src="../public/icon/azan.png" class="icon_menu" id="icon_prayer_time">
+                </a>
 
-            <a href="./info.html">
-                <img src="../public/icon/info.png" class="icon_menu" id="icon_info">
-            </a>
+                <a href="./settings.html">
+                    <img src="../public/icon/settings.png" class="icon_menu" id="icon_settings">
+                </a>
 
+                <a href="./info.html">
+                    <img src="../public/icon/info.png" class="icon_menu" id="icon_info">
+                </a>
+
+            </div>
+
+            <div id="altaqwaa">
+                <center>
+                    <img src="../public/icon/logo.png" id="logo">
+
+                    <ul id="pages">
+                        <li>
+                            <a href="./surah.html">
+                                <p id="page">القرآن الكريم (نص)</p>
+                                <!-- <img src="../public/icon/quran.png" id="page_icon"> -->  
+                            </a>      
+                        </li>
+                        <li>
+                            <a href="./quran_mp3.html">
+                                <p id="page">القرآن الكريم (صوت)</p>
+                                <!-- <img src="../public/icon/quran.png" id="page_icon"> -->  
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./adhkar.html">
+                                <p id="page">أذكار</p>
+                                <!-- <img src="../public/icon/quran.png" id="page_icon"> -->  
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./hisnmuslim.html">
+                                <p id="page">حصن المسلم</p>
+                                <!-- <img src="../public/icon/quran.png" id="page_icon"> -->  
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./prayer_time.html">
+                                <p id="page">مواقيت الصلاة</p>
+                                <!-- <img src="../public/icon/quran.png" id="page_icon"> -->  
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./settings.html">
+                                <p id="page"> إعدادات</p>
+                                <!-- <img src="../public/icon/quran.png" id="page_icon"> -->  
+                            </a>
+                        </li>
+                    </ul>    
+                </center>
+            </div>
         </div>
 
-        <div id="home"></div>
     </div>
 </body>
 </html>

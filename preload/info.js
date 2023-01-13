@@ -1,9 +1,7 @@
 const { shell } = require('electron');
-const fs = require('fs-extra');
-const path = require('path');
 const fetch = require('node-fetch');
 
-module.exports = function info(App_Path, currentRelease, already_checked) {
+module.exports = function info(fs, path, App_Path) {
 
     if (document.getElementById('info')) {
       

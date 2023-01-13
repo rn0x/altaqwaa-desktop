@@ -1,8 +1,6 @@
-const fs = require('fs-extra');
-const path = require('path');
 const copy = require('../module/Copy.js');
 
-module.exports = function adhkar(App_Path) {
+module.exports = function adhkar(fs, path) {
 
     if (document.getElementById('adhkar')) {
 

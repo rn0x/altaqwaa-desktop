@@ -1,8 +1,6 @@
-const fs = require('fs-extra');
-const path = require('path');
 const Copy = require('../module/Copy.js');
 
-module.exports = function Quran(App_Path) {
+module.exports = function Quran(fs, path, App_Path) {
 
     if (document.getElementById('Quran_Content')) {
 

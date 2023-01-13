@@ -1,6 +1,4 @@
-const { ipcRenderer } = require('electron');
-
-module.exports = function barWindow() {
+module.exports = function barWindow(ipcRenderer) {
 
     document.getElementById('closed').addEventListener('click', e => ipcRenderer.send('closed'));
     document.getElementById('minimizable').addEventListener('click', e => ipcRenderer.send('minimizable'));
