@@ -43,7 +43,7 @@
 }
 
 #info_ul li:hover {
-    background-color: #191a1b;
+    background-color: #6bc077;
     transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
 }
