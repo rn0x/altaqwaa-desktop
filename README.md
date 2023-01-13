@@ -154,6 +154,21 @@ yarn run packlinux
 
 <br>
 
+# المساهمون ✨ 
+
+
+
+<table>
+    <tr>
+        <td align="center"><a href="https://github.com/rn0x"><img src="https://avatars.githubusercontent.com/u/76129163?v=4" width="100px;"/><br /><sub>rn0x</sub></a></td>
+        <td align="center"><a href="https://github.com/kemzops"><img src="https://avatars.githubusercontent.com/u/52936496?v=4" width="100px;"/><br /><sub>kemzops</sub></a></td>
+        <td align="center"><a href="https://github.com/me00001"><img src="https://avatars.githubusercontent.com/u/37930867?v=4" width="100px;"/><br /><sub>me00001</sub></a></td>
+    </tr>
+</table>
+
+<br>
+
+
 # review
 
 نبذه بسيطه عن التطبيق من الأخ [@SalehGNUTUX](https://github.com/SalehGNUTUX) على قناة [Gnu Tux](https://www.youtube.com/c/GnuTux) على اليوتيوب
