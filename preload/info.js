@@ -1,26 +1,40 @@
-const { shell } = require('electron');
-const fetch = require('node-fetch');
-
-module.exports = function info(currentRelease) {
+module.exports = function info(fs, path, App_Path) {
 
     if (document.getElementById('info')) {
-
+      
         /*
             * SIMPLE GITHUB API CHECK FOR NEW RELEASES SCRIPT
             * THE CURRENT RELEASE LOADS IN PRELOAD.JS FILE
+            * LAST CHANGE WAS TO INSURE THAT CHECK HAPPENS ONCE (GITHUB RATE LIMIT)
             * https://github.com/kemzops
         */
-        fetch(`https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases`)
-        .then(response => response.json())
-        .then(releases => {
-            const latestRelease = releases[0];
-            if(currentRelease != latestRelease.tag_name.substring(1)) {
-                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
+        let currentRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).currentRelease || "0.0.0";
+        let already_checked = fs.readJsonSync(path.join(App_Path, './data/version.json')).already_checked || false;
+        let latestRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).latestRelease || "0.0.0";
+        if(already_checked == false) {
+            try {
+                (async () => {
+                    const response = await fetch('https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases');
+                    const data = await response.json();
+                    let latestRelease = data[0];
+                    if(currentRelease != latestRelease.tag_name.substring(1)) {
+                        document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
+                    } else {
+                        document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+                    }
+                    await fs.writeJsonSync(path.join(App_Path, './data/version.json'), { currentRelease: currentRelease, already_checked: true, latestRelease: latestRelease.tag_name.substring(1) }, { spaces: '\t' });
+                })();
+            } catch(e) {
+                /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API OR INTERNET ISSUE */
+                document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+            }
+        } else {
+            if(currentRelease != latestRelease) {
+                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease}`;
             } else {
                 document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
             }
-        })
-        .catch(error => { /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API */ });
+        }
     
         let github = document.getElementById('github');
         let altaqwaa = document.getElementById('altaqwaa');
@@ -134,14 +148,10 @@ module.exports = function info(currentRelease) {
         });
 
         url_6.addEventListener('click', e => {
-            shell.openExternal('https://github.com/request/request')
-        });
-
-        url_7.addEventListener('click', e => {
             shell.openExternal('https://github.com/maxogden/menubar')
         }); 
 
-        url_8.addEventListener('click', e => {
+        url_7.addEventListener('click', e => {
             shell.openExternal('https://github.com/zertosh/v8-compile-cache')
         }); 
     }

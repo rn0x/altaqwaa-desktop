@@ -1,7 +1,4 @@
-const fs = require('fs-extra');
-const path = require('path');
-
-module.exports = function settings(App_Path) {
+module.exports = function settings(fs, path, App_Path) {
 
     if (document.getElementById('settings')) {
 

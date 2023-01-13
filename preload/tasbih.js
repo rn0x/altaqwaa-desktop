@@ -1,6 +1,4 @@
-const copy = require('../module/Copy.js');
-
-module.exports = function tasbih() {
+module.exports = function tasbih(copy) {
 
     if (document.getElementById('tasbih')) {
 

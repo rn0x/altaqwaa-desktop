@@ -1,6 +1,4 @@
-const copy = require('../module/Copy.js');
-
-module.exports = function evening() {
+module.exports = function evening(copy) {
 
     if (document.getElementById('evening')) {
 

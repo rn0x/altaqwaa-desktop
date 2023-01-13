@@ -92,7 +92,7 @@ body {
     z-index: 3;
 }
 
-#icon_menu_top {
+#icon_home {
     margin-top: 50px;
 }
 
@@ -126,7 +126,7 @@ body {
 /* Custom Scrollbar */
 
 ::-webkit-scrollbar {
-    width: 13px;
+    width: 8px;
     -webkit-app-region: no-drag;
 }
 
@@ -134,13 +134,11 @@ body {
 ::-webkit-scrollbar-track {
     background-color: #232527;
     -webkit-app-region: no-drag;
-
 }
 
 ::-webkit-scrollbar-thumb {
     background: #292c2e;
     -webkit-app-region: no-drag;
-
 }
 
 ::-webkit-scrollbar-thumb:hover {
