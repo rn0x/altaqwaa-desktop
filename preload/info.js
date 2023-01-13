@@ -30,14 +30,14 @@ module.exports = function info(fs, path, App_Path) {
             }
         } else {
             if(currentRelease != latestRelease) {
-                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease}`;
+                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: v${latestRelease}`;
             } else {
                 document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
             }
         }
     
         let github = document.getElementById('github');
-        let altaqwaa = document.getElementById('altaqwaa');
+        let main = document.getElementById('main');
         let Developer = document.getElementById('Developer');
         let telegram = document.getElementById('telegram');
         let rn0x_github = document.getElementById('rn0x_github');
@@ -63,21 +63,21 @@ module.exports = function info(fs, path, App_Path) {
         let url_7 = document.getElementById('url_7');
 
         info_li_1.addEventListener('click', e => {
-            altaqwaa.style.display = 'none'
+            main.style.display = 'none'
             Developer.style.display = 'block'
             dependencies.style.display = 'none'
             Sources.style.display = 'none'
         });
 
         info_li_2.addEventListener('click', e => {
-            altaqwaa.style.display = 'none'
+            main.style.display = 'none'
             Developer.style.display = 'none'
             dependencies.style.display = 'block'
             Sources.style.display = 'none'
         });
 
         info_li_3.addEventListener('click', e => {
-            altaqwaa.style.display = 'none'
+            main.style.display = 'none'
             Developer.style.display = 'none'
             dependencies.style.display = 'none'
             Sources.style.display = 'table'

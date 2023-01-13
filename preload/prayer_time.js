@@ -53,6 +53,12 @@ module.exports = function prayer_time(fs, path, App_Path) {
 
             country.innerHTML = `${location?.country} ${location?.regionName} <span id="city">${location?.city}</span>`
             country.style.display = 'block'
+
+        }
+
+        else if(location?.timezone && location.timezone != null && location.timezone != undefined) {
+            country.innerHTML = `المنطقة الزمنية: <span id="city">${location?.timezone}</span>`
+            country.style.display = 'block'
         }
 
         else if (location?.country === undefined) {

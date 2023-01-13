@@ -14,6 +14,10 @@ module.exports = function settings(fs, path, App_Path) {
         let alrt = document.getElementById('alrt');//selected
         let selected = document.getElementById(settings?.Calculation);
 
+        location.timezone ? timezone.value = location.timezone : false
+        location.lat ? latitude.value = location.lat : false
+        location.lon ? longitude.value = location.lon : false
+
         const volumeRange = document.getElementById('volume');
         const volumeValue = document.getElementById('volume_value');
         volumeRange.addEventListener('input', handleVolumeRange)
