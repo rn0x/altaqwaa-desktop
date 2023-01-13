@@ -37,7 +37,7 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
 
     win?.once('ready-to-show', () => {
         win?.show();
-        win.webContents.openDevTools();
+        //win.webContents.openDevTools();
     });
 
     win?.on('minimize', (event) => {
@@ -178,6 +178,6 @@ module.exports = async function homeWindow(BrowserWindow, ipcMain, app, Tray, Me
         tray?.destroy();
     });
 
-    fs.writeJsonSync(path.join(App_Path, './data/version.json'), { currentRelease: app.getVersion() }, { spaces: '\t' });
+    fs.writeJsonSync(path.join(App_Path, './data/version.json'), { currentRelease: app.getVersion(), already_checked: false, latestRelease: "0.0.0" }, { spaces: '\t' });
 
 }

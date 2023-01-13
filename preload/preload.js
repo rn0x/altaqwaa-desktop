@@ -24,9 +24,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   e.preventDefault();
 
   let App_Path = await ipcRenderer.invoke('App_Path');
-  let currentRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).currentRelease || "0.0.0";
-  let already_checked = fs.readJsonSync(path.join(App_Path, './data/version.json')).already_checked || false;
-  let latestRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).latestRelease || "0.0.0";
 
   barWindow();
   home(App_Path);
@@ -42,7 +39,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   prayer();
   prayer_time(App_Path);
   settings(App_Path);
-  info(currentRelease, already_checked, latestRelease);
+  info(App_Path);
   hisnmuslim();
 
 });

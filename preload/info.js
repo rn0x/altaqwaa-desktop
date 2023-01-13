@@ -3,34 +3,42 @@ const fs = require('fs-extra');
 const path = require('path');
 const fetch = require('node-fetch');
 
-module.exports = function info(currentRelease, already_checked, latestRelease) {
+module.exports = function info(App_Path, currentRelease, already_checked) {
 
     if (document.getElementById('info')) {
-
+      
         /*
             * SIMPLE GITHUB API CHECK FOR NEW RELEASES SCRIPT
             * THE CURRENT RELEASE LOADS IN PRELOAD.JS FILE
+            * LAST CHANGE WAS TO INSURE THAT CHECK HAPPENS ONCE (GITHUB RATE LIMIT)
             * https://github.com/kemzops
         */
+        let currentRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).currentRelease || "0.0.0";
+        let already_checked = fs.readJsonSync(path.join(App_Path, './data/version.json')).already_checked || false;
+        let latestRelease = fs.readJsonSync(path.join(App_Path, './data/version.json')).latestRelease || "0.0.0";
         if(already_checked == false) {
-            fetch(`https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases`)
-            .then(response => response.json())
-            .then(releases => {
-                const latestRelease = releases[0];
-                if(currentRelease != latestRelease.tag_name.substring(1)) {
-                    document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
-                } else {
-                    document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
-                }
-                fs.writeJsonSync(path.join(App_Path, './data/version.json'), { 
-                    currentRelease: currentRelease,
-                    already_checked: true,
-                    latestRelease: latestRelease.tag_name.substring(1)
-                }, { spaces: '\t' });
-            })
-            .catch(error => { /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API */ });    
+            try {
+                (async () => {
+                    const response = await fetch('https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases');
+                    const data = await response.json();
+                    let latestRelease = data[0];
+                    if(currentRelease != latestRelease.tag_name.substring(1)) {
+                        document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
+                    } else {
+                        document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+                    }
+                    await fs.writeJsonSync(path.join(App_Path, './data/version.json'), { currentRelease: currentRelease, already_checked: true, latestRelease: latestRelease.tag_name.substring(1) }, { spaces: '\t' });
+                })();
+            } catch(e) {
+                /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API OR INTERNET ISSUE */
+                document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+            }
         } else {
-            // i will continue later
+            if(currentRelease != latestRelease) {
+                document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease}`;
+            } else {
+                document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
+            }
         }
     
         let github = document.getElementById('github');

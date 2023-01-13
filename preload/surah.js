@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-module.exports = function home(App_Path) {
+module.exports = function surah(App_Path) {
 
     let Quran_json = fs.readJsonSync(path.join(__dirname, '../data/Quran.json'));
 
