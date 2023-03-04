@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "Vazirmatn-Bold";
+    src: url(../font/Vazirmatn-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-ExtraLight";
+    src: url(../font/Vazirmatn-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-Medium";
+    src: url(../font/Vazirmatn-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-Regular";
+    src: url(../font/Vazirmatn-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quran";
+    src: url(../font/Quran.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quran_Bold";
+    src: url(../font/Quran_Bold.ttf) format("truetype");
+}
+
+html,
+body {
+    background-color: #2e3338;
+    margin: 0px 0px 0px 0px;
+    max-height: 100%;
+}
+
+#titlebar {
+    height: 30px;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+
+#window-controls {
+    display: flex;
+    background-color: #232527;
+    direction: ltr;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.icon_bar {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#closed:hover {
+    background-color: #f34949;
+    transition: 0.3s ease-in-out;
+}
+
+#minimizable:hover,
+#minimize:hover {
+    background-color: #272b30;
+    transition: 0.3s ease-in-out;
+}
+
+#Content {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#menu {
+    background-color: #232527;
+    width: 70px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+
+#icon_home {
+    margin-top: 50px;
+}
+
+.icon_menu {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    max-width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.icon_menu:hover {
+
+    padding: 15px;
+    background-color: #2e3338;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0px 0px 25px 0px #00000041;
+
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+    -webkit-app-region: no-drag;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: #232527;
+    -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #292c2e;
+    -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #303335;
+}
+
+#alrt {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    margin: auto;
+    justify-content: center;
+    display: none;
+}
+
+.alert {
+    width: 50%;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-color: #232527;
+    color: #585858;
+    z-index: 5;
+    position: fixed;
+    margin-top: 200px;
+    margin-right: 100px;
+    font-family: 'Vazirmatn-Regular';
+    direction: rtl;
+}
+
+#blackout {
+    background-color: #0f0f0f8c;
+    width: 150%;
+    height: 100%;
+    margin: auto;
+    z-index: 1;
+    position: fixed;
+}

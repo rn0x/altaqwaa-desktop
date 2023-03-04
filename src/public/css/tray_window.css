@@ -1,0 +1,110 @@
+@font-face {
+    font-family: "Vazirmatn-Regular";
+    src: url(../font/Vazirmatn-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-Bold";
+    src: url(../font/Vazirmatn-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quran";
+    src: url(../font/Quran.ttf) format("truetype");
+}
+
+html,
+body {
+    background-color: #232527b9;
+    margin: 0px 0px 0px 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#time {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    align-items: baseline;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#hour_minutes {
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 78px;
+    margin-right: 7px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+#seconds {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 28px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+#data {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+#data_hijri {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 18px;
+}
+
+#data_Gregorian {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 18px;
+}
+
+#datoday {
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 25px;
+}
+
+
+
+#remaining {
+    display: block;
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 19px;
+    text-align: center;
+}
+
+#remaining_name {
+    font-family: 'Vazirmatn-bold';
+    color: #6bc077;
+    font-size: 20px;
+    text-align: center;
+}
+
+#remaining_time {
+    display: block;
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 27px;
+    text-align: center;
+    background-color: #6bc077;
+    width: 170px;
+    border-radius: 8px;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 15px 15px 0px #0000001c;
+    transition: 0.5s ease-in-out;
+}
