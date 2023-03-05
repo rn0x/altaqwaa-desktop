@@ -10,7 +10,7 @@
     "email": "ry2n711@gmail.com",
     "url": "https://www.altaqwaa.org"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "scripts": {
     "packwin": "electron-builder --windows",
     "packlinux": "electron-builder --linux",
@@ -46,7 +46,7 @@
       "protocol": "https"
     },
     "appId": "org.altaqwaa.rn0x",
-    "copyright": "Copyright © 2022 Altaqwaa",
+    "copyright": "Copyright © 2023 Altaqwaa",
     "win": {
       "icon": "./src/build/icon.ico",
       "signingHashAlgorithms": [

@@ -1,7 +1,7 @@
 ﻿const location = require('../modules/location.js');
 
 module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu, globalShortcut) {
-    await location(App_Path);
+    await location(path, fs, App_Path);
 
     let win
     let tray
@@ -25,7 +25,6 @@ module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ip
     });
 
     win.removeMenu();
-    // and load the file.pug of the app.
     win?.loadFile(path.join(__dirname, '../pages/home.html'));
 
     win?.once('ready-to-show', () => {

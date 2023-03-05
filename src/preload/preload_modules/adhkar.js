@@ -1,4 +1,4 @@
-module.exports = function adhkar(fs, path, copy) {
+module.exports = function adhkar(fs, path) {
 
     let alrt = document.getElementById('alrt');
     let click_copy = document.getElementById('copy');
@@ -27,7 +27,13 @@ module.exports = function adhkar(fs, path, copy) {
     adhker_id_6.addEventListener('click', e => window.location.href = '../pages/adhkar/tasbih.html');
 
     click_copy.addEventListener('click', event => {
-        copy('title');
+        let createRange = document.createRange();
+        createRange.selectNode(document.getElementById('title'));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(createRange);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
         alrt.style.display = 'inline-flex';
         setTimeout(() => {
 

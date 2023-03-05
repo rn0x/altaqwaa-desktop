@@ -1,8 +1,6 @@
 const fetch = require('node-fetch');
-const fs = require('fs-extra');
-const path = require('path');
 
-module.exports = async function location(App_Path) {
+module.exports = async function location(path, fs, App_Path) {
 
     try {
 

@@ -34,12 +34,10 @@ module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain, a
 
     win.removeMenu();
 
-    // and load the file.pug of the app.
     win?.loadFile(path.join(__dirname, '../pages/audio_window.html'));
 
     win?.once('ready-to-show', () => {
         win?.hide();
-        //win.webContents.openDevTools();
     });
 
     win?.on('closed', (event) => {
