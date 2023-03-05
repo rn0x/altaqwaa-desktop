@@ -16,13 +16,13 @@ module.exports = function tray_window(path, tray, win, ipcMain, app) {
             icon: path.join(__dirname, '../build/icons/icon.png'),
             webPreferences: {
                 nodeIntegration: true,
-                preload: path.join(__dirname, '../preload/tray_window.js')
+                preload: path.join(__dirname, '../preload/tray_window.js'),
+                devTools: false
             }
         },
         index: path.join(__dirname, '../pages/tray_window.html'),
         icon: path.join(__dirname, '../build/icons/icon@2x.png'),
         tray: tray
-
     });
 
     adhkar.on('ready', () => {

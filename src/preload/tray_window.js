@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     datoday.innerText = momentHj().locale('ar-SA').format('dddd');
     hour_minutes.innerText = moment().tz(location?.timezone).format('h:mm');
     seconds.innerText = moment().tz(location?.timezone).format(': ss A');
-    
+
     let fastData = adhanModule(path, fs, App_Path, location);
 
     switch (fastData.nextPrayer) {
@@ -109,6 +109,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         }
 
         remaining_time.innerText = refreshData.remainingNext;
+        data_hijri.innerText = momentHj().format('iYYYY/iM/iD');
+        data_Gregorian.innerText = momentHj().format('YYYY/M/D');
+        datoday.innerText = momentHj().locale('ar-SA').format('dddd');
+        hour_minutes.innerText = moment().tz(location?.timezone).format('h:mm');
+        seconds.innerText = moment().tz(location?.timezone).format(': ss A');
 
     }, 1000);
 });
