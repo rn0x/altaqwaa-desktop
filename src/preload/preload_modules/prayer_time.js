@@ -51,6 +51,12 @@ module.exports = function prayer_time(fs, path, App_Path) {
     }
 
     setInterval(() => {
+        data_hijri.innerText = momentHj().format('iYYYY/iM/iD');
+        data_Gregorian.innerText = momentHj().format('YYYY/M/D');
+        datoday.innerText = momentHj().locale('ar-SA').format('dddd');
+        hour_minutes.innerText = moment().tz(location?.timezone).format('h:mm');
+        seconds.innerText = moment().tz(location?.timezone).format(': ss A');
+    
         const data = adhanModule(path, fs, App_Path, location);
         
         remaining_time.innerText = data.remainingNext;
