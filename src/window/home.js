@@ -21,7 +21,7 @@
         }
     });
 
-    win.removeMenu();
+   // win.removeMenu();
     win?.loadFile(path.join(__dirname, '../pages/home.html'));
 
     win?.once('ready-to-show', () => {

@@ -249,3 +249,22 @@
 .Sources_url p {
     cursor: pointer;
 }
+
+
+.dev {
+    width: 90%;
+    background-color: #232527;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.dev:hover {
+    background-color: #6bc077;
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 15px 15px 0px #00000048;
+}
