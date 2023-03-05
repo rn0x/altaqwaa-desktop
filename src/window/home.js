@@ -1,8 +1,5 @@
-﻿const location = require('../modules/location.js');
-
-module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu, globalShortcut) {
-    await location(path, fs, App_Path);
-
+﻿module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu, globalShortcut) {
+    
     let win
     let tray
     let contextMenu
@@ -29,7 +26,7 @@ module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ip
 
     win?.once('ready-to-show', () => {
         win?.show();
-        win.webContents.openDevTools();
+        //win.webContents.openDevTools();
     });
 
     win?.on('minimize', (event) => {
@@ -80,6 +77,7 @@ module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ip
             }
         }
     ]);
+
     tray = new Tray(path.join(__dirname, '../build/icons/icon.png'));
     tray?.setContextMenu(contextMenu);
     tray?.setToolTip("التقوى");
@@ -90,7 +88,7 @@ module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ip
 
     }
 
-    else if (process.platform === 'win32' || process.platform === "win64") {
+    else if (process.platform != "linux") {
         let tray_window = require('./tray_window.js')
         tray_window(path, tray, win, ipcMain, app);
     }

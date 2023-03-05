@@ -1,4 +1,4 @@
-module.exports = function info(fs, path, App_Path) {
+module.exports = function info(fs, path, App_Path, shell) {
 
     /*
         * SIMPLE GITHUB API CHECK FOR NEW RELEASES SCRIPT
@@ -85,16 +85,30 @@ module.exports = function info(fs, path, App_Path) {
         shell.openExternal('https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application')
     });
 
+    /* RN0X */
     rn0x_github.addEventListener('click', e => {
         shell.openExternal('https://github.com/rn0x')
     });
 
-    telegram.addEventListener('click', e => {
+    rn0x_telegram.addEventListener('click', e => {
         shell.openExternal('https://t.me/binattia')
     });
 
-    gmail.addEventListener('click', e => {
+    rn0x_gmail.addEventListener('click', e => {
         shell.openExternal('mailto: ry2n711@gmail.com')
+    });
+
+    /* KEMZOPS */
+    aziz_github.addEventListener('click', e => {
+        shell.openExternal('https://github.com/kemzops/')
+    });
+
+    aziz_gmail.addEventListener('click', e => {
+        shell.openExternal('mailto: azizmjaber04@gmail.com')
+    });
+
+    aziz_discord.addEventListener('click', e => {
+        shell.openExternal('https://discord.gg/NeV3XEwXXw')
     });
 
     Sources_1.addEventListener('click', e => {

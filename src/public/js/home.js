@@ -7,26 +7,26 @@ let page_prayer_time = document.getElementById('page_prayer_time');
 let page_settings = document.getElementById('page_settings');
 
 
-page_quran.addEventListener('click', (e) => {
+page_quran.addEventListener('click', () => {
     window.location.assign('./surah.html')
 });
 
-page_quran_mp3.addEventListener('click', (e) => {
+page_quran_mp3.addEventListener('click', () => {
     window.location.assign('./quran_mp3.html')
 });
 
-page_adhkar.addEventListener('click', (e) => {
+page_adhkar.addEventListener('click', () => {
     window.location.assign('./adhkar.html')
 });
 
-page_hisnmuslim.addEventListener('click', (e) => {
+page_hisnmuslim.addEventListener('click', () => {
     window.location.assign('./hisnmuslim.html')
 });
 
-page_prayer_time.addEventListener('click', (e) => {
+page_prayer_time.addEventListener('click', () => {
     window.location.assign('./prayer_time.html')
 });
 
-page_settings.addEventListener('click', (e) => {
+page_settings.addEventListener('click', () => {
     window.location.assign('./settings.html')
 });

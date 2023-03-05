@@ -5,11 +5,13 @@ module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain, a
     ipcMain?.handle('App_Path3', async () => {
         return App_Path
     });
+    
     ipcMain?.on('closed3', () => {
         if (win?.isVisible()) {
             win?.hide();
         }
     });
+
     ipcMain?.on('show3', () => {
         win?.show();
     });

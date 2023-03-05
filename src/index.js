@@ -24,8 +24,9 @@ app.on('ready', (e) => {
     });
 
     homeWindow(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu, globalShortcut)
-    audio_window(path, App_Path, BrowserWindow, ipcMain, app)
 
+    /* NEED TO CHECK IF THE USER DISABLED (ADHAN) IN SETTINGS BUT ILL DO IT NEXT UPDATE ;D */
+    audio_window(path, App_Path, BrowserWindow, ipcMain, app)
 });
 
 app.on('window-all-closed', () => {

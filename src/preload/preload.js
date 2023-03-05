@@ -1,5 +1,5 @@
 /* PACKAGES */
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 
     case "info.html":
       let info = require('./preload_modules/info.js');
-      await info(fs, path, App_Path);
+      await info(fs, path, App_Path, shell);
       break;
 
     /* THE DEFAULT FOR UNEXPECTED THING HAPPEN */

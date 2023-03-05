@@ -2,18 +2,11 @@ const { ipcRenderer } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
 const moment = require('moment-timezone');
-const {
-    fajrTime,
-    dhuhrTime,
-    asrTime,
-    maghribTime,
-    ishaTime,
-    NewPrayerTimes
-} = require('../modules/adhan.js');
+const adhanModule = require('../modules/adhan.js')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
-
     e.preventDefault();
+    
     let App_Path = await ipcRenderer?.invoke('App_Path3');
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
     let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
@@ -30,9 +23,10 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
         await new Promise(resolve => setTimeout(resolve, 60000));
 
+        let data = adhanModule(path, fs, App_Path, location);
         let time_now = moment().tz(location?.timezone).format('LT');
 
-        if (time_now === fajrTime(NewPrayerTimes(App_Path), App_Path) && audioJson?.start === false && settings?.notifications_adhan) {
+        if (time_now === data.fajr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الفجر'
@@ -43,7 +37,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             }, 600000);
         }
 
-        else if (time_now === dhuhrTime(NewPrayerTimes(App_Path), App_Path) && audioJson?.start === false && settings?.notifications_adhan) {
+        else if (time_now === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
@@ -54,7 +48,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             }, 600000);
         }
 
-        else if (time_now === asrTime(NewPrayerTimes(App_Path), App_Path) && audioJson?.start === false && settings?.notifications_adhan) {
+        else if (time_now === data.asr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة العصر'
@@ -65,7 +59,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             }, 600000);
         }
 
-        else if (time_now === maghribTime(NewPrayerTimes(App_Path), App_Path) && audioJson?.start === false && settings?.notifications_adhan) {
+        else if (time_now === data.maghrib && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة المغرب'
@@ -76,7 +70,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             }, 600000);
         }
 
-        else if (time_now === ishaTime(NewPrayerTimes(App_Path), App_Path) && audioJson?.start === false && settings?.notifications_adhan) {
+        else if (time_now === data.isha && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة العشاء'
@@ -115,7 +109,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 });
 
 function audioBoolean(App_Path, boolean) {
-
     const audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
     audioJson.start = boolean
     fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), audioJson);

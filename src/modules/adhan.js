@@ -1,130 +1,31 @@
 const moment = require('moment-timezone');
 const momentDurationFormatSetup = require("moment-duration-format");
-const fs = require('fs-extra');
-const path = require('path');
-const {
-    Coordinates,
-    CalculationMethod,
-    PrayerTimes,
-} = require('adhan');
-
+const { Coordinates, CalculationMethod, PrayerTimes } = require('adhan');
 momentDurationFormatSetup(moment);
 
-function NewPrayerTimes(App_Path) {
+module.exports = function adhanModule(path, fs, App_Path, location) {
+    const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
 
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
     let coordinates = new Coordinates(location?.lat, location?.lon);
     let params = settings?.Calculation === 'MuslimWorldLeague' ? CalculationMethod.MuslimWorldLeague() : settings?.Calculation === 'Egyptian' ? CalculationMethod.Egyptian() : settings?.Calculation === 'Karachi' ? CalculationMethod.Karachi() : settings?.Calculation === 'UmmAlQura' ? CalculationMethod.UmmAlQura() : settings?.Calculation === 'Dubai' ? CalculationMethod.Dubai() : settings?.Calculation === 'Qatar' ? CalculationMethod.Qatar() : settings?.Calculation === 'Kuwait' ? CalculationMethod.Kuwait() : settings?.Calculation === 'Singapore' ? CalculationMethod.Singapore() : settings?.Calculation === 'Turkey' ? CalculationMethod.Turkey() : settings?.Calculation === 'Tehran' ? CalculationMethod.NorthAmerica() : CalculationMethod.NorthAmerica();
     let date = new Date();
 
-    return new PrayerTimes(coordinates, date, params);
+    const prayerTimes = new PrayerTimes(coordinates, date, params);
+    const nextPrayer = prayerTimes.nextPrayer();
 
-}
-
-function CurrentPrayer(NewPrayerTimes) {
-
-    switch (NewPrayerTimes.currentPrayer()) {
-        case "fajr":
-            return "الفجر"
-        case "dhuhr":
-            return "الظهر"
-        case "asr":
-            return "العصر"
-        case "maghrib":
-            return "المغرب"
-        case "isha":
-            return "العشاء"
-        default:
-            return "لايوجد"
-    }
-
-}
-
-
-function NextPrayer(NewPrayerTimes) {
-
-    switch (NewPrayerTimes.nextPrayer()) {
-        case "fajr":
-            return "الفجر"
-        case "dhuhr":
-            return "الظهر"
-        case "asr":
-            return "العصر"
-        case "maghrib":
-            return "المغرب"
-        case "isha":
-            return "العشاء"
-        default:
-            return "لايوجد"
-    }
-
-}
-
-function remaining(NewPrayerTimes, App_Path) {
-
-    let prayerTimes = NewPrayerTimes;
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
     let now = moment().tz(location?.timezone);
-    let end = moment(prayerTimes.timeForPrayer(prayerTimes.nextPrayer())).tz(location?.timezone);
+    let end = moment(prayerTimes.timeForPrayer(nextPrayer)).tz(location?.timezone);
     let duration = moment.duration(end.diff(now));
-    // let remaining = duration.format('h [ساعة] m [دقيقة] s [ثانية]');
     let remaining = duration.format('hh:mm:ss');
 
-    return remaining
-
-}
-
-function fajrTime(NewPrayerTimes, App_Path) {
-
-    let prayerTimes = NewPrayerTimes;
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    return moment(prayerTimes.fajr).tz(location?.timezone).format('h:mm A');
-
-}
-
-function dhuhrTime(NewPrayerTimes, App_Path) {
-
-    let prayerTimes = NewPrayerTimes;
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    return moment(prayerTimes.dhuhr).tz(location?.timezone).format('h:mm A');
-
-}
-
-function asrTime(NewPrayerTimes, App_Path) {
-
-    let prayerTimes = NewPrayerTimes;
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    return moment(prayerTimes.asr).tz(location?.timezone).format('h:mm A');
-
-}
-
-function maghribTime(NewPrayerTimes, App_Path) {
-
-    let prayerTimes = NewPrayerTimes;
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    return moment(prayerTimes.maghrib).tz(location?.timezone).format('h:mm A');
-
-}
-
-function ishaTime(NewPrayerTimes, App_Path) {
-
-    let prayerTimes = NewPrayerTimes;
-    let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    return moment(prayerTimes.isha).tz(location?.timezone).format('h:mm A');
-
-}
-
-
-module.exports = {
-    fajrTime,
-    dhuhrTime,
-    asrTime,
-    maghribTime,
-    ishaTime,
-    remaining,
-    NextPrayer,
-    CurrentPrayer,
-    NewPrayerTimes
-}
-
+    return {
+        isha: moment(prayerTimes.isha).tz(location?.timezone).format('h:mm A'),
+        maghrib: moment(prayerTimes.maghrib).tz(location?.timezone).format('h:mm A'),
+        asr: moment(prayerTimes.asr).tz(location?.timezone).format('h:mm A'),
+        dhuhr: moment(prayerTimes.dhuhr).tz(location?.timezone).format('h:mm A'),
+        fajr: moment(prayerTimes.fajr).tz(location?.timezone).format('h:mm A'),
+        nextPrayer: nextPrayer,
+        remainingNext: remaining,
+        currentPrayer: prayerTimes.currentPrayer(),
+    };
+};
