@@ -16,22 +16,36 @@ module.exports = function settings(fs, path, App_Path) {
     location.lat ? latitude.value = location.lat : false
     location.lon ? longitude.value = location.lon : false
 
-    const volumeRange = document.getElementById('volume');
-    const volumeValue = document.getElementById('volume_value');
+    /* VOLUME MANAGER */
+    let volumeRange = document.getElementById('volume');
+    let volumeValue = document.getElementById('volume_value');
     volumeRange.addEventListener('input', handleVolumeRange)
 
-    if (settings.volume && settings.value != 100) {
+    if (settings.volume && settings.volume != 100) {
         volumeValue.innerHTML = settings.volume * 100;
         volumeRange.value = settings.volume * 100;
+    }
+
+    function handleVolumeRange(volume) {
+        volumeValue.innerHTML = volumeRange.value;
+    }
+    
+    let adhanVolumeRange = document.getElementById('adhan_volume');
+    let adhanVolumeValue = document.getElementById('adhan_volume_value');
+    adhanVolumeRange.addEventListener('input', adhanHandleVolumeRange)
+
+    if (settings.adhanVolume && settings.adhanVolume != 100) {
+        adhanVolumeValue.innerHTML = settings.adhanVolume * 100;
+        adhanVolumeRange.value = settings.adhanVolume * 100;
+    }
+
+    function adhanHandleVolumeRange(volume) {
+        adhanVolumeValue.innerHTML = adhanVolumeRange.value;
     }
 
     notifications_adhan.checked = settings?.notifications_adhan
     notifications_adhkar.checked = settings?.notifications_adhkar
     selected.selected = "selected"
-
-    function handleVolumeRange(volume) {
-        volumeValue.innerHTML = volumeRange.value;
-    }
 
     save.addEventListener('click', e => {
 
@@ -40,8 +54,8 @@ module.exports = function settings(fs, path, App_Path) {
             Calculation: Calculation.value,
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,
-            volume: volumeRange.value / 100
-
+            volume: volumeRange.value / 100,
+            adhanVolume: adhanVolumeRange.value / 100
         }
 
         if (latitude.value !== '') {

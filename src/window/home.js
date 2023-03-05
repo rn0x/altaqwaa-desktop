@@ -6,9 +6,9 @@
 
     win = new BrowserWindow({
         width: 1000,
-        height: 620,
+        height: 645,
         minWidth: 1000,
-        minHeight: 600,
+        minHeight: 625,
         show: false,
         center: true,
         frame: false,
