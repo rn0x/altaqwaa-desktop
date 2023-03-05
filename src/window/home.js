@@ -1,5 +1,5 @@
 ﻿module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu, globalShortcut) {
-    
+
     let win
     let tray
     let contextMenu
@@ -21,7 +21,7 @@
         }
     });
 
-   // win.removeMenu();
+    win.removeMenu();
     win?.loadFile(path.join(__dirname, '../pages/home.html'));
 
     win?.once('ready-to-show', () => {
