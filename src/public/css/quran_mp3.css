@@ -1,0 +1,132 @@
+#icon_menu_mp3 {
+    background-color: #2e3338;
+}
+
+#quran_mp3 {
+
+    padding-right: 20px;
+    width: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#ul_group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    direction: rtl;
+}
+
+.li_group {
+    list-style: none;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    background-color: #232527;
+    width: 350px;
+    height: 30px;
+    border-radius: 8px;
+    align-items: center;
+    box-shadow: 0px 0px 25px 0px #00000023;
+}
+
+.li_group:hover {
+    background-color: #6bc077;
+}
+
+#grid_mp3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    direction: rtl;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.name {
+    margin-top: 5px;
+    font-family: 'Vazirmatn-Regular';
+    color: #fff;
+}
+
+.number {
+    margin-top: 0px;
+    color: #3e4347;
+}
+
+.icon_mp3,
+.icon_mp3_ddownload {
+    width: 15%;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#Sheikh {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    direction: rtl;
+}
+
+#Sheikh_name {
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 19px;
+    margin: 0 0 0 0;
+
+}
+
+#Sheikh_rewaya {
+    font-family: 'Vazirmatn-Regular';
+    color: #4e5458;
+    font-size: 12px;
+    margin: 0 0 0 0;
+    direction: rtl;
+
+}
+
+#Sheikh li {
+    /* width: max-content; */
+    list-style: none;
+    margin: 10px 10px 10px 10px;
+    background-color: #232527;
+    width: 350px;
+    height: auto;
+    border-radius: 8px;
+    color: #fff;
+    padding: 5px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#Sheikh li:hover {
+    background-color: #6bc077;
+}
+
+#reader {
+    /* width: max-content; */
+    width: 100%;
+    color: #fff;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+#reader_name {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: 'Quran';
+    color: #4e5458;
+    font-size: 18px;
+}

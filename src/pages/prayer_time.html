@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/barWindow.css">
+    <link rel="stylesheet" href="../public/css/prayer_time.css">
+    <link rel="stylesheet" href="../public/css/animate.min.css">
+</head>
+
+<body>
+
+    <!-- window bar -->
+
+    <header id="titlebar" onmousedown='return false;' onselectstart='return false;'>
+
+        <div id="drag-region">
+
+            <div id="window-controls">
+
+                <div id="closed">
+                    <img class="icon_bar" srcset="../public/icon/closed.png" draggable="false" />
+                </div>
+
+                <div id="minimizable">
+                    <img class="icon_bar" srcset="../public/icon/minimizable.png" draggable="false" />
+                </div>
+
+                <div id="minimize">
+                    <img class="icon_bar" srcset="../public/icon/minimize.png" draggable="false" />
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="Content">
+
+        <div id="menu" onmousedown='return false;' onselectstart='return false;'>
+            <a href="./home.html">
+                <img src="../public/icon/home.png" class="icon_menu" id="icon_home">
+            </a>
+
+            <a href="./surah.html">
+                <img src="../public/icon/quran.png" class="icon_menu" id="icon_surah">
+            </a>
+
+            <a href="./quran_mp3.html">
+                <img src="../public/icon/sound.png" class="icon_menu" id="icon_menu_mp3">
+            </a>
+
+            <a href="./adhkar.html">
+                <img src="../public/icon/open-hands.png" class="icon_menu" id="icon_adhkar">
+            </a>
+
+            <a href="./hisnmuslim.html">
+                <img src="../public/icon/castle.png" class="icon_menu" id="icon_hisnmuslim">
+            </a>
+
+            <a href="./prayer_time.html">
+                <img src="../public/icon/azan.png" class="icon_menu" id="icon_prayer_time">
+            </a>
+
+            <a href="./settings.html">
+                <img src="../public/icon/settings.png" class="icon_menu" id="icon_settings">
+            </a>
+
+            <a href="./info.html">
+                <img src="../public/icon/info.png" class="icon_menu" id="icon_info">
+            </a>
+
+
+        </div>
+
+        <div id="prayer_time" class="animate__animated animate__fadeIn">
+
+            <div id="time">
+                <p id="hour_minutes"></p>
+                <p id="seconds"></p>
+            </div>
+
+            <div id="data">
+                <p id="data_hijri"></p>
+                <p id="datoday">السبت</p>
+                <p id="data_Gregorian"></p>
+            </div>
+
+            <p id="country"></p>
+
+            <ul id="prayer">
+
+                <li id="fajr_li">
+                    <p id="fajr" class="slah">الفجر</p>
+                    <p id="time_fajr"></p>
+                </li>
+
+                <li id="dhuhr_li">
+                    <p id="dhuhr" class="slah">الظهر</p>
+                    <p id="time_dhuhr"></p>
+                </li>
+
+                <li id="asr_li">
+                    <p id="asr" class="slah">العصر</p>
+                    <p id="time_asr"></p>
+                </li>
+
+                <li id="maghrib_li">
+                    <p id="maghrib" class="slah">المغرب</p>
+                    <p id="time_maghrib"></p>
+                </li>
+
+                <li id="isha_li">
+                    <p id="isha" class="slah">العشاء</p>
+                    <p id="time_isha"></p>
+                </li>
+
+            </ul>
+
+            <p id="remaining">الوقت المتبقي لرفع الأذان لصلاة <span id="remaining_name"></span></p>
+            <p id="remaining_time"></p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

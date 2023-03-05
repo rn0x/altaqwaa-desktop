@@ -1,0 +1,149 @@
+#icon_prayer_time {
+    background-color: #2e3338;
+}
+
+#prayer_time {
+
+    padding-right: 70px;
+    width: 100%;
+    direction: rtl;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#time {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+#hour_minutes {
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 78px;
+    margin-right: 7px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+#seconds {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 28px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+#country {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 20px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#city {
+    color: #6bc077;
+}
+
+#data {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+#data_hijri {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 18px;
+}
+
+#data_Gregorian {
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 18px;
+}
+
+#datoday {
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 25px;
+}
+
+#prayer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#prayer li {
+    list-style: none;
+    margin: 10px 10px 10px 10px;
+    background-color: #232527;
+    width: 130px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    direction: ltr;
+    box-shadow: 5px 15px 15px 0px #0000001c;
+    transition: 0.5s ease-in-out;
+}
+
+#prayer li:hover {
+    background-color: #6bc077;
+    padding: 5px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 15px 15px 0px #00000048;
+}
+
+/* #asr_li {
+    background-color: #6bc077 !important;
+} */
+
+
+#remaining {
+    display: none;
+    font-family: 'Vazirmatn-Regular';
+    color: #6d7275;
+    font-size: 19px;
+    text-align: center;
+}
+
+#remaining_name {
+    font-family: 'Vazirmatn-bold';
+    color: #6bc077;
+    font-size: 20px;
+    text-align: center;
+}
+
+#remaining_time {
+    display: none;
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 27px;
+    text-align: center;
+    background-color: #6bc077;
+    width: 20%;
+    border-radius: 8px;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 15px 15px 0px #0000001c;
+    transition: 0.5s ease-in-out;
+}
+
+.slah {
+    color: #6d7275;
+}

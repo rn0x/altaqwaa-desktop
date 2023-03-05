@@ -1,0 +1,137 @@
+#icon_hisnmuslim {
+    background-color: #2e3338;
+}
+
+#hisnmuslim {
+
+    padding-right: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    word-wrap: break-word;
+    direction: rtl;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+}
+
+#ul_hisn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    direction: rtl;
+    margin-top: 50px;
+}
+
+#ul_hisn li {
+    list-style: none;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    background-color: #232527;
+    width: 350px;
+    height: 30px;
+    border-radius: 8px;
+    align-items: center;
+    box-shadow: 0px 0px 25px 0px #00000023;
+    font-family: 'Vazirmatn-Regular';
+    color: #ffffff;
+    font-size: 19px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#ul_hisn li:hover {
+    background-color: #6bc077;
+}
+
+#titel_hisn {
+    text-align: center;
+    font-family: "Quran";
+    color: #ffffff;
+    font-size: 55px;
+    margin: 0 0 0 0;
+    cursor: default;
+}
+
+#ktab {
+
+    font-family: "Quran";
+    color: #222324;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    cursor: default;
+
+}
+
+#mp3_hisn {
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    justify-content: center;
+}
+
+#mp3_hisn_blackout {
+    background-color: #0000008c;
+    width: 150%;
+    height: 100%;
+    z-index: 1;
+    position: fixed;
+}
+
+#mp3_hisn_closed {
+
+    display: block;
+    position: fixed;
+    z-index: 6;
+    width: 5%;
+    margin-top: 120px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+}
+
+#mp3_hisn_closed:hover {
+    width: 6%;
+    background-color: #f34949;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+#mp3_hisn_src {
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+#mp3_hisn_alert {
+    display: block;
+    width: 50%;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-color: #232527;
+    z-index: 5;
+    position: fixed;
+    margin-top: 200px;
+    text-align: center;
+    /* margin-left: 200px; */
+}
+
+::-webkit-media-controls-enclosure {
+    border-radius: 5px;
+    background-color: #c0c4c7;
+}

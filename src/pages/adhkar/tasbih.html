@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/barWindow.css">
+    <link rel="stylesheet" href="../../public/css/adhkar2.css">
+    <link rel="stylesheet" href="../../public/css/animate.min.css">
+</head>
+
+<body>
+
+    <!-- window bar -->
+
+    <header id="titlebar" onmousedown='return false;' onselectstart='return false;'>
+
+        <div id="drag-region">
+
+            <div id="window-controls">
+
+                <div id="closed">
+                    <img class="icon_bar" srcset="../../public/icon/closed.png" draggable="false" />
+                </div>
+
+                <div id="minimizable">
+                    <img class="icon_bar" srcset="../../public/icon/minimizable.png" draggable="false" />
+                </div>
+
+                <div id="minimize">
+                    <img class="icon_bar" srcset="../../public/icon/minimize.png" draggable="false" />
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="alrt" onmousedown='return false;' onselectstart='return false;'>
+
+        <div id="blackout"></div>
+        <div class="alert" role="alert">تم النسخ</div>
+
+    </div>
+
+    <div id="Content" onmousedown='return false;' onselectstart='return false;'>
+
+        <div id="menu">
+            <a href="../home.html">
+                <img src="../../public/icon/home.png" class="icon_menu" id="icon_home">
+            </a>
+
+            <a href="../surah.html">
+                <img src="../../public/icon/quran.png" class="icon_menu" id="icon_menu_top">
+            </a>
+
+            <a href="../quran_mp3.html">
+                <img src="../../public/icon/sound.png" class="icon_menu" id="icon_menu_mp3">
+            </a>
+
+            <a href="../adhkar.html">
+                <img src="../../public/icon/open-hands.png" class="icon_menu" id="icon_adhkar">
+            </a>
+
+            <a href="../hisnmuslim.html">
+                <img src="../../public/icon/castle.png" class="icon_menu" id="icon_hisnmuslim">
+            </a>
+
+            <a href="../prayer_time.html">
+                <img src="../../public/icon/azan.png" class="icon_menu" id="icon_prayer_time">
+            </a>
+
+            <a href="../settings.html">
+                <img src="../../public/icon/settings.png" class="icon_menu" id="icon_settings">
+            </a>
+
+            <a href="../info.html">
+                <img src="../../public/icon/info.png" class="icon_menu" id="icon_info">
+            </a>
+
+
+        </div>
+
+        <div id="tasbih" class="animate__animated animate__fadeIn">
+
+            <div class="adhkar" id="1">
+                <p class="text">سُبْحَانَ اللَّهِ</p>
+                <p class="text_bottom">يكتب له ألف حسنة أو يحط عنه ألف خطيئة</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_1">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="2">
+                <p class="text">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</p>
+                <p class="text_bottom">حُطَّتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ. لَمْ يَأْتِ أَحَدٌ
+                    يَوْمَ الْقِيَامَةِ بِأَفْضَلَ مِمَّا جَاءَ بِهِ إِلَّا أَحَدٌ قَالَ مِثْلَ مَا قَالَ أَوْ زَادَ
+                    عَلَيْهِ</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_2">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="3">
+                <p class="text">سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ</p>
+                <p class="text_bottom">تَمْلَآَنِ مَا بَيْنَ السَّمَاوَاتِ وَالْأَرْضِ</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_3">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="4">
+                <p class="text">سُبْحَانَ اللهِ العَظِيمِ وَبِحَمْدِهِ</p>
+                <p class="text_bottom">غرست له نخلة في الجنة (أى عدد)</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_4">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="5">
+                <p class="text">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ ، سُبْحَانَ اللَّهِ الْعَظِيمِ</p>
+                <p class="text_bottom">ثقيلتان في الميزان حبيبتان إلى الرحمن (أى عدد) </p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_5">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="6">
+                <p class="text">لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ
+                    عَلَى كُلُّ شَيْءِ قَدِيرِ</p>
+                <p class="text_bottom">كانت له عدل عشر رقاب، وكتبت له مئة حسنة، ومحيت عنه مئة سيئة، وكانت له حرزا من
+                    الشيطان</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_6">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="7">
+                <p class="text">الْحَمْدُ للّهِ رَبِّ الْعَالَمِينَ</p>
+                <p class="text_bottom">تملأ ميزان العبد بالحسنات</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_7">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="8">
+                <p class="text">لا حَوْلَ وَلا قُوَّةَ إِلا بِاللَّهِ</p>
+                <p class="text_bottom">كنز من كنوز الجنة (أى عدد)</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_8">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="9">
+                <p class="text">الْلَّهُم صَلِّ وَسَلِم وَبَارِك عَلَى سَيِّدِنَا مُحَمَّد</p>
+                <p class="text_bottom">من صلى على حين يصبح وحين يمسى ادركته شفاعتى يوم القيامة</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_9">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="10">
+                <p class="text">أستغفر الله</p>
+                <p class="text_bottom">لفعل الرسول صلى الله عليه وسلم</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_10">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="11">
+                <p class="text">سُبْحَانَ الْلَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا الْلَّهُ، وَالْلَّهُ
+                    أَكْبَرُ</p>
+                <p class="text_bottom">أنهن أحب الكلام الى الله، ومكفرات للذنوب، وغرس الجنة، وجنة لقائلهن من النار، وأحب
+                    الى النبي عليه السلام مما طلعت عليه الشمس، والْبَاقِيَاتُ الْصَّالِحَات</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_11">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="12">
+                <p class="text">لَا إِلَهَ إِلَّا اللَّهُ</p>
+                <p class="text_bottom">أفضل الذكر لا إله إلاّ الله</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_12">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="13">
+                <p class="text">الْلَّهُ أَكْبَرُ</p>
+                <p class="text_bottom">من قال الله أكبر كتبت له عشرون حسنة وحطت عنه عشرون سيئة. الله أكبر من كل شيء</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_13">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="14">
+                <p class="text">سُبْحَانَ اللَّهِ ، وَالْحَمْدُ لِلَّهِ ، وَلا إِلَهَ إِلا اللَّهُ ، وَاللَّهُ أَكْبَرُ
+                    ، اللَّهُمَّ اغْفِرْ لِي ، اللَّهُمَّ ارْحَمْنِي ، اللَّهُمَّ ارْزُقْنِي</p>
+                <p class="text_bottom">خير الدنيا والآخرة</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_14">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="15">
+                <p class="text">الْحَمْدُ لِلَّهِ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ</p>
+                <p class="text_bottom">قَالَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ‏"‏لَقَدْ رَأَيْتُ اثْنَيْ
+                    عَشَرَ مَلَكًا يَبْتَدِرُونَهَا، أَيُّهُمْ يَرْفَعُهَا"</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_15">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="16">
+                <p class="text">اللَّهُ أَكْبَرُ كَبِيرًا ، وَالْحَمْدُ لِلَّهِ كَثِيرًا ، وَسُبْحَانَ اللَّهِ بُكْرَةً
+                    وَأَصِيلاً</p>
+                <p class="text_bottom">قَالَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ "عَجِبْتُ لَهَا ، فُتِحَتْ
+                    لَهَا أَبْوَابُ السَّمَاءِ"</p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_16">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="adhkar" id="17">
+                <p class="text">
+                    للَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ , وَعَلَى
+                    آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ , اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ
+                    كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ
+                </p>
+                <p class="text_bottom">
+                    في كل مره تحط عنه عشر خطايا ويرفع له عشر درجات ويصلي الله عليه عشرا وتعرض على الرسول صلى الله عليه
+                    وسلم (أى عدد)
+                </p>
+                <ul class="copy_and_paste">
+                    <li class="tkrar">
+                        <p>التكرار: </p>
+                        <p class="tkrar_number" id="t_1">100</p>
+                    </li>
+                    <li>
+                        <img src="../../public//icon/copy.png" class="icon_c_p" id="copy_17">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../../public/js/adhkar.js"></script>
+</body>
+
+</html>

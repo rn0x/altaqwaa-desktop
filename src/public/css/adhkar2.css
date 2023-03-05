@@ -1,0 +1,107 @@
+#icon_adhkar {
+    background-color: #2e3338;
+}
+
+#morning,
+#evening,
+#food,
+#prayer,
+#sleeping,
+#tasbih {
+    padding-right: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    margin-bottom: 30px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.adhkar {
+    margin-top: 40px;
+    background-color: #232527;
+    padding: 15px;
+    border-radius: 15px;
+    margin-right: 30px;
+    margin-left: 30px;
+    box-shadow: 5px 15px 15px 0px #0000001c;
+    user-select: text;
+}
+
+.text_bottom {
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-family: 'Vazirmatn-Regular';
+    color: #585858;
+    font-size: 17px;
+    text-align: center;
+
+
+}
+
+.text {
+    font-family: 'quran';
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.copy_and_paste {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    background-color: #2e3338;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.copy_and_paste li {
+    list-style: none;
+    margin-left: 50px;
+    margin-bottom: 0px;
+    padding: 10px;
+    align-self: center;
+}
+
+.icon_c_p {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.icon_c_p:hover {
+    width: 23px;
+    height: 23px;
+}
+
+.tkrar {
+    text-align: center;
+    font-family: 'Vazirmatn-Regular';
+    color: #fff;
+    font-size: 14px;
+    background-color: #232527;
+    border-radius: 10px;
+    width: 90px;
+    height: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tkrar_number {
+    color: #4e5458;
+}
