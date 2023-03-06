@@ -1,28 +1,20 @@
 ![preview|690x388](/screenshots/Featured_banner.png)
 <br>
 
-- - -
-
-<br>
-
 **تطبيق إسلامي مفتوح المصدر يعمل على أنظمة التشغيل ويندوز ولينكس سهل الإستخدام و جامع للكثير من  الميزات التي يحتاجها المسلم في يومه**
 
 <br>
 
-
 - - -
 
 # مميزات التطبيق
+
 <br>
 
 - القرآن الكريم `نص`
 - القرآن الكريم `صوت`
-- أذكار الصباح
-- أذكار المساء 
-- أذكار الطعام 
-- أذكار النوم 
-- أذكار الصلاة
-- تسابيح 
+- أذكار (**الصباح, المساء, الطعام, النوم, الصلاة**)
+- تسابيح وأدعية
 - مواقيت الصلاة حسب إحداثيات موقعك عبر الـ (**ip**)
 - إمكانية تعديل موقعك (**عبر إدخال خطوط الطول والعرض**) و المنطقة الزمنية
 - تغير طريقة حساب أوقات الصلاة (**ام القرى , رابطة العالم الإسلامي ,الهيئة المصرية العامة للمساحة الخ ...**)
@@ -32,13 +24,11 @@
 - بدء تشغيل التطبيق مع بدء تشغيل النظام - ويندوز - لينكس
 - إيقاف وتشغيل الإشعارات 
 - نافذة شريط القوائم (**منطقة الإعلامات**) تبين الساعة + الصلاة القادمة
+- مجاني ومفتوح المصدر بالكامل تحت رخصة جنو العمومية `GPL-3.0`
 
 <br>
 
 ---
-
-<br>
-
 # صور الشاشة
 
 <br>
@@ -51,13 +41,12 @@
 | ![altaqwaa](/screenshots/9.png) | ![altaqwaa](/screenshots/10.png) |
 
 
-
-
 <br>
 
+- - -
 # تنزيل التطبيق
 
-<br><br>
+<br>
 
 <p align="center">
   <a href="https://snapcraft.io/altaqwaa">
@@ -72,28 +61,32 @@
 </p>
 
 
-- **Linux**: [Download the .AppImage, .deb, or .rpm file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
-- **Windows**: [Download the .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
-
-<br><br>
+- **Linux**: [Download the .AppImage, .deb,  .rpm, or Tar.gz Archive](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
+- **Windows**: [Download the setup .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 
 
+<br>
+
+- - -
 # قم بتشغيل التطبيق في وضع التطوير
 
-<br><br>
+<br>
 
-**متطلبات التشغيل**
+**متطلبات التشغيل الأساسية**
 
-- nodejs
+- **nodejs**
 
-- git
+- **git**
 
-- yarn
+- **yarn** or **npm**
+
+---
+### بأستخدام `YARN`
+
 
 <br>
 
 ```bash
-
 git clone https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application
 
 cd Altaqwaa-Islamic-Desktop-Application
@@ -101,17 +94,38 @@ cd Altaqwaa-Islamic-Desktop-Application
 yarn install
 
 yarn run dev
-
 ```
+### بأستخدام `NPM`
 
-<br>
-
- **build**
 
 <br>
 
 ```bash
+git clone https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application
 
+cd Altaqwaa-Islamic-Desktop-Application
+
+npm install
+
+npm run dev
+```
+
+<br>
+
+---
+
+# **بناء التطبيق من المصدر**
+
+<br>
+
+ 
+**سيتم بناء التطبيق بحسب الأعدادات الموجودة في ملف `package.json`**
+
+### بأستخدام `YARN`
+
+<br>
+
+```bash
 #Windows
 
 yarn run packwin
@@ -119,14 +133,30 @@ yarn run packwin
 #Linux
 
 yarn run packlinux
-
 ```
 
-![cmd_2|690x171](/screenshots/cmd_1.png)
+### بأستخدام `NPM`
 
-![cmd_1|690x205](/screenshots/cmd_2.png)
+<br>
 
-# التبعيات 
+```bash
+#Windows
+
+npm run packwin
+
+#Linux
+
+npm run packlinux
+```
+
+<br>
+
+---
+
+# التبعيات
+
+ <br>
+
 - adhan-js
 - electron
 - fs-extra
@@ -134,12 +164,15 @@ yarn run packlinux
 - node-fetch
 - menubar
 - v8-compile-cache
+
 <br>
 
+---
 
 # المصادر 
 
 <br>
+
 
 |          مصدر        |           الرابط          |
 |:--------------------------|------------------------|
@@ -154,8 +187,11 @@ yarn run packlinux
 
 <br>
 
+---
+
 # المساهمون ✨ 
 
+<br>
 
 
 <table>
@@ -168,10 +204,10 @@ yarn run packlinux
 
 <br>
 
+---
 
-# review
 
-نبذه بسيطه عن التطبيق من الأخ [@SalehGNUTUX](https://github.com/SalehGNUTUX) على قناة [Gnu Tux](https://www.youtube.com/c/GnuTux) على اليوتيوب
+نبذه بسيطه عن التطبيق من الأخ [@SalehGNUTUX](https://github.com/SalehGNUTUX) على قناة [Gnu Tux](https://www.youtube.com/c/GnuTux) على اليوتيوب `v2.0.0`
 
 <br>
 
