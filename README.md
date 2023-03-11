@@ -68,6 +68,54 @@
 <br>
 
 - - -
+
+# التحقق من وجود تحديثات
+
+**التحديث التلقائي لايعمل على لينكس بالشكل المطلوب لم ولن يتم إضافته إلى عند إيجاد حل للمشكلة... لذلك تم إضافة طريقة للتحقق من وجود إصدارات جديدة من التطبيق في صفحة المعلومات (آخر صفحة في القائمة) عند فتحها سيتحقق البرنامج من وجود إصدارات جديدة منشورة في المستودع...**
+`يمكن الحصول على تحديثات تلقائية فقط من خلال (Snap) حاليا.`
+
+### مثال:
+
+![image](https://user-images.githubusercontent.com/52936496/224512764-ae1a54ea-74c4-45b3-a6db-184bd1dcaa12.png)
+#### لذلك عند صدور إصدار جديد من تطبيق التقوى يجب إعادة تثبيت تطبيق التقوى... (التحديث غير إجباري ولكنه مستحسن للحصول على آخر الميزات)
+<br>
+
+- - -
+
+# أسئلة شائعة
+
+- هل هنالك نسخة من تطبيق التقوى لأنظمة الأندرويد؟ نعم جار العمل على نسخة من تطبيق التقوى للأندرويد [هنا](https://github.com/Alsarmad/altaqwaa_android)
+
+- هل هنالك نسخة من تطبيق التقوى لأنظمة ماك؟ للأسف حاليا لايوجد نسخة للماك والسبب عدم توفر جهاز ماك لإنشاء الحزمة... ولكن يمكن بناء التطبيق من المصدر على أي نظام تشغيل طالما تتوفر التبعيات.
+
+- ماهية المصادر المستخدمة في تطبيق التقوى؟ **تم بناء تطبيق التقوى بشفافية كاملة وكل المصادر المستخدمة مذكورة في قسم خاص تحت عنوان المصادر [هنا](#المصادر)**
+
+<br>
+
+- - -
+
+# المساهمة في المشروع
+
+**طرق المساهمة في مشروع التقوى متنوعة وكثيرة ولعل أهمها ما يلي:**
+
+1. المساهمة في التطوير لكل من لديه الخبرة الكافية نحن نرحب بأي مساعدة تهدف لتطوير المشروع بأي شكل
+    - تم تطوير مشروع التقوى بإستخدام تقنيات الويب بإستخدام إطار عمل **`ElectronJS`**
+    - مشروع التقوى لايستخدم أي أطر عمل أو مكاتب خارجية للواجهات **Pure `HTML/CSS/JS`**
+
+2. التبليغ عن المشكلات في مستودع جيت هب
+    - يرجى أن يتم وضع عنوان واضح ومناسب للمشكلة
+    - أن يتضمن مواصفات الجهاز ونظام التشغيل (والتوزيعة والواجهة المستخدمة لمستخدمي لينكس) 
+    - وصف ومعلومات عن المشكلة بشكل تفصيلي إن أمكن 
+
+3. دعم المشروع ماديا عن طريق **`Github Sponsors`** من [هنا](https://github.com/sponsors/rn0x)
+
+4. نشر تطبيق التقوى
+    - عن أبي مسعود البدري رضي الله عنه عن النبي صلى الله عليه وسلم قال: «من دلَّ على خير، فله مثلُ أجرِ فاعلِه».
+
+<br>
+
+- - -
+
 # قم بتشغيل التطبيق في وضع التطوير
 
 <br>
@@ -160,10 +208,11 @@ npm run packlinux
 - adhan-js
 - electron
 - fs-extra
-- moment-js
+- moment-js **`(moment-duration-format, moment-hijri, moment-timezone)`**
 - node-fetch
 - menubar
 - v8-compile-cache
+- nodemon **`للمطورين فقط`**
 
 <br>
 
@@ -183,7 +232,7 @@ npm run packlinux
 | الأيقونات | https://www.flaticon.com |
 | خطوط | https://fonts.qurancomplex.gov.sa/wp02 | 
 | خطوط | https://github.com/rastikerdar/vazirmatn |
-
+| مؤثرات الإنتقال | https://animate.style |
 
 <br>
 
@@ -198,7 +247,6 @@ npm run packlinux
     <tr>
         <td align="center"><a href="https://github.com/rn0x"><img src="https://avatars.githubusercontent.com/u/76129163?v=4" width="100px;"/><br /><sub>rn0x</sub></a></td>
         <td align="center"><a href="https://github.com/kemzops"><img src="https://avatars.githubusercontent.com/u/52936496?v=4" width="100px;"/><br /><sub>kemzops</sub></a></td>
-        <td align="center"><a href="https://github.com/me00001"><img src="https://avatars.githubusercontent.com/u/37930867?v=4" width="100px;"/><br /><sub>me00001</sub></a></td>
     </tr>
 </table>
 
@@ -207,13 +255,18 @@ npm run packlinux
 ---
 
 
-نبذه بسيطه عن التطبيق من الأخ [@SalehGNUTUX](https://github.com/SalehGNUTUX) على قناة [Gnu Tux](https://www.youtube.com/c/GnuTux) على اليوتيوب `v2.0.0`
 
 <br>
 
-[![GnuTux|690x385](/screenshots/GnuTux.png)](https://www.youtube.com/watch?v=PtRfxMe9nRI)
+### مراجعة تطبيق التقوى في قناة [NofarahTech](https://www.youtube.com/@NofarahTech) `v2.1.0`
 
+[![Nofarah Tech|690x385](/screenshots/NofarahTech.png)](https://www.youtube.com/watch?v=QbL8l6_-WR4)
 
+<br>
+
+### مراجعة تطبيق التقوى في قناة [Gnu Tux](https://www.youtube.com/@NofarahTech) `v2.0.0`
+
+[![Gnu Tux|690x385](/screenshots/GnuTux.png)](https://www.youtube.com/watch?v=PtRfxMe9nRI)
 
 
 # سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك
