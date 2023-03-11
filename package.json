@@ -21,18 +21,18 @@
   },
   "dependencies": {
     "adhan": "^4.4.3",
-    "fs-extra": "^11.1.*",
+    "fs-extra": "^11.1.0",
     "menubar": "^9.3.0",
     "moment-duration-format": "^2.3.2",
     "moment-hijri": "^2.1.2",
     "moment-timezone": "^0.5.41",
-    "node-fetch": "^2.6.*",
+    "node-fetch": "^2.6.7",
     "v8-compile-cache": "^2.3.0"
   },
   "devDependencies": {
     "electron": "^22.3.2",
     "electron-builder": "^23.6.0",
-    "nodemon": "^2.0.*"
+    "nodemon": "^2.0.21"
   },
   "build": {
     "directories": {
