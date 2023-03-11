@@ -46,7 +46,7 @@
       "protocol": "https"
     },
     "appId": "org.altaqwaa.rn0x",
-    "copyright": "Copyright © 2023 Altaqwaa",
+    "copyright": "Copyleft 🄯 2023 Altaqwaa",
     "win": {
       "icon": "./src/build/icon.ico",
       "signingHashAlgorithms": [
