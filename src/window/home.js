@@ -26,7 +26,7 @@
 
     win?.once('ready-to-show', () => {
         win?.show();
-        win.webContents.openDevTools();
+        //win.webContents.openDevTools();
     });
 
     win?.on('minimize', (event) => {
