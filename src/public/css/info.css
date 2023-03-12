@@ -1,5 +1,5 @@
 #icon_info {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #info {
@@ -33,9 +33,7 @@
     padding: 10px;
     text-align: center;
     border-radius: 15px;
-    background-color: #232527;
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
+    background-color: var(--background_div);
     font-size: 22px;
     box-shadow: 5px 15px 15px 0px #0000001c;
     transition: 0.5s ease-in-out;
@@ -43,7 +41,7 @@
 }
 
 #info_ul li:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
 }
@@ -75,8 +73,6 @@
 }
 
 #me {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     text-align: center;
     font-size: 20px;
     margin-bottom: 50px;
@@ -84,9 +80,9 @@
 }
 
 #Version {
+    color: var(--red) !important;
     margin-top: 30px;
     text-align: center;
-    font-family: 'Vazirmatn-ExtraLight';
     font-size: 18px;
 }
 
@@ -102,8 +98,6 @@
 #Developer_ul li {
     list-style: none;
     text-align: center;
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 22px;
     margin-left: 40px;
 }
@@ -111,8 +105,6 @@
 #Developer_li {
     list-style: none;
     text-align: center;
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 22px;
 }
 
@@ -159,8 +151,6 @@
     *list-style: decimal;
     margin-top: 70px;
     text-align: center;
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 22px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
     margin-bottom: 70px;
@@ -172,8 +162,7 @@
     display: block;
     padding: .4em .4em .4em 2em;
     *padding: .4em;
-    background: #232527;
-    color: rgb(255, 255, 255);
+    background: var(--background_div);
     text-decoration: none;
     border-radius: .3em;
     transition: all .3s ease-out;
@@ -186,7 +175,7 @@
 }
 
 #dependencies li:hover {
-    background: #2c2f31;
+    background: var(--background_div_hover);
 
 }
 
@@ -202,11 +191,11 @@
     right: -1.3em;
     top: 50%;
     margin-top: -1.3em;
-    background: #2d2f30;
+    background: var(--background_div);
     height: 2em;
     width: 2em;
     line-height: 2em;
-    border: .3em solid #232525;
+    border: .3em solid var(--background_div);
     text-align: center;
     font-weight: bold;
     border-radius: 2em;
@@ -216,14 +205,12 @@
 
 #Sources {
     display: none;
-    width: 100%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    font-family: 'Vazirmatn-Regular';
     font-size: 18px;
     border-collapse: collapse;
-    color: #fff;
     border-collapse: separate;
     border-spacing: 0 8px;
 
@@ -232,9 +219,10 @@
 #Sources td {
     margin-left: auto;
     margin-right: auto;
-    background-color: #2a2f33;
+    background-color: var(--background_div);
     padding: 20px;
 }
+
 
 .Sources_name {
     text-align: right;
@@ -253,7 +241,7 @@
 
 .dev {
     width: 90%;
-    background-color: #232527;
+    background-color: var(--background_div);
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -264,7 +252,7 @@
 }
 
 .dev:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
 }

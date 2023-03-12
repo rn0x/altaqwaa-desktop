@@ -19,6 +19,8 @@ body {
     margin: 0px 0px 0px 0px;
     height: 100%;
     width: 100%;
+    font-family: var(--font_default);
+    color: var(--white);
 }
 
 #time {
@@ -35,8 +37,6 @@ body {
 }
 
 #hour_minutes {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 78px;
     margin-right: 7px;
     margin-bottom: 0px;
@@ -44,8 +44,7 @@ body {
 }
 
 #seconds {
-    font-family: 'Vazirmatn-Regular';
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 28px;
     margin-bottom: 0px;
     margin-top: 30px;
@@ -64,20 +63,17 @@ body {
 }
 
 #data_hijri {
-    font-family: 'Vazirmatn-Regular';
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 18px;
 }
 
 #data_Gregorian {
-    font-family: 'Vazirmatn-Regular';
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 18px;
 }
 
 #datoday {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
+    color: var(--color_font_grey);
     font-size: 25px;
 }
 
@@ -85,8 +81,7 @@ body {
 
 #remaining {
     display: block;
-    font-family: 'Vazirmatn-Regular';
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 19px;
     text-align: center;
     -webkit-user-select: none;
@@ -98,8 +93,8 @@ body {
 }
 
 #remaining_name {
-    font-family: 'Vazirmatn-bold';
-    color: #6bc077;
+    font-weight: 700;
+    color: var(--background_div_hover);
     font-size: 20px;
     text-align: center;
     -webkit-user-select: none;
@@ -112,11 +107,9 @@ body {
 
 #remaining_time {
     display: block;
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 27px;
     text-align: center;
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     width: 170px;
     border-radius: 8px;
     margin-bottom: auto;

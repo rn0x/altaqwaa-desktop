@@ -30,9 +30,11 @@
 
 html,
 body {
-    background-color: #2e3338;
+    background-color: var(--background_body);
     margin: 0px 0px 0px 0px;
     max-height: 100%;
+    font-family: var(--font_default);
+    color: var(--white);
 }
 
 #titlebar {
@@ -43,7 +45,7 @@ body {
 
 #window-controls {
     display: flex;
-    background-color: #232527;
+    background-color: var(--background_div);
     direction: ltr;
     position: fixed;
     width: 100%;
@@ -67,13 +69,13 @@ body {
 }
 
 #closed:hover {
-    background-color: #f34949;
+    background-color: var(--red);
     transition: 0.3s ease-in-out;
 }
 
 #minimizable:hover,
 #minimize:hover {
-    background-color: #272b30;
+    background-color: var(--background_div_hover);
     transition: 0.3s ease-in-out;
 }
 
@@ -83,7 +85,7 @@ body {
 }
 
 #menu {
-    background-color: #232527;
+    background-color: var(--background_div);
     width: 70px;
     height: 100%;
     position: fixed;
@@ -116,7 +118,7 @@ body {
 .icon_menu:hover {
 
     padding: 15px;
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
     border-radius: 10px;
     transition: 0.5s ease-in-out;
     box-shadow: 0px 0px 25px 0px #00000041;
@@ -132,17 +134,17 @@ body {
 
 
 ::-webkit-scrollbar-track {
-    background-color: #232527;
+    background-color: var(--background_div);
     -webkit-app-region: no-drag;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #292c2e;
+    background: var(--scrollbar_thumb);
     -webkit-app-region: no-drag;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #303335;
+    background: var(--scrollbar_thumb_hover);
 }
 
 #alrt {
@@ -160,19 +162,19 @@ body {
     padding: 15px;
     border-radius: 4px;
     font-size: 16px;
-    background-color: #ffffff;
-    border-color: #232527;
-    color: #585858;
+    background-color: var(--white);
+    border-color: var(--background_div);
+    color: var(--color_font_grey);
     z-index: 5;
     position: fixed;
     margin-top: 200px;
     margin-right: 100px;
-    font-family: 'Vazirmatn-Regular';
     direction: rtl;
 }
 
 #blackout {
-    background-color: #0f0f0f8c;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
     width: 150%;
     height: 100%;
     margin: auto;

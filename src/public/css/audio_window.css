@@ -7,7 +7,9 @@
 
 html,
 body {
-    background-color: #2e3338;
+    background-color: var(--background_body);
+    font-family: var(--font_default);
+    color: var(--white);
     margin: 0px 0px 0px 0px;
     max-height: 100%;
     -webkit-user-select: none;
@@ -26,7 +28,7 @@ body {
 
 #window-controls {
     display: flex;
-    background-color: #232527;
+    background-color: var( --background_div);
     direction: ltr;
     position: fixed;
     width: 100%;
@@ -50,13 +52,13 @@ body {
 }
 
 #closed:hover {
-    background-color: #f34949;
+    background-color: var(--red);
     transition: 0.3s ease-in-out;
 }
 
 #minimizable:hover,
 #minimize:hover {
-    background-color: #272b30;
+    background-color: var(--background_div_hover);
     transition: 0.3s ease-in-out;
 }
 
@@ -73,8 +75,6 @@ body {
 }
 
 #text {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 20px;
 }
 

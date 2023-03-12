@@ -1,5 +1,5 @@
 #icon_home {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 
@@ -41,7 +41,7 @@
     width: calc(50% / 2);
     height: 80px;
     text-align: center;
-    background-color: #232527;
+    background-color: var(--background_div);
     border-radius: 15px;
     box-shadow: 5px 15px 15px 0px #0000001c;
     transition: 0.5s ease-in-out;
@@ -52,16 +52,13 @@
 }
 
 #pages li:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     padding: 5px;
     transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
 
 }
 
-#pages li p {
-    font-size: medium !important;
-}
 
 /* #pages li a {
     color: inherit;
@@ -74,7 +71,6 @@
 }
 
 .page {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
-    font-size: 22px;
+    color: var(--white);
+    font-size: 18px;
 }

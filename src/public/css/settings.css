@@ -1,5 +1,5 @@
 #icon_settings {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #settings {
@@ -21,10 +21,8 @@
     margin-right: auto;
     margin-top: 30px;
     text-align: center;
-    font-family: 'Vazirmatn-Regular';
     font-size: 18px;
     border-collapse: collapse;
-    color: #fff;
     border-collapse: separate;
     border-spacing: 0 8px;
 }
@@ -51,14 +49,14 @@
 
 #Calculation {
     width: 300px;
-    height: 35px;
+    height: 40px;
     text-align: right;
     border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
     text-indent: 4px;
-    font-family: 'Vazirmatn-Regular';
-    color: #6d7275;
+    background-color: #ffffff;
+    color: var(--color_font_grey);
 
 }
 
@@ -104,11 +102,11 @@
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: var(--background_div_hover);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--background_div_hover);
 }
 
 input:checked+.slider:before {
@@ -119,12 +117,20 @@ input:checked+.slider:before {
 
 /* for the volume value box */
 output {
-    background: #2196F3;
+    background: var(--background_div_hover);
     font-size: small;
     padding: 4px 12px;
     border-radius: 3px;
-    color: #fff;
 }
+
+#volume {
+    accent-color: var(--background_div_hover);
+}
+
+#adhan_volume {
+    accent-color: var(--background_div_hover);
+}
+
 
 /* Rounded sliders */
 .slider.round {
@@ -138,6 +144,7 @@ output {
 
 #save {
     margin-top: 25px;
+    margin-bottom: 20px;
     display: block;
     width: 200px;
     border-style: none;
@@ -146,8 +153,8 @@ output {
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
-    font-family: 'Vazirmatn-Regular';
-    color: #fff;
+    font-family: var(--font_default);
+    color: var(--white);
     background-color: #232527;
     box-shadow: 5px 15px 15px 0px #0000001c;
     transition: 0.5s ease-in-out;
@@ -155,6 +162,6 @@ output {
 }
 
 #save:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     box-shadow: 5px 15px 15px 0px #00000048;
 }

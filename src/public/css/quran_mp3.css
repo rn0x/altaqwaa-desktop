@@ -1,5 +1,5 @@
 #icon_menu_mp3 {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #quran_mp3 {
@@ -26,16 +26,17 @@
     list-style: none;
     text-align: center;
     margin: 10px 10px 10px 10px;
-    background-color: #232527;
+    background-color: var(--background_div);
     width: 350px;
     height: 30px;
     border-radius: 8px;
     align-items: center;
+    padding: 10px;
     box-shadow: 0px 0px 25px 0px #00000023;
 }
 
 .li_group:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
 }
 
 #grid_mp3 {
@@ -48,14 +49,13 @@
 }
 
 .name {
+    font-size: 18px;
     margin-top: 5px;
-    font-family: 'Vazirmatn-Regular';
-    color: #fff;
 }
 
 .number {
     margin-top: 0px;
-    color: #3e4347;
+    color: var(--color_font_grey);
 }
 
 .icon_mp3,
@@ -76,8 +76,6 @@
 }
 
 #Sheikh_name {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
     font-size: 19px;
     margin: 0 0 0 0;
 
@@ -100,20 +98,18 @@
     width: 350px;
     height: auto;
     border-radius: 8px;
-    color: #fff;
     padding: 5px;
     justify-content: center;
     cursor: pointer;
 }
 
 #Sheikh li:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
 }
 
 #reader {
     /* width: max-content; */
     width: 100%;
-    color: #fff;
     display: inline-flex;
     justify-content: space-evenly;
     align-items: center;
@@ -127,6 +123,6 @@
     margin-top: 0px;
     margin-bottom: 10px;
     font-family: 'Quran';
-    color: #4e5458;
+    color: var(--color_font_grey);
     font-size: 18px;
 }
