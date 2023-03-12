@@ -47,7 +47,7 @@
         if (settings.notifications_adhan == true || settings.notifications_adhkar == true) {
             const audio_window = require('./window/audio_window.js');
             console.log("[Altaqwaa-CLI] Audio Window Enabled Starting...")
-            audio_window(path, App_Path, BrowserWindow, ipcMain, app)
+            audio_window(path, App_Path, BrowserWindow, ipcMain)
         } else {
             console.log("[Altaqwaa-CLI] Audio Window Disabled.")
         }
@@ -134,7 +134,8 @@
         } catch (e) { }
 
         const tray_window = require('./window/tray_window.js')
-        tray_window(path, tray, win, ipcMain, app);
+        console.log("[Altaqwaa-CLI] Tray Window Enabled Starting...")
+        tray_window(path, App_Path, tray, win, ipcMain);
     }
 
     else if (process.platform == 'linux') {

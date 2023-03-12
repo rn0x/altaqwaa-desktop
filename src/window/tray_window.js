@@ -1,6 +1,6 @@
 const { menubar } = require('menubar');
 
-module.exports = function tray_window(path, tray, win, ipcMain, app) {
+module.exports = function tray_window(path, App_Path, tray, win, ipcMain) {
 
     let adhkar = menubar({
         browserWindow: {
@@ -26,6 +26,7 @@ module.exports = function tray_window(path, tray, win, ipcMain, app) {
     });
 
     adhkar.on('ready', () => {
+        console.log("[Altaqwaa-CLI] Tray Window Ready.")
 
         adhkar.tray.on('click', () => {
 
@@ -42,7 +43,7 @@ module.exports = function tray_window(path, tray, win, ipcMain, app) {
     });
 
     ipcMain?.handle('App_Path2', () => {
-        return path.join(app?.getPath("appData"), './altaqwaa');
+        return App_Path;
     });
 
 }

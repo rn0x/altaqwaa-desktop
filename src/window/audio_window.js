@@ -1,4 +1,4 @@
-module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain, app) {
+module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain) {
 
     let win
 
