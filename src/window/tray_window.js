@@ -26,7 +26,6 @@ module.exports = function tray_window(path, App_Path, tray, win, ipcMain) {
     });
 
     adhkar.on('ready', () => {
-        console.log("[Altaqwaa-CLI] Tray Window Ready.")
 
         adhkar.tray.on('click', () => {
 
