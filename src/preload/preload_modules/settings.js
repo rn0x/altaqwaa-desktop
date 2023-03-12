@@ -2,15 +2,20 @@ module.exports = function settings(fs, path, App_Path) {
 
     let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
+
     let latitude = document.getElementById('latitude');
     let longitude = document.getElementById('longitude');
     let timezone = document.getElementById('timezone');
     let Calculation = document.getElementById('Calculation');
     let notifications_adhan = document.getElementById('notifications_adhan');
     let notifications_adhkar = document.getElementById('notifications_adhkar');
+    let autostart = document.getElementById('autostart');
+    let startHidden = document.getElementById('startHidden');
+    let minimizeToPanel = document.getElementById('minimizeToPanel');
+    let selected = document.getElementById(settings?.Calculation);
+
     let save = document.getElementById('save');
     let alrt = document.getElementById('alrt');//selected
-    let selected = document.getElementById(settings?.Calculation);
 
     location.timezone ? timezone.value = location.timezone : false
     location.lat ? latitude.value = location.lat : false
@@ -49,15 +54,6 @@ module.exports = function settings(fs, path, App_Path) {
 
     save.addEventListener('click', e => {
 
-        let opj = {
-
-            Calculation: Calculation.value,
-            notifications_adhan: notifications_adhan.checked,
-            notifications_adhkar: notifications_adhkar.checked,
-            volume: volumeRange.value / 100,
-            adhanVolume: adhanVolumeRange.value / 100
-        }
-
         if (latitude.value !== '') {
 
             location.lat = Number(latitude.value)
@@ -88,16 +84,20 @@ module.exports = function settings(fs, path, App_Path) {
 
         }
 
-        fs.writeJsonSync(path.join(App_Path, './data/settings.json'), opj, { spaces: '\t' });
+        fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
+            autostart: autostart.checked || false,
+            startHidden: startHidden.checked || false,
+            minimizeToPanel: minimizeToPanel.checked || false,
+            Calculation: Calculation.value,
+            notifications_adhan: notifications_adhan.checked,
+            notifications_adhkar: notifications_adhkar.checked,
+            volume: volumeRange.value / 100,
+            adhanVolume: adhanVolumeRange.value / 100
+        }, { spaces: '\t' });
 
+    
         alrt.style.display = 'inline-flex';
-
-        setTimeout(() => {
-
-            alrt.style.display = 'none';
-
-        }, 1000);
-
+        setTimeout(() => { alrt.style.display = 'none'; }, 1000);
     })
 
 }
