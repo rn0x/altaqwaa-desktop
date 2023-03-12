@@ -1,4 +1,4 @@
-module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain, app) {
+module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain) {
 
     let win
 
@@ -39,9 +39,7 @@ module.exports = function audio_window(path, App_Path, BrowserWindow, ipcMain, a
     win?.loadFile(path.join(__dirname, '../pages/audio_window.html'));
 
     win?.once('ready-to-show', () => {
-        console.log("[Altaqwaa-CLI] Audio Window Ready.")
         win?.hide();
-        console.log("[Altaqwaa-CLI] Audio Window Hidden.")
     });
 
     win?.on('closed', (event) => {

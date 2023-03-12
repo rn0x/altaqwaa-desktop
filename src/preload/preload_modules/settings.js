@@ -15,11 +15,17 @@ module.exports = function settings(fs, path, App_Path) {
     let selected = document.getElementById(settings?.Calculation);
 
     let save = document.getElementById('save');
-    let alrt = document.getElementById('alrt');//selected
+    let alrt = document.getElementById('alrt');
 
     location.timezone ? timezone.value = location.timezone : false
     location.lat ? latitude.value = location.lat : false
     location.lon ? longitude.value = location.lon : false
+    notifications_adhan.checked = settings?.notifications_adhan
+    notifications_adhkar.checked = settings?.notifications_adhkar
+    autostart.checked = settings?.autostart || false
+    startHidden.checked = settings?.startHidden || false
+    minimizeToPanel.checked = settings?.minimizeToPanel || false
+    selected.selected = "selected"
 
     /* VOLUME MANAGER */
     let volumeRange = document.getElementById('volume');
@@ -47,10 +53,6 @@ module.exports = function settings(fs, path, App_Path) {
     function adhanHandleVolumeRange(volume) {
         adhanVolumeValue.innerHTML = adhanVolumeRange.value;
     }
-
-    notifications_adhan.checked = settings?.notifications_adhan
-    notifications_adhkar.checked = settings?.notifications_adhkar
-    selected.selected = "selected"
 
     save.addEventListener('click', e => {
 
@@ -85,9 +87,9 @@ module.exports = function settings(fs, path, App_Path) {
         }
 
         fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
-            autostart: autostart.checked || false,
-            startHidden: startHidden.checked || false,
-            minimizeToPanel: minimizeToPanel.checked || false,
+            autostart: autostart.checked,
+            startHidden: startHidden.checked,
+            minimizeToPanel: minimizeToPanel.checked,
             Calculation: Calculation.value,
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,

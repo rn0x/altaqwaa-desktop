@@ -10,7 +10,6 @@ const main = require('./main.js');
 /* App Initialization (Make Sure Files Ready)  */
 const appInitialization = require('./modules/appInitialization.js');
 const App_Path = path.join(app?.getPath("appData"), './altaqwaa');
-fs.existsSync(App_Path) ? true : fs.mkdirsSync(App_Path, { recursive: true });
 appInitialization(path, fs, App_Path, app.getVersion());
 
 app.on('ready', (e) => {

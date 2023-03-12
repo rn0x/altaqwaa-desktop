@@ -28,17 +28,15 @@
     const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
 
     win?.once('ready-to-show', () => {
-        console.log("[Altaqwaa-CLI] Main Window Ready.")
 
         if (process.argv.includes('--hidden')) {
+            console.log("[Altaqwaa-CLI] Hidden & Minimized.")
             win?.hide()
-            console.log("[Altaqwaa-CLI] Main Window Hidden.")
         } else if (settings?.startHidden == true) {
+            console.log("[Altaqwaa-CLI] Hidden & Minimized.")
             win?.hide()
-            console.log("[Altaqwaa-CLI] Main Window Hidden.")
         } else {
             win?.show();
-            console.log("[Altaqwaa-CLI] Main Window Shown.")
         }
 
         //win.webContents.openDevTools();
@@ -46,10 +44,7 @@
         /* LOAD AUDIO WINDOW AFTER MAIN WINDOW (HOME) IS READY & LOADED */
         if (settings.notifications_adhan == true || settings.notifications_adhkar == true) {
             const audio_window = require('./window/audio_window.js');
-            console.log("[Altaqwaa-CLI] Audio Window Enabled Starting...")
-            audio_window(path, App_Path, BrowserWindow, ipcMain, app)
-        } else {
-            console.log("[Altaqwaa-CLI] Audio Window Disabled.")
+            audio_window(path, App_Path, BrowserWindow, ipcMain)
         }
     });
 
@@ -134,7 +129,7 @@
         } catch (e) { }
 
         const tray_window = require('./window/tray_window.js')
-        tray_window(path, tray, win, ipcMain, app);
+        tray_window(path, App_Path, tray, win, ipcMain);
     }
 
     else if (process.platform == 'linux') {
