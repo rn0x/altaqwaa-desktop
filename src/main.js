@@ -1,8 +1,26 @@
 ﻿module.exports = async function homeWindow(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu) {
+    const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
 
     let win
+    let loadWin
     let tray
     let contextMenu
+
+    if (process.argv.includes('--hidden')) {
+        loadWin = null
+    } else if (settings?.startHidden == true) {
+        loadWin = null
+    } else {
+        loadWin = new BrowserWindow({
+            width: 128, 
+            height: 128, 
+            transparent: true, 
+            frame: false, 
+            alwaysOnTop: true,
+            center: true,
+        })    
+        loadWin?.loadFile(path.join(__dirname, './pages/loading.html'));
+    }
 
     win = new BrowserWindow({
         width: 1000,
@@ -21,14 +39,11 @@
         }
     });
 
-    win.removeMenu();
+    win?.removeMenu();
     win?.loadFile(path.join(__dirname, './pages/home.html'));
 
-    // FOR AUTOSTARTING && AUDIO WINDOW
-    const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
 
     win?.once('ready-to-show', () => {
-
         if (process.argv.includes('--hidden')) {
             console.log("[Altaqwaa-CLI] Hidden & Minimized.")
             win?.hide()
@@ -36,9 +51,12 @@
             console.log("[Altaqwaa-CLI] Hidden & Minimized.")
             win?.hide()
         } else {
-            win?.show();
+            setTimeout(() => {
+                loadWin.close();
+                win?.show();
+            }, 1000);
         }
-
+        
         //win.webContents.openDevTools();
 
         /* LOAD AUDIO WINDOW AFTER MAIN WINDOW (HOME) IS READY & LOADED */
@@ -64,9 +82,6 @@
         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), soundJson);
         fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), audioJson);
         // tray?.destroy();
-        tray = null
-        contextMenu = null
-        win = null
         app?.quit()
 
     });
@@ -77,7 +92,7 @@
 
         if (win?.isMaximized()) win?.unmaximize();
         else win?.maximize();
-    
+
     });
 
     ipcMain?.on('minimize', () => win?.minimize());
@@ -108,17 +123,17 @@
         console.log("[Altaqwaa-CLI] Altaqwaa For Windows.")
         try {
             if (settings?.autostart == true) {
-                if(settings.startHidden) {
+                if (settings.startHidden) {
                     app.setLoginItemSettings({
                         openAtLogin: true,
                         path: path.join(process.resourcesPath, '../Altaqwaa.exe'),
                         args: ['--hidden']
-                    });    
+                    });
                 } else {
                     app.setLoginItemSettings({
                         openAtLogin: true,
                         path: path.join(process.resourcesPath, '../Altaqwaa.exe')
-                    });    
+                    });
                 }
             } else {
                 app.setLoginItemSettings({

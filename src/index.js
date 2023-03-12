@@ -11,10 +11,10 @@ const main = require('./main.js');
 const appInitialization = require('./modules/appInitialization.js');
 const App_Path = path.join(app?.getPath("appData"), './altaqwaa');
 appInitialization(path, fs, App_Path, app.getVersion());
+app.setAppUserModelId("org.altaqwaa.rn0x");
 
 app.on('ready', (e) => {
     e.preventDefault();
-    app.setAppUserModelId("org.altaqwaa.rn0x");
     console.log("[Altaqwaa-CLI] Ready, Starting Main Window...")
     main(path, fs, App_Path, BrowserWindow, ipcMain, app, Tray, Menu)
 });
