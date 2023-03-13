@@ -6,6 +6,7 @@ momentHj.locale('en-EN')
 module.exports = function prayer_time(fs, path, App_Path) {
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
+    let dark_mode = fs.readJsonSync(path.join(App_Path, './data/settings.json'))?.dark_mode;
     let data_hijri = document.getElementById('data_hijri');
     let data_Gregorian = document.getElementById('data_Gregorian');
     let datoday = document.getElementById('datoday');
@@ -64,7 +65,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
             remaining_name.innerText = "الفجر";
             remaining_.style.display = 'block'
             remaining_time.style.display = 'block'
-            fajr_li.style.background = '#6bc077'
+            fajr_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
             dhuhr_li.style.background = null
             asr_li.style.background = null
             maghrib_li.style.background = null
@@ -76,7 +77,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
             remaining_.style.display = 'block'
             remaining_time.style.display = 'block'
             fajr_li.style.background = null
-            dhuhr_li.style.background = '#6bc077'
+            dhuhr_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
             asr_li.style.background = null
             maghrib_li.style.background = null
             isha_li.style.background = null
@@ -88,7 +89,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
             remaining_time.style.display = 'block'
             fajr_li.style.background = null
             dhuhr_li.style.background = null
-            asr_li.style.background = '#6bc077'
+            asr_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
             maghrib_li.style.background = null
             isha_li.style.background = null
             break;
@@ -100,7 +101,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
             fajr_li.style.background = null
             dhuhr_li.style.background = null
             asr_li.style.background = null
-            maghrib_li.style.background = '#6bc077'
+            maghrib_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
             isha_li.style.background = null
             break;
 
@@ -112,7 +113,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
             dhuhr_li.style.background = null
             asr_li.style.background = null
             maghrib_li.style.background = null
-            isha_li.style.background = '#6bc077'
+            isha_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
             break;
 
         default:
@@ -148,7 +149,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
                 remaining_name.innerText = "الفجر";
                 remaining_.style.display = 'block'
                 remaining_time.style.display = 'block'
-                fajr_li.style.background = '#6bc077'
+                fajr_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
                 dhuhr_li.style.background = null
                 asr_li.style.background = null
                 maghrib_li.style.background = null
@@ -160,7 +161,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
                 remaining_.style.display = 'block'
                 remaining_time.style.display = 'block'
                 fajr_li.style.background = null
-                dhuhr_li.style.background = '#6bc077'
+                dhuhr_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
                 asr_li.style.background = null
                 maghrib_li.style.background = null
                 isha_li.style.background = null
@@ -172,7 +173,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
                 remaining_time.style.display = 'block'
                 fajr_li.style.background = null
                 dhuhr_li.style.background = null
-                asr_li.style.background = '#6bc077'
+                asr_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
                 maghrib_li.style.background = null
                 isha_li.style.background = null
                 break;
@@ -184,7 +185,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
                 fajr_li.style.background = null
                 dhuhr_li.style.background = null
                 asr_li.style.background = null
-                maghrib_li.style.background = '#6bc077'
+                maghrib_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
                 isha_li.style.background = null
                 break;
 
@@ -196,7 +197,7 @@ module.exports = function prayer_time(fs, path, App_Path) {
                 dhuhr_li.style.background = null
                 asr_li.style.background = null
                 maghrib_li.style.background = null
-                isha_li.style.background = '#6bc077'
+                isha_li.style.background = dark_mode ? '#6bc077' : '#b0bec5'
                 break;
 
             default:

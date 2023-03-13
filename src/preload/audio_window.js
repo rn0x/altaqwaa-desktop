@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
     let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
     let audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
+    let variables_css = document.getElementById("variables_css");
+    let icon_closed_window = document.getElementById("icon_closed_window");
 
     document.getElementById('closed').addEventListener('click', e => {
         document.getElementById('audio').pause();
@@ -18,6 +20,21 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         ipcRenderer.send('closed3');
         audioBoolean(App_Path, false)
     });
+
+    if (settings?.dark_mode) {
+        // stylesheet 
+        variables_css.href = '../public/css/var.css';
+        // window controls
+        icon_closed_window.srcset = '../public/icon/closed.png';
+    }
+
+    else if (settings?.dark_mode === false) {
+        // stylesheet 
+        variables_css.href = '../public/css/var_light.css';
+        // window controls
+        icon_closed_window.srcset = '../public/icon/dark/closed.png';
+    }
+    
 
     while (true) {
 

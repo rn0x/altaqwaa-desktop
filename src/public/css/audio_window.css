@@ -80,5 +80,5 @@ body {
 
 ::-webkit-media-controls-enclosure {
     border-radius: 5px;
-    background-color: #222629;
+    background-color: var(--background_div);
 }

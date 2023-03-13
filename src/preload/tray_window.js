@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     const App_Path = await ipcRenderer.invoke('App_Path2');
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
+    let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
+    let variables_css = document.getElementById("variables_css");
     let data_hijri = document.getElementById('data_hijri');
     let data_Gregorian = document.getElementById('data_Gregorian');
     let datoday = document.getElementById('datoday');
@@ -19,6 +21,14 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     let remaining_ = document.getElementById('remaining');
     let remaining_time = document.getElementById('remaining_time');
     let remaining_name = document.getElementById('remaining_name');
+
+    if (settings?.dark_mode) {
+        variables_css.href = '../public/css/var.css';
+    }
+
+    else if (settings?.dark_mode === false) {
+        variables_css.href = '../public/css/var_light.css';
+    }
 
     data_hijri.innerText = momentHj().format('iYYYY/iM/iD');
     data_Gregorian.innerText = momentHj().format('YYYY/M/D');
@@ -114,6 +124,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         datoday.innerText = momentHj().locale('ar-SA').format('dddd');
         hour_minutes.innerText = moment().tz(location?.timezone).format('h:mm');
         seconds.innerText = moment().tz(location?.timezone).format(': ss A');
+
 
     }, 1000);
 });
