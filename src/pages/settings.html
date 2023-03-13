@@ -22,15 +22,18 @@
             <div id="window-controls">
 
                 <div id="closed">
-                    <img class="icon_bar" srcset="../public/icon/closed.png" id="icon_closed_window" draggable="false" />
+                    <img class="icon_bar" srcset="../public/icon/closed.png" id="icon_closed_window"
+                        draggable="false" />
                 </div>
 
                 <div id="minimizable">
-                    <img class="icon_bar" srcset="../public/icon/minimizable.png" id="icon_minimizable_window" draggable="false" />
+                    <img class="icon_bar" srcset="../public/icon/minimizable.png" id="icon_minimizable_window"
+                        draggable="false" />
                 </div>
 
                 <div id="minimize">
-                    <img class="icon_bar" srcset="../public/icon/minimize.png" id="icon_minimize_window" draggable="false" />
+                    <img class="icon_bar" srcset="../public/icon/minimize.png" id="icon_minimize_window"
+                        draggable="false" />
                 </div>
 
             </div>
@@ -85,28 +88,81 @@
         </div>
 
         <div id="settings" class="animate__animated animate__fadeIn">
-            <table id="table">
-                <tr>
-                    <td class="name">خط العرض</td>
-                    <td>
+
+            <ul class="settings_ul">
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            خط العرض
+                        </h3>
+
+                        <p class="settings_description">
+                            أدخِل إحداثيات نظام تحديد المواقع العالمي (GPS) لخط العرض
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <input type="number" placeholder="21.4849" id="latitude">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">خط الطول</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            خط الطول
+                        </h3>
+
+                        <p class="settings_description">
+                            أدخِل إحداثيات نظام تحديد المواقع العالمي (GPS) لخط الطول
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <input type="number" placeholder="39.192" id="longitude">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">المنطقة الزمنية</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            المنطقة الزمنية
+                        </h3>
+
+                        <p class="settings_description">
+                           أدخِل المنطقة الزمنية (بالإنجليزية: Time zone) الخاص بدولتك
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <input type="text" placeholder="Asia/Riyadh" id="timezone">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">طريقة حساب أوقات الصلاة</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            طريقة حساب أوقات الصلاة
+                        </h3>
+
+                        <p class="settings_description">
+                            أدخِل طريقة حساب أوقات الصلاة (ام القرى , رابطة العالم الإسلامي ,الهيئة المصرية العامة للمساحة الخ ...)
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <select id="Calculation" size="1">
                             <option value="MuslimWorldLeague" id="MuslimWorldLeague">رابطة العالم الإسلامي</option>
                             <option value="Egyptian" id="Egyptian">الهيئة المصرية العامة للمساحة</option>
@@ -120,80 +176,195 @@
                             <option value="Tehran" id="Tehran">معهد الجيوفيزياء بجامعة طهران</option>
                             <option value="NorthAmerica" id="NorthAmerica">يمكن استخدامه لأمريكا الشمالية</option>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">تنبية بدخول وقت الصلاة (صوت)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            تنبية بدخول وقت الصلاة
+                        </h3>
+
+                        <p class="settings_description">
+                            يقوم هذا الخيار بتفعيل التنبيه الصوتي عند دخول وقت الصلاة
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <label class="switch" id="label_adhan">
                             <input type="checkbox" checked id="notifications_adhan">
                             <span class="slider round"></span>
                         </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">إشعارات أذكار الصباح والمساء (صوت)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            إشعارات أذكار الصباح والمساء
+                        </h3>
+
+                        <p class="settings_description">
+                            تنبيه صوتي ( أذكار ) عند الساعة 7:40 صباحا و مساءً
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <label class="switch" id="label_adhkar">
                             <input type="checkbox" checked id="notifications_adhkar">
                             <span class="slider round"></span>
                         </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">بدأ التطبيق مع النظام (لنظام ويندوز فقط)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            بدأ التطبيق مع النظام
+                        </h3>
+
+                        <p class="settings_description">
+                            بداء تشغيل التطبيق مع بداية تشغيل النظام, يدعم نظام ويندوز فقط
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <label class="switch" id="label_adhkar">
                             <input type="checkbox" checked id="autostart">
                             <span class="slider round"></span>
                         </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">بدأ التطبيق بالخلفية (بدون واجهة)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            بدأ التطبيق بالخلفية
+                        </h3>
+
+                        <p class="settings_description">
+                            بداء تشغيل التطبيق بدون واجه رسومية gui
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <label class="switch" id="label_adhkar">
                             <input type="checkbox" id="startHidden">
                             <span class="slider round"></span>
                         </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">تصغير التطبيق لشريط المهام (تلقائيا)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            تصغير التطبيق لقائمة الإعلامات
+                        </h3>
+
+                        <p class="settings_description">
+                            عند تفعيل هذا الخيار سيتم تصغير التطبيق لقائمة الإعلامات عند الضغط على زر تصغير بدلاً من
+                            قائمة المهام
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <label class="switch" id="label_adhkar">
                             <input type="checkbox" id="minimizeToPanel">
                             <span class="slider round"></span>
                         </label>
-                    </td>
-                </tr>
+                    </div>
 
-                <tr>
-                    <td class="name">الوضع الليلي</td>
-                    <td>
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            الوضع الليلي
+                        </h3>
+
+                        <p class="settings_description">
+                            عند تفعيل هذا الخيار سيتم تغير شكل التطبيق الى الوضع الليلي
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <label class="switch" id="label_adhkar">
                             <input type="checkbox" id="dark_mode">
                             <span class="slider round"></span>
                         </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">مستوى الصوت (للإستماع للقرآن)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            مستوى صوت القرآن الكريم
+                        </h3>
+
+                        <p class="settings_description">
+                            حرِّك مستوى الصوت إلى المستوى الذي تريده عند الإستماع للقرآن الكريم
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <input type="range" value="100" min="1" max="100" id="volume">
                         <output id="volume_value">100</output>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name">مستوى الصوت (للأذان وللإذكار)</td>
-                    <td>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            مستوى صوت الأذان و الأذكار
+                        </h3>
+
+                        <p class="settings_description">
+                            حرِّك مستوى الصوت إلى المستوى الذي تريده عند الإستماع للأذان او الأذكار
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
                         <input type="range" value="100" min="1" max="100" id="adhan_volume">
                         <output id="adhan_volume_value">100</output>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+
+                </li>
+
+            </ul>
+
             <button id="save">حفظ</button>
-            <br>
+
         </div>
 
     </div>

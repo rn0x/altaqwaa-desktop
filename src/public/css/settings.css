@@ -15,27 +15,6 @@
     user-select: none;
 }
 
-#table {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 18px;
-    border-collapse: collapse;
-    border-collapse: separate;
-    border-spacing: 0 8px;
-}
-
-.name {
-    text-align: right;
-}
-
-#table td {
-    border-bottom: 5px;
-    padding: 10px;
-    padding-right: 30px;
-}
 
 #latitude,
 #longitude,
@@ -44,7 +23,8 @@
     height: 35px;
     text-align: center;
     border-radius: 10px;
-    border: none
+    border: none;
+    background-color: #eceff1;
 }
 
 #Calculation {
@@ -55,7 +35,8 @@
     cursor: pointer;
     font-size: 15px;
     text-indent: 4px;
-    background-color: #ffffff;
+    background-color: #eceff1;
+    border: none;
     color: var(--color_font_grey);
 
 }
@@ -171,4 +152,37 @@ output {
 
 #save:hover {
     background-color: var(--background_div_hover);
+}
+
+
+.settings_ul {
+    display: block;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    padding: 0px;
+}
+
+.settings_ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: var(--background_div);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.settings_ul li:hover {
+    background-color: var(--background_settings_hover);
+}
+
+.settings_title {
+    color: var(--white-div);
+}
+
+.settings_description {
+    color: var(--color_font_grey);
 }
