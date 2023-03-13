@@ -34,8 +34,9 @@
     text-align: center;
     border-radius: 15px;
     background-color: var(--background_div);
+    color: var(--white-div);
     font-size: 22px;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     transition: 0.5s ease-in-out;
     cursor: pointer;
 }
@@ -43,7 +44,6 @@
 #info_ul li:hover {
     background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 15px 15px 0px #00000048;
 }
 
 #logo {
@@ -100,6 +100,7 @@
     text-align: center;
     font-size: 22px;
     margin-left: 40px;
+    color: var(--white-div);
 }
 
 #Developer_li {
@@ -162,6 +163,7 @@
     display: block;
     padding: .4em .4em .4em 2em;
     *padding: .4em;
+    color: var(--white-div);
     background: var(--background_div);
     text-decoration: none;
     border-radius: .3em;
@@ -213,6 +215,7 @@
     border-collapse: collapse;
     border-collapse: separate;
     border-spacing: 0 8px;
+    color: var(--white-div);
 
 }
 
@@ -249,10 +252,10 @@
     border-radius: 10px;
     margin-bottom: 20px;
     transition: 0.5s ease-in-out;
+    box-shadow: 0px 0px 10px 0px #00000010;
 }
 
 .dev:hover {
     background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 15px 15px 0px #00000048;
 }

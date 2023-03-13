@@ -22,7 +22,7 @@
     border-radius: 15px;
     margin-right: 30px;
     margin-left: 30px;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     user-select: text;
 }
 
@@ -36,6 +36,7 @@
 }
 
 #text {
+    color: var(--white-div);
     font-family: var(--font_quran);
     font-size: var(--font_size_adhkar);
     text-align: center;
@@ -96,7 +97,7 @@
     text-align: center;
     background-color: var(--background_div);
     border-radius: 15px;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     transition: 0.5s ease-in-out;
     display: flex;
     align-items: center;
@@ -109,7 +110,6 @@
     background-color: var(--background_div_hover);
     padding: 5px;
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 15px 15px 0px #00000048;
 
 }
 
@@ -119,6 +119,7 @@
 }
 
 #opt {
+    color: var(--white-div);
     font-size: 22px;
 }
 

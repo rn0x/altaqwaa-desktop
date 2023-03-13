@@ -7,10 +7,11 @@
     --font_size_adhkar: 20px;
     --background_body: #f4f5fb;
     --background_div: #ffffff;
-    --background_div_hover: #6bc077;
+    --background_div_hover: #b0bec5;
     --scrollbar_thumb: #eaeaee;
     --scrollbar_thumb_hover: #dfdfe9;
-    --color_font_grey: #585858;
+    --color_font_grey: #546e7a;
     --red: #f34949;
-    --white: #505050;
+    --white: #78909c;
+    --white-div: #455a64;
 }

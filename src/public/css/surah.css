@@ -32,7 +32,7 @@
     display: flex;
     color: var(--white);
     background-color: var(--background_div);
-    box-shadow: 0px 0px 15px 0px #0000001f;
+    box-shadow: 0px 0px 10px 0px #0000001f;
     border: none;
     cursor: pointer;
     -webkit-user-select: none;
@@ -45,7 +45,6 @@
 
 .surah:hover {
     background-color: var(--background_div_hover);
-    box-shadow: 0px 0px 20px 0px #0000001f;
 }
 
 .surah_number {
@@ -64,6 +63,7 @@
 
 .surah_name {
     font-size: 19px;
+    color: var(--white-div);
 }
 
 #Quran_Content {
@@ -78,6 +78,7 @@
 #Surah_div {
     margin-top: 40px;
     background-color: var(--background_div);
+    box-shadow: 0px 0px 10px 0px #0000000a;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
@@ -98,7 +99,7 @@
 }
 
 #Qur_name {
-    color: var(--white);
+    color: var(--white-div);
 }
 
 #Descent {

@@ -82,12 +82,13 @@
 #prayer li {
     list-style: none;
     margin: 10px 10px 10px 10px;
+    color: var(--white-div);
     background-color: var(--background_div);
     width: 130px;
     border-radius: 8px;
     text-align: center;
     direction: ltr;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     transition: 0.5s ease-in-out;
 }
 
@@ -95,7 +96,6 @@
     background-color: var(--background_div_hover);
     padding: 5px;
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 15px 15px 0px #00000048;
 }
 
 /* #asr_li {
@@ -118,6 +118,7 @@
 }
 
 #remaining_time {
+    color: var(--white-div);
     display: none;
     font-size: 27px;
     text-align: center;
@@ -129,7 +130,7 @@
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     transition: 0.5s ease-in-out;
 }
 

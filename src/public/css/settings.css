@@ -131,6 +131,14 @@ output {
     accent-color: var(--background_div_hover);
 }
 
+#volume_value {
+    color: var(--white-div);
+}
+
+#adhan_volume_value {
+    color: var(--white-div);
+}
+
 
 /* Rounded sliders */
 .slider.round {
@@ -154,14 +162,13 @@ output {
     margin-right: auto;
     font-size: 20px;
     font-family: var(--font_default);
-    color: var(--white);
+    color: var(--white-div);
     background-color: var(--background_div);
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     transition: 0.5s ease-in-out;
     cursor: pointer;
 }
 
 #save:hover {
     background-color: var(--background_div_hover);
-    box-shadow: 5px 15px 15px 0px #00000048;
 }

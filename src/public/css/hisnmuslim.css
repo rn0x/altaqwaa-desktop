@@ -38,12 +38,13 @@
     list-style: none;
     text-align: center;
     margin: 10px 10px 10px 10px;
+    color: var(--white-div);
     background-color: var(--background_div);
     width: 350px;
     height: 30px;
     border-radius: 8px;
     align-items: center;
-    box-shadow: 0px 0px 25px 0px #00000023;
+    box-shadow: 0px 0px 10px 0px #00000010;
     font-size: 19px;
     padding: 10px;
     cursor: pointer;
