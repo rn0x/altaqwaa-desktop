@@ -33,12 +33,17 @@
 
 <br>
 
-| ![altaqwaa](/screenshots/1.png) | ![altaqwaa](/screenshots/2.png) |
-|:------------------------|----------------------|
-| ![altaqwaa](/screenshots/3.png) | ![altaqwaa](/screenshots/4.png) |
-| ![altaqwaa](/screenshots/5.png) | ![altaqwaa](/screenshots/6.png) |
-| ![altaqwaa](/screenshots/7.png) | ![altaqwaa](/screenshots/8.png) |
-| ![altaqwaa](/screenshots/9.png) | ![altaqwaa](/screenshots/10.png) |
+
+| dark | light | description
+|:------------------------|----------------------|----------------------|
+| ![altaqwaa](/screenshots/dark/1.png) | ![altaqwaa](/screenshots/light/1.png) | القائمة الرئيسية
+| ![altaqwaa](/screenshots/dark/2.png) | ![altaqwaa](/screenshots/light/2.png) | قائمة سورة القرآن الكريم
+| ![altaqwaa](/screenshots/dark/3.png) | ![altaqwaa](/screenshots/light/3.png) | قائمة القراء
+| ![altaqwaa](/screenshots/dark/4.png) | ![altaqwaa](/screenshots/light/4.png) | قائمة الأذكار
+| ![altaqwaa](/screenshots/dark/5.png) | ![altaqwaa](/screenshots/light/5.png) | قائمة حصن المسلم
+| ![altaqwaa](/screenshots/dark/6.png) | ![altaqwaa](/screenshots/light/6.png) | قائمة مواقيت الصلاة
+| ![altaqwaa](/screenshots/dark/7.png) | ![altaqwaa](/screenshots/light/7.png) | قائمة الأعدادات
+| ![altaqwaa](/screenshots/dark/8.png) | ![altaqwaa](/screenshots/light/8.png) | قائمة المزيد
 
 
 <br>
