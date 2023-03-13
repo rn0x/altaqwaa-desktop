@@ -155,7 +155,7 @@ output {
     font-size: 20px;
     font-family: var(--font_default);
     color: var(--white);
-    background-color: #232527;
+    background-color: var(--background_div);
     box-shadow: 5px 15px 15px 0px #0000001c;
     transition: 0.5s ease-in-out;
     cursor: pointer;

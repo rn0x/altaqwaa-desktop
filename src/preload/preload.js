@@ -2,17 +2,21 @@
 const { ipcRenderer, shell } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
+const darkMode = require('./darkMode.js');
 
 window.addEventListener('DOMContentLoaded', async (event) => {
   event.preventDefault();
 
+  const App_Path = await ipcRenderer.invoke('App_Path');
+
+  /* DARK MODE */
+  await darkMode(fs, path, App_Path);
+  
   const pageFile = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
   document.documentElement.style.setProperty('--animate-duration', '1.5s');
   document.getElementById('closed').addEventListener('click', e => ipcRenderer.send('closed'));
   document.getElementById('minimizable').addEventListener('click', e => ipcRenderer.send('minimizable'));
   document.getElementById('minimize').addEventListener('click', e => ipcRenderer.send('minimize'));
-
-  const App_Path = await ipcRenderer.invoke('App_Path');
 
   /* PAGES LOAD (SWITCH) */
   switch (pageFile) {

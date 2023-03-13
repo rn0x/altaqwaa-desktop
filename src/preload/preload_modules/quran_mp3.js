@@ -3,6 +3,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
     let Quran_json = fs.readJsonSync(path.join(__dirname, '../../data/Quran.json'));
     let mp3quran_json = fs.readJsonSync(path.join(__dirname, '../../data/mp3quran.json'));
     let volume = fs.readJsonSync(path.join(App_Path, './data/settings.json')).volume;
+    let dark_mode = fs.readJsonSync(path.join(App_Path, './data/settings.json'))?.dark_mode;
     let ul_group = document.getElementById('ul_group');
     let Sheikh = document.getElementById('Sheikh');
     let li_Sheikh_number = 1
@@ -78,7 +79,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
                 download.appendChild(icon_mp3);
                 icon_mp3.className = 'icon_mp3';
                 icon_mp3.id = `icon_mp3_${item?.Number}`
-                icon_mp3.src = '../public/icon/play.png';
+                icon_mp3.src = dark_mode ? '../public/icon/play.png' : '../public/icon/dark/play.png';
                 download.appendChild(a_download);
                 a_download.id = `a_download_${item?.Number}`
                 a_download.href = url
@@ -86,7 +87,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
                 a_download.appendChild(icon_mp3_ddownload);
                 icon_mp3_ddownload.className = 'icon_mp3_ddownload';
                 icon_mp3_ddownload.id = `icon_mp3_ddownload_${item?.Number}`
-                icon_mp3_ddownload.src = '../public/icon/download.png';
+                icon_mp3_ddownload.src = dark_mode ? '../public/icon/download.png' : '../public/icon/dark/download.png';
                 download.appendChild(audio);
                 audio.id = `start_mp3_${numberx}`
                 audio.src = url
@@ -115,7 +116,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
 
                     if (sound_json?.sound) {
 
-                        icon_mp3.src = '../public/icon/pause.png';
+                        icon_mp3.src = dark_mode ? '../public/icon/pause.png' : '../public/icon/dark/pause.png';
                         sound.play()
                         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { sound: false });
                     }
@@ -123,7 +124,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
 
 
                     else {
-                        icon_mp3.src = '../public/icon/play.png';
+                        icon_mp3.src = dark_mode ? '../public/icon/play.png': '../public/icon/dark/play.png';
                         sound.pause()
                         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { sound: true });
                     }

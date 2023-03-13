@@ -162,8 +162,10 @@ body {
     padding: 15px;
     border-radius: 4px;
     font-size: 16px;
-    background-color: var(--white);
-    border-color: var(--background_div);
+    background-color: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--background_body);
     color: var(--color_font_grey);
     z-index: 5;
     position: fixed;

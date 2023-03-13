@@ -82,8 +82,7 @@
 }
 
 #Sheikh_rewaya {
-    font-family: 'Vazirmatn-Regular';
-    color: #4e5458;
+    color: var(--color_font_grey);
     font-size: 12px;
     margin: 0 0 0 0;
     direction: rtl;
@@ -94,7 +93,7 @@
     /* width: max-content; */
     list-style: none;
     margin: 10px 10px 10px 10px;
-    background-color: #232527;
+    background-color: var(--background_div);
     width: 350px;
     height: auto;
     border-radius: 8px;

@@ -12,6 +12,7 @@ module.exports = function settings(fs, path, App_Path) {
     let autostart = document.getElementById('autostart');
     let startHidden = document.getElementById('startHidden');
     let minimizeToPanel = document.getElementById('minimizeToPanel');
+    let dark_mode = document.getElementById('dark_mode');
     let selected = document.getElementById(settings?.Calculation);
 
     let save = document.getElementById('save');
@@ -25,6 +26,7 @@ module.exports = function settings(fs, path, App_Path) {
     autostart.checked = settings?.autostart || false
     startHidden.checked = settings?.startHidden || false
     minimizeToPanel.checked = settings?.minimizeToPanel || false
+    dark_mode.checked = settings?.dark_mode || true
     selected.selected = "selected"
 
     /* VOLUME MANAGER */
@@ -90,6 +92,7 @@ module.exports = function settings(fs, path, App_Path) {
             autostart: autostart.checked,
             startHidden: startHidden.checked,
             minimizeToPanel: minimizeToPanel.checked,
+            dark_mode: dark_mode.checked,
             Calculation: Calculation.value,
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,
