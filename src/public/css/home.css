@@ -71,4 +71,5 @@
 .page {
     color: var(--white-div);
     font-size: 18px;
+    font-weight: 600;
 }
