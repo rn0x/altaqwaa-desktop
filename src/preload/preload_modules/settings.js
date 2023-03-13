@@ -26,7 +26,7 @@ module.exports = function settings(fs, path, App_Path) {
     autostart.checked = settings?.autostart || false
     startHidden.checked = settings?.startHidden || false
     minimizeToPanel.checked = settings?.minimizeToPanel || false
-    dark_mode.checked = settings?.dark_mode || true
+    dark_mode.checked = settings?.dark_mode ? true : false
     selected.selected = "selected"
 
     /* VOLUME MANAGER */
