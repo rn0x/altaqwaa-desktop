@@ -6,21 +6,11 @@ module.exports = async (fs, path, App_Path) => {
 
     if (dark_mode === false) {
 
-        const pageFile = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
-        const root = document.querySelector(':root');
-        const setVariables = vars => Object.entries(vars).forEach(v => root.style.setProperty(v[0], v[1]));
-        const myVariables = {
-            '--background_body': '#f4f5fb',
-            '--background_div': '#ffffff',
-            '--white': '#505050',
-            '--scrollbar_thumb': '#eaeaee',
-            '--scrollbar_thumb_hover': '#dfdfe9',
-            // '--color_font_grey': '#6bc077',
-        };
-        setVariables(myVariables);
+        let pageFile = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
 
+        // stylesheet 
 
-        /* document */
+        let variables_css = document.getElementById("variables_css");
 
         // window controls
         let icon_closed_window = document.getElementById("icon_closed_window");
@@ -37,7 +27,7 @@ module.exports = async (fs, path, App_Path) => {
         let icon_settings = document.getElementById("icon_settings");
         let icon_info = document.getElementById("icon_info");
 
-        // every 
+        // document 
 
         let logo = document.getElementById("logo");
         let copy = document.getElementById("copy");
@@ -49,6 +39,9 @@ module.exports = async (fs, path, App_Path) => {
         switch (pageFile) {
 
             case "home.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
 
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
@@ -65,11 +58,14 @@ module.exports = async (fs, path, App_Path) => {
                 icon_settings.src = '../public/icon/dark/settings.png';
                 icon_info.src = '../public/icon/dark/info.png';
 
-                // every
+                // document
                 logo.src = '../public/icon/dark/logo.png';
 
                 break;
             case "evening.html":
+
+                // stylesheet 
+                variables_css.href = '../../public/css/var_light.css';
 
                 // window controls
                 icon_closed_window.srcset = '../../public/icon/dark/closed.png';
@@ -91,6 +87,8 @@ module.exports = async (fs, path, App_Path) => {
                 }
                 break;
             case "food.html":
+                // stylesheet 
+                variables_css.href = '../../public/css/var_light.css';
 
                 // window controls
                 icon_closed_window.srcset = '../../public/icon/dark/closed.png';
@@ -113,6 +111,9 @@ module.exports = async (fs, path, App_Path) => {
                 break;
             case "morning.html":
 
+                // stylesheet 
+                variables_css.href = '../../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../../public/icon/dark/minimizable.png';
@@ -134,6 +135,9 @@ module.exports = async (fs, path, App_Path) => {
                 break;
             case "prayer.html":
 
+                // stylesheet 
+                variables_css.href = '../../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../../public/icon/dark/minimizable.png';
@@ -154,6 +158,9 @@ module.exports = async (fs, path, App_Path) => {
                 }
                 break;
             case "sleeping.html":
+
+                // stylesheet 
+                variables_css.href = '../../public/css/var_light.css';
 
                 // window controls
                 icon_closed_window.srcset = '../../public/icon/dark/closed.png';
@@ -177,6 +184,9 @@ module.exports = async (fs, path, App_Path) => {
                 break;
             case "tasbih.html":
 
+                // stylesheet 
+                variables_css.href = '../../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../../public/icon/dark/minimizable.png';
@@ -199,6 +209,10 @@ module.exports = async (fs, path, App_Path) => {
                 break;
 
             case "surah.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -216,6 +230,11 @@ module.exports = async (fs, path, App_Path) => {
                 break;
 
             case "quran.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -233,6 +252,10 @@ module.exports = async (fs, path, App_Path) => {
                 break;
 
             case "quran_mp3.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -250,6 +273,10 @@ module.exports = async (fs, path, App_Path) => {
                 break;
 
             case "adhkar.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -265,13 +292,17 @@ module.exports = async (fs, path, App_Path) => {
                 icon_settings.src = '../public/icon/dark/settings.png';
                 icon_info.src = '../public/icon/dark/info.png';
 
-                // every 
+                // document 
 
                 copy.src = '../public/icon/dark/copy.png';
                 random.src = '../public/icon/dark/random.png';
                 break;
 
             case "hisnmuslim.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -287,12 +318,16 @@ module.exports = async (fs, path, App_Path) => {
                 icon_settings.src = '../public/icon/dark/settings.png';
                 icon_info.src = '../public/icon/dark/info.png';
 
-                // every 
+                // document 
 
                 mp3_hisn_closed.src = '../public/icon/dark/closed.png';
                 break;
 
             case "prayer_time.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -310,6 +345,10 @@ module.exports = async (fs, path, App_Path) => {
                 break;
 
             case "settings.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -327,6 +366,10 @@ module.exports = async (fs, path, App_Path) => {
                 break;
 
             case "info.html":
+
+                // stylesheet 
+                variables_css.href = '../public/css/var_light.css';
+
                 // window controls
                 icon_closed_window.srcset = '../public/icon/dark/closed.png';
                 icon_minimizable_window.srcset = '../public/icon/dark/minimizable.png';
@@ -342,8 +385,76 @@ module.exports = async (fs, path, App_Path) => {
                 icon_settings.src = '../public/icon/dark/settings.png';
                 icon_info.src = '../public/icon/dark/info.png';
 
-                // every
+                // document
                 logo.src = '../public/icon/dark/logo.png';
+                break;
+
+            /* THE DEFAULT FOR UNEXPECTED THING HAPPEN */
+            default:
+                break;
+        }
+    }
+
+    //////////////////////////////
+    else {
+
+        let pageFile = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+        let variables_css = document.getElementById("variables_css");
+
+        switch (pageFile) {
+
+            case "home.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+            case "evening.html":
+                variables_css.href = '../../public/css/var.css';
+                break;
+            case "food.html":
+                variables_css.href = '../../public/css/var.css';
+                break;
+            case "morning.html":
+                variables_css.href = '../../public/css/var.css';
+                break;
+            case "prayer.html":
+                variables_css.href = '../../public/css/var.css';
+                break;
+            case "sleeping.html":
+                variables_css.href = '../../public/css/var.css';
+                break;
+            case "tasbih.html":
+                variables_css.href = '../../public/css/var.css';
+                break;
+
+            case "surah.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "quran.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "quran_mp3.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "adhkar.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "hisnmuslim.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "prayer_time.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "settings.html":
+                variables_css.href = '../public/css/var.css';
+                break;
+
+            case "info.html":
+                variables_css.href = '../public/css/var.css';
                 break;
 
             /* THE DEFAULT FOR UNEXPECTED THING HAPPEN */
