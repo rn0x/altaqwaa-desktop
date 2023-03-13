@@ -12,13 +12,13 @@
         loadWin = null
     } else {
         loadWin = new BrowserWindow({
-            width: 128, 
-            height: 128, 
-            transparent: true, 
-            frame: false, 
+            width: 128,
+            height: 128,
+            transparent: true,
+            frame: false,
             alwaysOnTop: true,
             center: true,
-        })    
+        })
         loadWin?.loadFile(path.join(__dirname, './pages/loading.html'));
     }
 
@@ -42,6 +42,8 @@
     //win?.removeMenu();
     win?.loadFile(path.join(__dirname, './pages/home.html'));
 
+    // The default window background color
+    settings?.dark_mode ? win?.setBackgroundColor('#2e3338') : win?.setBackgroundColor('#f4f5fb');
 
     win?.once('ready-to-show', () => {
         if (process.argv.includes('--hidden')) {
@@ -56,7 +58,7 @@
                 win?.show();
             }, 1000);
         }
-        
+
         //win.webContents.openDevTools();
 
         /* LOAD AUDIO WINDOW AFTER MAIN WINDOW (HOME) IS READY & LOADED */
