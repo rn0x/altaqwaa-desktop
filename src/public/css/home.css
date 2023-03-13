@@ -38,8 +38,8 @@
     margin-left: 10px;
     margin-right: 10px;
     list-style: none;
-    width: calc(50% / 2);
-    height: 80px;
+    width: calc(60% / 2);
+    height: 60px;
     text-align: center;
     background-color: var(--background_div);
     border-radius: 15px;
@@ -63,7 +63,7 @@
     text-decoration: inherit;
 } */
 
-#page_icon {
+.page_icon {
     width: 20px;
     height: 20px;
 }

@@ -34,6 +34,12 @@ module.exports = async (fs, path, App_Path) => {
         let random = document.getElementById("random");
         let mp3_hisn_closed = document.getElementById("mp3_hisn_closed");
         let icon_c_p = document.getElementsByClassName("icon_c_p");
+        let home_icon_quran = document.getElementById("home_icon_quran");
+        let home_icon_quran_mp3 = document.getElementById("home_icon_quran_mp3");
+        let home_icon_adhkar = document.getElementById("home_icon_adhkar");
+        let home_icon_hisnmuslim = document.getElementById("home_icon_hisnmuslim");
+        let home_icon_prayer = document.getElementById("home_icon_prayer");
+        let home_icon_settings = document.getElementById("home_icon_settings");
 
 
         switch (pageFile) {
@@ -60,6 +66,12 @@ module.exports = async (fs, path, App_Path) => {
 
                 // document
                 logo.src = '../public/icon/dark/logo.png';
+                home_icon_quran.src = '../public/icon/dark/quran.png';
+                home_icon_quran_mp3.src = '../public/icon/dark/sound.png';
+                home_icon_adhkar.src = '../public/icon/dark/open-hands.png';
+                home_icon_hisnmuslim.src = '../public/icon/dark/castle.png';
+                home_icon_prayer.src = '../public/icon/dark/azan.png';
+                home_icon_settings.src = '../public/icon/dark/settings.png';
 
                 break;
             case "evening.html":
