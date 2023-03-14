@@ -35,6 +35,7 @@ body {
     max-height: 100%;
     font-family: var(--font_default);
     color: var(--white);
+    overflow-y: scroll;
 }
 
 #titlebar {

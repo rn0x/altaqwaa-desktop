@@ -56,7 +56,7 @@
             setTimeout(() => {
                 loadWin.close();
                 win?.show();
-                win?.webContents.openDevTools();
+                //win?.webContents.openDevTools();
             }, 1000);
         }
 
