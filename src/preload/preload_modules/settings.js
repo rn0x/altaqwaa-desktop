@@ -110,7 +110,7 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
         alrt.style.display = 'inline-flex';
         setTimeout(() => {
             alrt.style.display = 'none'; 
-            //window.location.href = "./settings.html";
+            window.location.href = "./settings.html";
         }, 1000);
 
     })
