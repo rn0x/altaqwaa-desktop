@@ -84,8 +84,8 @@
 </p>
 
 
-- **Linux**: [Download the .AppImage, .deb,  .rpm, or Tar.gz Archive](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
-- **Windows**: [Download the setup .exe file](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
+- **Linux**: [Download the .AppImage, .deb,  .rpm, .flatpak, .snap or Tar.gz Archive](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
+- **Windows**: [Download the setup .exe file portable or installable](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 
 
 <br>
@@ -112,7 +112,7 @@
 
 ### دعم التطبيق للينكس أدى إلى فروقات بين تجربة المستخدمين بين الأنظمة والواجهات المختلفة لسطح المكتب وبالتحديد في إعداد بدأ تشغيل التطبيق مع النظام وهنا بعض الأوامر المفيدة لمستخدمي لينكس : 
 
-- **`--hidden`**
+- إستخدام **`--hidden`**
     - يمكن تمريره عند كتابة أمر التشغيل ليبدأ التطبيق بدون واجهة رسومية أو شاشة تحميل في الخلفية
     - يمكن تفعيله بشكل دائم عن طريق إعدادات التطبيق
     - يدعم كل أنواع الحزم الخاصة بالتقوى
