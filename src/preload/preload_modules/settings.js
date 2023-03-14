@@ -1,4 +1,4 @@
-module.exports = function settings(fs, path, App_Path, settings) {
+module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
 
@@ -41,7 +41,7 @@ module.exports = function settings(fs, path, App_Path, settings) {
     function handleVolumeRange(volume) {
         volumeValue.innerHTML = volumeRange.value;
     }
-    
+
     let adhanVolumeRange = document.getElementById('adhan_volume');
     let adhanVolumeValue = document.getElementById('adhan_volume_value');
     adhanVolumeRange.addEventListener('input', adhanHandleVolumeRange)
@@ -56,6 +56,9 @@ module.exports = function settings(fs, path, App_Path, settings) {
     }
 
     save.addEventListener('click', e => {
+
+        dark_mode?.checked ? ipcRenderer.send('background', true)
+            : ipcRenderer.send('background', false)
 
         if (latitude.value !== '') {
 
@@ -99,9 +102,13 @@ module.exports = function settings(fs, path, App_Path, settings) {
             adhanVolume: adhanVolumeRange.value / 100
         }, { spaces: '\t' });
 
-    
+
         alrt.style.display = 'inline-flex';
-        setTimeout(() => { alrt.style.display = 'none'; }, 1000);
+        setTimeout(() => {
+            alrt.style.display = 'none'; 
+            window.location.href = "./settings.html";
+        }, 1000);
+
     })
 
 }

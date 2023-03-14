@@ -89,6 +89,11 @@
 
     ipcMain?.on('closed', () => win?.close());
 
+    // for changing light/dark mode on settings
+    ipcMain?.on('background', (_, dark) => {
+        dark ? win?.setBackgroundColor('#2e3338') : win?.setBackgroundColor('#f4f5fb');
+    });
+
     ipcMain?.on('minimizable', () => {
 
         if (win?.isMaximized()) win?.unmaximize();

@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
   document.getElementById('closed').addEventListener('click', e => ipcRenderer.send('closed'));
   document.getElementById('minimizable').addEventListener('click', e => ipcRenderer.send('minimizable'));
   document.getElementById('minimize').addEventListener('click', e => ipcRenderer.send('minimize'));
-
+    
   /* DARK/LIGHT MODE */
   const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
 
@@ -393,7 +393,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_info.src = '../public/icon/dark/info.png';
 
         let settingsPage = require('./preload_modules/settings.js');
-        await settingsPage(fs, path, App_Path, settings);
+        await settingsPage(fs, path, App_Path, settings, ipcRenderer);
         break;
 
       case "info.html":
@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
       case "settings.html":
         variables_css.href = '../public/css/var.css';
         let settingsPage = require('./preload_modules/settings.js');
-        await settingsPage(fs, path, App_Path, settings);
+        await settingsPage(fs, path, App_Path, settings, ipcRenderer);
         break;
 
       case "info.html":
