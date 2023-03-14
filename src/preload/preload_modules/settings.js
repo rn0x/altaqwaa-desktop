@@ -13,7 +13,8 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
     let minimizeToPanel = document.getElementById('minimizeToPanel');
     let dark_mode = document.getElementById('dark_mode');
     let selected = document.getElementById(settings?.Calculation);
-
+    let morning_adhkar_time = document.getElementById("morning_adhkar_time");
+    let evening_adhkar_time = document.getElementById("evening_adhkar_time");
     let save = document.getElementById('save');
     let alrt = document.getElementById('alrt');
 
@@ -25,6 +26,8 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
     autostart.checked = settings?.autostart || false
     startHidden.checked = settings?.startHidden || false
     minimizeToPanel.checked = settings?.minimizeToPanel || false
+    morning_adhkar_time.value = settings?.morning_adhkar_time || ""
+    evening_adhkar_time.value = settings?.evening_adhkar_time || ""
     dark_mode.checked = settings?.dark_mode ? true : false
     selected.selected = "selected"
 
@@ -96,17 +99,18 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
             minimizeToPanel: minimizeToPanel.checked,
             dark_mode: dark_mode.checked,
             Calculation: Calculation.value,
+            morning_adhkar_time: morning_adhkar_time.value,
+            evening_adhkar_time: evening_adhkar_time.value,
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,
             volume: volumeRange.value / 100,
             adhanVolume: adhanVolumeRange.value / 100
         }, { spaces: '\t' });
 
-
         alrt.style.display = 'inline-flex';
         setTimeout(() => {
             alrt.style.display = 'none'; 
-            window.location.href = "./settings.html";
+            //window.location.href = "./settings.html";
         }, 1000);
 
     })
