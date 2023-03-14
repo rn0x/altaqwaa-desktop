@@ -83,7 +83,7 @@
 }
 
 input:checked+.slider {
-    background-color: var(--background_div_hover);
+    background-color: var(--settings);
 }
 
 input:focus+.slider {
@@ -105,11 +105,11 @@ output {
 }
 
 #volume {
-    accent-color: var(--background_div_hover);
+    accent-color: var(--settings);
 }
 
 #adhan_volume {
-    accent-color: var(--background_div_hover);
+    accent-color: var(--settings);
 }
 
 #volume_value {
