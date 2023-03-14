@@ -21,6 +21,7 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
     let settings_font_quran = document.getElementById('settings_font_quran');
     let settings_font_adhkar_output = document.getElementById('settings_font_adhkar_output');
     let settings_font_quran_output = document.getElementById('settings_font_quran_output');
+    let refresh_button = document.getElementById("refresh_button");
 
     location.timezone ? timezone.value = location.timezone : false
     location.lat ? latitude.value = location.lat : false
@@ -76,6 +77,34 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
     function adhanHandleVolumeRange(volume) {
         adhanVolumeValue.innerHTML = adhanVolumeRange.value;
     }
+
+    refresh_button.addEventListener('click', async (e) => {
+        try {
+            let fetch = require('node-fetch');
+            let response = await fetch('http://ip-api.com/json');
+            let status = await response?.status;
+            if (status !== 200) return
+            let body = await response?.json();
+    
+            await fs.writeJsonSync(path.join(App_Path, './data/location.json'), {
+                country: body?.country,
+                countryCode: body?.countryCode,
+                regionName: body?.regionName,
+                city: body?.city,
+                lat: body?.lat,
+                lon: body?.lon,
+                timezone: body?.timezone,
+                ip: body?.query
+            }, { spaces: '\t' });
+            alrt.style.display = 'inline-flex';
+            setTimeout(() => {
+                alrt.style.display = 'none';
+                window.location.href = "./settings.html";
+            }, 1000);    
+        } catch (error) {
+            /* MAYBE THERE IS NO INTERNET CONNECTION SO AVOIDING CRASH */
+        }
+    });
 
     save.addEventListener('click', e => {
 

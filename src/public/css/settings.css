@@ -190,6 +190,13 @@ output {
     color: var(--color_font_grey);
 }
 
+#refresh_button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
 #refresh_location {
     width: 40px;
     margin-left: 50px;
