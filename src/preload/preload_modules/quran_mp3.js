@@ -1,9 +1,9 @@
-module.exports = function quran_mp3(fs, path, App_Path) {
+module.exports = function quran_mp3(fs, path, App_Path, settings) {
 
     let Quran_json = fs.readJsonSync(path.join(__dirname, '../../data/Quran.json'));
     let mp3quran_json = fs.readJsonSync(path.join(__dirname, '../../data/mp3quran.json'));
-    let volume = fs.readJsonSync(path.join(App_Path, './data/settings.json')).volume;
-    let dark_mode = fs.readJsonSync(path.join(App_Path, './data/settings.json'))?.dark_mode;
+    let volume = settings?.volume;
+    let dark_mode = settings?.dark_mode;
     let ul_group = document.getElementById('ul_group');
     let Sheikh = document.getElementById('Sheikh');
     let li_Sheikh_number = 1

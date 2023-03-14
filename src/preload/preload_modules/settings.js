@@ -1,6 +1,5 @@
-module.exports = function settings(fs, path, App_Path) {
+module.exports = function settings(fs, path, App_Path, settings) {
 
-    let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
 
     let latitude = document.getElementById('latitude');

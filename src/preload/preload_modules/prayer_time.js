@@ -3,10 +3,10 @@ const moment = require('moment-timezone');
 const adhanModule = require('../../modules/adhan.js')
 momentHj.locale('en-EN')
 
-module.exports = function prayer_time(fs, path, App_Path) {
+module.exports = function prayer_time(fs, path, App_Path, settings) {
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    let dark_mode = fs.readJsonSync(path.join(App_Path, './data/settings.json'))?.dark_mode;
+    let dark_mode = settings?.dark_mode;
     let data_hijri = document.getElementById('data_hijri');
     let data_Gregorian = document.getElementById('data_Gregorian');
     let datoday = document.getElementById('datoday');
