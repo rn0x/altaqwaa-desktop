@@ -52,6 +52,7 @@ module.exports = function info(fs, path, App_Path, shell) {
     let Sources_5 = document.getElementById('Sources_5');
     let Sources_6 = document.getElementById('Sources_6');
     let Sources_7 = document.getElementById('Sources_7');
+    let Sources_8 = document.getElementById('Sources_8');
     let url_1 = document.getElementById('url_1');
     let url_2 = document.getElementById('url_2');
     let url_3 = document.getElementById('url_3');
@@ -59,6 +60,8 @@ module.exports = function info(fs, path, App_Path, shell) {
     let url_5 = document.getElementById('url_5');
     let url_6 = document.getElementById('url_6');
     let url_7 = document.getElementById('url_7');
+    let url_8 = document.getElementById('url_8');
+    let url_9 = document.getElementById('url_9');
 
     info_li_1.addEventListener('click', e => {
         altaqwaa.style.display = 'none'
@@ -139,6 +142,10 @@ module.exports = function info(fs, path, App_Path, shell) {
         shell.openExternal('https://github.com/rastikerdar/vazirmatn')
     });
 
+    Sources_8.addEventListener('click', e => {
+        shell.openExternal('https://animate.style/')
+    });
+
     url_1.addEventListener('click', e => {
         shell.openExternal('https://github.com/batoulapps/adhan-js')
     });
@@ -152,7 +159,7 @@ module.exports = function info(fs, path, App_Path, shell) {
     });
 
     url_4.addEventListener('click', e => {
-        shell.openExternal('https://github.com/moment')
+        shell.openExternal('https://momentjs.com/timezone/')
     });
 
     url_5.addEventListener('click', e => {
@@ -166,4 +173,13 @@ module.exports = function info(fs, path, App_Path, shell) {
     url_7.addEventListener('click', e => {
         shell.openExternal('https://github.com/zertosh/v8-compile-cache')
     });
+
+    url_8.addEventListener('click', e => {
+        shell.openExternal('https://github.com/xsoh/moment-hijri')
+    });
+
+    url_9.addEventListener('click', e => {
+        shell.openExternal('https://github.com/jsmreese/moment-duration-format')
+    });
+
 }
