@@ -33,6 +33,10 @@
     user-select: text;
 }
 
+.adhkar:nth-of-type(1) {
+    margin-top: 40px;
+}
+
 .text_bottom {
     margin-bottom: 8px;
     margin-top: 10px;
@@ -104,4 +108,26 @@
 
     color: var(--color_font_grey);
     font-weight: 600;
+}
+
+#adhkar_back {
+    margin-top: 20px;
+    width: 30px;
+    cursor: pointer;
+    right: 100px;
+    position: absolute;
+}
+
+#adhkar_top_title {
+    display: block;
+    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    color: var(--white-div);
+    padding: 10px;
+    background-color: var(--background_div);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #00000010;
 }

@@ -128,3 +128,11 @@
     font-size: 40px;
     margin-bottom: 30px;
 }
+
+#quran_back {
+    margin-top: 20px;
+    width: 30px;
+    cursor: pointer;
+    right: 100px;
+    position: absolute;
+}

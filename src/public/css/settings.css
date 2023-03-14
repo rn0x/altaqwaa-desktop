@@ -123,6 +123,7 @@ output {
 }
 
 
+
 /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
@@ -188,3 +189,43 @@ output {
 .settings_description {
     color: var(--color_font_grey);
 }
+
+#refresh_location {
+    width: 40px;
+    margin-left: 50px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#refresh_location:hover {
+    width: 55px;
+    animation: rotation 0.5s  linear;
+    transition: 0.5s ease-in-out;
+}
+
+
+@keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(360deg);
+    }
+}
+
+#settings_font_quran_output {
+    color: var(--white-div);
+}
+
+#settings_font_adhkar_output {
+    color: var(--white-div);
+}
+
+#settings_font_quran {
+    accent-color: var(--settings);
+}
+
+#settings_font_adhkar {
+    accent-color: var(--settings);
+}
+

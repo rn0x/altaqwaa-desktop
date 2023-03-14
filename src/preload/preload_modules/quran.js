@@ -8,9 +8,17 @@ module.exports = function Quran(fs, path, App_Path) {
     document.getElementById('Descent').innerText = ArrayQuran?.Descent;
     document.getElementById('bsmlh').innerText = ArrayQuran?.Name === 'التوبة' ? 'اعوذ بالله من الشيطان الرجيم' : 'بسم الله الرحمن الرحيم';
     document.getElementById('Surah_text').innerText = ArrayQuran?.Surah;
+
+    // Return to surah page
+    document.getElementById('quran_back').addEventListener("click", e => {
+
+        window.location.href = './surah.html'
+
+    });
+
     document.getElementById('Surah_text').addEventListener('click', (e) => {
         document.getElementById('alrt').style = 'display:inline-flex;'
-        
+
         let createRange = document.createRange();
         createRange.selectNode(document.getElementById('Surah_text'));
         window.getSelection().removeAllRanges();

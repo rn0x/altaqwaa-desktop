@@ -22,15 +22,18 @@
             <div id="window-controls">
 
                 <div id="closed">
-                    <img class="icon_bar" srcset="../../public/icon/closed.png" id="icon_closed_window" draggable="false" />
+                    <img class="icon_bar" srcset="../../public/icon/closed.png" id="icon_closed_window"
+                        draggable="false" />
                 </div>
 
                 <div id="minimizable">
-                    <img class="icon_bar" srcset="../../public/icon/minimizable.png" id="icon_minimizable_window" draggable="false" />
+                    <img class="icon_bar" srcset="../../public/icon/minimizable.png" id="icon_minimizable_window"
+                        draggable="false" />
                 </div>
 
                 <div id="minimize">
-                    <img class="icon_bar" srcset="../../public/icon/minimize.png" id="icon_minimize_window" draggable="false" />
+                    <img class="icon_bar" srcset="../../public/icon/minimize.png" id="icon_minimize_window"
+                        draggable="false" />
                 </div>
 
             </div>
@@ -85,6 +88,10 @@
         </div>
 
         <div id="evening" class="animate__animated animate__fadeIn">
+
+            <img src="../../public/icon/back.png" id="adhkar_back">
+
+            <h3 id="adhkar_top_title">أذكار المساء</h3>
 
             <div class="adhkar" id="1">
                 <p class="text">
@@ -627,6 +634,12 @@
 
     </div>
     <script src="../../public/js/adhkar.js"></script>
+    <script>
+        document.getElementById("adhkar_back").addEventListener("click", e => {
+
+            window.location.href = "../adhkar.html"
+        });
+    </script>
 </body>
 
 </html>

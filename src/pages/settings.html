@@ -90,6 +90,27 @@
         <div id="settings" class="animate__animated animate__fadeIn">
 
             <ul class="settings_ul">
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            جلب احداثيات الموقع
+                        </h3>
+
+                        <p class="settings_description">
+                            أدخِل إحداثيات نظام تحديد المواقع العالمي (GPS) لخط العرض
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
+                        <img src="../public/icon/refresh.png" id="refresh_location">
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
                 <li>
 
                     <div class="settings_right">
@@ -351,7 +372,7 @@
                     <div class="settings_left">
                         <label class="switch" id="label_adhkar">
                             <input type="checkbox" id="dark_mode">
-                            <span class="slider round"></span> 
+                            <span class="slider round"></span>
                         </label>
                     </div>
 
@@ -395,6 +416,48 @@
                     <div class="settings_left">
                         <input type="range" value="100" min="1" max="100" id="adhan_volume">
                         <output id="adhan_volume_value">100</output>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            حجم خط القرآن الكريم
+                        </h3>
+
+                        <p class="settings_description">
+                            ///////////////
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
+                        <input type="range" value="30" min="27" max="45" id="settings_font_quran">
+                        <output id="settings_font_quran_output">30</output>
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            حجم خط الأذكار
+                        </h3>
+
+                        <p class="settings_description">
+                            ///////////////
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
+                        <input type="range" value="20" min="18" max="35" id="settings_font_adhkar">
+                        <output id="settings_font_adhkar_output">20</output>
                     </div>
 
                 </li>

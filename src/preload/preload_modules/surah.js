@@ -1,5 +1,5 @@
 module.exports = function surah(fs, path, App_Path) {
-
+ 
     let Quran_json = fs.readJsonSync(path.join(__dirname, '../../data/Quran.json'));
 
     for (let item of Quran_json) {

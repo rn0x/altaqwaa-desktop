@@ -12,6 +12,7 @@ body {
     color: var(--white);
     margin: 0px 0px 0px 0px;
     max-height: 100%;
+    overflow-y:hidden;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

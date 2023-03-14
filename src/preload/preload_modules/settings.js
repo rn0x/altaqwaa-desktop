@@ -17,6 +17,10 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
     let evening_adhkar_time = document.getElementById("evening_adhkar_time");
     let save = document.getElementById('save');
     let alrt = document.getElementById('alrt');
+    let settings_font_adhkar = document.getElementById('settings_font_adhkar');
+    let settings_font_quran = document.getElementById('settings_font_quran');
+    let settings_font_adhkar_output = document.getElementById('settings_font_adhkar_output');
+    let settings_font_quran_output = document.getElementById('settings_font_quran_output');
 
     location.timezone ? timezone.value = location.timezone : false
     location.lat ? latitude.value = location.lat : false
@@ -30,6 +34,21 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
     evening_adhkar_time.value = settings?.evening_adhkar_time || ""
     dark_mode.checked = settings?.dark_mode ? true : false
     selected.selected = "selected"
+    settings_font_adhkar_output.innerText = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
+    settings_font_adhkar.value = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
+    settings_font_quran_output.innerText = settings?.font_size_quran ? settings?.font_size_quran : 30
+    settings_font_quran.value = settings?.font_size_quran ? settings?.font_size_quran : 30
+
+    // inptu font adhkar
+    settings_font_adhkar.addEventListener('input', e => {
+        settings_font_adhkar_output.innerText = settings_font_adhkar.value
+    });
+
+    // inptu font adhkar
+    settings_font_quran.addEventListener('input', e => {
+        settings_font_quran_output.innerText = settings_font_quran.value
+    });
+
 
     /* VOLUME MANAGER */
     let volumeRange = document.getElementById('volume');
@@ -104,12 +123,14 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,
             volume: volumeRange.value / 100,
-            adhanVolume: adhanVolumeRange.value / 100
+            adhanVolume: adhanVolumeRange.value / 100,
+            font_size_quran: settings_font_quran.value,
+            font_size_adhkar: settings_font_adhkar.value,
         }, { spaces: '\t' });
 
         alrt.style.display = 'inline-flex';
         setTimeout(() => {
-            alrt.style.display = 'none'; 
+            alrt.style.display = 'none';
             window.location.href = "./settings.html";
         }, 1000);
 

@@ -12,7 +12,7 @@
     font-family: "Quran";
     src: url(../font/Quran.ttf) format("truetype");
 }
- 
+
 html,
 body {
     background-color: #232527b9;
@@ -21,6 +21,7 @@ body {
     width: 100%;
     font-family: var(--font_default);
     color: var(--white);
+    overflow-y: hidden;
 }
 
 #time {

@@ -17,6 +17,10 @@ window.addEventListener('DOMContentLoaded', async (event) => {
   /* DARK/LIGHT MODE */
   const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
 
+  // variables font size
+  document.body.style.setProperty('--font_size_surah', `${settings?.font_size_quran}px`);
+  document.body.style.setProperty('--font_size_adhkar', `${settings?.font_size_adhkar}px`);
+
   if (settings?.dark_mode === false) {
     // stylesheet 
 

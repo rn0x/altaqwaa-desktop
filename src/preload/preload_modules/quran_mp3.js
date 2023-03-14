@@ -43,9 +43,17 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
 
         document.getElementById(event.id).addEventListener('click', e => {
 
+            window.scrollTo(0, 0);
             let Sheikh_true = event.id.split('li_Sheikh_')[1]
             let ArrayMp3 = mp3quran_json.find(e => e?.id.toString() === Sheikh_true);
-
+            let quran_mp3_name_Sheikh = document.getElementById('quran_mp3_name_Sheikh')
+            let quran_mp3_back = document.getElementById('quran_mp3_back')
+            quran_mp3_name_Sheikh.innerText = ArrayMp3?.name
+            quran_mp3_name_Sheikh.style.display = "block"
+            quran_mp3_back.style.display = "block"
+            quran_mp3_back.addEventListener("click", e => {
+                window.location.href = './quran_mp3.html'
+            });
             ul_group.style = 'display: flex;'
             Sheikh.style = 'display: none;'
             let num = 1
@@ -124,7 +132,7 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
 
 
                     else {
-                        icon_mp3.src = dark_mode ? '../public/icon/play.png': '../public/icon/dark/play.png';
+                        icon_mp3.src = dark_mode ? '../public/icon/play.png' : '../public/icon/dark/play.png';
                         sound.pause()
                         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { sound: true });
                     }

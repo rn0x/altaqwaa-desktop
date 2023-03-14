@@ -46,7 +46,14 @@ module.exports = async (path, fs, App_Path, currentVersion) => {
         fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
             "Calculation": "UmmAlQura",
             "notifications_adhan": true,
-            "notifications_adhkar": true
+            "notifications_adhkar": true,
+            "notifications_adhkar": true,
+            "autostart": true,
+            "startHidden": false,
+            "minimizeToPanel": false,
+            "dark_mode": false,
+            "font_size_adhkar": 30,
+            "font_size_adhkar": 30,
         });
 
     fs.existsSync(path.join(App_Path, "./data/sound.json")) ? true :

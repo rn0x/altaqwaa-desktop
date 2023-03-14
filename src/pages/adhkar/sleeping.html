@@ -86,6 +86,10 @@
 
         <div id="sleeping" class="animate__animated animate__fadeIn">
 
+            <img src="../../public/icon/back.png" id="adhkar_back">
+
+            <h3 id="adhkar_top_title">أذكار النوم</h3>
+
             <div class="adhkar" id="1">
                 <p class="text">بِاسْمِكَ رَبِّـي وَضَعْـتُ جَنْـبي ، وَبِكَ أَرْفَعُـه، فَإِن أَمْسَـكْتَ نَفْسـي
                     فارْحَـمْها ، وَإِنْ أَرْسَلْتَـها فاحْفَظْـها بِمـا تَحْفَـظُ بِه عِبـادَكَ الصّـالِحـين
@@ -366,6 +370,12 @@
 
     </div>
     <script src="../../public/js/adhkar.js"></script>
+    <script>
+        document.getElementById("adhkar_back").addEventListener("click", e => {
+
+            window.location.href = "../adhkar.html"
+        });
+    </script>
 </body>
 
 </html>
