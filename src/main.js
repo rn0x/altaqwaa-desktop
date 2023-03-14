@@ -56,10 +56,9 @@
             setTimeout(() => {
                 loadWin.close();
                 win?.show();
+                win?.webContents.openDevTools();
             }, 1000);
         }
-
-        //win.webContents.openDevTools();
 
         /* LOAD AUDIO WINDOW AFTER MAIN WINDOW (HOME) IS READY & LOADED */
         if (settings.notifications_adhan == true || settings.notifications_adhkar == true) {
