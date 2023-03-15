@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     while (true) {
 
-        await new Promise(resolve => setTimeout(resolve, 30000));
+        await new Promise(resolve => setTimeout(resolve, 20000));
         let audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
         let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
         let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
