@@ -15,13 +15,14 @@ const fs = require('fs-extra');
 app.setAppUserModelId("org.altaqwaa.rn0x");
 const appInitialization = require('./modules/appInitialization.js');
 const App_Path = path.join(app?.getPath("appData"), './altaqwaa');
-const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
-appInitialization(path, fs, App_Path);
 
 /* App Main Code Start Here */
-app.on('ready', (e) => {
+app.on('ready', async (e) => {
     e.preventDefault();
 
+    await appInitialization(path, fs, App_Path);
+    const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
+    
     let loadingWindow
 
     if (process.argv.includes('--hidden')) {
