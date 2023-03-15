@@ -7,7 +7,7 @@ const adhanModule = require('../modules/adhan.js')
 window.addEventListener('DOMContentLoaded', async (e) => {
     e.preventDefault();
     
-    let App_Path = await ipcRenderer?.invoke('App_Path3');
+    let App_Path = await ipcRenderer?.invoke('App_Path');
     let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
     let variables_css = document.getElementById("variables_css");
     let icon_closed_window = document.getElementById("icon_closed_window");
@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         document.getElementById('audio').pause();
         document.getElementById('audio').currentTime = 0;
         ipcRenderer.send('closed3');
-        audioBoolean(App_Path, false)
     });
 
     if (settings?.dark_mode) {
@@ -36,7 +35,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     while (true) {
 
-        await new Promise(resolve => setTimeout(resolve, 20000));
+        await new Promise(resolve => setTimeout(resolve, 25000));
         let audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
         let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
         let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
@@ -51,9 +50,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/002.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false)
-            }, 600000);
+            }, 60000);
         }
 
         else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
@@ -63,9 +61,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false);
-            }, 600000);
+            }, 60000);
         }
 
         else if (time_now_adhan === data.asr && audioJson?.start === false && settings?.notifications_adhan) {
@@ -75,9 +72,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false);
-            }, 600000);
+            }, 60000);
         }
 
         else if (time_now_adhan === data.maghrib && audioJson?.start === false && settings?.notifications_adhan) {
@@ -87,9 +83,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false);
-            }, 600000);
+            }, 60000);
         }
 
         else if (time_now_adhan === data.isha && audioJson?.start === false && settings?.notifications_adhan) {
@@ -99,9 +94,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false);
-            }, 600000);
+            }, 60000);
         }
 
         else if (time_now_adhkar === settings?.morning_adhkar_time && audioJson?.start === false && settings?.notifications_adhkar) {
@@ -111,9 +105,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/AM.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false);
-            }, 600000);
+            }, 60000);
         }
 
         else if (time_now_adhkar === settings?.evening_adhkar_time && audioJson?.start === false && settings?.notifications_adhkar) {
@@ -123,9 +116,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').src = path.join(__dirname, '../public/audio/PM.mp3');
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
-                ipcRenderer.send('closed3');
                 audioBoolean(App_Path, false);
-            }, 600000);
+            }, 60000);
         }
 
     }

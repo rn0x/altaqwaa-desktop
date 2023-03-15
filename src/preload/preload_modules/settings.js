@@ -3,7 +3,6 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
     let currentRelease = await ipcRenderer.invoke('currentRelease');
 
-    console.log(currentRelease)
     let latitude = document.getElementById('latitude');
     let longitude = document.getElementById('longitude');
     let timezone = document.getElementById('timezone');
@@ -146,7 +145,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
 
         setTimeout(() => {
             alert_settings.style.display = "none"
-        }, 5000);
+        }, 5500);
 
     });
 
@@ -208,7 +207,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
         setTimeout(() => {
             alrt.style.display = 'none';
             window.location.href = "./settings.html";
-        }, 1000);
+        }, 1200);
 
     })
 

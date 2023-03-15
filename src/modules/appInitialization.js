@@ -1,4 +1,4 @@
-module.exports = async (path, fs, App_Path, currentVersion) => {
+module.exports = async (path, fs, App_Path) => {
 
     fs.existsSync(App_Path) ? true : fs.mkdirsSync(App_Path, { recursive: true });
 
@@ -35,7 +35,7 @@ module.exports = async (path, fs, App_Path, currentVersion) => {
     fs.existsSync(path.join(App_Path, "./data/Now.json")) ? true :
         fs.writeJsonSync(path.join(App_Path, './data/Now.json'), { "id": "surah_number_1" });
 
-    fs.existsSync(path.join(App_Path, "./data/audio_window.json")) ? true :
+    fs.existsSync(path.join(App_Path, "./data/audio_window.json")) ? fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false }) :
         fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false });
 
     fs.existsSync(path.join(App_Path, "./data/settings.json")) ? true :
@@ -43,16 +43,19 @@ module.exports = async (path, fs, App_Path, currentVersion) => {
             "Calculation": "UmmAlQura",
             "notifications_adhan": true,
             "notifications_adhkar": true,
-            "notifications_adhkar": true,
             "autostart": true,
             "startHidden": false,
             "minimizeToPanel": false,
-            "dark_mode": false,
+            "morning_adhkar_time": "",
+            "evening_adhkar_time": "",
+            "dark_mode": true,
+            "font_size_quran": 30,
             "font_size_adhkar": 30,
-            "font_size_adhkar": 30,
+            "volume": 1,
+            "adhanVolume": 1,
         });
 
-    fs.existsSync(path.join(App_Path, "./data/sound.json")) ? true :
+    fs.existsSync(path.join(App_Path, "./data/sound.json")) ? fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true }) :
         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true });
 
 }

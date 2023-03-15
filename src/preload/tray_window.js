@@ -8,7 +8,7 @@ const adhanModule = require('../modules/adhan.js')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
     e.preventDefault();
-    const App_Path = await ipcRenderer.invoke('App_Path2');
+    const App_Path = await ipcRenderer.invoke('App_Path');
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
     let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
