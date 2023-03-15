@@ -26,7 +26,7 @@
         width: 1000,
         height: 645,
         minWidth: 1000,
-        minHeight: 625,
+        minHeight: 645,
         show: false,
         center: true,
         frame: false,
