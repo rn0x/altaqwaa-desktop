@@ -1,20 +1,56 @@
-module.exports = function settings(fs, path, App_Path) {
+module.exports = async function settings(fs, path, App_Path, settings, ipcRenderer) {
 
-    let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
+    let currentRelease = await ipcRenderer.invoke('currentRelease');
+
     let latitude = document.getElementById('latitude');
     let longitude = document.getElementById('longitude');
     let timezone = document.getElementById('timezone');
     let Calculation = document.getElementById('Calculation');
     let notifications_adhan = document.getElementById('notifications_adhan');
     let notifications_adhkar = document.getElementById('notifications_adhkar');
-    let save = document.getElementById('save');
-    let alrt = document.getElementById('alrt');//selected
+    let autostart = document.getElementById('autostart');
+    let startHidden = document.getElementById('startHidden');
+    let minimizeToPanel = document.getElementById('minimizeToPanel');
+    let dark_mode = document.getElementById('dark_mode');
     let selected = document.getElementById(settings?.Calculation);
+    let morning_adhkar_time = document.getElementById("morning_adhkar_time");
+    let evening_adhkar_time = document.getElementById("evening_adhkar_time");
+    let save = document.getElementById('save');
+    let alrt = document.getElementById('alrt');
+    let settings_font_adhkar = document.getElementById('settings_font_adhkar');
+    let settings_font_quran = document.getElementById('settings_font_quran');
+    let settings_font_adhkar_output = document.getElementById('settings_font_adhkar_output');
+    let settings_font_quran_output = document.getElementById('settings_font_quran_output');
+    let refresh_button = document.getElementById("refresh_button");
 
     location.timezone ? timezone.value = location.timezone : false
     location.lat ? latitude.value = location.lat : false
     location.lon ? longitude.value = location.lon : false
+    notifications_adhan.checked = settings?.notifications_adhan
+    notifications_adhkar.checked = settings?.notifications_adhkar
+    autostart.checked = settings?.autostart || false
+    startHidden.checked = settings?.startHidden || false
+    minimizeToPanel.checked = settings?.minimizeToPanel || false
+    morning_adhkar_time.value = settings?.morning_adhkar_time || ""
+    evening_adhkar_time.value = settings?.evening_adhkar_time || ""
+    dark_mode.checked = settings?.dark_mode ? true : false
+    selected.selected = "selected"
+    settings_font_adhkar_output.innerText = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
+    settings_font_adhkar.value = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
+    settings_font_quran_output.innerText = settings?.font_size_quran ? settings?.font_size_quran : 30
+    settings_font_quran.value = settings?.font_size_quran ? settings?.font_size_quran : 30
+
+    // inptu font adhkar
+    settings_font_adhkar.addEventListener('input', e => {
+        settings_font_adhkar_output.innerText = settings_font_adhkar.value
+    });
+
+    // inptu font adhkar
+    settings_font_quran.addEventListener('input', e => {
+        settings_font_quran_output.innerText = settings_font_quran.value
+    });
+
 
     /* VOLUME MANAGER */
     let volumeRange = document.getElementById('volume');
@@ -29,7 +65,7 @@ module.exports = function settings(fs, path, App_Path) {
     function handleVolumeRange(volume) {
         volumeValue.innerHTML = volumeRange.value;
     }
-    
+
     let adhanVolumeRange = document.getElementById('adhan_volume');
     let adhanVolumeValue = document.getElementById('adhan_volume_value');
     adhanVolumeRange.addEventListener('input', adhanHandleVolumeRange)
@@ -43,20 +79,83 @@ module.exports = function settings(fs, path, App_Path) {
         adhanVolumeValue.innerHTML = adhanVolumeRange.value;
     }
 
-    notifications_adhan.checked = settings?.notifications_adhan
-    notifications_adhkar.checked = settings?.notifications_adhkar
-    selected.selected = "selected"
+    refresh_button.addEventListener('click', async (e) => {
+        try {
+            let fetch = require('node-fetch');
+            let response = await fetch('http://ip-api.com/json');
+            let status = await response?.status;
+            if (status !== 200) return
+            let body = await response?.json();
+
+            await fs.writeJsonSync(path.join(App_Path, './data/location.json'), {
+                country: body?.country,
+                countryCode: body?.countryCode,
+                regionName: body?.regionName,
+                city: body?.city,
+                lat: body?.lat,
+                lon: body?.lon,
+                timezone: body?.timezone,
+                ip: body?.query
+            }, { spaces: '\t' });
+            alrt.style.display = 'inline-flex';
+            setTimeout(() => {
+                alrt.style.display = 'none';
+                window.location.href = "./settings.html";
+            }, 1000);
+        } catch (error) {
+            /* MAYBE THERE IS NO INTERNET CONNECTION SO AVOIDING CRASH */
+        }
+    });
+
+    // alert update 
+
+    let alert_settings = document.getElementById("alert_settings");
+    let alert_settings_title = document.getElementById("alert_settings_title");
+    let alert_settings_icon = document.getElementById("alert_settings_icon");
+    let app_current_version = document.getElementById("app_current_version");
+    let app_latest_version = document.getElementById("app_latest_version");
+    let alert_settings_text = document.getElementById("alert_settings_text");
+    let Check_for_update_icon = document.getElementById("Check_for_update_icon");
+
+    Check_for_update_icon.addEventListener("click", async e => {
+
+        let response = await fetch('https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases');
+        let data = await response.json();
+        let latestRelease = data?.[0];
+        let lastVersion = latestRelease?.tag_name?.substring(1);
+
+        alert_settings.style.display = "block"
+
+        if (lastVersion === currentRelease) {
+
+            alert_settings_title.innerText = "لديك بالفعل آخر إصدار من تطبيق التقوى"
+            alert_settings_icon.src = "../public/icon/correct.png"
+            app_current_version.innerText = currentRelease
+            app_latest_version.innerText = lastVersion
+        }
+
+        else {
+
+            alert_settings_title.innerText = "يتوفر تحديث جديد للتطبيق"
+            alert_settings_icon.src = "../public/icon/x.png"
+            app_current_version.innerText = currentRelease
+            app_latest_version.innerText = lastVersion
+            alert_settings_text.style.display = "block"
+        }
+
+        setTimeout(() => {
+            alert_settings.style.display = "none"
+        }, 5500);
+
+    });
+
+
+    // save
 
     save.addEventListener('click', e => {
 
-        let opj = {
-
-            Calculation: Calculation.value,
-            notifications_adhan: notifications_adhan.checked,
-            notifications_adhkar: notifications_adhkar.checked,
-            volume: volumeRange.value / 100,
-            adhanVolume: adhanVolumeRange.value / 100
-        }
+        dark_mode?.checked ? ipcRenderer.send('background', true)
+            : ipcRenderer.send('background', false)
 
         if (latitude.value !== '') {
 
@@ -88,15 +187,27 @@ module.exports = function settings(fs, path, App_Path) {
 
         }
 
-        fs.writeJsonSync(path.join(App_Path, './data/settings.json'), opj, { spaces: '\t' });
+        fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
+            autostart: autostart.checked,
+            startHidden: startHidden.checked,
+            minimizeToPanel: minimizeToPanel.checked,
+            dark_mode: dark_mode.checked,
+            Calculation: Calculation.value,
+            morning_adhkar_time: morning_adhkar_time.value,
+            evening_adhkar_time: evening_adhkar_time.value,
+            notifications_adhan: notifications_adhan.checked,
+            notifications_adhkar: notifications_adhkar.checked,
+            volume: volumeRange.value / 100,
+            adhanVolume: adhanVolumeRange.value / 100,
+            font_size_quran: settings_font_quran.value,
+            font_size_adhkar: settings_font_adhkar.value,
+        }, { spaces: '\t' });
 
         alrt.style.display = 'inline-flex';
-
         setTimeout(() => {
-
             alrt.style.display = 'none';
-
-        }, 1000);
+            window.location.href = "./settings.html";
+        }, 1200);
 
     })
 

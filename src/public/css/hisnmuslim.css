@@ -1,5 +1,5 @@
 #icon_hisnmuslim {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #hisnmuslim {
@@ -38,27 +38,25 @@
     list-style: none;
     text-align: center;
     margin: 10px 10px 10px 10px;
-    background-color: #232527;
+    color: var(--white-div);
+    background-color: var(--background_div);
     width: 350px;
     height: 30px;
     border-radius: 8px;
     align-items: center;
-    box-shadow: 0px 0px 25px 0px #00000023;
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
+    box-shadow: 0px 0px 10px 0px #00000010;
     font-size: 19px;
     padding: 10px;
     cursor: pointer;
 }
 
 #ul_hisn li:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
 }
 
 #titel_hisn {
     text-align: center;
-    font-family: "Quran";
-    color: #ffffff;
+    font-family: var(--font_quran);
     font-size: 55px;
     margin: 0 0 0 0;
     cursor: default;
@@ -66,8 +64,8 @@
 
 #ktab {
 
-    font-family: "Quran";
-    color: #222324;
+    font-family: var(--font_quran);
+    color: var(--color_font_grey);
     text-align: center;
     font-size: 25px;
     margin-top: 0px;
@@ -85,7 +83,8 @@
 }
 
 #mp3_hisn_blackout {
-    background-color: #0000008c;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
     width: 150%;
     height: 100%;
     z-index: 1;
@@ -106,7 +105,7 @@
 
 #mp3_hisn_closed:hover {
     width: 6%;
-    background-color: #f34949;
+    background-color: var(--red);
     border-radius: 4px;
     transition: 0.3s ease-in-out;
 }
@@ -122,8 +121,7 @@
     padding: 15px;
     border-radius: 4px;
     font-size: 16px;
-    background-color: #ffffff;
-    border-color: #232527;
+    border-color: var(--background_div);
     z-index: 5;
     position: fixed;
     margin-top: 200px;

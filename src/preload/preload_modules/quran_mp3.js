@@ -1,8 +1,9 @@
-module.exports = function quran_mp3(fs, path, App_Path) {
+module.exports = function quran_mp3(fs, path, App_Path, settings) {
 
     let Quran_json = fs.readJsonSync(path.join(__dirname, '../../data/Quran.json'));
     let mp3quran_json = fs.readJsonSync(path.join(__dirname, '../../data/mp3quran.json'));
-    let volume = fs.readJsonSync(path.join(App_Path, './data/settings.json')).volume;
+    let volume = settings?.volume;
+    let dark_mode = settings?.dark_mode;
     let ul_group = document.getElementById('ul_group');
     let Sheikh = document.getElementById('Sheikh');
     let li_Sheikh_number = 1
@@ -42,9 +43,17 @@ module.exports = function quran_mp3(fs, path, App_Path) {
 
         document.getElementById(event.id).addEventListener('click', e => {
 
+            window.scrollTo(0, 0);
             let Sheikh_true = event.id.split('li_Sheikh_')[1]
             let ArrayMp3 = mp3quran_json.find(e => e?.id.toString() === Sheikh_true);
-
+            let quran_mp3_name_Sheikh = document.getElementById('quran_mp3_name_Sheikh')
+            let quran_mp3_back = document.getElementById('quran_mp3_back')
+            quran_mp3_name_Sheikh.innerText = ArrayMp3?.name
+            quran_mp3_name_Sheikh.style.display = "block"
+            quran_mp3_back.style.display = "block"
+            quran_mp3_back.addEventListener("click", e => {
+                window.location.href = './quran_mp3.html'
+            });
             ul_group.style = 'display: flex;'
             Sheikh.style = 'display: none;'
             let num = 1
@@ -78,7 +87,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
                 download.appendChild(icon_mp3);
                 icon_mp3.className = 'icon_mp3';
                 icon_mp3.id = `icon_mp3_${item?.Number}`
-                icon_mp3.src = '../public/icon/play.png';
+                icon_mp3.src = dark_mode ? '../public/icon/play.png' : '../public/icon/dark/play.png';
                 download.appendChild(a_download);
                 a_download.id = `a_download_${item?.Number}`
                 a_download.href = url
@@ -86,7 +95,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
                 a_download.appendChild(icon_mp3_ddownload);
                 icon_mp3_ddownload.className = 'icon_mp3_ddownload';
                 icon_mp3_ddownload.id = `icon_mp3_ddownload_${item?.Number}`
-                icon_mp3_ddownload.src = '../public/icon/download.png';
+                icon_mp3_ddownload.src = dark_mode ? '../public/icon/download.png' : '../public/icon/dark/download.png';
                 download.appendChild(audio);
                 audio.id = `start_mp3_${numberx}`
                 audio.src = url
@@ -115,7 +124,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
 
                     if (sound_json?.sound) {
 
-                        icon_mp3.src = '../public/icon/pause.png';
+                        icon_mp3.src = dark_mode ? '../public/icon/pause.png' : '../public/icon/dark/pause.png';
                         sound.play()
                         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { sound: false });
                     }
@@ -123,7 +132,7 @@ module.exports = function quran_mp3(fs, path, App_Path) {
 
 
                     else {
-                        icon_mp3.src = '../public/icon/play.png';
+                        icon_mp3.src = dark_mode ? '../public/icon/play.png' : '../public/icon/dark/play.png';
                         sound.pause()
                         fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { sound: true });
                     }

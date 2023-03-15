@@ -1,0 +1,19 @@
+:root {
+    --font_default: "Vazirmatn-Regular";
+    --font_quran: "Quran";
+    --font_quran_bold: "Quran_Bold";
+    --font_1: "Vazirmatn-ExtraLight";
+    --font_size_surah: 30px;
+    --font_size_adhkar: 20px;
+    --background_body: #f4f5fb;
+    --background_div: #ffffff;
+    --background_div_hover: #b0bec5;
+    --background_settings_hover: #cfd8dc;
+    --scrollbar_thumb: #eaeaee;
+    --scrollbar_thumb_hover: #dfdfe9;
+    --color_font_grey: #78909c;
+    --red: #f34949;
+    --white: #78909c;
+    --white-div: #455a64;
+    --settings: #455a64;
+}

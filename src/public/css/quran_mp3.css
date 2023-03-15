@@ -1,5 +1,5 @@
 #icon_menu_mp3 {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #quran_mp3 {
@@ -26,16 +26,17 @@
     list-style: none;
     text-align: center;
     margin: 10px 10px 10px 10px;
-    background-color: #232527;
+    background-color: var(--background_div);
     width: 350px;
     height: 30px;
     border-radius: 8px;
     align-items: center;
-    box-shadow: 0px 0px 25px 0px #00000023;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px #00000010;
 }
 
 .li_group:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
 }
 
 #grid_mp3 {
@@ -48,14 +49,14 @@
 }
 
 .name {
+    color: var(--white-div);
+    font-size: 18px;
     margin-top: 5px;
-    font-family: 'Vazirmatn-Regular';
-    color: #fff;
 }
 
 .number {
     margin-top: 0px;
-    color: #3e4347;
+    color: var(--color_font_grey);
 }
 
 .icon_mp3,
@@ -76,16 +77,14 @@
 }
 
 #Sheikh_name {
-    font-family: 'Vazirmatn-Regular';
-    color: #ffffff;
+    color: var(--white-div);
     font-size: 19px;
     margin: 0 0 0 0;
 
 }
 
 #Sheikh_rewaya {
-    font-family: 'Vazirmatn-Regular';
-    color: #4e5458;
+    color: var(--color_font_grey);
     font-size: 12px;
     margin: 0 0 0 0;
     direction: rtl;
@@ -96,24 +95,23 @@
     /* width: max-content; */
     list-style: none;
     margin: 10px 10px 10px 10px;
-    background-color: #232527;
+    background-color: var(--background_div);
+    box-shadow: 0px 0px 10px 0px #00000010;
     width: 350px;
     height: auto;
     border-radius: 8px;
-    color: #fff;
     padding: 5px;
     justify-content: center;
     cursor: pointer;
 }
 
 #Sheikh li:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
 }
 
 #reader {
     /* width: max-content; */
     width: 100%;
-    color: #fff;
     display: inline-flex;
     justify-content: space-evenly;
     align-items: center;
@@ -127,6 +125,29 @@
     margin-top: 0px;
     margin-bottom: 10px;
     font-family: 'Quran';
-    color: #4e5458;
+    color: var(--color_font_grey);
     font-size: 18px;
+}
+
+#quran_mp3_back {
+    display: none;
+    margin-top: 20px;
+    width: 30px;
+    cursor: pointer;
+    right: 100px;
+    position: absolute;
+}
+
+#quran_mp3_name_Sheikh {
+    display: none;
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    color: var(--white-div);
+    padding: 10px;
+    background-color: var(--background_div);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #00000010;
 }

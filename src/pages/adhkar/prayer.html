@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" id="variables_css">
+    <link rel="stylesheet" href="../../public/css/fonts.css">
     <link rel="stylesheet" href="../../public/css/barWindow.css">
-    <link rel="stylesheet" href="../../public/css/adhkar2.css">
+    <link rel="stylesheet" href="../../public/css/pages_adhkar.css">
     <link rel="stylesheet" href="../../public/css/animate.min.css">
 </head>
 
@@ -21,15 +23,15 @@
             <div id="window-controls">
 
                 <div id="closed">
-                    <img class="icon_bar" srcset="../../public/icon/closed.png" draggable="false" />
+                    <img class="icon_bar" srcset="../../public/icon/closed.png" id="icon_closed_window" draggable="false" />
                 </div>
 
                 <div id="minimizable">
-                    <img class="icon_bar" srcset="../../public/icon/minimizable.png" draggable="false" />
+                    <img class="icon_bar" srcset="../../public/icon/minimizable.png" id="icon_minimizable_window" draggable="false" />
                 </div>
 
                 <div id="minimize">
-                    <img class="icon_bar" srcset="../../public/icon/minimize.png" draggable="false" />
+                    <img class="icon_bar" srcset="../../public/icon/minimize.png" id="icon_minimize_window" draggable="false" />
                 </div>
 
             </div>
@@ -53,7 +55,7 @@
             </a>
 
             <a href="../surah.html">
-                <img src="../../public/icon/quran.png" class="icon_menu" id="icon_menu_top">
+                <img src="../../public/icon/quran.png" class="icon_menu" id="icon_surah">
             </a>
 
             <a href="../quran_mp3.html">
@@ -84,6 +86,10 @@
         </div>
 
         <div id="prayer" class="animate__animated animate__fadeIn">
+
+            <img src="../../public/icon/back.png" id="adhkar_back">
+
+            <h3 id="adhkar_top_title">أذكار الصلاة</h3>
 
             <div class="adhkar" id="1">
                 <p class="text">
@@ -346,6 +352,12 @@
 
     </div>
     <script src="../../public/js/adhkar.js"></script>
+    <script>
+        document.getElementById("adhkar_back").addEventListener("click", e => {
+
+            window.location.href = "../adhkar.html"
+        });
+    </script>
 </body>
 
 </html>

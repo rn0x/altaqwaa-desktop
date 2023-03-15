@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/fonts.css">
+    <link rel="stylesheet" id="variables_css">
     <link rel="stylesheet" href="../public/css/barWindow.css">
     <link rel="stylesheet" href="../public/css/quran_mp3.css">
     <link rel="stylesheet" href="../public/css/animate.min.css">
@@ -21,15 +23,15 @@
             <div id="window-controls">
 
                 <div id="closed">
-                    <img class="icon_bar" srcset="../public/icon/closed.png" draggable="false" />
+                    <img class="icon_bar" srcset="../public/icon/closed.png" id="icon_closed_window" draggable="false" />
                 </div>
 
                 <div id="minimizable">
-                    <img class="icon_bar" srcset="../public/icon/minimizable.png" draggable="false" />
+                    <img class="icon_bar" srcset="../public/icon/minimizable.png" id="icon_minimizable_window" draggable="false" />
                 </div>
 
                 <div id="minimize">
-                    <img class="icon_bar" srcset="../public/icon/minimize.png" draggable="false" />
+                    <img class="icon_bar" srcset="../public/icon/minimize.png" id="icon_minimize_window" draggable="false" />
                 </div>
 
             </div>
@@ -79,8 +81,14 @@
         <div id="quran_mp3" onmousedown='return false;' onselectstart='return false;'
             class="animate__animated animate__fadeIn">
 
+            <img src="../public/icon/back.png" id="quran_mp3_back">
+
             <ul id="Sheikh"></ul>
-            <ul id="ul_group"></ul>
+
+            <h3 id="quran_mp3_name_Sheikh"></h3>
+
+            <ul id="ul_group">
+            </ul>
 
         </div>
 

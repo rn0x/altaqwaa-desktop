@@ -1,5 +1,5 @@
 #icon_settings {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #settings {
@@ -15,50 +15,31 @@
     user-select: none;
 }
 
-#table {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    text-align: center;
-    font-family: 'Vazirmatn-Regular';
-    font-size: 18px;
-    border-collapse: collapse;
-    color: #fff;
-    border-collapse: separate;
-    border-spacing: 0 8px;
-}
-
-.name {
-    text-align: right;
-}
-
-#table td {
-    border-bottom: 5px;
-    padding: 10px;
-    padding-right: 30px;
-}
 
 #latitude,
 #longitude,
-#timezone {
+#timezone,
+#morning_adhkar_time,
+#evening_adhkar_time {
     width: 300px;
     height: 35px;
     text-align: center;
     border-radius: 10px;
-    border: none
+    border: none;
+    background-color: #eceff1;
 }
 
 #Calculation {
     width: 300px;
-    height: 35px;
+    height: 40px;
     text-align: right;
     border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
     text-indent: 4px;
-    font-family: 'Vazirmatn-Regular';
-    color: #6d7275;
+    background-color: #eceff1;
+    border: none;
+    color: var(--color_font_grey);
 
 }
 
@@ -104,11 +85,11 @@
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: var(--settings);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--background_div_hover);
 }
 
 input:checked+.slider:before {
@@ -119,12 +100,29 @@ input:checked+.slider:before {
 
 /* for the volume value box */
 output {
-    background: #2196F3;
+    background: var(--background_div_hover);
     font-size: small;
     padding: 4px 12px;
     border-radius: 3px;
-    color: #fff;
 }
+
+#volume {
+    accent-color: var(--settings);
+}
+
+#adhan_volume {
+    accent-color: var(--settings);
+}
+
+#volume_value {
+    color: var(--white-div);
+}
+
+#adhan_volume_value {
+    color: var(--white-div);
+}
+
+
 
 /* Rounded sliders */
 .slider.round {
@@ -138,6 +136,7 @@ output {
 
 #save {
     margin-top: 25px;
+    margin-bottom: 20px;
     display: block;
     width: 200px;
     border-style: none;
@@ -146,15 +145,166 @@ output {
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
-    font-family: 'Vazirmatn-Regular';
-    color: #fff;
-    background-color: #232527;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    font-family: var(--font_default);
+    color: var(--white-div);
+    background-color: var(--background_div);
+    box-shadow: 0px 0px 10px 0px #00000010;
     transition: 0.5s ease-in-out;
     cursor: pointer;
 }
 
 #save:hover {
-    background-color: #6bc077;
-    box-shadow: 5px 15px 15px 0px #00000048;
+    background-color: var(--background_div_hover);
+}
+
+
+.settings_ul {
+    display: block;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    padding: 0px;
+}
+
+.settings_ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: var(--background_div);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.settings_ul li:hover {
+    background-color: var(--background_settings_hover);
+}
+
+.settings_title {
+    color: var(--white-div);
+}
+
+.settings_description {
+    color: var(--color_font_grey);
+}
+
+#refresh_button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
+#refresh_location {
+    width: 40px;
+    margin-left: 50px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#refresh_location:hover {
+    width: 55px;
+    margin-left: 40px;
+    animation: rotation 0.5s  linear;
+    transition: 0.5s ease-in-out;
+}
+
+
+@keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(360deg);
+    }
+}
+
+#settings_font_quran_output {
+    color: var(--white-div);
+}
+
+#settings_font_adhkar_output {
+    color: var(--white-div);
+}
+
+#settings_font_quran {
+    accent-color: var(--settings);
+}
+
+#settings_font_adhkar {
+    accent-color: var(--settings);
+}
+
+#Check_for_update_icon {
+    width: 50px;
+    margin-left: 50px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#Check_for_update_icon:hover {
+    width: 65px;
+    margin-left: 45px;
+    animation: rotation 0.5s  linear;
+    transition: 0.5s ease-in-out;
+}
+
+#alert_settings {
+    display: none;
+    width: 100%;
+    height: 100%;
+    right: 50px;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
+    position: fixed;
+}
+
+#div_alert_settings {
+    display: block;
+    width: 60%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    box-shadow: 0px 0px 20px 0px #00000034;
+}
+
+#alert_settings_icon {
+    display: block;
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#alert_settings_title {
+    text-align: center;
+    color: var(--color_font_grey);
+}
+
+#alert_settings_v {
+    text-align: center;
+    color: var(--color_font_grey);
+}
+
+#alert_settings_text {
+    display: none;
+    text-align: center;
+    color: var(--color_font_grey);
+}
+
+#app_current_version {
+    color: var(--background_div_hover);
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#app_latest_version {
+    color: var(--background_div_hover);
+    margin-right: 5px;
+    margin-left: 5px;
 }

@@ -1,5 +1,5 @@
 #icon_adhkar {
-    background-color: #2e3338;
+    background-color: var(--background_div_hover);
 }
 
 #morning,
@@ -24,20 +24,23 @@
 
 .adhkar {
     margin-top: 40px;
-    background-color: #232527;
+    background-color: var(--background_div);
     padding: 15px;
     border-radius: 15px;
     margin-right: 30px;
     margin-left: 30px;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: 0px 0px 10px 0px #00000010;
     user-select: text;
+}
+
+.adhkar:nth-of-type(1) {
+    margin-top: 40px;
 }
 
 .text_bottom {
     margin-bottom: 8px;
     margin-top: 10px;
-    font-family: 'Vazirmatn-Regular';
-    color: #585858;
+    color: var(--color_font_grey);
     font-size: 17px;
     text-align: center;
 
@@ -45,9 +48,9 @@
 }
 
 .text {
-    font-family: 'quran';
-    color: #fff;
-    font-size: 19px;
+    color: var(--white-div);
+    font-family: var(--font_quran);
+    font-size: var(--font_size_adhkar);
     text-align: center;
     margin-bottom: 0px;
 }
@@ -55,7 +58,7 @@
 .copy_and_paste {
     margin-top: 15px;
     margin-bottom: 0px;
-    background-color: #2e3338;
+    background-color: var(--background_body);
     border-radius: 15px;
     display: flex;
     flex-direction: row;
@@ -66,12 +69,12 @@
 .copy_and_paste li {
     list-style: none;
     margin-left: 50px;
-    margin-bottom: 0px;
-    padding: 10px;
+    padding: 12px;
     align-self: center;
 }
 
 .icon_c_p {
+    margin-top: 5px;
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -89,11 +92,10 @@
 }
 
 .tkrar {
+    color: var(--white-div);
     text-align: center;
-    font-family: 'Vazirmatn-Regular';
-    color: #fff;
-    font-size: 14px;
-    background-color: #232527;
+    font-size: 16px;
+    background-color: var(--background_div);
     border-radius: 10px;
     width: 90px;
     height: 10px;
@@ -103,5 +105,29 @@
 }
 
 .tkrar_number {
-    color: #4e5458;
+
+    color: var(--color_font_grey);
+    font-weight: 600;
+}
+
+#adhkar_back {
+    margin-top: 20px;
+    width: 30px;
+    cursor: pointer;
+    right: 100px;
+    position: absolute;
+}
+
+#adhkar_top_title {
+    display: block;
+    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    color: var(--white-div);
+    padding: 10px;
+    background-color: var(--background_div);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #00000010;
 }

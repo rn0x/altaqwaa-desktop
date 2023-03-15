@@ -1,38 +1,7 @@
-module.exports = function info(fs, path, App_Path, shell) {
+module.exports = async function info(ipcRenderer, shell) {
 
-    /*
-        * SIMPLE GITHUB API CHECK FOR NEW RELEASES SCRIPT
-        * THE CURRENT RELEASE LOADS IN PRELOAD.JS FILE
-        * LAST CHANGE WAS TO INSURE THAT CHECK HAPPENS ONCE (GITHUB RATE LIMIT)
-        * https://github.com/kemzops
-    */
-    let currentRelease = fs.readJsonSync(path.join(App_Path, './version.json')).currentRelease || "0.0.0";
-    let already_checked = fs.readJsonSync(path.join(App_Path, './version.json')).already_checked || false;
-    let latestRelease = fs.readJsonSync(path.join(App_Path, './version.json')).latestRelease || "0.0.0";
-    if (already_checked == false) {
-        try {
-            (async () => {
-                const response = await fetch('https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases');
-                const data = await response.json();
-                let latestRelease = data[0];
-                if (currentRelease != latestRelease.tag_name.substring(1)) {
-                    document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: ${latestRelease.tag_name}`;
-                } else {
-                    document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
-                }
-                await fs.writeJsonSync(path.join(App_Path, './version.json'), { currentRelease: currentRelease, already_checked: true, latestRelease: latestRelease.tag_name.substring(1) }, { spaces: '\t' });
-            })();
-        } catch (e) {
-            /* SKIP ERRORS... SOMETIMES ITS RATE LIMIT FOR GITHUB API OR INTERNET ISSUE */
-            document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
-        }
-    } else {
-        if (currentRelease != latestRelease) {
-            document.getElementById("Version").innerHTML = "هنالك اصدار جديد من البرنامج\n" + `الإصدار الحالي: v${currentRelease}\n` + `الإصدار الأخير: v${latestRelease}`;
-        } else {
-            document.getElementById("Version").innerHTML = "الإصدار: v" + currentRelease;
-        }
-    }
+    let currentRelease = await ipcRenderer.invoke('currentRelease') || "0.0.0";
+    document.getElementById("Version").innerHTML = "v" + currentRelease;
 
     let github = document.getElementById('github');
     let altaqwaa = document.getElementById('altaqwaa');
@@ -52,6 +21,7 @@ module.exports = function info(fs, path, App_Path, shell) {
     let Sources_5 = document.getElementById('Sources_5');
     let Sources_6 = document.getElementById('Sources_6');
     let Sources_7 = document.getElementById('Sources_7');
+    let Sources_8 = document.getElementById('Sources_8');
     let url_1 = document.getElementById('url_1');
     let url_2 = document.getElementById('url_2');
     let url_3 = document.getElementById('url_3');
@@ -59,6 +29,8 @@ module.exports = function info(fs, path, App_Path, shell) {
     let url_5 = document.getElementById('url_5');
     let url_6 = document.getElementById('url_6');
     let url_7 = document.getElementById('url_7');
+    let url_8 = document.getElementById('url_8');
+    let url_9 = document.getElementById('url_9');
 
     info_li_1.addEventListener('click', e => {
         altaqwaa.style.display = 'none'
@@ -139,6 +111,10 @@ module.exports = function info(fs, path, App_Path, shell) {
         shell.openExternal('https://github.com/rastikerdar/vazirmatn')
     });
 
+    Sources_8.addEventListener('click', e => {
+        shell.openExternal('https://animate.style/')
+    });
+
     url_1.addEventListener('click', e => {
         shell.openExternal('https://github.com/batoulapps/adhan-js')
     });
@@ -152,7 +128,7 @@ module.exports = function info(fs, path, App_Path, shell) {
     });
 
     url_4.addEventListener('click', e => {
-        shell.openExternal('https://github.com/moment')
+        shell.openExternal('https://momentjs.com/timezone/')
     });
 
     url_5.addEventListener('click', e => {
@@ -165,5 +141,13 @@ module.exports = function info(fs, path, App_Path, shell) {
 
     url_7.addEventListener('click', e => {
         shell.openExternal('https://github.com/zertosh/v8-compile-cache')
+    });
+
+    url_8.addEventListener('click', e => {
+        shell.openExternal('https://github.com/xsoh/moment-hijri')
+    });
+
+    url_9.addEventListener('click', e => {
+        shell.openExternal('https://github.com/jsmreese/moment-duration-format')
     });
 }
