@@ -50,7 +50,7 @@ module.exports = async (path, fs, App_Path) => {
             "evening_adhkar_time": "",
             "dark_mode": true,
             "font_size_quran": 30,
-            "font_size_adhkar": 30,
+            "font_size_adhkar": 20,
             "volume": 1,
             "adhanVolume": 1,
         });
