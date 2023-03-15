@@ -7,7 +7,6 @@
 /* PACKAGES */
 require('v8-compile-cache');
 const { BrowserWindow, ipcMain, app, Tray, Menu } = require('electron');
-const { menubar } = require('menubar');
 const path = require('path');
 const fs = require('fs-extra');
 
@@ -149,6 +148,7 @@ app.on('ready', async (e) => {
                 });
             }
         } catch (e) { }
+        const { menubar } = require('menubar');
 
         let windowsMenubar = menubar({
             browserWindow: {
@@ -161,22 +161,22 @@ app.on('ready', async (e) => {
                 maxHeight: 380,
                 show: false,
                 title: 'التقوى',
-                icon: path.join(__dirname, '../build/icons/icon.png'),
+                icon: path.join(__dirname, './build/icons/icon.png'),
                 webPreferences: {
                     nodeIntegration: true,
-                    preload: path.join(__dirname, '../preload/tray_window.js'),
+                    preload: path.join(__dirname, './preload/tray_window.js'),
                     devTools: false
                 }
             },
-            index: path.join(__dirname, '../pages/tray_window.html'),
-            icon: path.join(__dirname, '../build/icons/icon@2x.png'),
+            index: path.join(__dirname, './pages/tray_window.html'),
+            icon: path.join(__dirname, './build/icons/icon@2x.png'),
             tray: tray
         });
 
         windowsMenubar.on('ready', () => {
             windowsMenubar.tray.on('click', () => {
-                if (windowsMenubar?.isVisible()) {
-                    windowsMenubar?.hide();
+                if (win?.isVisible()) {
+                    win?.hide();
                     windowsMenubar?.showWindow();
                 } else {
                     win?.show();
@@ -237,7 +237,7 @@ app.on('ready', async (e) => {
         ipcMain?.on('show3', () => {
             audioWindow?.show();
         });
-
+        
         audioWindow?.on('closed', (event) => {
             event?.preventDefault();
             audioWindow = null

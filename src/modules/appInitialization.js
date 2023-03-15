@@ -1,12 +1,12 @@
 module.exports = async (path, fs, App_Path) => {
 
-    fs.existsSync(App_Path) ? true : await fs.mkdirsSync(App_Path, { recursive: true });
+    fs.existsSync(App_Path) ? true : fs.mkdirsSync(App_Path, { recursive: true });
 
     fs.existsSync(path.join(App_Path, "./data")) ? true :
-        await fs.mkdirsSync(path.join(App_Path, "./data"), { recursive: true });
+        fs.mkdirsSync(path.join(App_Path, "./data"), { recursive: true });
 
     fs.existsSync(path.join(App_Path, "./data/settings.json")) ? true :
-        await fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
+        fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
             "Calculation": "UmmAlQura",
             "notifications_adhan": true,
             "notifications_adhkar": true,
@@ -32,7 +32,7 @@ module.exports = async (path, fs, App_Path) => {
             if (status !== 200) return
             let body = await response?.json();
 
-            await fs.writeJsonSync(path.join(App_Path, './data/location.json'), {
+            fs.writeJsonSync(path.join(App_Path, './data/location.json'), {
                 country: body?.country,
                 countryCode: body?.countryCode,
                 regionName: body?.regionName,
@@ -50,10 +50,10 @@ module.exports = async (path, fs, App_Path) => {
     }
 
     fs.existsSync(path.join(App_Path, "./data/Now.json")) ? true :
-        await fs.writeJsonSync(path.join(App_Path, './data/Now.json'), { "id": "surah_number_1" });
+        fs.writeJsonSync(path.join(App_Path, './data/Now.json'), { "id": "surah_number_1" });
 
-    await fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false });
+    fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false });
 
-    await fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true });
+    fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true });
 
 }
