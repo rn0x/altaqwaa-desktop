@@ -52,27 +52,8 @@ module.exports = async (path, fs, App_Path) => {
     fs.existsSync(path.join(App_Path, "./data/Now.json")) ? true :
         await fs.writeJsonSync(path.join(App_Path, './data/Now.json'), { "id": "surah_number_1" });
 
-    fs.existsSync(path.join(App_Path, "./data/audio_window.json")) ? fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false }) :
-        fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false });
+    await fs.writeJsonSync(path.join(App_Path, './data/audio_window.json'), { "start": false });
 
-    fs.existsSync(path.join(App_Path, "./data/settings.json")) ? true :
-        fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
-            "Calculation": "UmmAlQura",
-            "notifications_adhan": true,
-            "notifications_adhkar": true,
-            "autostart": true,
-            "startHidden": false,
-            "minimizeToPanel": false,
-            "morning_adhkar_time": "",
-            "evening_adhkar_time": "",
-            "dark_mode": true,
-            "font_size_quran": 30,
-            "font_size_adhkar": 30,
-            "volume": 1,
-            "adhanVolume": 1,
-        });
-
-    fs.existsSync(path.join(App_Path, "./data/sound.json")) ? fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true }) :
-        await fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true });
+    await fs.writeJsonSync(path.join(App_Path, './data/sound.json'), { "sound": true });
 
 }
