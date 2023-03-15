@@ -111,7 +111,12 @@ sudo snap install altaqwaa
 
 ### مثال:
 
-![image](/screenshots/dark/9.png)
+<div align="center">
+
+![image](/screenshots/dark/update.png)
+
+</div>
+
 
 <br>
 

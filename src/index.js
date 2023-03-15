@@ -251,7 +251,7 @@ app.on('ready', async (e) => {
 
     // To get app version 
     ipcMain?.handle('currentRelease', async () => {
-        return await app?.getVersion();
+        return app?.getVersion();
     });
 
     // Window Controls
