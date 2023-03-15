@@ -175,8 +175,8 @@ app.on('ready', async (e) => {
 
         windowsMenubar.on('ready', () => {
             windowsMenubar.tray.on('click', () => {
-                if (win?.isVisible()) {
-                    win?.hide();
+                if (windowsMenubar?.isVisible()) {
+                    windowsMenubar?.hide();
                     windowsMenubar?.showWindow();
                 } else {
                     win?.show();
@@ -200,16 +200,6 @@ app.on('ready', async (e) => {
     /* LOAD AUDIO WINDOW AFTER MAIN WINDOW (HOME) IS READY & LOADED */
     if (settings.notifications_adhan == true || settings.notifications_adhkar == true) {
         let audioWindow
-
-        ipcMain?.on('closed3', () => {
-            if (audioWindow?.isVisible()) {
-                audioWindow?.hide();
-            }
-        });
-
-        ipcMain?.on('show3', () => {
-            audioWindow?.show();
-        });
 
         audioWindow = new BrowserWindow({
             width: 600,
@@ -236,6 +226,16 @@ app.on('ready', async (e) => {
         audioWindow?.once('ready-to-show', () => {
             audioWindow?.hide();
             //audioWindow?.webContents.openDevTools();
+        });
+
+        ipcMain?.on('closed3', () => {
+            if (audioWindow?.isVisible()) {
+                audioWindow?.hide();
+            }
+        });
+
+        ipcMain?.on('show3', () => {
+            audioWindow?.show();
         });
 
         audioWindow?.on('closed', (event) => {
