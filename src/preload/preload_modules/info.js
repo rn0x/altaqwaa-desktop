@@ -1,12 +1,6 @@
-module.exports = function info(fs, path, App_Path, shell) {
+module.exports = async function info(ipcRenderer, shell) {
 
-    /*
-        * SIMPLE GITHUB API CHECK FOR NEW RELEASES SCRIPT
-        * THE CURRENT RELEASE LOADS IN PRELOAD.JS FILE
-        * LAST CHANGE WAS TO INSURE THAT CHECK HAPPENS ONCE (GITHUB RATE LIMIT)
-        * https://github.com/kemzops
-    */
-    let currentRelease = ipcRenderer.invoke('currentRelease') || "0.0.0";
+    let currentRelease = await ipcRenderer.invoke('currentRelease') || "0.0.0";
     document.getElementById("Version").innerHTML = "v" + currentRelease;
 
     let github = document.getElementById('github');

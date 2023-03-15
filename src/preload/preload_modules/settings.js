@@ -1,7 +1,8 @@
-module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
+module.exports = async function settings(fs, path, App_Path, settings, ipcRenderer) {
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
-    let currentRelease = ipcRenderer.invoke('currentRelease');
+    let currentRelease = await ipcRenderer.invoke('currentRelease');
+
     console.log(currentRelease)
     let latitude = document.getElementById('latitude');
     let longitude = document.getElementById('longitude');
@@ -129,7 +130,7 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
         if (lastVersion === currentRelease) {
 
             alert_settings_title.innerText = "لديك بالفعل آخر إصدار من تطبيق التقوى"
-            alert_settings_icon.src = "../public/icon/x.png"
+            alert_settings_icon.src = "../public/icon/correct.png"
             app_current_version.innerText = currentRelease
             app_latest_version.innerText = lastVersion
         }
@@ -137,7 +138,7 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
         else {
 
             alert_settings_title.innerText = "يتوفر تحديث جديد للتطبيق"
-            alert_settings_icon.src = "../public/icon/correct.png"
+            alert_settings_icon.src = "../public/icon/x.png"
             app_current_version.innerText = currentRelease
             app_latest_version.innerText = lastVersion
             alert_settings_text.style.display = "block"

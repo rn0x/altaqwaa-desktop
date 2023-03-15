@@ -56,7 +56,7 @@
             setTimeout(() => {
                 loadWin.close();
                 win?.show();
-                win?.webContents.openDevTools();
+                //win?.webContents.openDevTools();
             }, 1000);
         }
 
@@ -95,8 +95,8 @@
     });
 
     // to get app version 
-    ipcMain?.on('currentRelease', () => {
-        return app.getVersion();
+    ipcMain?.handle('currentRelease', async () => {
+        return await app.getVersion();
     });
 
     ipcMain?.on('minimizable', () => {

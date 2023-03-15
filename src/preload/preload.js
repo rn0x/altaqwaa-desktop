@@ -423,7 +423,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         logo.src = '../public/icon/dark/logo.png';
 
         let info = require('./preload_modules/info.js');
-        await info(fs, path, App_Path, shell);
+        await info(ipcRenderer, shell);
         break;
 
       /* THE DEFAULT FOR UNEXPECTED THING HAPPEN */
@@ -505,7 +505,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
       case "info.html":
         variables_css.href = '../public/css/var.css';
         let info = require('./preload_modules/info.js');
-        await info(fs, path, App_Path, shell);
+        await info(ipcRenderer, shell);
         break;
 
       /* THE DEFAULT FOR UNEXPECTED THING HAPPEN */
