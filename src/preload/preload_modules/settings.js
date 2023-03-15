@@ -128,7 +128,7 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
 
         if (lastVersion === version?.currentRelease) {
 
-            alert_settings_title.innerText = "انت على آخر إصدار من تطبيق التقوى"
+            alert_settings_title.innerText = "لديك بالفعل آخر إصدار من تطبيق التقوى"
             alert_settings_icon.src = "../public/icon/x.png"
             app_current_version.innerText = version?.currentRelease
             app_latest_version.innerText = lastVersion

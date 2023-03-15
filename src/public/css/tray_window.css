@@ -1,18 +1,3 @@
-@font-face {
-    font-family: "Vazirmatn-Regular";
-    src: url(../font/Vazirmatn-Regular.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "Vazirmatn-Bold";
-    src: url(../font/Vazirmatn-Bold.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "Quran";
-    src: url(../font/Quran.ttf) format("truetype");
-}
-
 html,
 body {
     background-color: #232527b9;

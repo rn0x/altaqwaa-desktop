@@ -1,0 +1,36 @@
+:root {
+  --font_default: "Vazirmatn-Regular";
+  --font_quran: "Quran";
+  --font_quran_bold: "Quran_Bold";
+  --font_1: "Vazirmatn-ExtraLight";
+}
+
+@font-face {
+    font-family: "Vazirmatn-Bold";
+    src: url(../font/Vazirmatn-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-ExtraLight";
+    src: url(../font/Vazirmatn-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-Medium";
+    src: url(../font/Vazirmatn-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quran_Bold";
+    src: url(../font/Quran_Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Vazirmatn-Regular";
+    src: url(../font/Vazirmatn-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quran";
+    src: url(../font/Quran.ttf) format("truetype");
+}
