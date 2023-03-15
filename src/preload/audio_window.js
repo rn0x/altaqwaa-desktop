@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     while (true) {
 
-        await new Promise(resolve => setTimeout(resolve, 25000));
+        await new Promise(resolve => setTimeout(resolve, 20000));
         let audioJson = fs.readJsonSync(path.join(App_Path, './data/audio_window.json'));
         let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
         let settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false)
-            }, 60000);
+            }, 65000);
         }
 
         else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
-            }, 60000);
+            }, 65000);
         }
 
         else if (time_now_adhan === data.asr && audioJson?.start === false && settings?.notifications_adhan) {
@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
-            }, 60000);
+            }, 65000);
         }
 
         else if (time_now_adhan === data.maghrib && audioJson?.start === false && settings?.notifications_adhan) {
@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
-            }, 60000);
+            }, 65000);
         }
 
         else if (time_now_adhan === data.isha && audioJson?.start === false && settings?.notifications_adhan) {
@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
-            }, 60000);
+            }, 65000);
         }
 
         else if (time_now_adhkar === settings?.morning_adhkar_time && audioJson?.start === false && settings?.notifications_adhkar) {
@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
-            }, 60000);
+            }, 65000);
         }
 
         else if (time_now_adhkar === settings?.evening_adhkar_time && audioJson?.start === false && settings?.notifications_adhkar) {
@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
-            }, 60000);
+            }, 65000);
         }
 
     }
