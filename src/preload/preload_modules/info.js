@@ -148,4 +148,12 @@ module.exports = function info(fs, path, App_Path, shell) {
     url_7.addEventListener('click', e => {
         shell.openExternal('https://github.com/zertosh/v8-compile-cache')
     });
+
+    url_8.addEventListener('click', e => {
+        shell.openExternal('https://github.com/xsoh/moment-hijri')
+    });
+
+    url_9.addEventListener('click', e => {
+        shell.openExternal('https://github.com/jsmreese/moment-duration-format')
+    });
 }
