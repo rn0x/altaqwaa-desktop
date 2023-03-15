@@ -6,7 +6,7 @@ module.exports = function info(fs, path, App_Path, shell) {
         * LAST CHANGE WAS TO INSURE THAT CHECK HAPPENS ONCE (GITHUB RATE LIMIT)
         * https://github.com/kemzops
     */
-    let currentRelease = fs.readJsonSync(path.join(App_Path, './data/version.json'))?.currentRelease || "0.0.0";
+    let currentRelease = ipcRenderer.invoke('currentRelease') || "0.0.0";
     document.getElementById("Version").innerHTML = "v" + currentRelease;
 
     let github = document.getElementById('github');

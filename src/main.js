@@ -56,7 +56,7 @@
             setTimeout(() => {
                 loadWin.close();
                 win?.show();
-                //win?.webContents.openDevTools();
+                win?.webContents.openDevTools();
             }, 1000);
         }
 
@@ -92,6 +92,11 @@
     // for changing light/dark mode on settings
     ipcMain?.on('background', (_, dark) => {
         dark ? win?.setBackgroundColor('#2e3338') : win?.setBackgroundColor('#f4f5fb');
+    });
+
+    // to get app version 
+    ipcMain?.on('currentRelease', () => {
+        return app.getVersion();
     });
 
     ipcMain?.on('minimizable', () => {

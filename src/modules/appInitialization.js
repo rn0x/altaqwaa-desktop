@@ -2,10 +2,6 @@ module.exports = async (path, fs, App_Path, currentVersion) => {
 
     fs.existsSync(App_Path) ? true : fs.mkdirsSync(App_Path, { recursive: true });
 
-    fs.writeJsonSync(path.join(App_Path, "./data/version.json"), {
-        currentRelease: currentVersion
-    }, { spaces: '\t' });
-
     fs.existsSync(path.join(App_Path, "./data")) ? true :
         fs.mkdirsSync(path.join(App_Path, "./data"), { recursive: true });
 
