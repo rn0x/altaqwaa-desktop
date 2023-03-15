@@ -113,7 +113,7 @@ sudo snap install altaqwaa
 
 <div align="center">
 
-![image](/screenshots/dark/update.png)
+![image](/screenshots/update.png)
 
 </div>
 

@@ -48,7 +48,7 @@
     "appId": "org.altaqwaa.rn0x",
     "copyright": "Copyleft 🄯 2023 Altaqwaa",
     "win": {
-      "icon": "./src/build/icon.ico",
+      "icon": "./src/build/icons/icon.ico",
       "signingHashAlgorithms": [
         "sha256",
         "sha1"
@@ -75,8 +75,8 @@
       "oneClick": "false",
       "perMachine": true,
       "allowToChangeInstallationDirectory": "true",
-      "installerIcon": "./src/build/icon.ico",
-      "uninstallerIcon": "./src/build/icon.ico",
+      "installerIcon": "./src/build/icons/icon.ico",
+      "uninstallerIcon": "./src/build/icons/icon.ico",
       "license": "./src/build/LICENSE.txt",
       "shortcutName": "التقوى",
       "uninstallDisplayName": "التقوى",
