@@ -206,6 +206,7 @@ output {
 
 #refresh_location:hover {
     width: 55px;
+    margin-left: 40px;
     animation: rotation 0.5s  linear;
     transition: 0.5s ease-in-out;
 }
@@ -236,3 +237,74 @@ output {
     accent-color: var(--settings);
 }
 
+#Check_for_update_icon {
+    width: 50px;
+    margin-left: 50px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#Check_for_update_icon:hover {
+    width: 65px;
+    margin-left: 45px;
+    animation: rotation 0.5s  linear;
+    transition: 0.5s ease-in-out;
+}
+
+#alert_settings {
+    display: none;
+    width: 100%;
+    height: 100%;
+    right: 50px;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
+    position: fixed;
+}
+
+#div_alert_settings {
+    display: block;
+    width: 60%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    box-shadow: 0px 0px 20px 0px #00000034;
+}
+
+#alert_settings_icon {
+    display: block;
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#alert_settings_title {
+    text-align: center;
+    color: var(--color_font_grey);
+}
+
+#alert_settings_v {
+    text-align: center;
+    color: var(--color_font_grey);
+}
+
+#alert_settings_text {
+    display: none;
+    text-align: center;
+    color: var(--color_font_grey);
+}
+
+#app_current_version {
+    color: var(--background_div_hover);
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#app_latest_version {
+    color: var(--background_div_hover);
+    margin-right: 5px;
+    margin-left: 5px;
+}

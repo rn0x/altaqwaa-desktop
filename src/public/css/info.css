@@ -80,10 +80,11 @@
 }
 
 #Version {
-    color: var(--red) !important;
-    margin-top: 30px;
+    color: var(--white-div) !important;
+    margin-top: 90px;
     text-align: center;
-    font-size: 18px;
+    font-size: 13px;
+    margin-bottom: 0px;
 }
 
 #Developer {

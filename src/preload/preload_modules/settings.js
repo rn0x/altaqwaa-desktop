@@ -1,6 +1,7 @@
 module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
 
     let location = fs.readJsonSync(path.join(App_Path, './data/location.json'));
+    let version = fs.readJsonSync(path.join(App_Path, './data/version.json'))
 
     let latitude = document.getElementById('latitude');
     let longitude = document.getElementById('longitude');
@@ -85,7 +86,7 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
             let status = await response?.status;
             if (status !== 200) return
             let body = await response?.json();
-    
+
             await fs.writeJsonSync(path.join(App_Path, './data/location.json'), {
                 country: body?.country,
                 countryCode: body?.countryCode,
@@ -100,11 +101,56 @@ module.exports = function settings(fs, path, App_Path, settings, ipcRenderer) {
             setTimeout(() => {
                 alrt.style.display = 'none';
                 window.location.href = "./settings.html";
-            }, 1000);    
+            }, 1000);
         } catch (error) {
             /* MAYBE THERE IS NO INTERNET CONNECTION SO AVOIDING CRASH */
         }
     });
+
+    // alert update 
+
+    let alert_settings = document.getElementById("alert_settings");
+    let alert_settings_title = document.getElementById("alert_settings_title");
+    let alert_settings_icon = document.getElementById("alert_settings_icon");
+    let app_current_version = document.getElementById("app_current_version");
+    let app_latest_version = document.getElementById("app_latest_version");
+    let alert_settings_text = document.getElementById("alert_settings_text");
+    let Check_for_update_icon = document.getElementById("Check_for_update_icon");
+
+    Check_for_update_icon.addEventListener("click", async e => {
+
+        let response = await fetch('https://api.github.com/repos/rn0x/Altaqwaa-Islamic-Desktop-Application/releases');
+        let data = await response.json();
+        let latestRelease = data?.[0];
+        let lastVersion = latestRelease?.tag_name?.substring(1);
+
+        alert_settings.style.display = "block"
+
+        if (lastVersion === version?.currentRelease) {
+
+            alert_settings_title.innerText = "انت على آخر إصدار من تطبيق التقوى"
+            alert_settings_icon.src = "../public/icon/x.png"
+            app_current_version.innerText = version?.currentRelease
+            app_latest_version.innerText = lastVersion
+        }
+
+        else {
+
+            alert_settings_title.innerText = "يتوفر تحديث جديد للتطبيق"
+            alert_settings_icon.src = "../public/icon/correct.png"
+            app_current_version.innerText = version?.currentRelease
+            app_latest_version.innerText = lastVersion
+            alert_settings_text.style.display = "block"
+        }
+
+        setTimeout(() => {
+            alert_settings.style.display = "none"
+        }, 5000);
+
+    });
+
+
+    // save
 
     save.addEventListener('click', e => {
 

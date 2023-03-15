@@ -87,9 +87,46 @@
 
         </div>
 
-        <div id="settings" class="animate__animated animate__fadeIn">
+        <div id="settings" class="animate__animated animate__fadeIn" onmousedown='return false;' onselectstart='return false;'>
+
+            <div id="alert_settings">
+                <div id="div_alert_settings">
+
+                    <img src="../public/icon/correct.png" id="alert_settings_icon">
+                    <h3 id="alert_settings_title">
+                        <!-- يتوفر تحديث جديد للتطبيق -->
+                    </h3>
+                    
+                    <h4 id="alert_settings_v">
+                        الإصدار الحالي <span id="app_current_version">v0.0.0</span> الإصدار الأخير <span id="app_latest_version">v0.0.0</span>
+                    </h4>
+                    <p id="alert_settings_text">
+                        يمكن تحميل التحديث الجديد من خلال المستودع الرسمي على جيتهب
+                    </p>
+                </div>
+            </div>
 
             <ul class="settings_ul">
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            التحقق من وجود إصدار جديد
+                        </h3>
+
+                        <p class="settings_description">
+                            التحقق من وجود إصدار جديد لـ تطبيق التقوى من المستودع الرسمي على جيتهب
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
+                        <img src="../public/icon/appupdate.png" id="Check_for_update_icon">
+                    </div>
+
+                </li>
+
+                <!-- ======= -->
 
                 <li>
 
@@ -431,9 +468,9 @@
                             حجم خط القرآن الكريم
                         </h3>
 
-                        <p class="settings_description">
+                        <!-- <p class="settings_description">
                             ///////////////
-                        </p>
+                        </p> -->
                     </div>
 
                     <div class="settings_left">
@@ -452,9 +489,9 @@
                             حجم خط الأذكار
                         </h3>
 
-                        <p class="settings_description">
+                        <!-- <p class="settings_description">
                             ///////////////
-                        </p>
+                        </p> -->
                     </div>
 
                     <div class="settings_left">
