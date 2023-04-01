@@ -45,7 +45,7 @@
       "repo": "Altaqwaa-Islamic-Desktop-Application",
       "protocol": "https"
     },
-    "appId": "org.altaqwaa.rn0x",
+    "appId": "org.altaqwaa.Altaqwaa",
     "copyright": "Copyleft 🄯 2023 Altaqwaa",
     "win": {
       "icon": "./src/build/icons/icon.ico",

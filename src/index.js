@@ -11,7 +11,7 @@ const path = require('path');
 const fs = require('fs-extra');
 
 /* App Initialization (Make Sure Files Ready)  */
-app.setAppUserModelId("org.altaqwaa.rn0x");
+app.setAppUserModelId("org.altaqwaa.Altaqwaa");
 const appInitialization = require('./modules/appInitialization.js');
 const App_Path = path.join(app?.getPath("appData"), './altaqwaa');
 
