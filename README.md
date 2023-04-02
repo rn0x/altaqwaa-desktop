@@ -319,7 +319,7 @@ npm run packlinux
     <tr>
         <td align="center"><a href="https://github.com/rn0x"><img src="https://avatars.githubusercontent.com/u/76129163?v=4" width="100px;"/><br /><sub>rn0x</sub></a></td>
         <td align="center"><a href="https://github.com/kemzops"><img src="https://avatars.githubusercontent.com/u/52936496?v=4" width="100px;"/><br /><sub>kemzops</sub></a></td>
-        <td align="center"><a href="https://github.com/o-kotb"><img src="https://avatars.githubusercontent.com/u/72304125?v=4"/><br /><sub>o-kotb</sub></a></td>
+        <td align="center"><a href="https://github.com/o-kotb"><img src="https://avatars.githubusercontent.com/u/72304125?v=4" width="100px;"/><br /><sub>o-kotb</sub></a></td>
     </tr>
 </table>
 
