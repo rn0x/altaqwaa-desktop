@@ -84,16 +84,22 @@
 
 <p align="center">
   <a href="https://snapcraft.io/altaqwaa">
-    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg">
+    <img width='240' alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-white.svg">
   </a>
 
-```bash
-
-sudo snap install altaqwaa
-
-```
-
+  <a href='https://flathub.org/apps/details/org.altaqwaa.Altaqwaa'>
+    <img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.svg'/>
+  </a>
 </p>
+
+
+```bash
+# FLATHUB
+flatpak install flathub org.altaqwaa.Altaqwaa
+
+# SNAPS
+sudo snap install altaqwaa
+```
 
 - **Linux**: [Download the .AppImage, .deb, .rpm, .flatpak, .snap or Tar.gz Archive](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
 - **Windows**: [Download the setup .exe file portable or installable](https://github.com/rn0x/Altaqwaa-Islamic-Desktop-Application/releases/latest)
@@ -136,7 +142,7 @@ sudo snap install altaqwaa
   - يمكن بدأ التطبيق عن طريق أمر `altaqwaa`
 - **اذا تم تثبيت التطبيق من حزمة `FLATPAK`**
 
-  - يمكن بدأ التطبيق عن طريق أمر `flatpak run org.altaqwaa.rn0x`
+  - يمكن بدأ التطبيق عن طريق أمر `flatpak run org.altaqwaa.Altaqwaa`
 
 - **باقي الحزم يتم تشغيلها حسب المسار بدون أي مشاكل**
 
@@ -313,6 +319,7 @@ npm run packlinux
     <tr>
         <td align="center"><a href="https://github.com/rn0x"><img src="https://avatars.githubusercontent.com/u/76129163?v=4" width="100px;"/><br /><sub>rn0x</sub></a></td>
         <td align="center"><a href="https://github.com/kemzops"><img src="https://avatars.githubusercontent.com/u/52936496?v=4" width="100px;"/><br /><sub>kemzops</sub></a></td>
+        <td align="center"><a href="https://github.com/o-kotb"><img src="https://avatars.githubusercontent.com/u/72304125?v=4"/><br /><sub>o-kotb</sub></a></td>
     </tr>
 </table>
 
@@ -322,13 +329,19 @@ npm run packlinux
 
 <br>
 
+### مراجعة تطبيق التقوى في قناة [Mohammed Besar](https://www.youtube.com/@mmbesar) `v3.0.1`
+
+[![mmbesar|690x385](/screenshots/mmbesar.png)](https://www.youtube.com/watch?v=PQQks44j7YQ)
+
+<br>
+
 ### مراجعة تطبيق التقوى في قناة [NofarahTech](https://www.youtube.com/@NofarahTech) `v2.1.0`
 
 [![Nofarah Tech|690x385](/screenshots/NofarahTech.png)](https://www.youtube.com/watch?v=QbL8l6_-WR4)
 
 <br>
 
-### مراجعة تطبيق التقوى في قناة [Gnu Tux](https://www.youtube.com/@NofarahTech) `v2.0.0`
+### مراجعة تطبيق التقوى في قناة [Gnu Tux](https://www.youtube.com/@GnuTux) `v2.0.0`
 
 [![Gnu Tux|690x385](/screenshots/GnuTux.png)](https://www.youtube.com/watch?v=PtRfxMe9nRI)
 
