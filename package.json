@@ -26,13 +26,13 @@
     "moment-duration-format": "^2.3.2",
     "moment-hijri": "^2.1.2",
     "moment-timezone": "^0.5.41",
-    "node-fetch": "^2.6.7",
+    "node-fetch": "^2.6.9",
     "v8-compile-cache": "^2.3.0"
   },
   "devDependencies": {
-    "electron": "^22.3.2",
+    "electron": "^22.3.5",
     "electron-builder": "^23.6.0",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.22"
   },
   "build": {
     "directories": {
