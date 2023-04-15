@@ -38,9 +38,10 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     let icon_adhkar = document.getElementById("icon_adhkar");
     let icon_hisnmuslim = document.getElementById("icon_hisnmuslim");
     let icon_prayer_time = document.getElementById("icon_prayer_time");
+    let icon_snn = document.getElementById("icon_snn");
     let icon_settings = document.getElementById("icon_settings");
     let icon_info = document.getElementById("icon_info");
-
+    
     // document 
 
     let logo = document.getElementById("logo");
@@ -53,6 +54,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     let home_icon_adhkar = document.getElementById("home_icon_adhkar");
     let home_icon_hisnmuslim = document.getElementById("home_icon_hisnmuslim");
     let home_icon_prayer = document.getElementById("home_icon_prayer");
+    let home_icon_snn = document.getElementById("home_icon_snn");
     let home_icon_settings = document.getElementById("home_icon_settings");
 
     /* PAGES LOAD (SWITCH) */
@@ -76,6 +78,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
         icon_settings.src = '../public/icon/dark/settings.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_info.src = '../public/icon/dark/info.png';
 
         // document
@@ -85,6 +88,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         home_icon_adhkar.src = '../public/icon/dark/open-hands.png';
         home_icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         home_icon_prayer.src = '../public/icon/dark/azan.png';
+        home_icon_snn.src = '../public/icon/dark/book.png';
         home_icon_settings.src = '../public/icon/dark/settings.png';
         break;
       case "evening.html":
@@ -103,6 +107,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../../public/icon/dark/castle.png';
         icon_prayer_time.src = '../../public/icon/dark/azan.png';
+        icon_snn.src = '../../public/icon/dark/book.png';
         icon_settings.src = '../../public/icon/dark/settings.png';
         icon_info.src = '../../public/icon/dark/info.png';
 
@@ -126,6 +131,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../../public/icon/dark/castle.png';
         icon_prayer_time.src = '../../public/icon/dark/azan.png';
+        icon_snn.src = '../../public/icon/dark/book.png';
         icon_settings.src = '../../public/icon/dark/settings.png';
         icon_info.src = '../../public/icon/dark/info.png';
         for (let item of Array.from(icon_c_p)) {
@@ -149,6 +155,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../../public/icon/dark/castle.png';
         icon_prayer_time.src = '../../public/icon/dark/azan.png';
+        icon_snn.src = '../../public/icon/dark/book.png';
         icon_settings.src = '../../public/icon/dark/settings.png';
         icon_info.src = '../../public/icon/dark/info.png';
         for (let item of Array.from(icon_c_p)) {
@@ -172,6 +179,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../../public/icon/dark/castle.png';
         icon_prayer_time.src = '../../public/icon/dark/azan.png';
+        icon_snn.src = '../../public/icon/dark/book.png';
         icon_settings.src = '../../public/icon/dark/settings.png';
         icon_info.src = '../../public/icon/dark/info.png';
         for (let item of Array.from(icon_c_p)) {
@@ -195,6 +203,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../../public/icon/dark/castle.png';
         icon_prayer_time.src = '../../public/icon/dark/azan.png';
+        icon_snn.src = '../../public/icon/dark/book.png';
         icon_settings.src = '../../public/icon/dark/settings.png';
         icon_info.src = '../../public/icon/dark/info.png';
 
@@ -219,6 +228,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../../public/icon/dark/castle.png';
         icon_prayer_time.src = '../../public/icon/dark/azan.png';
+        icon_snn.src = '../../public/icon/dark/book.png';
         icon_settings.src = '../../public/icon/dark/settings.png';
         icon_info.src = '../../public/icon/dark/info.png';
 
@@ -245,6 +255,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -269,6 +280,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -292,6 +304,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -315,6 +328,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -343,6 +357,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -370,6 +385,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -393,6 +409,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
@@ -416,6 +433,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         icon_adhkar.src = '../public/icon/dark/open-hands.png';
         icon_hisnmuslim.src = '../public/icon/dark/castle.png';
         icon_prayer_time.src = '../public/icon/dark/azan.png';
+        icon_snn.src = '../public/icon/dark/book.png';
         icon_settings.src = '../public/icon/dark/settings.png';
         icon_info.src = '../public/icon/dark/info.png';
 
