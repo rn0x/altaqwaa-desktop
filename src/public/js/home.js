@@ -29,7 +29,7 @@ page_prayer_time.addEventListener('click', () => {
 });
 
 page_snn.addEventListener('click', () => {
-    window.location.assign('./prayer_time.html')
+    window.location.assign('./snn.html')
 });
 
 page_settings.addEventListener('click', () => {
