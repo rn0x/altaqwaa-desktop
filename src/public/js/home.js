@@ -4,6 +4,7 @@ let page_quran_mp3 = document.getElementById('page_quran_mp3');
 let page_adhkar = document.getElementById('page_adhkar');
 let page_hisnmuslim = document.getElementById('page_hisnmuslim');
 let page_prayer_time = document.getElementById('page_prayer_time');
+let page_snn = document.getElementById('page_snn');
 let page_settings = document.getElementById('page_settings');
 
 
@@ -25,6 +26,10 @@ page_hisnmuslim.addEventListener('click', () => {
 
 page_prayer_time.addEventListener('click', () => {
     window.location.assign('./prayer_time.html')
+});
+
+page_snn.addEventListener('click', () => {
+    window.location.assign('./snn.html')
 });
 
 page_settings.addEventListener('click', () => {
