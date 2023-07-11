@@ -34,4 +34,5 @@ module.exports = function Quran(fs, path, App_Path) {
         }, 1000);
     }, { once: true });
 
-}
+
+  }

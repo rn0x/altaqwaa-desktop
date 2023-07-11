@@ -1,5 +1,5 @@
 module.exports = function surah(fs, path, App_Path) {
- 
+
     let Quran_json = fs.readJsonSync(path.join(__dirname, '../../data/Quran.json'));
 
     for (let item of Quran_json) {
@@ -40,6 +40,28 @@ module.exports = function surah(fs, path, App_Path) {
             window.location.href = '../pages/quran.html'
         });
 
+    }
+
+    let searchInput = document.getElementById('search-input');
+
+    searchInput.addEventListener('input', function() {
+        let searchQuery = searchInput.value.trim();
+        filterSurahs(searchQuery);
+    });
+
+    function filterSurahs(searchQuery) {
+        let surahs = Array.from(document.getElementsByClassName('surah'));
+
+        surahs.forEach(function(surah) {
+            let surahName = surah.querySelector('.surah_name').innerText;
+            let surahNumber = surah.id.replace('surah_number_', '');
+
+            if (surahName.includes(searchQuery)) {
+                surah.style.display = 'block';
+            } else {
+                surah.style.display = 'none';
+            }
+        });
     }
 
 }

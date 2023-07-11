@@ -117,6 +117,7 @@ body {
 }
 
 #alrt {
+    text-align: center;
     width: 100%;
     display: flex;
     position: fixed;
@@ -127,14 +128,15 @@ body {
 }
 
 .alert {
-    width: 50%;
+    text-align: center;
+    width: 20%;
     padding: 15px;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 20px;
     background-color: #ffffff;
-    border-width: 1px;
+    border-width: 3px;
     border-style: solid;
-    border-color: var(--background_body);
+    border-color: var(--background_div_hover);
     color: var(--color_font_grey);
     z-index: 5;
     position: fixed;
@@ -153,3 +155,11 @@ body {
     z-index: 1;
     position: fixed;
 }
+
+#correct_image {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+  }
+  

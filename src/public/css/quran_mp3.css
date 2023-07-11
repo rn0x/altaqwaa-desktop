@@ -3,8 +3,9 @@
 }
 
 #quran_mp3 {
-
+    padding-top: 30px;
     padding-right: 20px;
+    margin-top: 10px;
     width: 100%;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -150,4 +151,40 @@
     background-color: var(--background_div);
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #00000010;
+}
+
+
+#search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 9999;
+}
+
+#search-bar input[type="text"] {
+    direction: rtl;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#search-bar input[type="text"]:focus {
+    outline: none;
+    border-width: 2px;
+    /* Remove the default focus outline */
+    border-color:var(--background_div_hover);;
+    /* Change the border color when selected */
+    box-shadow: 0 0 5px var(--background_div_hover);
+    /* Add a box shadow when selected */
 }

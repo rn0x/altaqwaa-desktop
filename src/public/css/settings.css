@@ -262,8 +262,11 @@ output {
 }
 
 #div_alert_settings {
+    border-style: solid;
+    border-color: var(--background_div_hover);
+    border-width: 3px;
     display: block;
-    width: 60%;
+    width: 40%;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 10px;
