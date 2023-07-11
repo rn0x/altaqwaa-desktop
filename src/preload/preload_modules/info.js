@@ -83,6 +83,25 @@ module.exports = async function info(ipcRenderer, shell) {
         shell.openExternal('https://discord.gg/NeV3XEwXXw')
     });
 
+    /* o_kotb */
+    o_kotb_git.addEventListener('click', e => {
+        shell.openExternal('https://github.com/o-kotb')
+    });
+
+    o_kotb_gml.addEventListener('click', e => {
+        shell.openExternal('mailto: omar@omarkotb.com')
+    });
+
+    /* m_1226 */
+    m_1226_tg.addEventListener('click', e => {
+        shell.openExternal('https://t.me/mahmoud_ashraf_yahia')
+    });
+
+    m_1226_git.addEventListener('click', e => {
+        shell.openExternal('https://github.com/m-1226')
+    });
+
+
     Sources_1.addEventListener('click', e => {
         shell.openExternal('https://github.com/rn0x/Quran-Json')
     });
