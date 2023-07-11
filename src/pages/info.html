@@ -15,68 +15,15 @@
 <body>
 
     <!-- window bar -->
+    <div id="titlebar-container"></div>
 
-    <header id="titlebar" onmousedown='return false;' onselectstart='return false;'>
-
-        <div id="drag-region">
-
-            <div id="window-controls">
-
-                <div id="closed">
-                    <img class="icon_bar" srcset="../public/icon/closed.png" id="icon_closed_window" draggable="false" />
-                </div>
-
-                <div id="minimizable">
-                    <img class="icon_bar" srcset="../public/icon/minimizable.png" id="icon_minimizable_window" draggable="false" />
-                </div>
-
-                <div id="minimize">
-                    <img class="icon_bar" srcset="../public/icon/minimize.png" id="icon_minimize_window" draggable="false" />
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
+    <script src="../preload/title_bar.js"></script>
 
     <div id="Content" onmousedown='return false;' onselectstart='return false;'>
 
-        <div id="menu">
-            <a href="./home.html">
-                <img src="../public/icon/home.png" class="icon_menu" id="icon_home">
-            </a>
+        <div id="menu-container"></div>
 
-            <a href="./surah.html">
-                <img src="../public/icon/quran.png" class="icon_menu" id="icon_surah">
-            </a>
-
-            <a href="./quran_mp3.html">
-                <img src="../public/icon/sound.png" class="icon_menu" id="icon_menu_mp3">
-            </a>
-
-            <a href="./adhkar.html">
-                <img src="../public/icon/open-hands.png" class="icon_menu" id="icon_adhkar">
-            </a>
-
-            <a href="./hisnmuslim.html">
-                <img src="../public/icon/castle.png" class="icon_menu" id="icon_hisnmuslim">
-            </a>
-
-            <a href="./prayer_time.html">
-                <img src="../public/icon/azan.png" class="icon_menu" id="icon_prayer_time">
-            </a>
-
-            <a href="./settings.html">
-                <img src="../public/icon/settings.png" class="icon_menu" id="icon_settings">
-            </a>
-
-            <a href="./info.html">
-                <img src="../public/icon/info.png" class="icon_menu" id="icon_info">
-            </a>
-
-
-        </div>
+        <script src="../preload/menu.js"></script>
 
         <div id="info" class="animate__animated animate__fadeIn">
             <ul id="info_ul">

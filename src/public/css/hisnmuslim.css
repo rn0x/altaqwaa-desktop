@@ -54,7 +54,8 @@
     background-color: var(--background_div_hover);
 }
 
-#titel_hisn {
+#title_hisn {
+    padding-top: 10px;
     text-align: center;
     font-family: var(--font_quran);
     font-size: 55px;
@@ -132,4 +133,43 @@
 ::-webkit-media-controls-enclosure {
     border-radius: 5px;
     background-color: #c0c4c7;
+}
+
+
+
+     
+#search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 9999;
+}
+
+
+#search-bar input[type="text"] {
+    align-items: center;
+    direction: rtl;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+#search-bar input[type="text"]:focus {
+    outline: none;
+    border-width: 2px;
+    /* Remove the default focus outline */
+    border-color: var(--background_div_hover);
+    /* Change the border color when selected */
+    box-shadow: 0 0 5px var(--background_div_hover);;
+    /* Add a box shadow when selected */
 }

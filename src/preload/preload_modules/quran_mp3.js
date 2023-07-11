@@ -144,5 +144,24 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
         });
 
     });
+    // Search bar logic
+    let searchInput = document.getElementById('search-input');
+
+    searchInput.addEventListener('input', function () {
+        let searchValue = searchInput.value.toLowerCase();
+        let sheikhs = Array.from(document.getElementById('Sheikh').children);
+
+        sheikhs.forEach(function (li) {
+            let sheikhName = li.querySelector('#Sheikh_name').innerText.toLowerCase();
+
+            if (sheikhName.includes(searchValue)) {
+                li.style.display = 'flex';
+            } else {
+                li.style.display = 'none';
+            }
+        });
+    });
+
+
 
 }
