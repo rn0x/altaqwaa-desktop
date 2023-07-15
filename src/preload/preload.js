@@ -39,6 +39,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     let icon_hisnmuslim = document.getElementById("icon_hisnmuslim");
     let icon_prayer_time = document.getElementById("icon_prayer_time");
     let icon_settings = document.getElementById("icon_settings");
+    let icon_radio = document.getElementById('icon_radio');
     let icon_info = document.getElementById("icon_info");
 
     // document 

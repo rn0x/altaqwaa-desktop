@@ -6,9 +6,10 @@
 
 /* PACKAGES */
 require('v8-compile-cache');
-const { BrowserWindow, ipcMain, app, Tray, Menu } = require('electron');
+const { BrowserWindow, ipcMain, app, Tray, Menu} = require('electron');
 const path = require('path');
 const fs = require('fs-extra');
+
 
 /* App Initialization (Make Sure Files Ready)  */
 app.setAppUserModelId("org.altaqwaa.Altaqwaa");
@@ -21,7 +22,7 @@ app.on('ready', async (e) => {
 
     await appInitialization(path, fs, App_Path);
     const settings = fs.readJsonSync(path.join(App_Path, './data/settings.json'));
-    
+
     let loadingWindow
 
     if (process.argv.includes('--hidden')) {
@@ -115,8 +116,8 @@ app.on('ready', async (e) => {
                     win?.close();
                 } else if (win === null) {
                     app.isQuiting = true;
-                    app?.quit();    
-                } 
+                    app?.quit();
+                }
             }
         }
     ]);
@@ -198,9 +199,9 @@ app.on('ready', async (e) => {
     }
 
     /* LOAD AUDIO WINDOW AFTER MAIN WINDOW (HOME) IS READY & LOADED */
-    if (settings.notifications_adhan == true || settings.notifications_adhkar == true) {
-        let audioWindow
+    let audioWindow = null; // Flag to track if the audioWindow has been created
 
+    if ((settings?.notifications_adhan == true || settings?.notifications_adhkar == true) && !audioWindow) {
         audioWindow = new BrowserWindow({
             width: 600,
             height: 200,
@@ -217,33 +218,31 @@ app.on('ready', async (e) => {
                 preload: path.join(__dirname, './preload/audio_window.js')
             }
         });
-
-
+    
         audioWindow.removeMenu();
-
         audioWindow?.loadFile(path.join(__dirname, './pages/audio_window.html'));
-
+    
         audioWindow?.once('ready-to-show', () => {
             audioWindow?.hide();
             //audioWindow?.webContents.openDevTools();
         });
-
+    
         ipcMain?.on('closed3', () => {
             if (audioWindow?.isVisible()) {
                 audioWindow?.hide();
             }
         });
-
+    
         ipcMain?.on('show3', () => {
             audioWindow?.show();
         });
-        
+    
         audioWindow?.on('closed', (event) => {
             event?.preventDefault();
-            audioWindow = null
+            audioWindow = null;
         });
     }
-
+    
     // For changing light/dark mode on settings
     ipcMain?.on('background', (_, dark) => {
         dark ? win?.setBackgroundColor('#2e3338') : win?.setBackgroundColor('#f4f5fb');
@@ -260,6 +259,7 @@ app.on('ready', async (e) => {
     ipcMain?.on('closed', () => win?.close());
 
     app?.on('before-quit', () => tray?.destroy());
+
 });
 
 // For App_Path
@@ -270,3 +270,5 @@ ipcMain?.handle('App_Path', async () => {
 app?.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app?.quit()
 })
+
+
