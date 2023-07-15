@@ -158,11 +158,12 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                   audioElement.src = currentItem.audioPath;
               
                   audioElement.addEventListener('ended', () => {
-                    currentIndex = (currentIndex + 1) % audioList.length; // Move to the next item or reset to 0 if at the end
+                    currentIndex = (currentIndex + 1) % audioList.length; // Move to the next item
                     if (currentIndex === 0) {
                       // Reset currentIndex to 0 when the list is finished playing
                       setTimeout(() => {
                         audioBoolean(App_Path, false); // Stop audio playback after the duration
+                        currentIndex = 0; // Reset currentIndex to 0
                       }, zekr_duration_number * 60 * 1000); // Delay based on zekr_duration
                     } else {
                       setTimeout(() => {
@@ -177,6 +178,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 // Start playing the audio
                 playAudio();
               }
+              
               
         }
 
