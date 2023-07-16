@@ -20,8 +20,7 @@
 #longitude,
 #timezone,
 #morning_adhkar_time,
-#evening_adhkar_time,
-#zekr_duration {
+#evening_adhkar_time{
     width: 300px;
     height: 35px;
     text-align: center;
