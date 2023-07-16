@@ -144,7 +144,14 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 const audioList = [
                     { text: 'الإستغفار', audioPath: path.join(__dirname, '../public/audio/أذكار/أستغفر_الله.mp3') },
                     // Add more items to the list with text and audio path
-                    { text: 'الصلاة علي النبي', audioPath: path.join(__dirname, '../public/audio/أذكار/ذكر_الصلاة_علي_النبي.mp3') }
+                    { text: 'الصلاة علي النبي', audioPath: path.join(__dirname, '../public/audio/أذكار/ذكر_الصلاة_علي_النبي.mp3') },
+                    { text: 'سبحان الله وبحمده', audioPath: path.join(__dirname, '../public/audio/أذكار/سبحان_الله_وبحمده.mp3') },
+                    { text: 'علما نافعا', audioPath: path.join(__dirname, '../public/audio/أذكار/اللهم_إني_اسألك_علما_نافعا.mp3') },
+                    { text: 'اللهم أنت ربي ', audioPath: path.join(__dirname, '../public/audio/أذكار/اللهم_انت_ربي.mp3') },
+                    { text: 'لا إله إلا الله', audioPath: path.join(__dirname, '../public/audio/أذكار/لا_إله_إلا_الله.mp3') },
+                    { text: 'حسبي الله', audioPath: path.join(__dirname, '../public/audio/أذكار/حسبي_الله.mp3') },
+                    { text: 'رضيت بالله ربا', audioPath: path.join(__dirname, '../public/audio/أذكار/رضيت_بالله_ربا.mp3') },
+
                 ];
 
                 // Select a random item from the audioList
