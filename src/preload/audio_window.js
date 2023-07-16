@@ -151,6 +151,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                     { text: 'لا إله إلا الله', audioPath: path.join(__dirname, '../public/audio/أذكار/لا_إله_إلا_الله.mp3') },
                     { text: 'حسبي الله', audioPath: path.join(__dirname, '../public/audio/أذكار/حسبي_الله.mp3') },
                     { text: 'رضيت بالله ربا', audioPath: path.join(__dirname, '../public/audio/أذكار/رضيت_بالله_ربا.mp3') },
+                    { text: 'الباقيات الصالحات', audioPath: path.join(__dirname, '../public/audio/أذكار/الباقيات_الصالحات.mp3') },
 
                 ];
 
