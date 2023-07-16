@@ -142,44 +142,23 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             // الإستغفار
             else {
                 const audioList = [
-                  { text: 'الإستغفار', audioPath: path.join(__dirname, '../public/audio/أذكار/أستغفر_الله.mp3') },
-                  // Add more items to the list with text and audio path
-                  { text: 'الصلاة علي النبي', audioPath: path.join(__dirname, '../public/audio/أذكار/ذكر_الصلاة_علي_النبي.mp3') }
+                    { text: 'الإستغفار', audioPath: path.join(__dirname, '../public/audio/أذكار/أستغفر_الله.mp3') },
+                    // Add more items to the list with text and audio path
+                    { text: 'الصلاة علي النبي', audioPath: path.join(__dirname, '../public/audio/أذكار/ذكر_الصلاة_علي_النبي.mp3') }
                 ];
-              
-                let currentIndex = 0;
-                const zekr_duration_number = parseInt(settings.zekr_duration);
-              
-                const playAudio = () => {
-                  const currentItem = audioList[currentIndex];
-                  audioBoolean(App_Path, true);
-                  document.getElementById('text').innerText = currentItem.text;
-                  const audioElement = document.getElementById('audio');
-                  audioElement.src = currentItem.audioPath;
-              
-                  audioElement.addEventListener('ended', () => {
-                    currentIndex = (currentIndex + 1) % audioList.length; // Move to the next item
-                    if (currentIndex === 0) {
-                      // Reset currentIndex to 0 when the list is finished playing
-                      setTimeout(() => {
-                        audioBoolean(App_Path, false); // Stop audio playback after the duration
-                        currentIndex = 0; // Reset currentIndex to 0
-                      }, zekr_duration_number * 60 * 1000); // Delay based on zekr_duration
-                    } else {
-                      setTimeout(() => {
-                        playAudio(); // Play the next item after the duration
-                      }, zekr_duration_number * 60 * 1000); // Delay based on zekr_duration
-                    }
-                  });
-              
-                  audioElement.play();
-                };
-              
-                // Start playing the audio
-                playAudio();
-              }
-              
-              
+
+                // Select a random item from the audioList
+                const randomIndex = Math.floor(Math.random() * audioList.length);
+                const randomItem = audioList[randomIndex];
+
+                audioBoolean(App_Path, true);
+                document.getElementById('text').innerText = randomItem.text;
+                document.getElementById('audio').src = randomItem.audioPath;
+
+                setTimeout(() => {
+                    audioBoolean(App_Path, false);
+                }, zekr_duration_number * 60 * 1000);
+            }
         }
 
     }
