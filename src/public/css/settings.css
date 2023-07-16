@@ -20,7 +20,7 @@
 #longitude,
 #timezone,
 #morning_adhkar_time,
-#evening_adhkar_time {
+#evening_adhkar_time{
     width: 300px;
     height: 35px;
     text-align: center;
@@ -28,6 +28,21 @@
     border: none;
     background-color: #eceff1;
 }
+
+#zekr_duration{
+    font-size: 15px;
+    margin-left: 10px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color: #eceff1;
+}
+#minutes_text{
+    font-size: 20px;
+}
+
 
 #Calculation {
     width: 300px;
@@ -180,6 +195,7 @@ output {
 
 .settings_ul li:hover {
     background-color: var(--background_settings_hover);
+    transform: scale(1.03); /* Increase the scale value to make it bigger */
 }
 
 .settings_title {

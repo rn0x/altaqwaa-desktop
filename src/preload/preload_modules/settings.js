@@ -16,6 +16,8 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     let selected = document.getElementById(settings?.Calculation);
     let morning_adhkar_time = document.getElementById("morning_adhkar_time");
     let evening_adhkar_time = document.getElementById("evening_adhkar_time");
+    let zekr_duration = document.getElementById('zekr_duration');
+
     let save = document.getElementById('save');
     let alrt = document.getElementById('alrt');
     let settings_font_adhkar = document.getElementById('settings_font_adhkar');
@@ -34,6 +36,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     minimizeToPanel.checked = settings?.minimizeToPanel || false
     morning_adhkar_time.value = settings?.morning_adhkar_time || ""
     evening_adhkar_time.value = settings?.evening_adhkar_time || ""
+    zekr_duration.value = settings?.zekr_duration || ""
     dark_mode.checked = settings?.dark_mode ? true : false
     selected.selected = "selected"
     settings_font_adhkar_output.innerText = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
@@ -50,6 +53,8 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     settings_font_quran.addEventListener('input', e => {
         settings_font_quran_output.innerText = settings_font_quran.value
     });
+
+
 
 
     /* VOLUME MANAGER */
@@ -195,6 +200,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
             Calculation: Calculation.value,
             morning_adhkar_time: morning_adhkar_time.value,
             evening_adhkar_time: evening_adhkar_time.value,
+            zekr_duration : zekr_duration.value,
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,
             volume: volumeRange.value / 100,
@@ -207,7 +213,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
         setTimeout(() => {
             alrt.style.display = 'none';
             window.location.href = "./settings.html";
-        }, 1200);
+        }, 1700);
 
     })
 

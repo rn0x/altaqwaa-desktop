@@ -15,6 +15,7 @@ module.exports = async (path, fs, App_Path) => {
             "minimizeToPanel": false,
             "morning_adhkar_time": "",
             "evening_adhkar_time": "",
+            "zekr_duration": 20 ,
             "dark_mode": true,
             "font_size_quran": 30,
             "font_size_adhkar": 20,
