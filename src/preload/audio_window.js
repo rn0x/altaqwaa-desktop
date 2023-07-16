@@ -152,6 +152,10 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                     { text: 'حسبي الله', audioPath: path.join(__dirname, '../public/audio/أذكار/حسبي_الله.mp3') },
                     { text: 'رضيت بالله ربا', audioPath: path.join(__dirname, '../public/audio/أذكار/رضيت_بالله_ربا.mp3') },
                     { text: 'الباقيات الصالحات', audioPath: path.join(__dirname, '../public/audio/أذكار/الباقيات_الصالحات.mp3') },
+                    { text: 'أعوذ بكلمات الله التامات', audioPath: path.join(__dirname, '../public/audio/أذكار/أعوذ_بكلمات_الله.mp3') },
+                    { text: 'سبحانك اللهم ربنا وبحمدك', audioPath: path.join(__dirname, '../public/audio/أذكار/سبحانك_اللهم_وبحمدك.mp3') },
+                    { text: 'سور الناس - الفلق - الإخلاص', audioPath: path.join(__dirname, '../public/audio/أذكار/الناس_الفلق_الإخلاص.mp3') },
+
 
                 ];
 
