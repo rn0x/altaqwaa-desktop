@@ -24,9 +24,6 @@ var menuCode = '<div id="menu" onmousedown="return false;" onselectstart="return
     '<a href="./info.html">' +
     '<img src="../public/icon/info.png" class="icon_menu" id="icon_info" title="معلومات التطبيق">' +
     '</a>' +
-    '<a href="#">' +
-    '<img src="../public/icon/radio.png" class="icon_menu" id="icon_radio" title="راديو القرآن الكريم">' +
-    '</a>' +
     '</div>';
 
 var menuContainer = document.getElementById("menu-container");

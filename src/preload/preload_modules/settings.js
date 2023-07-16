@@ -17,6 +17,10 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     let morning_adhkar_time = document.getElementById("morning_adhkar_time");
     let evening_adhkar_time = document.getElementById("evening_adhkar_time");
     let zekr_duration = document.getElementById('zekr_duration');
+    let athan = document.getElementById('athan_select');
+    let selected_athan = document.querySelector(`#athan_select option[value="${settings?.athan}"]`);
+
+
 
     let save = document.getElementById('save');
     let alrt = document.getElementById('alrt');
@@ -39,6 +43,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     zekr_duration.value = settings?.zekr_duration || ""
     dark_mode.checked = settings?.dark_mode ? true : false
     selected.selected = "selected"
+    selected_athan.selected = true;
     settings_font_adhkar_output.innerText = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
     settings_font_adhkar.value = settings?.font_size_adhkar ? settings?.font_size_adhkar : 20
     settings_font_quran_output.innerText = settings?.font_size_quran ? settings?.font_size_quran : 30
@@ -198,6 +203,7 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
             minimizeToPanel: minimizeToPanel.checked,
             dark_mode: dark_mode.checked,
             Calculation: Calculation.value,
+            athan: athan.value,
             morning_adhkar_time: morning_adhkar_time.value,
             evening_adhkar_time: evening_adhkar_time.value,
             zekr_duration : zekr_duration.value,
