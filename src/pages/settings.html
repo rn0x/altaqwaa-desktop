@@ -24,7 +24,7 @@
 
         <div id="blackout"></div>
         <div class="alert" role="alert">
-            <img src="../public/icon/correct.png" id="correct_image"/>
+            <img src="../public/icon/correct.png" id="correct_image" />
             تم حفظ الإعدادت
         </div>
 
@@ -36,19 +36,20 @@
 
         <script src="../preload/menu.js"></script>
 
-        
+
         <div id="settings" class="animate__animated animate__fadeIn">
 
             <div id="alert_settings">
-                <div id="div_alert_settings"  onmousedown='return false;' onselectstart='return false;'>
+                <div id="div_alert_settings" onmousedown='return false;' onselectstart='return false;'>
 
                     <img src="../public/icon/correct.png" id="alert_settings_icon">
                     <h3 id="alert_settings_title">
                         <!-- يتوفر تحديث جديد للتطبيق -->
                     </h3>
-                    
+
                     <h4 id="alert_settings_v">
-                        الإصدار الحالي <span id="app_current_version">v0.0.0</span> الإصدار الأخير <span id="app_latest_version">v0.0.0</span>
+                        الإصدار الحالي <span id="app_current_version">v0.0.0</span> الإصدار الأخير <span
+                            id="app_latest_version">v0.0.0</span>
                     </h4>
                     <p id="alert_settings_text">
                         يمكن تحميل التحديث الجديد من خلال المستودع الرسمي على جيتهب
@@ -71,7 +72,8 @@
                     </div>
 
                     <div class="settings_left">
-                        <img src="../public/icon/appupdate.png" id="Check_for_update_icon"  onmousedown='return false;' onselectstart='return false;'>
+                        <img src="../public/icon/appupdate.png" id="Check_for_update_icon" onmousedown='return false;'
+                            onselectstart='return false;'>
                     </div>
 
                 </li>
@@ -86,13 +88,14 @@
                         </h3>
 
                         <p class="settings_description">
-                            إعادة إنشاء ملف الموقع الجغرافي بإستخدام الـ (IP) عن طريق ip-api.com 
+                            إعادة إنشاء ملف الموقع الجغرافي بإستخدام الـ (IP) عن طريق ip-api.com
                         </p>
                     </div>
 
                     <div class="settings_left">
                         <button id="refresh_button">
-                            <img src="../public/icon/refresh.png" id="refresh_location"  onmousedown='return false;' onselectstart='return false;'>
+                            <img src="../public/icon/refresh.png" id="refresh_location" onmousedown='return false;'
+                                onselectstart='return false;'>
                         </button>
                     </div>
 
@@ -233,11 +236,11 @@
 
                     <div class="settings_right">
                         <h3 class="settings_title">
-                            فترة عرض الأذكار 
+                            فترة عرض الأذكار
                         </h3>
 
                         <p class="settings_description">
-                               تسبيحة أو ذكر (صوتا) كل فترة معينة (دقائق) 
+                            تسبيحة أو ذكر (صوتا) كل فترة معينة (دقائق)
                         </p>
                     </div>
 
@@ -268,6 +271,54 @@
                             <span class="slider round"></span>
                         </label>
                     </div>
+
+                </li>
+
+                <li>
+
+                    <div class="settings_right">
+                        <h3 class="settings_title">
+                            المؤذن
+                        </h3>
+
+                        <p class="settings_description">
+                            إختيار مؤذن للصلاة من القائمة (يمكنك تجربة صوت المؤذن قبل الحفظ)
+                        </p>
+                    </div>
+
+                    <div class="settings_left">
+                        <select id="athan_select" size="1" onchange="scheduleAudioPlayback()" >
+                          <option value="../public/audio/الأذان/نصر_الدين_طوبار.mp3" id="athan_num_1">نصر الدين طوبار</option>
+                          <option value="../public/audio/الأذان/ياسر_الدوسري.mp3" id="athan_num_2">ياسر الدوسري</option>
+                          <option value="../public/audio/الأذان/عبدالمجيد_السريحي.mp3" id="athan_num_3">عبد المجيد السريحي</option>
+                          <option value="../public/audio/الأذان/ناصر_القطامي.mp3" id="athan_num_4">ناصر القطامي</option>
+                          <option value="../public/audio/الأذان/إسلام_صبحي.mp3" id="athan_num_5">إسلام صبحي</option>
+                          <option value="../public/audio/الأذان/ماهر_المعيقلي.mp3" id="athan_num_6">ماهر المعيقلي</option>
+                          <option value="../public/audio/الأذان/سيد_النقشبندي.mp3" id="athan_num_7">سيد النقشبندي</option>
+                          <option value="../public/audio/الأذان/عبد_الباسط.mp3" id="athan_num_8">عبد الباسط</option>
+                        </select>
+                      </div>
+                    
+                      <!-- Add your JavaScript code here -->
+                      <script>
+                        var audioPlayer = null;
+                    
+                        function scheduleAudioPlayback() {
+                          var selectElement = document.getElementById("athan_select");
+                          var selectedOption = selectElement.options[selectElement.selectedIndex];
+                          var audioFile = selectedOption.value;
+                    
+                          if (audioPlayer) {
+                            audioPlayer.pause();
+                          }
+                    
+                          audioPlayer = new Audio(audioFile);
+                    
+                          setTimeout(function() {
+                            audioPlayer.play();
+                          }, 2000);
+                        }
+                      </script>
 
                 </li>
 
@@ -350,7 +401,8 @@
                         </h3>
 
                         <p class="settings_description">
-                            تفعيل هذا الخيار سيجعل التطبيق عند تصغيره يصبح في قائمة الإعلامات بدلا من الشريط (يحتاج إعادة تشغيل)
+                            تفعيل هذا الخيار سيجعل التطبيق عند تصغيره يصبح في قائمة الإعلامات بدلا من الشريط (يحتاج
+                            إعادة تشغيل)
                         </p>
                     </div>
 

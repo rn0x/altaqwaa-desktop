@@ -62,6 +62,23 @@
     font-size: 18px;
 }
 
+#athan_select {
+    width: 300px;
+    height: 40px;
+    text-align: right;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    text-indent: 4px;
+    background-color: #eceff1;
+    border: none;
+    color: var(--color_font_grey);
+
+}
+
+#athan_select option {
+    font-size: 18px;
+}
 .switch {
     position: relative;
     display: inline-block;

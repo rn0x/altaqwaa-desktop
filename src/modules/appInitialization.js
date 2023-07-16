@@ -15,6 +15,7 @@ module.exports = async (path, fs, App_Path) => {
             "minimizeToPanel": false,
             "morning_adhkar_time": "",
             "evening_adhkar_time": "",
+            "athan":"../public/audio/الأذان/عبدالمجيد_السريحي.mp3",
             "zekr_duration": 20 ,
             "dark_mode": true,
             "font_size_quran": 30,

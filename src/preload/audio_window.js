@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الفجر'
-            document.getElementById('audio').src = path.join(__dirname, '../public/audio/002.mp3');
+            document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false)
@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
-            document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
+            document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة العصر'
-            document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
+            document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة المغرب'
-            document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
+            document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة العشاء'
-            document.getElementById('audio').src = path.join(__dirname, '../public/audio/001.mp3');
+            document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
