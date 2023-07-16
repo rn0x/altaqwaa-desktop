@@ -30,6 +30,21 @@
     background-color: #eceff1;
 }
 
+#zekr_duration{
+    font-size: 15px;
+    margin-left: 10px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color: #eceff1;
+}
+#minutes_text{
+    font-size: 20px;
+}
+
+
 #Calculation {
     width: 300px;
     height: 40px;
