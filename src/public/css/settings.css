@@ -181,6 +181,7 @@ output {
 
 .settings_ul li:hover {
     background-color: var(--background_settings_hover);
+    transform: scale(1.03); /* Increase the scale value to make it bigger */
 }
 
 .settings_title {
