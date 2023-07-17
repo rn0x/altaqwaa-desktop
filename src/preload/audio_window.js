@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
-            document.getElementById('audio').src = path.join(__dirname, settings.athan);
+            document.getElementById('audio').src = path.join(__dirname, `${settings.athan}`);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             document.getElementById('audio').addEventListener('ended', () => {
                 setTimeout(() => {
@@ -98,7 +98,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة العصر'
-            document.getElementById('audio').src = path.join(__dirname, settings.athan);
+            document.getElementById('audio').src = path.join(__dirname, `${settings.athan}`);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             document.getElementById('audio').addEventListener('ended', () => {
                 setTimeout(() => {
@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة المغرب'
-            document.getElementById('audio').src = path.join(__dirname, settings.athan);
+            document.getElementById('audio').src = path.join(__dirname, `${settings.athan}`);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             document.getElementById('audio').addEventListener('ended', () => {
                 setTimeout(() => {
@@ -130,7 +130,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة العشاء'
-            document.getElementById('audio').src = path.join(__dirname, settings.athan);
+            document.getElementById('audio').src = path.join(__dirname, `${settings.athan}`);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
             document.getElementById('audio').addEventListener('ended', () => {
                 setTimeout(() => {
@@ -171,6 +171,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
             let currentDate = new Date();
             let currentDay = currentDate.getDay();
+           
 
             // Check if the current day is Friday (day number 5)
             if (currentDay === 5) {
@@ -234,7 +235,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 audioBoolean(App_Path, true);
                 document.getElementById('text').innerText = randomItem.text;
                 document.getElementById('audio').src = randomItem.audioPath;
-
                 setTimeout(() => {
                     audioBoolean(App_Path, false);
                 }, zekr_duration_number * 60 * 1000);
