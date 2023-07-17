@@ -42,10 +42,10 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         let data = adhanModule(path, fs, App_Path, location);
         let time_now_adhan = moment().tz(location?.timezone).format('LT');
         let time_now_adhkar = moment().tz(location?.timezone).format('HH:mm');
-        const targetTime = new Date(data.dhuhr); // Assuming data.dhuhr is a valid time string
-        const fifteenMinutesBefore = new Date(targetTime.getTime() - 15 * 60000); // Subtract 15 minutes
+        // const targetTime = new Date(data.dhuhr); // Assuming data.dhuhr is a valid time string
+        // const fifteenMinutesBefore = new Date(targetTime.getTime() - 15 * 60000); // Subtract 15 minutes
 
-        const currentTime = new Date(); // Get the current time
+        // const currentTime = new Date(); // Get the current time
 
 
         if (time_now_adhan === data.fajr && audioJson?.start === false && settings?.notifications_adhan) {
@@ -66,31 +66,31 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 audioBoolean(App_Path, false);
             }, 65000);
         }
-        else if (currentTime.getTime() === fifteenMinutesBefore.getTime() && audioJson?.start === false && settings?.notifications_before_adhan) {
-            audioBoolean(App_Path, true);
-            ipcRenderer.send('show3');
-            document.getElementById('text').innerText = 'باقي علي صلاة الظهر 15 دقيقة'
-            document.getElementById('audio').src = path.join(__dirname, '');
-            setTimeout(() => {
-                audioBoolean(App_Path, false);
-            }, 65000);
-        }
-
-        // else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
+        // else if (currentTime.getTime() === fifteenMinutesBefore.getTime() && audioJson?.start === false && settings?.notifications_before_adhan) {
         //     audioBoolean(App_Path, true);
         //     ipcRenderer.send('show3');
-        //     document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
-        //     document.getElementById('audio').src = path.join(__dirname, settings.athan);
-        //     document.getElementById('audio').volume = settings?.adhanVolume || 1;
-        //     document.getElementById('audio').addEventListener('ended', () => {
-        //         setTimeout(() => {
-        //             document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
-        //         }, 2000);
-        //     });
+        //     document.getElementById('text').innerText = 'باقي علي صلاة الظهر 15 دقيقة'
+        //     document.getElementById('audio').src = path.join(__dirname, '');
         //     setTimeout(() => {
         //         audioBoolean(App_Path, false);
         //     }, 65000);
         // }
+
+        else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
+            audioBoolean(App_Path, true);
+            ipcRenderer.send('show3');
+            document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
+            document.getElementById('audio').src = path.join(__dirname, settings.athan);
+            document.getElementById('audio').volume = settings?.adhanVolume || 1;
+            document.getElementById('audio').addEventListener('ended', () => {
+                setTimeout(() => {
+                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+                }, 2000);
+            });
+            setTimeout(() => {
+                audioBoolean(App_Path, false);
+            }, 65000);
+        }
 
 
 
