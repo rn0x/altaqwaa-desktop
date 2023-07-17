@@ -171,7 +171,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
             let currentDate = new Date();
             let currentDay = currentDate.getDay();
-           
+
 
             // Check if the current day is Friday (day number 5)
             if (currentDay === 5) {

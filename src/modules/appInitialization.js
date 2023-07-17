@@ -8,7 +8,6 @@ module.exports = async (path, fs, App_Path) => {
     fs.existsSync(path.join(App_Path, "./data/settings.json")) ? true :
         fs.writeJsonSync(path.join(App_Path, './data/settings.json'), {
             "Calculation": "UmmAlQura",
-            "notifications_before_adhan": false,
             "notifications_adhan": true,
             "notifications_adhkar": true,
             "autostart": true,

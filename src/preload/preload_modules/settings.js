@@ -8,7 +8,6 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     let timezone = document.getElementById('timezone');
     let Calculation = document.getElementById('Calculation');
     let notifications_adhan = document.getElementById('notifications_adhan');
-    let notifications_before_adhan = document.getElementById('notifications_before_adhan');
     let notifications_adhkar = document.getElementById('notifications_adhkar');
     let autostart = document.getElementById('autostart');
     let startHidden = document.getElementById('startHidden');
@@ -35,7 +34,6 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
     location.lat ? latitude.value = location.lat : false
     location.lon ? longitude.value = location.lon : false
     notifications_adhan.checked = settings?.notifications_adhan
-    notifications_before_adhan.checked = settings?.notifications_before_adhan
     notifications_adhkar.checked = settings?.notifications_adhkar
     autostart.checked = settings?.autostart || false
     startHidden.checked = settings?.startHidden || false
@@ -209,7 +207,6 @@ module.exports = async function settings(fs, path, App_Path, settings, ipcRender
             morning_adhkar_time: morning_adhkar_time.value,
             evening_adhkar_time: evening_adhkar_time.value,
             zekr_duration : zekr_duration.value,
-            notifications_before_adhan: notifications_before_adhan.checked,
             notifications_adhan: notifications_adhan.checked,
             notifications_adhkar: notifications_adhkar.checked,
             volume: volumeRange.value / 100,
