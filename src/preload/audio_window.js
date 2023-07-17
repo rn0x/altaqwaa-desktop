@@ -76,21 +76,21 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             }, 65000);
         }
 
-        else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
-            audioBoolean(App_Path, true);
-            ipcRenderer.send('show3');
-            document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
-            document.getElementById('audio').src = path.join(__dirname, settings.athan);
-            document.getElementById('audio').volume = settings?.adhanVolume || 1;
-            document.getElementById('audio').addEventListener('ended', () => {
-                setTimeout(() => {
-                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
-                }, 2000);
-            });
-            setTimeout(() => {
-                audioBoolean(App_Path, false);
-            }, 65000);
-        }
+        // else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
+        //     audioBoolean(App_Path, true);
+        //     ipcRenderer.send('show3');
+        //     document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
+        //     document.getElementById('audio').src = path.join(__dirname, settings.athan);
+        //     document.getElementById('audio').volume = settings?.adhanVolume || 1;
+        //     document.getElementById('audio').addEventListener('ended', () => {
+        //         setTimeout(() => {
+        //             document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+        //         }, 2000);
+        //     });
+        //     setTimeout(() => {
+        //         audioBoolean(App_Path, false);
+        //     }, 65000);
+        // }
 
 
 
