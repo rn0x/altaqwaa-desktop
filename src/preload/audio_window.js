@@ -71,11 +71,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'باقي علي صلاة الظهر 15 دقيقة'
             document.getElementById('audio').src = path.join(__dirname, '');
-            document.getElementById('audio').volume = settings?.adhanVolume || 1;
             setTimeout(() => {
                 audioBoolean(App_Path, false);
             }, 65000);
         }
+
         else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
@@ -91,6 +91,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 audioBoolean(App_Path, false);
             }, 65000);
         }
+
+
 
         else if (time_now_adhan === data.asr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
