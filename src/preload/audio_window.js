@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الفجر';
-            document.getElementById('audio').src = path.join(__dirname, settings.athan);
+            document.getElementById('audio').src = path.join(__dirname, `${settings.athan}`);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
 
             // Add an event listener for the "ended" event
