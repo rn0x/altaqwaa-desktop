@@ -42,24 +42,51 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         let data = adhanModule(path, fs, App_Path, location);
         let time_now_adhan = moment().tz(location?.timezone).format('LT');
         let time_now_adhkar = moment().tz(location?.timezone).format('HH:mm');
+        const targetTime = new Date(data.dhuhr); // Assuming data.dhuhr is a valid time string
+        const fifteenMinutesBefore = new Date(targetTime.getTime() - 15 * 60000); // Subtract 15 minutes
+
+        const currentTime = new Date(); // Get the current time
+
 
         if (time_now_adhan === data.fajr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
-            document.getElementById('text').innerText = 'حان الان وقت صلاة الفجر'
+            document.getElementById('text').innerText = 'حان الان وقت صلاة الفجر';
             document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
+
+            // Add an event listener for the "ended" event
+            document.getElementById('audio').addEventListener('ended', () => {
+                setTimeout(() => {
+                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+                }, 2000);
+            });
+
             setTimeout(() => {
-                audioBoolean(App_Path, false)
+                audioBoolean(App_Path, false);
             }, 65000);
         }
-
+        else if (currentTime.getTime() === fifteenMinutesBefore.getTime() && audioJson?.start === false && settings?.notifications_before_adhan) {
+            audioBoolean(App_Path, true);
+            ipcRenderer.send('show3');
+            document.getElementById('text').innerText = 'باقي علي صلاة الظهر 15 دقيقة'
+            document.getElementById('audio').src = path.join(__dirname, '');
+            document.getElementById('audio').volume = settings?.adhanVolume || 1;
+            setTimeout(() => {
+                audioBoolean(App_Path, false);
+            }, 65000);
+        }
         else if (time_now_adhan === data.dhuhr && audioJson?.start === false && settings?.notifications_adhan) {
             audioBoolean(App_Path, true);
             ipcRenderer.send('show3');
             document.getElementById('text').innerText = 'حان الان وقت صلاة الظهر'
             document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
+            document.getElementById('audio').addEventListener('ended', () => {
+                setTimeout(() => {
+                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+                }, 2000);
+            });
             setTimeout(() => {
                 audioBoolean(App_Path, false);
             }, 65000);
@@ -71,6 +98,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('text').innerText = 'حان الان وقت صلاة العصر'
             document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
+            document.getElementById('audio').addEventListener('ended', () => {
+                setTimeout(() => {
+                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+                }, 2000);
+            });
             setTimeout(() => {
                 audioBoolean(App_Path, false);
             }, 65000);
@@ -82,6 +114,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('text').innerText = 'حان الان وقت صلاة المغرب'
             document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
+            document.getElementById('audio').addEventListener('ended', () => {
+                setTimeout(() => {
+                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+                }, 2000);
+            });
             setTimeout(() => {
                 audioBoolean(App_Path, false);
             }, 65000);
@@ -93,6 +130,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             document.getElementById('text').innerText = 'حان الان وقت صلاة العشاء'
             document.getElementById('audio').src = path.join(__dirname, settings.athan);
             document.getElementById('audio').volume = settings?.adhanVolume || 1;
+            document.getElementById('audio').addEventListener('ended', () => {
+                setTimeout(() => {
+                    document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/الدعاء_بعد_الصلاة_الشعراوي.mp3');
+                }, 2000);
+            });
             setTimeout(() => {
                 audioBoolean(App_Path, false);
             }, 65000);
@@ -130,15 +172,39 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
             // Check if the current day is Friday (day number 5)
             if (currentDay === 5) {
-                audioBoolean(App_Path, true);
-                ipcRenderer.send('show3');
-                document.getElementById('text').innerText = 'لا تنسي الصلاة علي النبيﷺ وقراءة سورة الكهف';
-                document.getElementById('audio').src = path.join(__dirname, '../public/audio/أذكار/ذكر_الصلاة_علي_النبي_الجمعة.mp3');
+                const audioListFriday = [
+                    { text: 'لا تنسي الصلاة علي النبي ﷺ وقراءة سورة الكهف', audioPath: path.join(__dirname, '../public/audio/أذكار/ذكر_الصلاة_علي_النبي_الجمعة.mp3') },
+                    { text: 'وَقَالَ صلى الله عليه وسلم: ((مَا مِنْ أَحَدٍ يُسَلِّمُ عَلَيَّ إِلاَّ رَدَّ اللَّهُ عَلَيَّ رُوحِيَ حَتَّى أَرُدَّ عَلَيْهِ السَّلاَمَ))', audioPath: path.join(__dirname, '../public/audio/أذكار/ما_من_أحد_يسلم_علي.mp3') },
+                    { text: 'قَالَ النَّبِيُّ صلى الله عليه وسلم: ((مَنْ صَلَّى عَلَيَّ صَلاَةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْراً))', audioPath: path.join(__dirname, '../public/audio/أذكار/فضل_الصلاة_علي_النبي.mp3') },
+                    { text: 'وَقَالَ صلى الله عليه وسلم: ((الْبَخِيلُ مَنْ ذُكِرْتُ عِنْدَهُ فَلَمْ يُصَلِّ عَلَيَّ))', audioPath: path.join(__dirname, '../public/audio/أذكار/البخيل_من_لم_يصلي_علي.mp3') },
+                    { text: 'صلي علي محمد ﷺ', audioPath: path.join(__dirname, '../public/audio/أذكار/صلي_علي_محمد.mp3') },
 
-                setTimeout(() => {
-                    audioBoolean(App_Path, false);
-                }, zekr_duration_number * 60 * 1000);
+
+                ];
+
+                const randomIndexFriday = Math.floor(Math.random() * audioListFriday.length);
+                const randomItemFriday = audioListFriday[randomIndexFriday];
+
+                audioBoolean(App_Path, true);
+                if (randomIndexFriday === 0 || randomIndexFriday === 1 || randomIndexFriday === 2 || randomIndexFriday === 3) {
+                    ipcRenderer.send('show3');
+                    document.getElementById('text').innerText = randomItemFriday.text;
+                    document.getElementById('audio').src = randomItemFriday.audioPath;
+                    setTimeout(() => {
+                        audioBoolean(App_Path, false);
+                    }, zekr_duration_number * 60 * 1000);
+
+                } else {
+
+                    document.getElementById('text').innerText = randomItemFriday.text;
+                    document.getElementById('audio').src = randomItemFriday.audioPath;
+                    setTimeout(() => {
+                        audioBoolean(App_Path, false);
+                    }, zekr_duration_number * 60 * 1000);
+                }
+
             }
+
             // الإستغفار
             else {
                 const audioList = [
