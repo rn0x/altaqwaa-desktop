@@ -21,22 +21,29 @@ adhkar.forEach((e) => {
 
 // jQuery Code for tkrar Number Counter
 $(document).ready(function () {
-  $('.count')
+  $('.text')
     .parent()
     .on({
       click: function () {
-        let counter = $(this).children('.count').text();
-        let tkrar_number = $(this).siblings().children('.tkrar_number').text();
-        if (counter != tkrar_number) {
-          counter++;
-          $(this).children('.count').text(counter);
+        let counter_element = $(this)
+          .children('.copy_and_paste')
+          .children('.tkrar')
+          .children('.tkrar_number');
+        let counter_element_val = counter_element.text();
+        if (counter_element_val != 0) {
+          counter_element_val--;
+          $(counter_element).text(counter_element_val);
+          if (counter_element_val == 0) {
+            let nextElementOffset = $(this).next().offset().top - 70;
+            let animationDelay = 1000;
+            $(this).css('background', ' var(--background_div_hover)');
+            $(this).children('.copy_and_paste').css('background', '#d0d0d09b');
+            $('html, body').animate(
+              { scrollTop: nextElementOffset },
+              animationDelay
+            );
+          }
         }
-      },
-      mouseenter: function () {
-        $(this).css('background', ' var(--background_div_hover)');
-      },
-      mouseleave: function () {
-        $(this).css('background', 'var(--background_div)');
       },
     });
 });
