@@ -32,7 +32,6 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
 
   for (let item of mp3quran_json) {
     let li_Sheikh = document.createElement("li");
-    let reader_name = document.createElement("p");
     let reader = document.createElement("div");
     let reader_info = document.createElement("div");
     let Sheikh_name = document.createElement("p");
@@ -44,8 +43,6 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
     li_Sheikh.id = li_Sheikh_id;
     li_Sheikh.className = "li_Sheikh";
     li_Sheikh.setAttribute("data-sheikh-id", item?.id);
-    li_Sheikh.appendChild(reader_name);
-    reader_name.id = "reader_name";
     li_Sheikh.appendChild(reader);
     reader.id = "reader";
 
@@ -249,7 +246,7 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
       let matchesFavorite = !showOnlyFavorites || favorites[sheikhId];
 
       if (matchesSearch && matchesFavorite) {
-        li.style.display = "flex";
+        li.style.display = "";
       } else {
         li.style.display = "none";
       }
@@ -271,7 +268,7 @@ module.exports = function quran_mp3(fs, path, App_Path, settings) {
       let matchesFavorite = !showOnlyFavorites || favorites[sheikhId];
 
       if (matchesSearch && matchesFavorite) {
-        li.style.display = "flex";
+        li.style.display = "";
       } else {
         li.style.display = "none";
       }

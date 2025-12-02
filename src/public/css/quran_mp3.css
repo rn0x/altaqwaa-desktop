@@ -93,7 +93,7 @@
 }
 
 #Sheikh li {
-  /* width: max-content; */
+  width: max-content;
   list-style: none;
   margin: 10px 10px 10px 10px;
   background-color: var(--background_div);
@@ -111,15 +111,13 @@
 }
 
 #reader {
-  /* width: max-content; */
+  width: max-content;
   width: 100%;
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 15px;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 5px;
   align-items: center;
-  padding: 0 10px;
-  margin-top: 0px;
-  margin-bottom: 15px;
+  padding: 10px;
 }
 
 .reader-info {
@@ -135,6 +133,7 @@
   cursor: pointer;
   transition: transform 0.2s ease;
   flex-shrink: 0;
+  justify-self: center;
 }
 
 .favorite-icon:hover {
@@ -219,13 +218,13 @@
 }
 
 #favorite-filter-btn {
-  width: 40px;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: var(--background_div);
   cursor: pointer;
   display: flex;
+  gap: 5px;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
@@ -245,34 +244,4 @@
 #favorite-filter-icon {
   width: 20px;
   height: 20px;
-}
-
-.favorite-icon {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: transform 0.2s ease;
-}
-
-.favorite-icon:hover {
-  transform: scale(1.2);
-}
-
-#reader {
-  /* width: max-content; */
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  margin-top: 0px;
-  margin-bottom: 15px;
-}
-
-.reader-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
 }
