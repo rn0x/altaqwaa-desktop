@@ -17,7 +17,7 @@ jobs:
       - name: استنساخ المستودع
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: v4
 
       - name: تحديث ملف الإحصائيات
         run: node .github/scripts/update-stats.mjs
