@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-08-26T03:43:32.430Z",
+  "updated_at": "2026-08-27T13:16:48.746Z",
   "github": {
     "repo": "rn0x/altaqwaa-desktop",
     "html_url": "https://github.com/rn0x/altaqwaa-desktop",
     "stars": 265,
     "forks": 31,
     "watchers": 8,
-    "total_downloads": 8539,
+    "total_downloads": 8544,
     "releases_count": 18,
     "assets_count": 130,
     "platforms": {
       "windows": {
-        "downloads": 3743,
+        "downloads": 3747,
         "assets": 40
       },
       "linux": {
-        "downloads": 4796,
+        "downloads": 4797,
         "assets": 90
       }
     },
@@ -29,13 +29,13 @@
           {
             "name": "Altaqwaa-4.0.0-portable.exe",
             "size": 248872551,
-            "count": 6,
+            "count": 7,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-4.0.0-portable.exe"
           },
           {
             "name": "Altaqwaa-4.0.0-portable.zip",
             "size": 248894077,
-            "count": 9,
+            "count": 10,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-4.0.0-portable.zip"
           },
           {
@@ -47,7 +47,7 @@
           {
             "name": "Altaqwaa-Setup-4.0.0.zip",
             "size": 249152136,
-            "count": 27,
+            "count": 29,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-Setup-4.0.0.zip"
           }
         ],
@@ -61,7 +61,7 @@
           {
             "name": "Altaqwaa-4.0.0.AppImage",
             "size": 294517846,
-            "count": 6,
+            "count": 7,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-4.0.0.AppImage"
           },
           {
@@ -96,7 +96,7 @@
         "tag": "v4.0.0",
         "name": "v4.0.0 ✨",
         "published": "2026-08-06T23:19:46Z",
-        "downloads": 77,
+        "downloads": 82,
         "assets": 10,
         "url": "https://github.com/rn0x/altaqwaa-desktop/releases/tag/v4.0.0"
       },
