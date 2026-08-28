@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-08-27T13:16:48.746Z",
+  "updated_at": "2026-08-28T14:40:48.459Z",
   "github": {
     "repo": "rn0x/altaqwaa-desktop",
     "html_url": "https://github.com/rn0x/altaqwaa-desktop",
     "stars": 265,
     "forks": 31,
     "watchers": 8,
-    "total_downloads": 8544,
+    "total_downloads": 8548,
     "releases_count": 18,
     "assets_count": 130,
     "platforms": {
       "windows": {
-        "downloads": 3747,
+        "downloads": 3749,
         "assets": 40
       },
       "linux": {
-        "downloads": 4797,
+        "downloads": 4799,
         "assets": 90
       }
     },
@@ -41,13 +41,13 @@
           {
             "name": "Altaqwaa-Setup-4.0.0.exe",
             "size": 249139636,
-            "count": 5,
+            "count": 6,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-Setup-4.0.0.exe"
           },
           {
             "name": "Altaqwaa-Setup-4.0.0.zip",
             "size": 249152136,
-            "count": 29,
+            "count": 30,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-Setup-4.0.0.zip"
           }
         ],
@@ -61,7 +61,7 @@
           {
             "name": "Altaqwaa-4.0.0.AppImage",
             "size": 294517846,
-            "count": 7,
+            "count": 9,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-4.0.0.AppImage"
           },
           {
@@ -96,7 +96,7 @@
         "tag": "v4.0.0",
         "name": "v4.0.0 ✨",
         "published": "2026-08-06T23:19:46Z",
-        "downloads": 82,
+        "downloads": 86,
         "assets": 10,
         "url": "https://github.com/rn0x/altaqwaa-desktop/releases/tag/v4.0.0"
       },
