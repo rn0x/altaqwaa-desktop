@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-01T08:04:31.915Z",
+  "updated_at": "2026-09-02T07:24:13.189Z",
   "github": {
     "repo": "rn0x/altaqwaa-desktop",
     "html_url": "https://github.com/rn0x/altaqwaa-desktop",
     "stars": 266,
     "forks": 31,
     "watchers": 8,
-    "total_downloads": 8577,
+    "total_downloads": 8581,
     "releases_count": 18,
     "assets_count": 130,
     "platforms": {
       "windows": {
-        "downloads": 3772,
+        "downloads": 3776,
         "assets": 40
       },
       "linux": {
@@ -47,7 +47,7 @@
           {
             "name": "Altaqwaa-Setup-4.0.0.zip",
             "size": 249152136,
-            "count": 41,
+            "count": 45,
             "url": "https://github.com/rn0x/altaqwaa-desktop/releases/download/v4.0.0/Altaqwaa-Setup-4.0.0.zip"
           }
         ],
@@ -96,7 +96,7 @@
         "tag": "v4.0.0",
         "name": "v4.0.0 ✨",
         "published": "2026-08-06T23:19:46Z",
-        "downloads": 115,
+        "downloads": 119,
         "assets": 10,
         "url": "https://github.com/rn0x/altaqwaa-desktop/releases/tag/v4.0.0"
       },
