@@ -3,12 +3,12 @@
 
 import moment from 'moment-timezone';
 import momentDurationFormatSetup from 'moment-duration-format';
-import { Coordinates, CalculationMethod, PrayerTimes } from 'adhan';
+import { Coordinates, CalculationMethod, CalculationParameters, PrayerTimes } from 'adhan';
 import logger from '../core/logger.mjs';
 
 momentDurationFormatSetup(moment);
 
-export const METHODS = ['UmmAlQura', 'MuslimWorldLeague', 'Egyptian', 'Karachi', 'Dubai', 'Qatar', 'Kuwait', 'Singapore', 'Turkey', 'Tehran'];
+export const METHODS = ['UmmAlQura', 'MuslimWorldLeague', 'Egyptian', 'Karachi', 'Dubai', 'Qatar', 'Kuwait', 'Singapore', 'Turkey', 'Tehran', 'France'];
 
 const ORDER = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
 
@@ -24,6 +24,16 @@ function paramsFor(method) {
         Singapore: CalculationMethod.Singapore(),
         Turkey: CalculationMethod.Turkey(),
         Tehran: CalculationMethod.NorthAmerica(),
+        /* The adhan library does not ship a "France" method in v4, so build
+         * it from the UOIF (Union des organisations islamiques de France)
+         * parameters: a fixed angle method (Approximate) with 12° for both
+         * Fajr and Isha (Issue #58). */
+        France: (() => {
+            const p = new CalculationParameters('France');
+            p.fajrAngle = 12;
+            p.ishaAngle = 12;
+            return p;
+        })(),
     };
     return map[method] || CalculationMethod.NorthAmerica();
 }

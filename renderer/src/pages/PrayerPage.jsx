@@ -6,7 +6,7 @@ import { useNow, useSettings } from '../lib/hooks';
 const PRAYER_ICONS = { Fajr: Sunrise, Dhuhr: Sun, Asr: SunDim, Maghrib: Sunset, Isha: Moon, Sunrise: Sun };
 const PRAYER_NAMES = { Fajr: 'الفجر', Dhuhr: 'الظهر', Asr: 'العصر', Maghrib: 'المغرب', Isha: 'العشاء', Sunrise: 'الشروق' };
 const capKey = (k) => (k ? k.charAt(0).toUpperCase() + k.slice(1) : '');
-const METHODS = ['UmmAlQura', 'MuslimWorldLeague', 'Egyptian', 'Karachi', 'Dubai', 'Qatar', 'Kuwait', 'Singapore', 'Turkey', 'Tehran'];
+const METHODS = ['UmmAlQura', 'MuslimWorldLeague', 'Egyptian', 'Karachi', 'Dubai', 'Qatar', 'Kuwait', 'Singapore', 'Turkey', 'Tehran', 'France'];
 
 function parseRemaining(str) {
     if (!str) return null;
